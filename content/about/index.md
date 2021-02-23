@@ -12,3 +12,5 @@ slug: 'about-me'
 未完待续......
 
 > 看一下引用的样式是什么样的
+
+{{< img src="images/screenshot.png" >}}
