@@ -1,0 +1,75 @@
+baseURL = "https://daijiangtao.name/" # 网站域名
+defaultContentLanguage = "zh-cn" # 默认语言
+title = "船长的部落格" # 网站标题
+summaryLength = 10 # // 文章缩略文本长度
+paginate = 3 # 首页显示文章数量
+enableEmoji = true # 允许使用 emoji
+pygmentsUseClasses = true
+pygmentCodeFences = true
+pygmentscodefencesguesssyntax = true
+
+[author]
+name = "CaptainOfPhB"
+
+[params]
+description = "" # 网站描述
+enableMathJax = true # 是否使用 mathjax（数学公式）
+enableSummary = true # 是否显示文章摘要
+footerSlogan = "愿历经千帆，归来仍少年。" # 网站页脚标语
+keywords = ["CaptainOfPhB"] # 网站关键字
+subTitle = "/新/世/纪/的/斜/杠/青/年" # 网站二级标题
+mainSections = ["posts", "post"]
+
+# 配置菜单
+[[menu.main]]
+identifier = "home"
+name = "首页"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "archive"
+name = "归档"
+url = "/posts/"
+weight = 20
+
+[[menu.main]]
+identifier = "tags"
+name = "标签"
+url = "/tags/"
+weight = 30
+
+[[menu.main]]
+identifier = "about"
+name = "关于"
+url = "/about-me"
+weight = 40
+
+[permalinks]
+posts = "/:year/:month/:day/:slug"
+
+[social]
+github = "https://github.com/CaptainOfPhB"
+zhihu = "https://www.zhihu.com/people/CaptainInPHW"
+twitter = "https://twitter.com/CaptainInPHW"
+wechat = "https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg"
+
+# Valine.
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+[params.valine]
+enable = false
+appId = "vKYS7tvEIUXiu4prPVbT5NxA-gzGzoHsz"
+appKey = "9yJucmmbwsPL1xwqMB9yqn5n"
+placeholder = "请在这里发表你的想法..."
+visitor = true
+
+[blackfriday]
+smartypants = false
+
+[markup]
+
+[markup.goldmark]
+
+[markup.goldmark.renderer]
+unsafe = true
