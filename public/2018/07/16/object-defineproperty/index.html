@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	
+	
+	
+	<title>Object.defineProperty ｜ 船长的部落格</title>
+	
+    
+    
+    <meta name="description" content="Object.defineProperty" />
+    
+
+    
+    
+    <meta name="keywords" content="JavaScript" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://captainofphb.gitee.io/images/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/captain.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://captainofphb.gitee.io/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">/新/世/纪/的/斜/杠/青/年</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/CaptainInPHW" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="https://captainofphb.gitee.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2018/07/16/object-defineproperty/'>Object.defineProperty</a></h2>
+                        <span class="date">2018.07.16</span>
+                    </div>
+                    <div class="post_content markdown"><p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。该方法允许精确添加或修改对象的属性。通过赋值来添加的普通属性会创建在属性枚举期间显示的属性（<code>for...in</code> 或 <code>Object.keys</code> 方法），这些值可以被改变，也可以被删除。这种方法允许这些额外的细节从默认值改变。默认情况下，使用 <code>Object.defineProperty()</code> 添加的属性值是不可变的。</p>
+<h2 id="语法">语法</h2>
+<p><code>Object.defineProperty(obj, prop, descriptor)</code></p>
+<h2 id="参数">参数</h2>
+<ul>
+<li><code>obj</code>: 需定义属性的对象</li>
+<li><code>prop</code>: 要定义或修改的属性的名称</li>
+<li><code>descriptor</code>: 将被定义或修改的<code>属性描述符</code></li>
+</ul>
+<p>这里主要介绍研究一下第三个参数 <code>descriptor</code>。</p>
+<h2 id="属性描述符">属性描述符</h2>
+<p>属性描述符分为两种：<code>数据描述符</code>和<code>存取描述符</code>。描述符必须是这两种形式之一，不能同时是两者。</p>
+<p><code>数据描述符</code>和<code>存取描述符</code>均具有以下可选属性：</p>
+<ul>
+<li><code>configurable</code>: 默认为 <code>false</code></li>
+<li><code>enumerable</code>: 默认为 <code>false</code></li>
+</ul>
+<p><code>数据描述符</code>单独具有的可选属性：</p>
+<ul>
+<li><code>value</code>: 属性对应的值</li>
+<li><code>writable</code>: 默认为 <code>false</code></li>
+</ul>
+<p><code>存取描述符</code>单独具有的可选属性：</p>
+<ul>
+<li><code>get</code>: 一个给属性提供 getter 的方法，默认为 <code>false</code></li>
+<li><code>set</code>: 一个给属性提供 setter 的方法，默认为 <code>false</code></li>
+</ul>
+<p>如果一个描述符不具有 value、writable、get 和 set 任意一个关键字，那么它将被认为是一个数据描述符。
+如果一个描述符同时有(value 或 writable)和(get 或 set)关键字，将会产生一个异常（数据描述符和存取描述符不能同时存在）。</p>
+<h3 id="configurable">configurable</h3>
+<p><code>configurable</code> 特性指明对象的属性是否可以被删除，以及除 writable 特性外的其他特性是否可以被修改。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">configurable</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">get</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="c1">// 以下几条语句全部抛出错误，因为除了 writable 之外的其他属性都是不可修改的
+</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">set</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){}});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">get</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="mi">1</span><span class="p">;}});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">value</span> <span class="o">:</span> <span class="mi">12</span><span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// Nothing happens
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1
+</span></code></pre></div><p>如果 <code>configurable</code> 为 <code>true</code>，那么在删除某个属性的时候，该属性下的 <code>configurable</code> 是最后被删除的。</p>
+<h3 id="enumerable">enumerable</h3>
+<p><code>enumerable</code> 定义了对象的属性是否可以在 <code>for...in</code> 循环和 <code>Object.keys()</code> 中被枚举。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">enumerable</span><span class="o">:</span><span class="kc">true</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">enumerable</span><span class="o">:</span><span class="kc">false</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;c&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">3</span> <span class="p">});</span> <span class="c1">// enumerable 配置默认为 false
+</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">d</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// 使用直接赋值的方式创建对象的属性，则这个属性的 enumerable 为 true
+</span><span class="c1"></span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 打印 &#39;a&#39; 和 &#39;d&#39;
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// [&#34;a&#34;, &#34;d&#34;]
+</span><span class="c1"></span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span> <span class="c1">// false
+</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">);</span> <span class="c1">// false
+</span></code></pre></div><h3 id="writable">writable</h3>
+<p>当 <code>writable</code> 属性设置为 <code>false</code> 时，该属性不可写，它不能被重新赋值。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">37</span><span class="p">,</span>
+  <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 37
+</span><span class="c1">// 严格模式下会抛出错误，即使是赋的值与之前相等，如 obj.a = 37
+</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="c1">// the assignment didn&#39;t work
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 37
+</span><span class="c1"></span>
+<span class="c1">// strict mode
+</span><span class="c1"></span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// throws TypeError: &#34;b&#34; is read-only
+</span><span class="c1"></span>  <span class="k">return</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">b</span><span class="p">;</span> <span class="c1">// returns 2
+</span><span class="c1"></span><span class="p">}());</span>
+</code></pre></div><h3 id="get">get</h3>
+<p><code>get</code> 表示如何获取属性的值。配置了该选项后，属性的值不能通过外界的赋值操作来更改，属性的值是通过 <code>get</code> 来获取的。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">get</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;value of a&#39;</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// &#39;value of a&#39;
+</span></code></pre></div><h3 id="set">set</h3>
+<p><code>set</code> 表示对该属性进行赋值操作时的回调。配置了该选项后，对属性进行赋值，将会调用该属性配置下的 <code>set</code> 方法。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">set</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;set() has beend called&#39;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// log &#39;set() has beend called&#39;, and obj.a is undefined
+</span></code></pre></div><h2 id="默认行为">默认行为</h2>
+<p>使用 <code>.</code> 运算符和 <code>Object.defineProperty()</code> 为对象的属性赋值时，数据描述符中的属性默认值是不同的，如下例所示:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">// 等同于:
+</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">writable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+
+
+<span class="c1">// 另一方面，
+</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">1</span> <span class="p">});</span>
+<span class="c1">// 等同于:
+</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">configurable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</code></pre></div><p><code>Object.defineProperty</code> 是 Vue 实现数据响应式的核心，还需要结合的是 <code>watcher</code>，有待研究。</p>
+<blockquote>
+<p>Reference: <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty | MDN</a></p>
+</blockquote>
+<p>完。</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/javascript/">JavaScript</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年。</span>
+    </div>
+</footer>
+    <script src="https://captainofphb.gitee.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://captainofphb.gitee.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://captainofphb.gitee.io/js/fancybox.min.js"></script>
+<script src="https://captainofphb.gitee.io/js/captain.js"></script>
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  if(tables.length) {
+    for(var i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
+    }
+  }
+</script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+</body>
+
+</html>

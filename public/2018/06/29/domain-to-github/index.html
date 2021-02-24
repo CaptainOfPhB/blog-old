@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	
+	
+	
+	<title>如何将域名映射至 Github 仓库 ｜ 船长的部落格</title>
+	
+    
+    
+    <meta name="description" content="如何将域名映射至 Github 仓库" />
+    
+
+    
+    
+    <meta name="keywords" content="Domain, GitHub" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://captainofphb.gitee.io/images/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/captain.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://captainofphb.gitee.io/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">/新/世/纪/的/斜/杠/青/年</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/CaptainInPHW" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="https://captainofphb.gitee.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2018/06/29/domain-to-github/'>如何将域名映射至 Github 仓库</a></h2>
+                        <span class="date">2018.06.29</span>
+                    </div>
+                    <div class="post_content markdown"><p>借助博客框架（Jekyll、Hexo、Hugo、Gatsby 等）构建并部署好自己的博客后，可以选择托管至 GitHub。进入博客所在仓库，在 <code>Settings -&gt; GitHub Pages</code> 界面将 <code>Source</code> 设置为 <code>master branch</code> （或者其他分支）后，点击 <code>Save</code> 可生成博客的在线预览链接。</p>
+<p>博客的预览地址一般为 <code>https://&lt;your_user_name&gt;.github.io/</code>形式（<code>&lt;your_user_name&gt;</code> 为你的 GitHub 用户名），链接中的 <code>github.io</code> 很是不美观，我们可以在域名服务商处购买一个自己喜欢的域名，然后将其映射至博客线上预览地址。</p>
+<h2 id="购买域名">购买域名</h2>
+<p>域名交易网站很多，国内的有 <a href="https://wanwang.aliyun.com/">万网</a>（已被阿里收购）、<a href="http://www.xinnet.com/">新网</a> 等，
+国外的有 <a href="https://www.namesilo.com/">NameSilo</a>、<a href="https://sg.godaddy.com/">Godaddy</a>、<a href="https://www.dnspod.cn/">DNSPod</a>。一般来说，一级域名和顶级域名都不是很热门的话，第一年的价格是非常便宜的。在国内域名交易网站购买域名后，如果是作为盈利网站的主力域名、访问量较大的话，建议对网站进行实名认证以及工信部备案，若不进行备案，一旦被相关部门查出，网站可能会被屏蔽掉（通过国内 DNS 不再解析你的服务器的 IP 地址，取消域名与 IP 地址的关联）。</p>
+<h2 id="添加域名解析">添加域名解析</h2>
+<p>购买完成之后，进入<a href="https://netcn.console.aliyun.com/core/domain/tclist">阿里云</a> ，按照引导添加域名解析。</p>
+<h3 id="记录类型">记录类型</h3>
+<ul>
+<li>A 记录：将域名指向一个 IPv4 地址（例如：10.10.10.10）</li>
+<li>CNAME：将域名指向另一个域名（例如 <a href="http://www.aliyun.com">www.aliyun.com</a>）</li>
+<li>MX：将域名指向邮件服务器地址</li>
+<li>TXT：可任意填写，长度限制 255，通常做 SPF 记录（反垃圾邮件）</li>
+<li>NS：域名服务器记录，将子域名指定其他 DNS 服务器解析</li>
+<li>AAAA：将域名指向一个 IPv6 地址（例如：ff06:0:0:0:0:0:0:c3）</li>
+<li>SRV：记录提供特定服务的服务器（例如 example-server.tcp）</li>
+<li>显性 URL：将域名指向一个 http(s)协议地址，访问域名则自动跳转至目标地址</li>
+<li>隐性 URL：与显性 URL 类似，但隐性转发会隐藏真实的目标地址</li>
+</ul>
+<h3 id="主机记录域名前缀">主机记录（域名前缀）</h3>
+<ul>
+<li>www：解析后的域名为 <a href="http://www.aliyun.com">www.aliyun.com</a></li>
+<li>@：直接解析主域名 aliyun.com</li>
+<li>*：泛解析，匹配其他所有域名 *.aliyun.com</li>
+<li>mail：将域名解析为 mail.aliyun.com，通常用于解析邮箱服务器</li>
+<li>二级域名：如：abc.aliyun.com，填写 abc</li>
+<li>手机网站：如：m.aliyun.com，填写 m</li>
+<li>显性 URL：不支持泛解析（泛解析：将所有子域名解析到同一地址）</li>
+</ul>
+<p>其中需要我们填写的是 <code>记录类型</code>、<code>主机记录</code>、<code>记录值</code> 三项。</p>
+<p>添加第一条解析：<code>记录类型</code> 选为 <code>CNAME</code>，<code>主机记录</code> 选为 <code>@</code>；<code>记录值</code> 填入博客域名，假如博客预览地址为 <code>https://&lt;user_name&gt;.github.io/</code>，则 <code>记录值</code> 填入 <code>&lt;user_name&gt;.github.io.</code>，注意 <code>io</code> 后面要加上 <code>.</code> 符号，其余选项默认不用选。这条解析可使我们购买的域名指向我们的博客域名。</p>
+<p>添加第二条解析：<code>记录类型</code> 选为 <code>A</code>，<code>主机记录</code> 选为 <code>www</code>，<code>记录值</code> 选为博客的 <code>IP</code> 地址，同样，其余选项默认不用选。这条解析可使别人在浏览器键入我们的域名时，无论加不加 <code>www</code> 前缀都可以正常访问。</p>
+<blockquote>
+<p>Tips: 如何获取博客 IP 地址？打开终端，ping 博客地址 <code>ping https://{username}.github.io/</code>，ping 出来的就是你的博客 IP 地址</p>
+</blockquote>
+<h3 id="等待">等待</h3>
+<p>完成以上步骤之后，需要在博客仓库的根目录下新建名为 <code>CNAME</code> 的文件，编辑 <code>CNAME</code> 文件，写入你购买的域名，若你购买的域名为 <code>mydomain.com</code>，
+则将 <code>mydomain.com</code> 写入，注意不要加 <code>http://</code> 或者 <code>https://</code> 等，末尾不用加根目录 <code>/</code> 。</p>
+<p>等半个小时左右（运营商更新域名缓存），在浏览器键入你的域名即可以访问到你的博客。</p>
+<p>完。</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/domain/">Domain</a>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/github/">GitHub</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年。</span>
+    </div>
+</footer>
+    <script src="https://captainofphb.gitee.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://captainofphb.gitee.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://captainofphb.gitee.io/js/fancybox.min.js"></script>
+<script src="https://captainofphb.gitee.io/js/captain.js"></script>
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  if(tables.length) {
+    for(var i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
+    }
+  }
+</script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+</body>
+
+</html>

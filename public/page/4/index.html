@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta name="generator" content="Hugo 0.80.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	
+	
+	
+	<title>船长的部落格 ｜ /新/世/纪/的/斜/杠/青/年 </title>
+	
+    
+    
+
+    
+    
+    <meta name="keywords" content="CaptainOfPhB" />
+    
+
+	
+	<link rel="alternate" type="application/rss+xml" href="https://captainofphb.gitee.io/index.xml" title="船长的部落格" />
+    
+    
+    <link rel="shortcut icon" href="https://captainofphb.gitee.io/images/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/captain.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://captainofphb.gitee.io/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">/新/世/纪/的/斜/杠/青/年</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/CaptainInPHW" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="https://captainofphb.gitee.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/2018/07/17/vue-computed-watch-methods/'>Vue 中 Computed、Watch 和 Methods 的区别</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>在 Vue 模板中使用表达式是十分便利的，但是这样设计的初衷是仅仅用于简单运算。在模板中使用大量的逻辑运算会使得模板变得难以维护。对于任何复杂的逻辑，都应该使用计算属性。
+Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符串放入一个计算属性中：
+&lt;div id=&#34;app&#34;&gt; &lt;p&gt;Original message: &#34;{{ message }}&#34;&lt;/p&gt; &lt;p&gt;Computed reversed message: &#34;{{ reversedMessage }}&#34;&lt;/p&gt; &lt;/div&gt; const app = new Vue({ el: &#39;#app&#39;, data: { message: &#39;Hello&#39; }, computed: { // 计算属性的 getter  reversedMessage: function () { // this 指向 Vue 实例  return this....</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.07.17</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://captainofphb.gitee.io/tags/vue/">Vue</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/2018/07/16/object-freeze-and-object-seal/'>Object.freeze 和 Object.seal</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>Vue 的响应式是使用了 Object.defineProperty 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 Object.freeze 方法将数据“冻”起来。
+ Object.freeze() 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。
+ parameter Obj: 需要冻结的对象。...</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.07.16</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://captainofphb.gitee.io/tags/javascript/">JavaScript</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/2018/07/16/object-defineproperty/'>Object.defineProperty</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。该方法允许精确添加或修改对象的属性。通过赋值来添加的普通属性会创建在属性枚举期间显示的属性（for...in 或 Object.keys 方法），这些值可以被改变，也可以被删除。这种方法允许这些额外的细节从默认值改变。默认情况下，使用 Object.defineProperty() 添加的属性值是不可变的。
+语法 Object.defineProperty(obj, prop, descriptor)...</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.07.16</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="https://captainofphb.gitee.io/tags/javascript/">JavaScript</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+
+<div class="pagination">
+    
+    
+    <a href="/page/3/" class="pre">Prev</a>
+    
+    
+    <a href="/page/5/" class="next">Next</a>
+    
+    
+</div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年。</span>
+    </div>
+</footer>
+    <script src="https://captainofphb.gitee.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://captainofphb.gitee.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://captainofphb.gitee.io/js/fancybox.min.js"></script>
+<script src="https://captainofphb.gitee.io/js/captain.js"></script>
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  if(tables.length) {
+    for(var i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
+    }
+  }
+</script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+</body>
+
+</html>

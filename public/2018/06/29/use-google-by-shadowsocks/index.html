@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	
+	
+	
+	<title>如何使用 Shadowsocks 获取谷歌服务 ｜ 船长的部落格</title>
+	
+    
+    
+    <meta name="description" content="如何使用 Shadowsocks 获取谷歌服务" />
+    
+
+    
+    
+    <meta name="keywords" content="Shadowsocks, Google" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://captainofphb.gitee.io/images/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/captain.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://captainofphb.gitee.io/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">/新/世/纪/的/斜/杠/青/年</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/CaptainInPHW" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="https://captainofphb.gitee.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2018/06/29/use-google-by-shadowsocks/'>如何使用 Shadowsocks 获取谷歌服务</a></h2>
+                        <span class="date">2018.06.29</span>
+                    </div>
+                    <div class="post_content markdown"><p>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。</p>
+<h2 id="ip-黑名单">IP 黑名单</h2>
+<p>当你打开浏览器键入 URL 访问网络资源时，域名会被解析为 IP 地址（DNS 解析，一般由网络运营商提供，或者你也可以自己指定 DNS 服务器，例如谷歌的 DNS：8.8.8.8），然后与该 IP 地址的设备进行连接然后传输资源。然而在你访问墙外资源的时候，是要通过 GFW 这道关卡的。如果这个 IP 刚好在 GFW 的 IP 黑名单中，那么就会拒绝你的请求通过，当然也就访问不到相应的资源了。一般来说，网络运营商处的 IP 黑名单比 GFW 的多，除了 GFW 的 IP 黑名单外，运营商也有自己的 IP 黑名单。</p>
+<h2 id="如何跨越-gfw">如何跨越 GFW</h2>
+<p>为什么使用代理服务器就可以访问到墙外的资源了呢？由于 IP 地址数量庞大，GFW 不可能将所有的 IP 地址全都检查一遍，所以访问量（流量）比较大的 IP 地址 GFW 会额外关注，访问量比较小的可能会成为漏网之鱼，而使用代理服务器转发我们的请求就是利用了这一点。当我们买了一台墙外的 VPS（虚拟主机/服务器），而这个 VPS 没有在 GFW 的 IP 黑名单中（或者说还没有被 GFW 发现），那我们就可以访问到这台 VPS。通过这一步，我们已经跨过了 GFW 这座巍峨的墙，那么剩下的事情就简单多了。</p>
+<h2 id="在-vps-上安装">在 VPS 上安装</h2>
+<p>我们通过在 VPS 上安装 shadowsocks，指定监听某个端口的访问（例如 port 1234），当有访问进来的时候，shadowsocks 进行转发，然后将资源返回给我们。</p>
+<blockquote>
+<p>虚拟服务器供应商有好多，可自行上网搜索，推荐 <a href="https://www.vultr.com/">Vultr</a>、<a href="https://bandwagonhost.com/">BandwagonHOST</a>。如何在 VPS 上安装 shadowsocks 可参考<a href="https://zoomyale.com/2016/vultr_and_ss/">这篇文章</a>（<a href="https://shorturl.at/dhvKT">备用地址</a>，需翻墙），推荐搭配 <a href="https://www.docker.com/">docker</a> 使用。</p>
+</blockquote>
+<h2 id="本地安装">本地安装</h2>
+<p>主要介绍下 Windows、Linux 系统或者 Mac(Unix) 下本地 shadowsocks 的安装使用。</p>
+<h3 id="windows">Windows</h3>
+<p>下载 shadowsocks GUI 版本，解压后双击 <code>shadowsocks.exe</code> 文件打开客户端进行配置。配置选项中需要填写以下几项，填写完成后的配置信息保存在安装目录下的 <code>gui-config.json</code> 文件中：</p>
+<ul>
+<li>Server Addr：服务器 IP 地址（可在代理商处购买代理服务）</li>
+<li>Server Port：服务器上的代理端口（所有从这个端口进来的请求全部转发）</li>
+<li>Password：密码</li>
+<li>Encrpytion：加密方式（默认为 <code>aes-256-cfb</code>，不需要更改）</li>
+<li>Proxy Port：本地代理端口（默认为 <code>1080</code>，可自行修改为其他端口）</li>
+</ul>
+<p>可参考 Windows 环境下的配置截图：</p>
+<p><img src="https://i.loli.net/2017/11/04/59fd9e1b2cc3d.png" alt="Windows config"></p>
+<p>设置完成后，在任务栏小飞机右键选择<code>启用系统代理</code>即可。</p>
+<blockquote>
+<p>Shadowsocks v4.0.6 下载地址：<a href="http://pan.baidu.com/s/1i5f8sa5">百度云盘</a>（密码 <code>7zns</code>）或 <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.6/Shadowsocks-4.0.6.zip">Github</a></p>
+</blockquote>
+<h3 id="linux">Linux</h3>
+<p>该系统下推荐使用命令行版本，打开终端，键入以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get update
+sudo apt-get install python-pip
+sudo pip install shadowsocks
+</code></pre></div><p>执行成功后，编辑 <code>/etc/shadowsocks/config.json</code> 文件，可参考 Linux 下的配置截图：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo vim /etc/shadowsocks/config.json
+</code></pre></div><p><img src="https://i.loli.net/2017/11/04/59fda605f346d.jpg" alt="Linux config"></p>
+<p>配置完成后，键入以下命令可在后台运行 shadowsocks，运行成功截图：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo sslocal -c /etc/shadowsocks/config.json -d start
+</code></pre></div><p><img src="https://i.loli.net/2017/11/04/59fdb0a5ca920.jpg" alt="Successed"></p>
+<p>命令太长不好记，可以在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 中添加 alias：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># alias it in .zshrc for example</span>
+<span class="nb">echo</span> <span class="s1">&#39;\n#alias for running shaodowsocks in the background&#39;</span> &gt;&gt; ~/.zshrc
+<span class="nb">echo</span> <span class="s1">&#39;\nalias runss=&#34;sudo sslocal -c /etc/shadowsocks/config.json -d start&#34;&#39;</span> &gt;&gt; ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+</code></pre></div><p><code>runss</code> 即为命令快捷键，可自行设置，执行 <code>runss</code> 即可后台开启代理服务。</p>
+<h3 id="mac">Mac</h3>
+<p>下载 <a href="https://jaist.dl.sourceforge.net/project/shadowsocksgui/dist/ShadowsocksX-2.6.3.dmg">ShadowsocksX-2.6.3.dmg</a>，安装完成后进行配置，可参考上文的 Windows、Linux 系统下的方法进行。</p>
+<h2 id="代理管理设置">代理管理设置</h2>
+<p><a href="https://www.switchyomega.com/">SwitchyOmega</a> 是 Chrome &amp; Firefox 浏览器上的一个代理扩展程序，可以轻松快捷地管理和切换多个代理设置。以 Chrome 为例，下载完成后，在 Chrome 地址栏键入 <code>chrome://extensions</code> 进入扩展管理面板，将对应文件拖入进行安装。</p>
+<p>安装完成后，需要对插件进行配置，可参考该配置截图：</p>
+<p><img src="https://i.loli.net/2017/11/04/59fdcd8c2cd99.png" alt="SwitchyOmega config"></p>
+<p>配置完成后选择代理方式为 <code>auto switch</code> 即可，这样访问国内的网站时就不会通过代理去访问。</p>
+<p>Firefox 浏览器安装配置同理，参考 Chrome 即可。之后访问墙外的资源时，将其添加进 proxy 名单即可访问。</p>
+<p>完。</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/shadowsocks/">Shadowsocks</a>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/google/">Google</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年。</span>
+    </div>
+</footer>
+    <script src="https://captainofphb.gitee.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://captainofphb.gitee.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://captainofphb.gitee.io/js/fancybox.min.js"></script>
+<script src="https://captainofphb.gitee.io/js/captain.js"></script>
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  if(tables.length) {
+    for(var i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
+    }
+  }
+</script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on 船长的部落格</title>
+    <link>https://captainofphb.gitee.io/tags/vue/</link>
+    <description>Recent content in Vue on 船长的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 17 Jul 2018 17:38:47 +0800</lastBuildDate><atom:link href="https://captainofphb.gitee.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue 中 Computed、Watch 和 Methods 的区别</title>
+      <link>https://captainofphb.gitee.io/2018/07/17/vue-computed-watch-methods/</link>
+      <pubDate>Tue, 17 Jul 2018 17:38:47 +0800</pubDate>
+      
+      <guid>https://captainofphb.gitee.io/2018/07/17/vue-computed-watch-methods/</guid>
+      <description>在 Vue 模板中使用表达式是十分便利的，但是这样设计的初衷是仅仅用于简单运算。在模板中使用大量的逻辑运算会使得模板变得难以维护。对于任何复杂的逻辑，都应该使用计算属性。
+Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符串放入一个计算属性中：
+&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;p&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; const app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;Hello&amp;#39; }, computed: { // 计算属性的 getter  reversedMessage: function () { // this 指向 Vue 实例  return this.</description>
+    </item>
+    
+  </channel>
+</rss>

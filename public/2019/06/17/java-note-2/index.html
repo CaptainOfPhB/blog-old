@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	
+	
+	
+	<title>Java 学习笔记（二) ｜ 船长的部落格</title>
+	
+    
+    
+    <meta name="description" content="Java 学习笔记（二)" />
+    
+
+    
+    
+    <meta name="keywords" content="Java" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://captainofphb.gitee.io/images/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/captain.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://captainofphb.gitee.io/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">/新/世/纪/的/斜/杠/青/年</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/CaptainInPHW" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="https://captainofphb.gitee.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2019/06/17/java-note-2/'>Java 学习笔记（二)</a></h2>
+                        <span class="date">2019.06.17</span>
+                    </div>
+                    <div class="post_content markdown"><ol>
+<li>java 是一门强类型的静态语言，编译器（compile）提供了最佳的安全保障</li>
+<li>java 的跨平台性能良好（Windows、Linux、macOS），JVM（Java Virtual Machine）打通了不同平台和 java 之间的桥梁，这种中间层语言为 bytecode （字节码），java -&gt; bytecode -&gt; 机器码，一处编译，处处运行</li>
+<li>class 类是 java 中的最小单位，一般放在与类同名的 .java 文件中，文件名与类名不一致 IDEA 会报错</li>
+<li>类名其实是由包名决定的</li>
+<li>每个 class 类都有对应的包名，一般包名称需要遵守社区约定，与域名反序，例如 com.alibaba.fastjson，目录结构是 /src/main/java/com/alibaba/fastjson/</li>
+<li>放在 java 目录下的类称为默认类，一般不会有顶部的 package 声明</li>
+<li>maven 的项目结构约定为 src/main/java、src/test/java</li>
+<li>JVM 中，不存在简单的类名这种概念，所有的类名都会是复杂的带包名的类名（全限定类名，full qualified classname，FQCN），避免冲突。JVM 可以允许在不冲突的情况下使用简单的类名</li>
+<li>当一个 class 类放在 java.lang 包下时，其他类使用的时候可以不必在顶部 import</li>
+<li>局部变量的作用域是在当前的花括号内有效的，类似于 js 的块级作用域</li>
+<li>静态成员变量指存在于 class 中的常量，不和任何对象相绑定。成员变量也是 class 中的常量，是和 class 相绑定的</li>
+<li>class 中任何静态的方法都不能访问 class 构造出的实例上的属性或者方法的</li>
+<li>class 中没有声明 constructor 的时候，编译器会自动生成无参构造器</li>
+<li>class 中可以存在多个构造器，构造器本质是特殊的方法</li>
+<li>java 中有两种数据类型：原生类型以及引用类型。类似于 js，基础类型数据存在于栈内存中，引用类型数据存在于堆内存中，栈内存中存储的是堆内存地址</li>
+</ol>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/java/">Java</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年。</span>
+    </div>
+</footer>
+    <script src="https://captainofphb.gitee.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://captainofphb.gitee.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://captainofphb.gitee.io/js/fancybox.min.js"></script>
+<script src="https://captainofphb.gitee.io/js/captain.js"></script>
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  if(tables.length) {
+    for(var i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
+    }
+  }
+</script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+</body>
+
+</html>

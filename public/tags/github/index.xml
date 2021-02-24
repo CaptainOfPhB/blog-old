@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on 船长的部落格</title>
+    <link>https://captainofphb.gitee.io/tags/github/</link>
+    <description>Recent content in GitHub on 船长的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Jun 2018 16:49:00 +0800</lastBuildDate><atom:link href="https://captainofphb.gitee.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何将域名映射至 Github 仓库</title>
+      <link>https://captainofphb.gitee.io/2018/06/29/domain-to-github/</link>
+      <pubDate>Fri, 29 Jun 2018 16:49:00 +0800</pubDate>
+      
+      <guid>https://captainofphb.gitee.io/2018/06/29/domain-to-github/</guid>
+      <description>借助博客框架（Jekyll、Hexo、Hugo、Gatsby 等）构建并部署好自己的博客后，可以选择托管至 GitHub。进入博客所在仓库，在 Settings -&amp;gt; GitHub Pages 界面将 Source 设置为 master branch （或者其他分支）后，点击 Save 可生成博客的在线预览链接。</description>
+    </item>
+    
+  </channel>
+</rss>

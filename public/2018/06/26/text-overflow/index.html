@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	
+	
+	
+	<title>文本溢出省略 ｜ 船长的部落格</title>
+	
+    
+    
+    <meta name="description" content="文本溢出省略" />
+    
+
+    
+    
+    <meta name="keywords" content="CSS, Text Overflow" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://captainofphb.gitee.io/images/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/captain.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://captainofphb.gitee.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://captainofphb.gitee.io/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">/新/世/纪/的/斜/杠/青/年</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/CaptainInPHW" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="https://captainofphb.gitee.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2018/06/26/text-overflow/'>文本溢出省略</a></h2>
+                        <span class="date">2018.06.26</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>The <code>text-overflow</code> property in CSS deals with situations where text is clipped when it overflows the element&rsquo;s box. It can be clipped (i.e. cut off, hidden), display an ellipsis ('…', Unicode Range Value U+2026) or display an custom string (no current browser support for custom strings).</p>
+</blockquote>
+<p>CSS 中的 <code>text-overflow</code> 属性用来处理这样一种情况：当文本超出了他所在元素的盒子（边界）时，将文本进行剪切。文本可以被剪切（截断或者隐藏），将其显示为省略号（<code>...</code>，Unicode 编码为 <code>U+2026</code>）或者显示为一个自定义的字符串。</p>
+<blockquote>
+<p>Note that <code>text-overflow</code> only occurs when the container&rsquo;s <code>overflow</code> property has the value <code>hidden</code>, <code>scroll</code> or <code>auto</code> and <code>white-space: nowrap;</code>.</p>
+</blockquote>
+<p>请注意，<code>text-overflow</code> 仅仅当 container（包裹文字的容器元素）的 <code>overflow</code> 属性具有 <code>hidden</code> 或 <code>scroll</code> 或 <code>auto</code>，以及 <code>white-space: nowrap</code>。</p>
+<blockquote>
+<p><code>Text overflow</code> can only happen on <code>block</code> or <code>inline-block</code> level elements,
+because the element needs to have a width in order to be overflow-ed.
+The overflow happens in the direction as determined by the direction property or related attributes.</p>
+</blockquote>
+<p><code>text-oveflow</code> 仅仅能应用在<code>block</code> 或 <code>inline-block</code> 元素上，因为元素（容器）需要一个宽来隐藏文字，溢出发生在由方向属性或者与相关属性确定的方向上。</p>
+<h2 id="demo">Demo</h2>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;ellipsis&#34;</span><span class="p">&gt;</span>
+  请尽可能保持 props 函数为无状态的，因为它只会在路由发生变化时起作用。 如果你需要状态来定义
+  props，请使用包装组件，这样 Vue 才可以对状态变化做出反应。
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">ellipsis</span> <span class="p">{</span>
+  <span class="k">text-overflow</span><span class="p">:</span> <span class="kc">ellipsis</span><span class="p">;</span>
+  <span class="c">/* Required for text-overflow */</span>
+  <span class="k">white-space</span><span class="p">:</span> <span class="kc">nowrap</span><span class="p">;</span>
+  <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>文本溢出效果展示：</p>
+<p><img src="https://i.loli.net/2018/06/26/5b31d938ddeef.png" alt="text-overflow"></p>
+<blockquote>
+<p>Reference: <a href="https://css-tricks.com/almanac/properties/t/text-overflow/">text-overflow | CSS-Tricks</a>
+Extension: <a href="https://css-tricks.com/line-clampin/">text-overflow ellipsis multiple lines | CSS-Tricks</a></p>
+</blockquote>
+<p>完。</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://captainofphb.gitee.io/tags/css/">CSS</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年。</span>
+    </div>
+</footer>
+    <script src="https://captainofphb.gitee.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://captainofphb.gitee.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://captainofphb.gitee.io/js/fancybox.min.js"></script>
+<script src="https://captainofphb.gitee.io/js/captain.js"></script>
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  if(tables.length) {
+    for(var i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
+    }
+  }
+</script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+</body>
+
+</html>
