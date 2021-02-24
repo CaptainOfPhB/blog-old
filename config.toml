@@ -1,4 +1,4 @@
-baseURL = "https://daijiangtao.name/" # 网站域名
+baseURL = "https://captainofphb.gitee.io/" # 网站域名
 defaultContentLanguage = "zh-cn" # 默认语言
 title = "船长的部落格" # 网站标题
 summaryLength = 10 # // 文章缩略文本长度
