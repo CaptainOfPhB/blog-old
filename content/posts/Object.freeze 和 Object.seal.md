@@ -3,9 +3,10 @@ title: 'Object.freeze 和 Object.seal'
 date: 2018-07-16T17:32:12+08:00
 hidden: false
 draft: false
-tags: ['js']
-keywords: ['js']
-description: 'Object.freeze 和 Object'
+tags: ['JavaScript']
+keywords: ['JavaScript']
+description: 'Object.freeze 和 Object.seal'
+slug: 'object-freeze-and-object-seal'
 ---
 
 Vue 的响应式是使用了 `Object.defineProperty` 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 `Object.freeze` 方法将数据“冻”起来。

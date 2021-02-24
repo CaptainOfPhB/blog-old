@@ -3,9 +3,10 @@ title: '优雅的 Git 提交信息'
 date: 2018-06-27T16:05:17+08:00
 hidden: false
 draft: false
-tags: ['git']
-keywords: ['git']
-description: 'git commit message'
+tags: ['Git']
+keywords: ['Git']
+description: '优雅的 Git 提交信息'
+slug: 'git-message'
 ---
 
 Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？

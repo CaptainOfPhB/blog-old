@@ -3,9 +3,10 @@ title: 'React 学习笔记（一）'
 date: 2019-04-16T17:05:16+08:00
 hidden: false
 draft: false
-tags: ['react']
-keywords: ['react']
-description: 'Learn react'
+tags: ['React']
+keywords: ['React']
+description: 'React 学习笔记（一）'
+slug: 'react-note-1'
 ---
 
 1. React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态

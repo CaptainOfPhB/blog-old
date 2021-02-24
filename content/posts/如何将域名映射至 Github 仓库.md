@@ -3,9 +3,10 @@ title: '如何将域名映射至 Github 仓库'
 date: 2018-06-29T16:49:00+08:00
 hidden: false
 draft: false
-tags: ['domain', 'github']
-keywords: ['domain', 'github']
+tags: ['Domain', 'GitHub']
+keywords: ['Domain', 'GitHub']
 description: '如何将域名映射至 Github 仓库'
+slug: 'domain-to-github'
 ---
 
 借助博客框架（Jekyll、Hexo、Hugo、Gatsby 等）构建并部署好自己的博客后，可以选择托管至 GitHub。进入博客所在仓库，在 `Settings -> GitHub Pages` 界面将 `Source` 设置为 `master branch` （或者其他分支）后，点击 `Save` 可生成博客的在线预览链接。

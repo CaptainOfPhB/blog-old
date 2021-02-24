@@ -3,9 +3,10 @@ title: 'Java 学习笔记（二)'
 date: 2019-06-17T10:56:14+08:00
 hidden: false
 draft: false
-tags: ['java']
-keywords: ['java']
-description: 'java note'
+tags: ['Java']
+keywords: ['Java']
+description: 'Java 学习笔记（二)'
+slug: 'java-note-2'
 ---
 
 1. java 是一门强类型的静态语言，编译器（compile）提供了最佳的安全保障

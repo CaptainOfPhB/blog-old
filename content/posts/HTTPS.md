@@ -6,6 +6,7 @@ draft: false
 tags: ['https']
 keywords: ['https']
 description: 'https'
+slug: 'https'
 ---
 
 HTTPS：HTTP（Hyper Text Tranfer Protocal）+ SSL（Secure Sockets Layer）/ TLS（Transport Layer Security）.

@@ -1,6 +1,10 @@
 # Hugo default output directory
 /public
 
+# IDE
+/.idea
+/.vscode
+
 ## OS Files
 # Windows
 Thumbs.db
@@ -10,3 +14,5 @@ $RECYCLE.BIN/
 # OSX
 .DS_Store
 *.map
+
+.resource

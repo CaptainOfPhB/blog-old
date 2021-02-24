@@ -3,9 +3,10 @@ title: '如何使用 Shadowsocks 获取谷歌服务'
 date: 2018-06-29T17:00:57+08:00
 hidden: false
 draft: false
-tags: ['shadowsocks', 'google']
-keywords: ['shadowsocks', 'google']
+tags: ['Shadowsocks', 'Google']
+keywords: ['Shadowsocks', 'Google']
 description: '如何使用 Shadowsocks 获取谷歌服务'
+slug: 'use-google-by-shadowsocks'
 ---
 
 由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。

@@ -3,9 +3,10 @@ title: 'CSS 常见布局'
 date: 2018-03-16T14:55:37+08:00
 hidden: false
 draft: false
-tags: ['css', 'layout']
-keywords: ['css', 'layout']
+tags: ['CSS', 'Layout']
+keywords: ['CSS', 'Layout']
 description: 'CSS 常见布局'
+slug: 'css-layout'
 ---
 
 前端工程师的一门必修课程就是 CSS ( Cascading Style Sheet, 层叠样式表)，CSS 是一门艺术，学好 CSS 需要投入大量的时间去实践。今天我们主要聊一聊工作中常用到的 CSS 布局套路。

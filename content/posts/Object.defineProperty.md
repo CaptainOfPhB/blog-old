@@ -3,9 +3,10 @@ title: 'Object.defineProperty'
 date: 2018-07-16T17:20:12+08:00
 hidden: false
 draft: false
-tags: ['js']
-keywords: ['js']
+tags: ['JavaScript']
+keywords: ['JavaScript']
 description: 'Object.defineProperty'
+slug: 'object-defineProperty'
 ---
 
 `Object.defineProperty()` 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。该方法允许精确添加或修改对象的属性。通过赋值来添加的普通属性会创建在属性枚举期间显示的属性（`for...in` 或 `Object.keys` 方法），这些值可以被改变，也可以被删除。这种方法允许这些额外的细节从默认值改变。默认情况下，使用 `Object.defineProperty()` 添加的属性值是不可变的。

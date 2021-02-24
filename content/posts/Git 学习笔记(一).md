@@ -3,9 +3,10 @@ title: 'Git 学习笔记（一）'
 date: 2019-05-08T17:01:07+08:00
 hidden: false
 draft: false
-tags: ['git']
-keywords: ['git']
+tags: ['Git']
+keywords: ['Git']
 description: 'Learn git'
+slug: 'git-note-1'
 ---
 
 - git 查看文件改动状态使用 git status

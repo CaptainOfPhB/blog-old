@@ -3,9 +3,10 @@ title: 'Vue 中 Computed、Watch 和 Methods 的区别'
 date: 2018-07-17T17:38:47+08:00
 hidden: false
 draft: false
-tags: ['vue']
-keywords: ['vue']
+tags: ['Vue']
+keywords: ['Vue']
 description: 'Vue 中 Computed、Watch 和 Methods 的区别'
+slug: 'vue-computed-watch-methods'
 ---
 
 在 Vue 模板中使用表达式是十分便利的，但是这样设计的初衷是仅仅用于简单运算。在模板中使用大量的逻辑运算会使得模板变得难以维护。对于任何复杂的逻辑，都应该使用计算属性。

@@ -3,9 +3,10 @@ title: 'Java 学习笔记（一)'
 date: 2019-06-16T10:49:38+08:00
 hidden: false
 draft: false
-tags: ['java']
-keywords: ['java']
-description: 'java note'
+tags: ['Java']
+keywords: ['Java']
+description: 'Java 学习笔记（一）'
+slug: 'java-note-1'
 ---
 
 1. JRE：java runtime environment，java 运行时环境

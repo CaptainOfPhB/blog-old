@@ -3,9 +3,9 @@ title: 'Java 学习笔记（三)'
 date: 2019-06-25T11:03:15+08:00
 hidden: false
 draft: false
-tags: ['java']
-keywords: ['java']
-description: 'java 学习笔记（三）'
+tags: ['Java']
+keywords: ['Java']
+description: 'Java 学习笔记（三）'
 slug: 'java-note-3'
 ---
 
