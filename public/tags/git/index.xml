@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 船长的部落格</title>
-    <link>https://captainofphb.gitee.io/tags/git/</link>
+    <link>https://daijiangtao.gitee.io/tags/git/</link>
     <description>Recent content in Git on 船长的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 May 2019 17:01:07 +0800</lastBuildDate><atom:link href="https://captainofphb.gitee.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 May 2019 17:01:07 +0800</lastBuildDate><atom:link href="https://daijiangtao.gitee.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git 学习笔记（一）</title>
-      <link>https://captainofphb.gitee.io/2019/05/08/git-note-1/</link>
+      <link>https://daijiangtao.gitee.io/2019/05/08/git-note-1/</link>
       <pubDate>Wed, 08 May 2019 17:01:07 +0800</pubDate>
       
-      <guid>https://captainofphb.gitee.io/2019/05/08/git-note-1/</guid>
+      <guid>https://daijiangtao.gitee.io/2019/05/08/git-note-1/</guid>
       <description>git 查看文件改动状态使用 git status git 查看改动的内容使用 git diff git 查看提交记录使用 git log 命令 HEAD 指针表示的是当前版本，上一个版本为 HEAD^，再往上就是 HEAD^^，往上一百个版本可以写作 HEAD~100 git 回退至上个版本使用 git reset &amp;ndash;hard HEAD^，若回退至指定版本，先使用 git log 查看版本的 hash，然后使用 git reset &amp;ndash;hard &amp;lt;hash_version&amp;gt; 如果回退版本后又想回到最新的版本，在不知道最新版本 hash 的情况下，使用 git reflog 查看所有 commit 的 hash，然后使用 git reset &amp;ndash;hard &amp;lt;hash_version&amp;gt; 进行回退或者前进 git VCS 分为工作区和版本库（暂存区与分支），git add 命令将改动添加进入暂存区，git commit 将改动添加到分支 工作区的文件发生了改动，想要撤销修改，可以使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt; 来撤销掉修改，注意必须要加 &amp;ndash; 符号（&amp;ndash; 与文件名之间有空格），否则 git 会认为是要切换分支 如果文件发生了改动并且已经添加到暂存区，想撤销掉暂存区的改动，使用 git reset HEAD &amp;lt;file_name&amp;gt; 命令，这样就把修改了的文件又放回工作区了，暂存区是干净的，放置到工作区后，再使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt; 将放置在工作区的文件改动撤销掉，这样两步操作就将文件的改动彻底还原了 查看工作区与版本库文件的差异可以使用 git diff HEAD &amp;ndash; &amp;lt;file_name&amp;gt;（同样，&amp;ndash; 与文件名之间有空格） 如果工作区的文件被误删除，想要恢复可以使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt;，git checkout 其实是用版本库里的版本替换工作区的版本操作，无论是工作区的修改还是删除，都可以用该命令一键还原 本地分支首次推向远程分支的时候可以使用 git push -u origin &amp;lt;branch_name&amp;gt;，其中 -u 参数是 &amp;ndash;set-upstream 的简写 切换分支使用 git checkout &amp;lt;branch_name&amp;gt;，创建并切换新分支时需要加上 -b 参数，创建新分支使用 git branch &amp;lt;branch_name&amp;gt;，查看分支 git branch 合并分支使用 git merge &amp;lt;branch_name&amp;gt;，删除使用 git branch -d &amp;lt;branch_name&amp;gt; git merge 合并分支产生冲突时，先解决冲突，再添加至暂存区，然后提交。解决冲突时，&amp;laquo;&amp;laquo;&amp;lt; HEAD 到 ===== 部分是当前分支的内容，&amp;raquo;&amp;raquo;&amp;gt; 到 ===== 部分是需要并入的分支的内容，确定好要保留好的内容后保存并退出，然后提交。提交成功后，使用 git log &amp;ndash;graph 可查看分支合并图 如果合并分支时产生冲突，想要还原回原来的状态，可以适用 git merge &amp;ndash;abort 命令 git 可以将工作区暂时的改动“存储”起来，当你不想将改动提交至暂存区时。使用 git stash 命令即可。当你想将“存储”的内容释放出来时，先使用 git stash list 查看，然后进行恢复。恢复命令有两条，使用 git stash apply &amp;lt;shash@{index}&amp;gt; （这个括号里面的内容是可选的，可以指定恢复第几个 stash 的内容，在多次 stash 时使用)，可以将存储的内容恢复至工作区，但是存储的内容并不会删除，需要删除可以使用 git stash drop &amp;lt;shash@{index}&amp;gt; 命令；另一种方式是使用 git stash pop &amp;lt;shash@{index}&amp;gt; 命令，该条命令会在恢复之后同时删除 stash 区域的内容 查看远程仓库的信息使用 git remote -v 本地分支与远程分支进行关联使用 git branch -u &amp;lt;branch_name&amp;gt; origin/&amp;lt;branch_name&amp;gt; 创建标签使用 git tag -a &amp;lt;tag_name&amp;gt; -m &amp;lt;tag_description&amp;gt; &amp;lt;commit_hash&amp;gt;，查看一个标签的内容可以使用 git show &amp;lt;tag_name&amp;gt; 推送标签可以使用 git push origin &amp;lt;tag_name&amp;gt;，一次性推送可以使用 git push origun &amp;ndash;tags 命令，删除本地标签可以使用 git tag -d &amp;lt;tag_name&amp;gt;，删除远程标签使用 git push origin :refs/tags/&amp;lt;tag_name&amp;gt;  完。</description>
     </item>
     
     <item>
       <title>我常用的 Git 命令（译）</title>
-      <link>https://captainofphb.gitee.io/2018/07/24/commonly-used-git-commands/</link>
+      <link>https://daijiangtao.gitee.io/2018/07/24/commonly-used-git-commands/</link>
       <pubDate>Tue, 24 Jul 2018 18:04:02 +0800</pubDate>
       
-      <guid>https://captainofphb.gitee.io/2018/07/24/commonly-used-git-commands/</guid>
+      <guid>https://daijiangtao.gitee.io/2018/07/24/commonly-used-git-commands/</guid>
       <description>本文是对 Medium 上一篇国外开发者写的博客的翻译，原文地址请点击：A Dev’s Thoughts: My Most Used Git Commands | Medium。</description>
     </item>
     
     <item>
       <title>优雅的 Git 提交信息</title>
-      <link>https://captainofphb.gitee.io/2018/06/27/git-message/</link>
+      <link>https://daijiangtao.gitee.io/2018/06/27/git-message/</link>
       <pubDate>Wed, 27 Jun 2018 16:05:17 +0800</pubDate>
       
-      <guid>https://captainofphb.gitee.io/2018/06/27/git-message/</guid>
+      <guid>https://daijiangtao.gitee.io/2018/06/27/git-message/</guid>
       <description>Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？</description>
     </item>
     
