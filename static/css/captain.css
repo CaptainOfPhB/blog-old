@@ -76,7 +76,9 @@ h6 {
 }
 
 hr {
-  border: 1px solid #f3f3f3;
+  width: 50%;
+  margin: 50px auto;
+  border: 0.5px solid #f3f3f3;
 }
 
 /*basic styles ends*/
@@ -280,14 +282,13 @@ hr {
   color: #8e0000;
 }
 
-.post .post_footer {
-  padding: 20px 0;
-  border-bottom: 1px solid #f3f3f3;
-}
-
 .home .post_footer {
   padding: 30px 0 20px;
   border-bottom: 1px solid #f3f3f3;
+}
+
+.single_page .post_footer {
+  padding: 30px 0 80px;
 }
 
 .post .post_footer .meta {
@@ -317,6 +318,34 @@ hr {
   color: #1f1f1f;
 }
 
+.post .promotion_text {
+  font-size: 11px;
+  margin-top: 80px;
+  font-style: italic;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.post .promotion_container {
+  display: flex;
+}
+
+.post .promotion_container img.zhihu {
+  transform: scale(0.5);
+}
+
+.post .promotion_container img.juejin{
+  transform: scale(0.4);
+}
+
+.post .promotion_container img.yuque {
+  transform: scale(0.4);
+}
+
+.post .promotion_container img.dev {
+  transform: scale(0.4);
+}
+
 .page_tags {
   text-align: center;
   margin-top: 50px;
@@ -340,17 +369,6 @@ hr {
 .page_tags ul {
   margin: 0;
   padding: 0;
-}
-
-.doc_comments {
-  font-size: 14px;
-  color: #383838;
-  margin-top: 30px;
-  padding: 35px 0 45px;
-}
-
-.doc_comments .comments_block_title {
-  color: #000000;
 }
 
 .footer {

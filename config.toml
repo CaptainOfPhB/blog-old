@@ -53,23 +53,3 @@ github = "https://github.com/CaptainOfPhB"
 zhihu = "https://www.zhihu.com/people/CaptainInPHW"
 twitter = "https://twitter.com/CaptainInPHW"
 wechat = "https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg"
-
-# Valine.
-# You can get your appid and appkey from https://leancloud.cn
-# more info please open https://valine.js.org
-[params.valine]
-enable = false
-appId = "vKYS7tvEIUXiu4prPVbT5NxA-gzGzoHsz"
-appKey = "9yJucmmbwsPL1xwqMB9yqn5n"
-placeholder = "请在这里发表你的想法..."
-visitor = true
-
-[blackfriday]
-smartypants = false
-
-[markup]
-
-[markup.goldmark]
-
-[markup.goldmark.renderer]
-unsafe = true

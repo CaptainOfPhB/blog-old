@@ -13,4 +13,4 @@ slug: 'about-me'
 
 > 看一下引用的样式是什么样的
 
-{{< img src="images/screenshot.png" >}}
+{{< img src="images/favicon.png" >}}

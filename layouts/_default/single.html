@@ -5,13 +5,16 @@
         {{ partial "nav.html" . }}
         {{ partial "header.html" . }}
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
                         <span class="date">{{ .Date.Format "2006.01.02" }}</span>
                     </div>
-                    <div class="post_content markdown">{{ .Content }}</div>
+                    <div class="post_content markdown">
+                        {{ .Content }}
+                        {{ partial "promotion.html" . }}
+                    </div>
                     <div class="post_footer">
                         {{ with .Params.tags }}
                         <div class="meta">
@@ -27,12 +30,6 @@
                         {{ end }}
                     </div>
                 </div>
-                <!-- 评论系统 -->
-                {{ if .Site.Params.valine.enable }}
-                {{ partial "comments.html" . }}
-                {{ else }}
-                <div class="doc_comments">{{ template "_internal/disqus.html" . }}</div>
-                {{ end }}
             </div>
         </div>
     </div>
