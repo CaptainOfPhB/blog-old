@@ -12,7 +12,7 @@ pygmentscodefencesguesssyntax = true
 name = "CaptainOfPhB"
 
 [params]
-description = "" # 网站描述
+description = "船长の部落格" # 网站描述
 enableMathJax = true # 是否使用 mathjax（数学公式）
 enableSummary = true # 是否显示文章摘要
 footerSlogan = "愿历经千帆，归来仍少年。" # 网站页脚标语
