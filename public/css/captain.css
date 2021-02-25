@@ -330,20 +330,15 @@ hr {
   display: flex;
 }
 
-.post .promotion_container img.zhihu {
-  transform: scale(0.5);
-}
-
-.post .promotion_container img.juejin{
-  transform: scale(0.4);
-}
-
+.post .promotion_container img.github,
+.post .promotion_container img.juejin,
 .post .promotion_container img.yuque {
   transform: scale(0.4);
 }
 
+.post .promotion_container img.zhihu,
 .post .promotion_container img.dev {
-  transform: scale(0.4);
+  transform: scale(0.5);
 }
 
 .page_tags {
