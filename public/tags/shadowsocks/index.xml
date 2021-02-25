@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shadowsocks on 船长的部落格</title>
-    <link>https://daijiangtao.gitee.io/tags/shadowsocks/</link>
+    <link>/tags/shadowsocks/</link>
     <description>Recent content in Shadowsocks on 船长的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Jun 2018 17:00:57 +0800</lastBuildDate><atom:link href="https://daijiangtao.gitee.io/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jun 2018 17:00:57 +0800</lastBuildDate><atom:link href="/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何使用 Shadowsocks 获取谷歌服务</title>
-      <link>https://daijiangtao.gitee.io/2018/06/29/use-google-by-shadowsocks/</link>
+      <link>/2018/06/29/use-google-by-shadowsocks/</link>
       <pubDate>Fri, 29 Jun 2018 17:00:57 +0800</pubDate>
       
-      <guid>https://daijiangtao.gitee.io/2018/06/29/use-google-by-shadowsocks/</guid>
+      <guid>/2018/06/29/use-google-by-shadowsocks/</guid>
       <description>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。
 IP 黑名单 当你打开浏览器键入 URL 访问网络资源时，域名会被解析为 IP 地址（DNS 解析，一般由网络运营商提供，或者你也可以自己指定 DNS 服务器，例如谷歌的 DNS：8.</description>
     </item>

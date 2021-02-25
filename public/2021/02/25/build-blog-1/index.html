@@ -8,16 +8,16 @@
 	
 	
 	
-	<title>HTTPS ｜ 船长的部落格</title>
+	<title>记折腾博客（一） ｜ 船长的部落格</title>
 	
     
     
-    <meta name="description" content="https" />
+    <meta name="description" content="记折腾博客（一）" />
     
 
     
     
-    <meta name="keywords" content="https" />
+    <meta name="keywords" content="Build blog" />
     
 
 	
@@ -101,42 +101,48 @@
             <div class="post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
-                        <h2><a href='/2018/06/02/https/'>HTTPS</a></h2>
-                        <span class="date">2018.06.02</span>
+                        <h2><a href='/2021/02/25/build-blog-1/'>记折腾博客（一）</a></h2>
+                        <span class="date">2021.02.25</span>
                     </div>
-                    <div class="post_content markdown"><p>HTTPS：HTTP（Hyper Text Tranfer Protocal）+ SSL（Secure Sockets Layer）/ TLS（Transport Layer Security）.</p>
-<p>SSL 提高了互联网的连接安全，对两个系统之间发送的敏感数据提供了有效保护，它使用加密算法对传输的数据进行加密，防止第三方进行劫持和篡改。这两个系统可以是 server 与 client ，也可以是 server 与 server。</p>
-<p>TLS 只是更新的、更安全的 SSL 版本，我们仍可以将我们的安全证书称为 SSL，因为它是一个更常用的术语。</p>
-<p>SSL 证书安装在服务器端，但是在浏览器上有可视警告。如果该网站安装了 SSL 证书，浏览器的地址栏将显示 <code>https：//</code> 而不是 <code>http://</code>，根据证书颁发给企业的验证级别，地址栏前面通常会挂有绿锁来指示安全连接。</p>
-<blockquote>
-<p>Reference: <a href="https://www.websecurity.symantec.com/security-topics/what-is-ssl-tls-https">What is SSL TLS HTTPS?</a></p>
-</blockquote>
-<h2 id="ssltls-如何实现加密">SSL/TLS 如何实现加密？</h2>
-<p>加密分为<code>对称加密</code>与<code>非对称加密（RSA)</code>。对称加密使用<code>同一个密钥</code>进行加密与解密，而非对称加密使用<code>公钥</code>或<code>私钥</code>进行加密与解密。</p>
-<p>若使用对称加密，则对称密钥加密的内容可以使用对称密钥解开。而<code>使用非对称加密时，公钥加密的内容，只有私钥能解开，反之，私钥加密的内容，只有公钥能解开</code>。</p>
-<h2 id="对称加密-vs-非对称加密">对称加密 vs 非对称加密</h2>
-<p>如果 server 与 client 使用对称加密进行数据的传输，那么在 server 对单个 client 时貌似没有问题，但是当 server 对 多个 client 时呢？如果一旦第三方劫持到了 client 发送给 server 的数据并破解得到了密钥，那么也就意味着同时破解了其他 client 发送个 server 的数据，这样是极其不安全的。</p>
-<p>如若将对称加密与非对称加密结合起来，取长补短，就能够有效的解决上述问题。由于非对称加密的特性，通常情况下：</p>
-<ul>
-<li>server 会保留<code>私钥</code>，公钥会发送给 client 。</li>
-<li>client 接收到公钥后，在<code>本地生成一对对称密钥</code>。</li>
-<li>client 通过<code>公钥将该对称密钥进行加密</code>，再发送给 server 。</li>
-<li>server 使用<code>私钥解密 client 通过公钥加密后的内容</code>，得到对称密钥。</li>
-<li>之后 server 与 client <code>使用该对称密钥进行数据的传输</code>。</li>
-</ul>
-<p>就算第三方劫持到 client 发送给 server 发送的数据（<code>通过公钥加密的对称密钥</code>）后，也无法进行破解（<code>需要私钥才能破解</code>）。</p>
-<h2 id="公钥如何保证">公钥如何保证？</h2>
-<p>但是如何保证 server 发送给 client 的公钥确实是未经第三方劫持篡改的公钥呢？</p>
-<p>答案是使用<code>数字证书</code>。server 提供<code>网站信息（包含公钥）</code>去认证机构进行认证，认证机构根据提供的网站信息经加密（MD5）生成数字签名，利用<code>网站信息+数字签名</code>组成数字证书（<code>该数字证书经认证机构的私钥加密</code>）后，将该数字证书颁发给 server。</p>
-<p>那么 server 在向 client 发送公钥时，将不再直接发送公钥，而是发送数字证书（包含公钥），向 client 证明自己的身份：</p>
-<ul>
-<li>client 本地具有认证机构的公钥（浏览器内置）。</li>
-<li>client 接收到 server 发送过来的数字证书后，使用认证机构的公钥进行解密，得到其中的<code>网站信息与数字签名</code>。</li>
-<li>client 对<code>网站信息</code>进行 MD5 计算得出<code>本地的数字签名（其实就是 MD5 值）</code>，再<code>与数字证书中的数字签名进行比对</code>。</li>
-<li>若两者的 MD5 值相同，说明该<code>网站信息</code>是未经劫持与篡改的，其中的公钥是可信的。</li>
-</ul>
-<h2 id="总结">总结</h2>
-<p>就这样，使用<code>对称加密+非对称加密+数字证书</code>三者结合的方式，保证了 server 与 client 之间数据传输的准确性，敏感、私有数据得到了有效的保护。</p>
+                    <div class="post_content markdown"><p>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">STKaiti</span><span class="p">,</span> <span class="n">KaiTi</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div><p>写完部署后发现效果非常的棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</p>
+<p>这当然难不倒我小猪佩奇了，想起了以前的 web 自定义字体，因此我去网上下载了一个楷体字的 ttf 文件。但是下载完一看文件大小 15M（WTF！）。</p>
+<p>这怎么能忍，于是我有找啊找，终于找到一个方正楷体字，下载完 ttf 格式是 3.8M，这还可以忍受。那有没有办法让这个文件大小更小一点呢？就我所知字体格式有 ttf、woff、woff2、eof 等，于是搜了下发现 woff 字体文件是体积最小的，然后我又去网上搜“ttf to woff”，最后下载下来发现 woff 字体竟然只有 18K！</p>
+<p>不禁说了声牛逼，然后把代码改成了这样：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;KT&#39;</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/FZKaiti.woff&#39;</span><span class="o">);</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">KT</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div><p>在电脑上预览没有任何问题。但是在手机上又跪了，手机上只会把英文渲染为楷体字展示，中文不变。难道手机上中文不支持 woff？？？最后不得已，换回 ttf，然后又把代码改成了这样：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;KT&#39;</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/FZKaiti.ttf&#39;</span><span class="o">);</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">KT</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div><p>手机上也能正常展示楷体字了，但是有一个严重的体验问题。那就是在楷体字没有加载完成时，使用楷体字渲染的文本处都是空白的（WTF）。</p>
+<p>最后在网上搜了一下，可以使用 font-display 属性用来做自定义字体的过渡显示，当字体没加载完成时，显示兜底字体，字体加载完后，替换为加载完的字体。最后代码改成了这样：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;KT&#39;</span><span class="o">;</span>
+  <span class="nt">font-display</span><span class="o">:</span> <span class="nt">fallback</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;STKaiti&#39;</span><span class="o">),</span>
+       <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;KaiTi&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/FZKaiTi.ttf&#39;</span><span class="o">);</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">KT</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div><p>这样一来，Mac 和 Windows 上直接显示本地的楷体字，在手机上打开页面时，先展示系统默认字体，然后等 FZKaiti.ttf 加载完后，再展示楷体字。</p>
+<p>你可以<a href="https://daijiangtao.gitee.io">点击这里</a>可以浏览我的博客。</p>
 <p>完。</p>
 </div>
                     <div class="post_footer">
@@ -146,7 +152,7 @@
                                 <span class="field tags">
                                     <i class="ri-stack-line"></i>
                                     
-                                    <a href="/tags/https/">https</a>
+                                    <a href="/tags/build-blog/">Build blog</a>
                                     
                                 </span>
                             </div>

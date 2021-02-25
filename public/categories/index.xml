@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 船长的部落格</title>
-    <link>https://daijiangtao.gitee.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on 船长的部落格</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://daijiangtao.gitee.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

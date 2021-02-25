@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>React on 船长的部落格</title>
-    <link>https://daijiangtao.gitee.io/tags/react/</link>
+    <link>/tags/react/</link>
     <description>Recent content in React on 船长的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 16 Apr 2019 17:05:16 +0800</lastBuildDate><atom:link href="https://daijiangtao.gitee.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Apr 2019 17:05:16 +0800</lastBuildDate><atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React 学习笔记（一）</title>
-      <link>https://daijiangtao.gitee.io/2019/04/16/react-note-1/</link>
+      <link>/2019/04/16/react-note-1/</link>
       <pubDate>Tue, 16 Apr 2019 17:05:16 +0800</pubDate>
       
-      <guid>https://daijiangtao.gitee.io/2019/04/16/react-note-1/</guid>
+      <guid>/2019/04/16/react-note-1/</guid>
       <description>React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态  // this.</description>
     </item>
     
