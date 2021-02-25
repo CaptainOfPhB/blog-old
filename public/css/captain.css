@@ -312,6 +312,7 @@ hr {
   text-decoration: none;
   color: #bbbbbb;
   margin-top: -1px;
+  margin-right: 4px;
 }
 
 .post .post_footer .meta .tags a:hover {
