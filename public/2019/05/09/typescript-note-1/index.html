@@ -98,13 +98,14 @@
     </div>
 </div>
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2019/05/09/typescript-note-1/'>TypeScript 学习笔记（一）</a></h2>
                         <span class="date">2019.05.09</span>
                     </div>
-                    <div class="post_content markdown"><ul>
+                    <div class="post_content markdown">
+                        <ul>
 <li>ts 中的基础类型有：boolean、number、string、array、enum、元组 Tuple、any、null、undefined、never、object（除了 js 中的基础五大类型 string、number、boolean、symbol、null、undefined 之外可以用 object 类型表示）</li>
 <li>定义数组有两种方式：&lt;type&gt;[] 或者使用泛型 Array&lt;type&gt;</li>
 <li>元组类型表示已知数量和类型的数组，例如：let x = [number, string]。当访问越界元素时，会使用联合类型替代，例如：</li>
@@ -123,7 +124,24 @@
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kd">let</span> <span class="nx">someValue</span>: <span class="kt">any</span> <span class="o">=</span> <span class="s1">&#39;this is a string&#39;</span>
 <span class="kd">let</span> <span class="nx">strLength</span>: <span class="kt">number</span> <span class="o">=</span> <span class="p">(</span><span class="nx">someValue</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">).</span><span class="nx">length</span>
 </code></pre></div><p>完。</p>
+
+                        <div class="promotion_text">You can find me here:</div>
+<div class="promotion_container">
+  <a href="https://www.zhihu.com/people/CaptainInPHW" target="_blank">
+    <img class="zhihu" src="/images/zhihu-gray.png" alt="知乎" />
+  </a>
+  <a href="https://juejin.cn/user/2488950055523965" target="_blank">
+    <img class="juejin" src="/images/juejin-gray.png" alt="掘金" />
+  </a>
+  <a href="https://www.yuque.com/captainofphb" target="_blank">
+    <img class="yuque" src="/images/yuque-gray.png" alt="语雀" />
+  </a>
+  <a href="https://dev.to/captainofphb" target="_blank">
+    <img class="dev" src="/images/dev-gray.png" alt="DEV" />
+  </a>
 </div>
+
+                    </div>
                     <div class="post_footer">
                         
                         <div class="meta">
@@ -139,10 +157,6 @@
                         
                     </div>
                 </div>
-                
-                
-                <div class="doc_comments"></div>
-                
             </div>
         </div>
     </div>

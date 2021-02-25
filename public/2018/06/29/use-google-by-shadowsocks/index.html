@@ -98,13 +98,14 @@
     </div>
 </div>
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2018/06/29/use-google-by-shadowsocks/'>如何使用 Shadowsocks 获取谷歌服务</a></h2>
                         <span class="date">2018.06.29</span>
                     </div>
-                    <div class="post_content markdown"><p>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。</p>
+                    <div class="post_content markdown">
+                        <p>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。</p>
 <h2 id="ip-黑名单">IP 黑名单</h2>
 <p>当你打开浏览器键入 URL 访问网络资源时，域名会被解析为 IP 地址（DNS 解析，一般由网络运营商提供，或者你也可以自己指定 DNS 服务器，例如谷歌的 DNS：8.8.8.8），然后与该 IP 地址的设备进行连接然后传输资源。然而在你访问墙外资源的时候，是要通过 GFW 这道关卡的。如果这个 IP 刚好在 GFW 的 IP 黑名单中，那么就会拒绝你的请求通过，当然也就访问不到相应的资源了。一般来说，网络运营商处的 IP 黑名单比 GFW 的多，除了 GFW 的 IP 黑名单外，运营商也有自己的 IP 黑名单。</p>
 <h2 id="如何跨越-gfw">如何跨越 GFW</h2>
@@ -157,7 +158,24 @@ sudo pip install shadowsocks
 <p>配置完成后选择代理方式为 <code>auto switch</code> 即可，这样访问国内的网站时就不会通过代理去访问。</p>
 <p>Firefox 浏览器安装配置同理，参考 Chrome 即可。之后访问墙外的资源时，将其添加进 proxy 名单即可访问。</p>
 <p>完。</p>
+
+                        <div class="promotion_text">You can find me here:</div>
+<div class="promotion_container">
+  <a href="https://www.zhihu.com/people/CaptainInPHW" target="_blank">
+    <img class="zhihu" src="/images/zhihu-gray.png" alt="知乎" />
+  </a>
+  <a href="https://juejin.cn/user/2488950055523965" target="_blank">
+    <img class="juejin" src="/images/juejin-gray.png" alt="掘金" />
+  </a>
+  <a href="https://www.yuque.com/captainofphb" target="_blank">
+    <img class="yuque" src="/images/yuque-gray.png" alt="语雀" />
+  </a>
+  <a href="https://dev.to/captainofphb" target="_blank">
+    <img class="dev" src="/images/dev-gray.png" alt="DEV" />
+  </a>
 </div>
+
+                    </div>
                     <div class="post_footer">
                         
                         <div class="meta">
@@ -175,10 +193,6 @@ sudo pip install shadowsocks
                         
                     </div>
                 </div>
-                
-                
-                <div class="doc_comments"></div>
-                
             </div>
         </div>
     </div>

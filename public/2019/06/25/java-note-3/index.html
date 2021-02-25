@@ -98,13 +98,14 @@
     </div>
 </div>
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2019/06/25/java-note-3/'>Java 学习笔记（三)</a></h2>
                         <span class="date">2019.06.25</span>
                     </div>
-                    <div class="post_content markdown"><h3 id="数据类型">数据类型</h3>
+                    <div class="post_content markdown">
+                        <h3 id="数据类型">数据类型</h3>
 <ul>
 <li>Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据</li>
 <li>char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的</li>
@@ -239,7 +240,24 @@
 
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="o">);</span> <span class="c1">// true
 </span></code></pre></div><p>其原因是：Integer 创建的引用类型数据占用的空间大小远远比 int 占用的 4 byte 要大，因此 java 为了优化节省内存，将 -128 ~ 127 范围内的 Integer 数据进行了<strong>缓存</strong>，因此 i 和 j 指向的都是同一处堆内存，导致了使用 == 进行比较的时候得到的结果为 true，可以在 JDK 的代码中查看查看注释</p>
+
+                        <div class="promotion_text">You can find me here:</div>
+<div class="promotion_container">
+  <a href="https://www.zhihu.com/people/CaptainInPHW" target="_blank">
+    <img class="zhihu" src="/images/zhihu-gray.png" alt="知乎" />
+  </a>
+  <a href="https://juejin.cn/user/2488950055523965" target="_blank">
+    <img class="juejin" src="/images/juejin-gray.png" alt="掘金" />
+  </a>
+  <a href="https://www.yuque.com/captainofphb" target="_blank">
+    <img class="yuque" src="/images/yuque-gray.png" alt="语雀" />
+  </a>
+  <a href="https://dev.to/captainofphb" target="_blank">
+    <img class="dev" src="/images/dev-gray.png" alt="DEV" />
+  </a>
 </div>
+
+                    </div>
                     <div class="post_footer">
                         
                         <div class="meta">
@@ -255,10 +273,6 @@
                         
                     </div>
                 </div>
-                
-                
-                <div class="doc_comments"></div>
-                
             </div>
         </div>
     </div>

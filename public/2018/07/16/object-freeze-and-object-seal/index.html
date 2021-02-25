@@ -98,13 +98,14 @@
     </div>
 </div>
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2018/07/16/object-freeze-and-object-seal/'>Object.freeze 和 Object.seal</a></h2>
                         <span class="date">2018.07.16</span>
                     </div>
-                    <div class="post_content markdown"><p>Vue 的响应式是使用了 <code>Object.defineProperty</code> 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 <code>Object.freeze</code> 方法将数据“冻”起来。</p>
+                    <div class="post_content markdown">
+                        <p>Vue 的响应式是使用了 <code>Object.defineProperty</code> 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 <code>Object.freeze</code> 方法将数据“冻”起来。</p>
 <blockquote>
 <p><code>Object.freeze()</code> 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。</p>
 </blockquote>
@@ -194,7 +195,24 @@
 <p>Reference: <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">Object.freeze | MDN</a></p>
 </blockquote>
 <p>完。</p>
+
+                        <div class="promotion_text">You can find me here:</div>
+<div class="promotion_container">
+  <a href="https://www.zhihu.com/people/CaptainInPHW" target="_blank">
+    <img class="zhihu" src="/images/zhihu-gray.png" alt="知乎" />
+  </a>
+  <a href="https://juejin.cn/user/2488950055523965" target="_blank">
+    <img class="juejin" src="/images/juejin-gray.png" alt="掘金" />
+  </a>
+  <a href="https://www.yuque.com/captainofphb" target="_blank">
+    <img class="yuque" src="/images/yuque-gray.png" alt="语雀" />
+  </a>
+  <a href="https://dev.to/captainofphb" target="_blank">
+    <img class="dev" src="/images/dev-gray.png" alt="DEV" />
+  </a>
 </div>
+
+                    </div>
                     <div class="post_footer">
                         
                         <div class="meta">
@@ -210,10 +228,6 @@
                         
                     </div>
                 </div>
-                
-                
-                <div class="doc_comments"></div>
-                
             </div>
         </div>
     </div>

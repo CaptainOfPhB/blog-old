@@ -98,13 +98,14 @@
     </div>
 </div>
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2018/06/27/git-message/'>优雅的 Git 提交信息</a></h2>
                         <span class="date">2018.06.27</span>
                     </div>
-                    <div class="post_content markdown"><p>Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？</p>
+                    <div class="post_content markdown">
+                        <p>Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？</p>
 <blockquote>
 <p>这种东西，当然要借助工具了，才能够写得即规范，又格式化，还能够支持后续分析。
 目前比较建议的是，使用终端工具 <a href="https://github.com/commitizen/cz-cli">commitizen/cz-cli</a> + <a href="https://github.com/commitizen/cz-conventional-changelog">commitizen/cz-conventional-changelog</a> + <a href="https://github.com/conventional-changelog/standard-version">conventional-changelog/standard-version</a> 一步解决提交信息和版本发布。甚至，如果想更狠一点，在持续集成里面加入 <a href="https://github.com/marionebl/commitlint">marionebl/commitlint</a> 检查 commit 信息是否符合规范，也不是不可以。</p>
@@ -137,7 +138,7 @@
 </blockquote>
 <p>任意一行 commit message 不能超过 100 个字符，这样就使得 commit message 在 GitHub 或其他的 Git 工具上变得易读。</p>
 <blockquote>
-<p>If the commit reverts a previous commit, it should begin with revert:, followed by the header of the reverted commit. In the body it should say: This reverts commit <hash>., where the hash is the SHA of the commit being reverted. A commit with this format is automatically created by the git revert command.</p>
+<p>If the commit reverts a previous commit, it should begin with revert:, followed by the header of the reverted commit. In the body it should say: This reverts commit <!-- raw HTML omitted -->., where the hash is the SHA of the commit being reverted. A commit with this format is automatically created by the git revert command.</p>
 </blockquote>
 <p>如果某个 commit 恢复了之前的 commit，那么 commit message 应该以 <code>revert:</code> 开头，同时在 body 部分应该写明：恢复了 hash 为 xxx 的提交。
 git 恢复命令会自动创建这个格式的 commit message。</p>
@@ -283,7 +284,24 @@ npm i -D cz-customizable
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/34223150">优雅的提交你的 commit message</a></p>
 </blockquote>
 <p>完。</p>
+
+                        <div class="promotion_text">You can find me here:</div>
+<div class="promotion_container">
+  <a href="https://www.zhihu.com/people/CaptainInPHW" target="_blank">
+    <img class="zhihu" src="/images/zhihu-gray.png" alt="知乎" />
+  </a>
+  <a href="https://juejin.cn/user/2488950055523965" target="_blank">
+    <img class="juejin" src="/images/juejin-gray.png" alt="掘金" />
+  </a>
+  <a href="https://www.yuque.com/captainofphb" target="_blank">
+    <img class="yuque" src="/images/yuque-gray.png" alt="语雀" />
+  </a>
+  <a href="https://dev.to/captainofphb" target="_blank">
+    <img class="dev" src="/images/dev-gray.png" alt="DEV" />
+  </a>
 </div>
+
+                    </div>
                     <div class="post_footer">
                         
                         <div class="meta">
@@ -299,10 +317,6 @@ npm i -D cz-customizable
                         
                     </div>
                 </div>
-                
-                
-                <div class="doc_comments"></div>
-                
             </div>
         </div>
     </div>

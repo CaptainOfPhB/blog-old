@@ -98,13 +98,14 @@
     </div>
 </div>
         <div class="content">
-            <div class="post_page">
+            <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2019/04/16/react-note-1/'>React 学习笔记（一）</a></h2>
                         <span class="date">2019.04.16</span>
                     </div>
-                    <div class="post_content markdown"><ol>
+                    <div class="post_content markdown">
+                        <ol>
 <li>React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态</li>
 </ol>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// this.state.count === 0
@@ -144,7 +145,24 @@
 <span class="c1">//App.js
 </span><span class="c1"></span><span class="kr">import</span> <span class="nx">xxx</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">lazy</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./component.js&#39;</span><span class="p">))</span>
 </code></pre></div><p>完。</p>
+
+                        <div class="promotion_text">You can find me here:</div>
+<div class="promotion_container">
+  <a href="https://www.zhihu.com/people/CaptainInPHW" target="_blank">
+    <img class="zhihu" src="/images/zhihu-gray.png" alt="知乎" />
+  </a>
+  <a href="https://juejin.cn/user/2488950055523965" target="_blank">
+    <img class="juejin" src="/images/juejin-gray.png" alt="掘金" />
+  </a>
+  <a href="https://www.yuque.com/captainofphb" target="_blank">
+    <img class="yuque" src="/images/yuque-gray.png" alt="语雀" />
+  </a>
+  <a href="https://dev.to/captainofphb" target="_blank">
+    <img class="dev" src="/images/dev-gray.png" alt="DEV" />
+  </a>
 </div>
+
+                    </div>
                     <div class="post_footer">
                         
                         <div class="meta">
@@ -160,10 +178,6 @@
                         
                     </div>
                 </div>
-                
-                
-                <div class="doc_comments"></div>
-                
             </div>
         </div>
     </div>
