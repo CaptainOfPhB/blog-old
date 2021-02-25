@@ -4,10 +4,9 @@
 @font-face {
   font-family: 'KT';
   font-display: swap;
-  src: 
-    local('STKaiti')
-    local('KaiTi')
-    url('../font/FZKaiTi.ttf');
+  src: local('STKaiti'),
+       local('KaiTi'),
+       url('../font/FZKaiTi.ttf');
 }
 
 /*basic styles starts*/
