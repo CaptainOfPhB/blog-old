@@ -3,7 +3,11 @@
 /* 自定义楷体字，为了兼容所有平台 */
 @font-face {
   font-family: 'KT';
-  src: url('../font/FZKaiTi.ttf');
+  font-display: swap;
+  src: 
+    local('STKaiti')
+    local('KaiTi')
+    url('../font/FZKaiTi.ttf');
 }
 
 /*basic styles starts*/
