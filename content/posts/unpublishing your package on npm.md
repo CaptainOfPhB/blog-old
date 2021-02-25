@@ -29,5 +29,5 @@ npm unpublish <package_name> -f
 
 If you have two-factor authentication enabled for writes, you will need to add a one-time password to the unpublish command, --otp=123456 (where 123456 is the code from your authenticator app, [Google Authenticator](https://apps.apple.com/us/app/google-authenticator/id388497605) is for example).
 
-> 1. Reference: [unpublishing-packages-from-the-registry](https://link.zhihu.com/?target=https%3A//docs.npmjs.com/unpublishing-packages-from-the-registry)
+> 1. Reference: [unpublishing-packages-from-the-registry](https://docs.npmjs.com/unpublishing-packages-from-the-registry)
 > 2. use [Google Translate](https://translate.google.com/) to correct some of my english grammer error
