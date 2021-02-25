@@ -1,4 +1,11 @@
 @charset "UTF-8";
+
+/* 自定义楷体字，为了兼容所有平台 */
+@font-face {
+  font-family: 'KT';
+  src: url('../font/FZKaiTi.woff');
+}
+
 /*basic styles starts*/
 *::-webkit-scrollbar {
   display: none;
@@ -166,7 +173,7 @@ hr {
 .header .site_title_container .site_title a span {
   display: block;
   font-size: 40px;
-  font-family: 'STKaiti', 'KaiTi', sans-serif;
+  font-family: 'KT', sans-serif;
 }
 
 .header .site_title_container .site_title a:hover {
@@ -257,7 +264,7 @@ hr {
   color: #333;
   font-size: 12px;
   margin-bottom: 0;
-  font-family: 'STKaiti', 'KaiTi', sans-serif;
+  font-family: 'KT', sans-serif;
 }
 
 .post .post_content a {
