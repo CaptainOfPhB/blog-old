@@ -5,13 +5,13 @@
     <link>/tags/npm/</link>
     <description>Recent content in NPM on 船长的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 25 Feb 2021 16:09:06 +0800</lastBuildDate><atom:link href="/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 16:09:06 +0800</lastBuildDate><atom:link href="/tags/npm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unpublishing your package on NPM</title>
-      <link>/2021/02/25/unpublishing-your-package-on-npm/</link>
-      <pubDate>Thu, 25 Feb 2021 16:09:06 +0800</pubDate>
+      <link>/2021/01/25/unpublishing-your-package-on-npm/</link>
+      <pubDate>Mon, 25 Jan 2021 16:09:06 +0800</pubDate>
       
-      <guid>/2021/02/25/unpublishing-your-package-on-npm/</guid>
+      <guid>/2021/01/25/unpublishing-your-package-on-npm/</guid>
       <description>If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:</description>
     </item>
     

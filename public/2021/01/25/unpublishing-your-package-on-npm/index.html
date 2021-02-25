@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
 <head>
-	<meta name="generator" content="Hugo 0.80.0" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,19 +8,19 @@
 	
 	
 	
-	<title>船长的部落格</title>
+	<title>Unpublishing your package on NPM ｜ 船长的部落格</title>
 	
     
+    
+    <meta name="description" content="Unpublishing your package on NPM" />
     
 
     
     
-    <meta name="keywords" content="CaptainOfPhB" />
+    <meta name="keywords" content="NPM" />
     
 
 	
-	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="船长的部落格" />
-    
     
     <link rel="shortcut icon" href="/images/favicon.png" />
 
@@ -99,107 +98,50 @@
     </div>
 </div>
         <div class="content">
-            
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2021/02/25/build-blog-1/'>记折腾博客（一）</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：
-p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常的棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。...</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2021.02.25</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="/tags/build-blog/">Build blog</a>
-                    
-                </div>
-                
-        </div>
-    </div>
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2021/01/25/unpublishing-your-package-on-npm/'>Unpublishing your package on NPM</a></h2>
+                        <span class="date">2021.01.25</span>
+                    </div>
+                    <div class="post_content markdown"><p>If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:</p>
+<h3 id="unpublishing-a-single-version-of-a-package">Unpublishing a single version of a package</h3>
+<p>To unpublish a single version of a package, run the following command, replacing  with the name of your package, and  with your version number:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm unpublish &lt;package_name&gt;@&lt;specific_version_name&gt;
+</code></pre></div><h3 id="unpublishing-the-entire-package">Unpublishing the entire package</h3>
+<p>To unpublish an entire package, run the following command, replacing  with the name of your package:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm unpublish &lt;package_name&gt; -f
+</code></pre></div><p>If you have two-factor authentication enabled for writes, you will need to add a one-time password to the unpublish command, &ndash;otp=123456 (where 123456 is the code from your authenticator app, <a href="https://apps.apple.com/us/app/google-authenticator/id388497605">Google Authenticator</a> is for example).</p>
+<blockquote>
+<ol>
+<li>Reference: <a href="https://link.zhihu.com/?target=https%3A//docs.npmjs.com/unpublishing-packages-from-the-registry">unpublishing-packages-from-the-registry</a></li>
+<li>use <a href="https://translate.google.com/">Google Translate</a> to correct some of my english grammer error</li>
+</ol>
+</blockquote>
 </div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2021/01/25/unpublishing-your-package-on-npm/'>Unpublishing your package on NPM</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:...</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2021.01.25</span>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="/tags/npm/">NPM</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
                 
-                <div class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="/tags/npm/">NPM</a>
-                    
-                </div>
                 
-        </div>
-    </div>
-</div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2020/09/20/typescript-note-3/'>TypeScript 学习笔记（三）</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &#39;TypeScript&#39;; const ts: TypeScript = &#39;TypeScript&#39;; const sayHello = (name: string) =&gt; console....</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2020.09.20</span>
-                </div>
+                <div class="doc_comments"></div>
                 
-                <div class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="/tags/typescript/">TypeScript</a>
-                    
-                </div>
-                
+            </div>
         </div>
     </div>
-</div>
-
-
-<div class="pagination">
-    
-    
-    
-    <a href="/page/2/" class="next">Next</a>
-    
-    
-</div>
-        </div>
-    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
     <footer class="footer">
     <div class="powered_by">
         <a href="https://github.com/CaptainOfPhB">Designed by CaptainOfPhB,</a>
