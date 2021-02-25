@@ -103,6 +103,35 @@
 
 <div class="home post animated fadeInDown">
     <div class="post_title">
+        <h2><a href='/2019/06/25/java-note-3/'>Java 学习笔记（三)</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>数据类型  Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和**引用类型。**只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有：     数据类型 byte int long double float char boolean void     所占空间（字节） 1 4 8 8 4 2 true/false      每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:  int a = 127; System....</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2019.06.25</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="/tags/java/">Java</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
         <h2><a href='/2019/06/17/java-note-2/'>Java 学习笔记（二)</a></h2>
     </div>
     
@@ -152,35 +181,6 @@
                     <i class="ri-stack-line"></i>
                     
                     <a href="/tags/java/">Java</a>
-                    
-                </div>
-                
-        </div>
-    </div>
-</div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2019/05/09/typescript-note-1/'>TypeScript 学习笔记（一）</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>ts 中的基础类型有：boolean、number、string、array、enum、元组 Tuple、any、null、undefined、never、object（除了 js 中的基础五大类型 string、number、boolean、symbol、null、undefined 之外可以用 object 类型表示） 定义数组有两种方式：&lt;type&gt;[] 或者使用泛型 Array&lt;type&gt; 元组类型表示已知数量和类型的数组，例如：let x = [number, string]。当访问越界元素时，会使用联合类型替代，例如：  let x: [string, number]; x = [&#39;hello&#39;, 123]; // ok x = [123, &#39;hello&#39;]; // error // 越界元素将是 (number | string) 类型 x[3] = &#39;world&#39;;  枚举 enum 默认情况下，从 0 开始为元素编号，也可手动指定成员的值。也可以根据枚举的值得到 key 的名字，例如：enum Color = { Red, Green }，则 Color[1] 的值为 Green void 表示没有任何类型，只能给 void 类型数据赋值 null 或者 undefined null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 stricNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined 类型断言好比类型转换，当你比 ts 更了解某个值更确切的类型时。类型断言有两种，使用尖括号或者使用 as 语法，在 tsx 中只能使用 as。例如：  let someValue: any = &#39;this is a string&#39; let strLength: number = (someValue as string)....</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2019.05.09</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="/tags/typescript/">TypeScript</a>
                     
                 </div>
                 
