@@ -4,7 +4,6 @@
 hugo
 
 # 2. git push
-
 git add .
 git commit -m 'build'
 git push
