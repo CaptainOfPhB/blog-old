@@ -12,7 +12,7 @@
       <pubDate>Tue, 25 Jun 2019 11:03:15 +0800</pubDate>
       
       <guid>/2019/06/25/java-note-3/</guid>
-      <description>数据类型  Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和**引用类型。**只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有：     数据类型 byte int long double float char boolean void     所占空间（字节） 1 4 8 8 4 2 true/false      每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:  int a = 127; System.</description>
+      <description>数据类型  Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和引用类型。只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有：     数据类型 byte int long double float char boolean void     所占空间（字节） 1 4 8 8 4 2 true/false      每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:  int a = 127; System.</description>
     </item>
     
     <item>

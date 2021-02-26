@@ -111,7 +111,7 @@
 <li>char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的</li>
 <li>使用 man ascii 查看码表</li>
 <li>java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制</li>
-<li>java 中的数据分为<strong>原生类型</strong>和**引用类型。**只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型</li>
+<li>java 中的数据分为<strong>原生类型</strong>和<strong>引用类型</strong>。只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型</li>
 <li>java 中的基本类型有：</li>
 </ul>
 <table>
@@ -212,7 +212,7 @@
 <span class="n">Boolean</span> <span class="n">flag</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-</code></pre></div><p>但是对装箱类型赋值 null 的时候，存在一个隐患：当我们将一个装箱的数据赋值给一个原生类型的数据时，java 会进行拆箱操作，拆箱可能会出现<strong>空指针异常</strong>报错（NullPointerException），比如：</p>
+</code></pre></div><p>但是对装箱类型赋值 null 的时候，存在一个隐患：当我们将一个装箱的数据赋值给一个原生类型的数据时，java 会进行拆箱操作，拆箱可能会出现<u>空指针异常报错</u>（NullPointerException），比如：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// NullPointerException，java 拆箱的时候发生错误
 </span></code></pre></div><ul>
@@ -220,8 +220,8 @@
 </ul>
 <h3 id="相等比较">相等比较</h3>
 <ul>
-<li>equals 用来比较两个值是否相等，而 &lsquo;==&rsquo; 用来比较两个值是否具有同一性</li>
-<li>当 java 中的数据为基础类型时，使用 &lsquo;==&rsquo; 能够得到正确的结果。当数据为引用类型的时候，使用 &lsquo;==&rsquo; 比较的是引用类型的栈内存（stack）内容，<strong>通常</strong>得不到正确的结果，因为真正的数据存放于堆（heap）内存中</li>
+<li>equals 用来比较两个值是否相等，而 == 用来比较两个值是否具有同一性</li>
+<li>当 java 中的数据为基础类型时，使用 == 能够得到正确的结果。当数据为引用类型的时候，使用 == 比较的是引用类型的栈内存（stack）内容，通常得不到正确的结果，因为真正的数据存放于堆（heap）内存中</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">1000</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">1000</span><span class="o">;</span>
@@ -239,7 +239,8 @@
 <span class="n">Integer</span> <span class="n">j</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
 
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="o">);</span> <span class="c1">// true
-</span></code></pre></div><p>其原因是：Integer 创建的引用类型数据占用的空间大小远远比 int 占用的 4 byte 要大，因此 java 为了优化节省内存，将 -128 ~ 127 范围内的 Integer 数据进行了<strong>缓存</strong>，因此 i 和 j 指向的都是同一处堆内存，导致了使用 == 进行比较的时候得到的结果为 true，可以在 JDK 的代码中查看查看注释</p>
+</span></code></pre></div><p>其原因是：Integer 创建的引用类型数据占用的空间大小远远比 int 占用的 4 byte 要大，因此 java 为了优化节省内存，将 -128 ~ 127 范围内的 Integer 数据进行了<strong>缓存</strong>，因此 i 和 j 指向的都是同一处堆内存，导致了使用 == 进行比较的时候得到的结果为 true，可以在 JDK 的代码中查看查看注释。</p>
+<p>完。</p>
 
                         <div class="promotion_text">You can find me here:</div>
 <div class="promotion_container">

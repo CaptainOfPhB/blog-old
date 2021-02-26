@@ -138,7 +138,7 @@
 </blockquote>
 <p>任意一行 commit message 不能超过 100 个字符，这样就使得 commit message 在 GitHub 或其他的 Git 工具上变得易读。</p>
 <blockquote>
-<p>If the commit reverts a previous commit, it should begin with revert:, followed by the header of the reverted commit. In the body it should say: This reverts commit <!-- raw HTML omitted -->., where the hash is the SHA of the commit being reverted. A commit with this format is automatically created by the git revert command.</p>
+<p>If the commit reverts a previous commit, it should begin with revert:, followed by the header of the reverted commit. In the body it should say: This reverts commit <hash>., where the hash is the SHA of the commit being reverted. A commit with this format is automatically created by the git revert command.</p>
 </blockquote>
 <p>如果某个 commit 恢复了之前的 commit，那么 commit message 应该以 <code>revert:</code> 开头，同时在 body 部分应该写明：恢复了 hash 为 xxx 的提交。
 git 恢复命令会自动创建这个格式的 commit message。</p>
