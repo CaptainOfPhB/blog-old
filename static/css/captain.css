@@ -81,6 +81,17 @@ hr {
   border: 0.5px solid #f3f3f3;
 }
 
+u {
+  text-decoration-style: double;
+  text-underline-offset: 0.2em;
+  text-decoration-color: #E42B2B;
+  /* box-shadow:
+    inset 0 -0.075em white,
+    inset 0 -0.2em red,
+    inset 0 -0.15em white,
+    inset 0 -0.2em red; */
+}
+
 /*basic styles ends*/
 .main {
   background: #ffffff;

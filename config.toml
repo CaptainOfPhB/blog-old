@@ -53,3 +53,6 @@ github = "https://github.com/CaptainOfPhB"
 zhihu = "https://www.zhihu.com/people/CaptainInPHW"
 twitter = "https://twitter.com/CaptainInPHW"
 wechat = "https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg"
+
+[markup.goldmark.renderer]
+unsafe= true

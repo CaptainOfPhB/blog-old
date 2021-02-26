@@ -12,8 +12,8 @@ description: 'Learning TypeScript'
 #### Literal Types
 
 1. 字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的）
-1. ts 中，对应的也有字面量类型。分为  String Literal Type、Number Literal Type、Boolean Literal Type 等
-1. 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：
+2. ts 中，对应的也有字面量类型。分为  String Literal Type、Number Literal Type、Boolean Literal Type 等
+3. 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：
 
 ```typescript
 type TypeScript = 'TypeScript';    
@@ -71,18 +71,18 @@ export enum Animal {
 }
 
 export namepsace Animal {
- 	export function isCat(animalType: Animal) {
-  	return animalType === Animal.Cat;
+  export function isCat(animalType: Animal) {
+   return animalType === Animal.Cat;
   }
   
   export function isDog(animalType: Animal) {
-  	return animalType === Animal.Dog;
+   return animalType === Animal.Dog;
   }
 }
 
 // index.ts
 const animal = {
-	name: 'name',
+ name: 'name',
   type: 1,
   // other property
 }
@@ -199,3 +199,5 @@ interface InterfaceWithNumberKey {
 type UnionType = keyof InterfaceWithStringKey; // string | number;
 type NumberType = keyof InterfaceWithNumberKey; // number;
 ```
+
+完。
