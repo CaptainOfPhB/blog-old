@@ -4,7 +4,7 @@ date: 2018-07-17T17:38:47+08:00
 hidden: false
 draft: false
 tags: ['Vue']
-keywords: ['Vue']
+keywords: ['Vue computed', 'Vue watch', 'Vue methods']
 description: 'Vue 中 Computed、Watch 和 Methods 的区别'
 slug: 'vue-computed-watch-methods'
 ---

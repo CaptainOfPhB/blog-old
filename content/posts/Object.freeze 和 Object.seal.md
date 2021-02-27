@@ -4,7 +4,7 @@ date: 2018-07-16T17:32:12+08:00
 hidden: false
 draft: false
 tags: ['JavaScript']
-keywords: ['JavaScript']
+keywords: ['object freeze', 'object seal']
 description: 'Object.freeze 和 Object.seal'
 slug: 'object-freeze-and-object-seal'
 ---

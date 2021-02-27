@@ -3,8 +3,8 @@ title: '如何将域名映射至 Github 仓库'
 date: 2018-06-29T16:49:00+08:00
 hidden: false
 draft: false
-tags: ['Domain', 'GitHub']
-keywords: ['Domain', 'GitHub']
+tags: ['tutorial']
+keywords: ['domain', 'github']
 description: '如何将域名映射至 Github 仓库'
 slug: 'domain-to-github'
 ---

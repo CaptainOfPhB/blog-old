@@ -4,7 +4,7 @@ date: 2018-07-16T17:20:12+08:00
 hidden: false
 draft: false
 tags: ['JavaScript']
-keywords: ['JavaScript']
+keywords: ['object defineProperty']
 description: 'Object.defineProperty'
 slug: 'object-defineProperty'
 ---

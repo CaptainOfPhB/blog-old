@@ -3,8 +3,8 @@ title: '优雅的 Git 提交信息'
 date: 2018-06-27T16:05:17+08:00
 hidden: false
 draft: false
-tags: ['Git']
-keywords: ['Git']
+tags: ['git']
+keywords: ['git message']
 description: '优雅的 Git 提交信息'
 slug: 'git-message'
 ---

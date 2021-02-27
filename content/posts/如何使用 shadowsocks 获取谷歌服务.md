@@ -3,8 +3,8 @@ title: '如何使用 Shadowsocks 获取谷歌服务'
 date: 2018-06-29T17:00:57+08:00
 hidden: false
 draft: false
-tags: ['Shadowsocks', 'Google']
-keywords: ['Shadowsocks', 'Google']
+tags: ['tutorial']
+keywords: ['shadowsocks']
 description: '如何使用 Shadowsocks 获取谷歌服务'
 slug: 'use-google-by-shadowsocks'
 ---

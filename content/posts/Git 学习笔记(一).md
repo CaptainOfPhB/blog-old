@@ -3,8 +3,8 @@ title: 'Git 学习笔记（一）'
 date: 2019-05-08T17:01:07+08:00
 hidden: false
 draft: false
-tags: ['Git']
-keywords: ['Git']
+tags: ['git']
+keywords: ['git']
 description: 'Learn git'
 slug: 'git-note-1'
 ---

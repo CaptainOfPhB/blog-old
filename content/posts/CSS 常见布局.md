@@ -3,8 +3,8 @@ title: 'CSS 常见布局'
 date: 2018-03-16T14:55:37+08:00
 hidden: false
 draft: false
-tags: ['CSS', 'Layout']
-keywords: ['CSS', 'Layout']
+tags: ['CSS', 'layout']
+keywords: ['CSS', 'layout']
 description: 'CSS 常见布局'
 slug: 'css-layout'
 ---

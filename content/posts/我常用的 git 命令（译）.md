@@ -3,8 +3,8 @@ title: '我常用的 Git 命令（译）'
 date: 2018-07-24T18:04:02+08:00
 hidden: false
 draft: false
-tags: ['Git']
-keywords: ['Git']
+tags: ['git']
+keywords: ['git', 'translate']
 description: '我常用的 Git 命令（译）'
 slug: 'commonly-used-git-commands'
 ---

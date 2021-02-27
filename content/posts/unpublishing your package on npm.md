@@ -1,11 +1,11 @@
 ---
-title: "Unpublishing your package on NPM"
+title: "Unpublishing your package on npm"
 date: 2021-01-25T16:09:06+08:00
 hidden: false
 draft: false
-tags: ['NPM']
-keywords: ['NPM']
-description: "Unpublishing your package on NPM"
+tags: ['npm']
+keywords: ['npm']
+description: "Unpublishing your package on npm"
 slug: "unpublishing-your-package-on-npm"
 ---
 
