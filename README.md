@@ -1,36 +1,9 @@
-# 沉梦昂志
+# 船长の部落格
 
-This is my blog source repository, build with Hugo, which is an awesome static website generator.
+This is my personal blog site, named 沉梦昂志，built with [Hugo](https://gohugo.io/).
 
-## Preview
+[daijiangtao.name](http://daijiangtao.name) or [daijiangtao.gitee.io](https://daijiangtao.gitee.io) (China mirror site, more faster).
 
-[daijiangtao.name](http://daijiangtao.name)
+![船长の部落格](https://i.loli.net/2021/02/27/n2JP1WoUAVcZgkB.png)
 
-## Usage
-
-### Add a new blog
-
-```bash
-hugo new posts/<blog_name>.md
-```
-
-### Preview locally
-
-```bash
-hugo server
-```
-
-### Deploy
-
-Drafts do not get deployed, update the header of the post to `draft: false` before you deploy.
-
-Remove `public` dir at first if it exist.
-
-```bash
-rm -rf ./public
-hugo
-```
-
-## Reference
-
-[hugo-theme-zozo](https://github.com/imzeuk/hugo-theme-zozo)
+**Enjoy yourself!**
