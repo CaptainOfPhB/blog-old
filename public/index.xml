@@ -17,7 +17,7 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
     </item>
     
     <item>
-      <title>Unpublishing your package on NPM</title>
+      <title>Unpublishing your package on npm</title>
       <link>/2021/01/25/unpublishing-your-package-on-npm/</link>
       <pubDate>Mon, 25 Jan 2021 16:09:06 +0800</pubDate>
       

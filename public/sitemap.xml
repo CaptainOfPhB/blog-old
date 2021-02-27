@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tags/build-blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2021-02-25T15:55:08+08:00</lastmod>
   </url>
   
@@ -138,28 +138,13 @@
   </url>
   
   <url>
-    <loc>/tags/google/</loc>
-    <lastmod>2018-06-29T17:00:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/shadowsocks/</loc>
+    <loc>/tags/tutorial/</loc>
     <lastmod>2018-06-29T17:00:57+08:00</lastmod>
   </url>
   
   <url>
     <loc>/2018/06/29/use-google-by-shadowsocks/</loc>
     <lastmod>2018-06-29T17:00:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/domain/</loc>
-    <lastmod>2018-06-29T16:49:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/github/</loc>
-    <lastmod>2018-06-29T16:49:00+08:00</lastmod>
   </url>
   
   <url>
@@ -198,12 +183,12 @@
   </url>
   
   <url>
-    <loc>/2018/06/02/https/</loc>
+    <loc>/tags/https/</loc>
     <lastmod>2018-06-02T15:35:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/https/</loc>
+    <loc>/2018/06/02/https/</loc>
     <lastmod>2018-06-02T15:35:38+08:00</lastmod>
   </url>
   
@@ -219,11 +204,6 @@
   
   <url>
     <loc>/tags/script/</loc>
-    <lastmod>2017-10-10T11:47:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/shell/</loc>
     <lastmod>2017-10-10T11:47:01+08:00</lastmod>
   </url>
   

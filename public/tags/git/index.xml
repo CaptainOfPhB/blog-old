@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on 船长の部落格</title>
+    <title>git on 船长の部落格</title>
     <link>/tags/git/</link>
-    <description>Recent content in Git on 船长の部落格</description>
+    <description>Recent content in git on 船长の部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 08 May 2019 17:01:07 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>

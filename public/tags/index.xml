@@ -7,16 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 25 Feb 2021 15:55:08 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Build blog</title>
-      <link>/tags/build-blog/</link>
+      <title>blog</title>
+      <link>/tags/blog/</link>
       <pubDate>Thu, 25 Feb 2021 15:55:08 +0800</pubDate>
       
-      <guid>/tags/build-blog/</guid>
+      <guid>/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>NPM</title>
+      <title>npm</title>
       <link>/tags/npm/</link>
       <pubDate>Mon, 25 Jan 2021 16:09:06 +0800</pubDate>
       
@@ -52,7 +52,7 @@
     </item>
     
     <item>
-      <title>Git</title>
+      <title>git</title>
       <link>/tags/git/</link>
       <pubDate>Wed, 08 May 2019 17:01:07 +0800</pubDate>
       
@@ -88,43 +88,16 @@
     </item>
     
     <item>
-      <title>Google</title>
-      <link>/tags/google/</link>
+      <title>tutorial</title>
+      <link>/tags/tutorial/</link>
       <pubDate>Fri, 29 Jun 2018 17:00:57 +0800</pubDate>
       
-      <guid>/tags/google/</guid>
+      <guid>/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Shadowsocks</title>
-      <link>/tags/shadowsocks/</link>
-      <pubDate>Fri, 29 Jun 2018 17:00:57 +0800</pubDate>
-      
-      <guid>/tags/shadowsocks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Domain</title>
-      <link>/tags/domain/</link>
-      <pubDate>Fri, 29 Jun 2018 16:49:00 +0800</pubDate>
-      
-      <guid>/tags/domain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GitHub</title>
-      <link>/tags/github/</link>
-      <pubDate>Fri, 29 Jun 2018 16:49:00 +0800</pubDate>
-      
-      <guid>/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command Line</title>
+      <title>command line</title>
       <link>/tags/command-line/</link>
       <pubDate>Thu, 28 Jun 2018 16:36:16 +0800</pubDate>
       
@@ -133,7 +106,7 @@
     </item>
     
     <item>
-      <title>Tool</title>
+      <title>tool</title>
       <link>/tags/tool/</link>
       <pubDate>Thu, 28 Jun 2018 16:36:16 +0800</pubDate>
       
@@ -151,7 +124,7 @@
     </item>
     
     <item>
-      <title>https</title>
+      <title>HTTPS</title>
       <link>/tags/https/</link>
       <pubDate>Sat, 02 Jun 2018 15:35:38 +0800</pubDate>
       
@@ -160,7 +133,7 @@
     </item>
     
     <item>
-      <title>Layout</title>
+      <title>layout</title>
       <link>/tags/layout/</link>
       <pubDate>Fri, 16 Mar 2018 14:55:37 +0800</pubDate>
       
@@ -169,20 +142,11 @@
     </item>
     
     <item>
-      <title>Script</title>
+      <title>script</title>
       <link>/tags/script/</link>
       <pubDate>Tue, 10 Oct 2017 11:47:01 +0800</pubDate>
       
       <guid>/tags/script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>/tags/shell/</link>
-      <pubDate>Tue, 10 Oct 2017 11:47:01 +0800</pubDate>
-      
-      <guid>/tags/shell/</guid>
       <description></description>
     </item>
     
