@@ -105,6 +105,37 @@
 
 <div class="home post animated fadeInDown">
     <div class="post_title">
+        <h2><a href='/2018/07/17/vue-computed-watch-methods/'>Vue 中 Computed、Watch 和 Methods 的区别</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>在 Vue 模板中使用表达式是十分便利的，但是这样设计的初衷是仅仅用于简单运算。在模板中使用大量的逻辑运算会使得模板变得难以维护。对于任何复杂的逻辑，都应该使用计算属性。
+Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符串放入一个计算属性中：
+&lt;div id=&#34;app&#34;&gt; &lt;p&gt;Original message: &#34;{{ message }}&#34;&lt;/p&gt; &lt;p&gt;Computed reversed message: &#34;{{ reversedMessage }}&#34;&lt;/p&gt; &lt;/div&gt; const app = new Vue({ el: &#39;#app&#39;, data: { message: &#39;Hello&#39; }, computed: { // 计算属性的 getter  reversedMessage: function () { // this 指向 Vue 实例  return this....</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2018.07.17</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="/tags/vue/">Vue</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
         <h2><a href='/2018/07/16/object-freeze-and-object-seal/'>Object.freeze 和 Object.seal</a></h2>
     </div>
     
@@ -157,36 +188,6 @@
                     <i class="ri-stack-line"></i>
                     
                     <a href="/tags/javascript/">JavaScript</a>
-                    
-                </div>
-                
-        </div>
-    </div>
-</div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2018/06/29/use-google-by-shadowsocks/'>如何使用 Shadowsocks 获取谷歌服务</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。
-IP 黑名单 当你打开浏览器键入 URL 访问网络资源时，域名会被解析为 IP 地址（DNS 解析，一般由网络运营商提供，或者你也可以自己指定 DNS 服务器，例如谷歌的 DNS：8....</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2018.06.29</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="/tags/tutorial/">tutorial</a>
                     
                 </div>
                 

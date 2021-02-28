@@ -8,11 +8,11 @@
 	
 	
 	
-	<title>记折腾博客（一） ♡ 船长の部落格</title>
+	<title>记折腾博客（二） ♡ 船长の部落格</title>
 	
     
     
-    <meta name="description" content="记折腾博客（一）" />
+    <meta name="description" content="记折腾博客（二）" />
     
 
     
@@ -101,50 +101,52 @@
             <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
-                        <h2><a href='/2021/02/25/build-blog-1/'>记折腾博客（一）</a></h2>
-                        <span class="date">2021.02.25</span>
+                        <h2><a href='/2021/02/28/build-blog-2/'>记折腾博客（二）</a></h2>
+                        <span class="date">2021.02.28</span>
                     </div>
                     <div class="post_content markdown">
-                        <p>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="n">STKaiti</span><span class="p">,</span> <span class="n">KaiTi</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre></div><p>写完部署后发现效果非常的棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</p>
-<p>这当然难不倒我小猪佩奇了，想起了以前的 web 自定义字体，因此我去网上下载了一个楷体字的 ttf 文件。但是下载完一看文件大小 15M（WTF！）。</p>
-<p>这怎么能忍，于是我有找啊找，终于找到一个方正楷体字，下载完 ttf 格式是 3.8M，这还可以忍受。那有没有办法让这个文件大小更小一点呢？就我所知字体格式有 ttf、woff、woff2、eof 等，于是搜了下发现 woff 字体文件是体积最小的，然后我又去网上搜“ttf to woff”，最后下载下来发现 woff 字体竟然只有 18K！</p>
-<p>不禁说了声牛逼，然后把代码改成了这样：</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
-    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;KT&#39;</span><span class="o">;</span>
-  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/FZKaiti.woff&#39;</span><span class="o">);</span>
-<span class="p">}</span>
-
-<span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="n">KT</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre></div><p>在电脑上预览没有任何问题。但是在手机上又跪了，手机上只会把英文渲染为楷体字展示，中文不变。难道手机上中文不支持 woff？？？最后不得已，换回 ttf，然后又把代码改成了这样：</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
-    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;KT&#39;</span><span class="o">;</span>
-  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/FZKaiti.ttf&#39;</span><span class="o">);</span>
-<span class="p">}</span>
-<span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="n">KT</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre></div><p>手机上也能正常展示楷体字了，但是有一个严重的体验问题。那就是在楷体字没有加载完成时，使用楷体字渲染的文本处都是空白的（WTF）。</p>
-<p>最后在网上搜了一下，可以使用 font-display 属性用来做自定义字体的过渡显示，当字体没加载完成时，显示兜底字体，字体加载完后，替换为加载完的字体。最后代码改成了这样：</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
-  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;KT&#39;</span><span class="o">;</span>
-  <span class="nt">font-display</span><span class="o">:</span> <span class="nt">fallback</span><span class="o">;</span>
-  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;STKaiti&#39;</span><span class="o">),</span>
-       <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;KaiTi&#39;</span><span class="o">),</span>
-       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/FZKaiTi.ttf&#39;</span><span class="o">);</span>
-<span class="p">}</span>
-
-<span class="nt">p</span><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="n">KT</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre></div><p>这样一来，Mac 和 Windows 上直接显示本地的楷体字，在手机上打开页面时，先展示系统默认字体，然后等 FZKaiti.ttf 加载完后，再展示楷体字。</p>
-<p>你可以<a href="https://daijiangtao.gitee.io">点击这里</a>浏览我的博客。</p>
-<p>完。</p>
+                        <p>继续上篇。</p>
+<p>在所有的东西都配置好之后，运行 <code>hugo</code> 命令即可在 public 目录下构建出网站内容。静态站点需要将 public 目录作为网站的根目录进行部署。我的想法是，一份部署在国外 GitHub 上，一份部署在国内 gitee 上，这样一来除了可以做备份之外，还可以将 gitee 上的站点作为镜像，这样如果主域名访问较慢的情况下，可以切换到速度较快的国内站点进行访问。</p>
+<p>在将博客仓库推到 GitHub 之后，发现 GitHub 貌似没有提供自定义部署文件夹的功能，只有指定的 <code>/root</code> 或者 <code>/doc</code> 两个选择。那么解决方法有两个，要么将打包后的目标文件夹从 public 改为 doc，要么想办法把 public 文件夹作为一个仓库进行部署。</p>
+<p>在网上查阅发现，git 可以将指定的文件夹拷贝到另一个新分支，也就是使用 <code>git subtree</code> 命令。因此我打算将 public 的内容作为新分支 deploy 进行部署，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git subtree push --prefix public origin deploy
+</code></pre></div><p>执行完命令后，本地和远程仓库都有了 deploy 分支，并且分支内容和 public 完全一致。</p>
+<p>之后进行域名绑定，在阿里云上添加了 A 记录和 CNAME 记录，然后将 IP 地址和域名分别指向 GitHub 的 IP 和 GitHub 为我的博客仓库分配的预览地址。</p>
+<blockquote>
+<p>可以使用 <code>ping github.com</code> 命令来获取 GitHub 的 IP 地址</p>
+</blockquote>
+<p>还有一个问题，如何使本地仓库同步到两个远程仓库呢？在我网上查阅发现，只需要在本地仓库下的 .git/config 下添加第二个远程仓库的 url 即可，我打开 git config 发现内容如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>core<span class="o">]</span>
+    <span class="nv">repositoryformatversion</span> <span class="o">=</span> <span class="m">0</span>
+    <span class="nv">filemode</span> <span class="o">=</span> <span class="nb">true</span>
+    <span class="nv">bare</span> <span class="o">=</span> <span class="nb">false</span>
+    <span class="nv">logallrefupdates</span> <span class="o">=</span> <span class="nb">true</span>
+    <span class="nv">ignorecase</span> <span class="o">=</span> <span class="nb">true</span>
+    <span class="nv">precomposeunicode</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="o">[</span>user<span class="o">]</span>
+    <span class="nv">name</span> <span class="o">=</span> CaptainOfPhB
+    <span class="nv">email</span> <span class="o">=</span> xxxxxxxx@gmail.com
+<span class="o">[</span>remote <span class="s2">&#34;origin&#34;</span><span class="o">]</span>
+    <span class="nv">url</span> <span class="o">=</span> git@github.com:CaptainOfPhB/captainofphb.github.io.git
+    <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
+<span class="o">[</span>branch <span class="s2">&#34;master&#34;</span><span class="o">]</span>
+    <span class="nv">remote</span> <span class="o">=</span> origin
+    <span class="nv">merge</span> <span class="o">=</span> refs/heads/master
+<span class="o">[</span>branch <span class="s2">&#34;deploy&#34;</span><span class="o">]</span>
+    <span class="nv">remote</span> <span class="o">=</span> origin
+</code></pre></div><p>那么只需要在 <code>remote.origin.url</code> 下面再添加一条远程仓库的 url 即可，这样就可以把本地仓库同步到两个远程仓库：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>remote <span class="s2">&#34;origin&#34;</span><span class="o">]</span>
+  <span class="nv">url</span> <span class="o">=</span> git@github.com:CaptainOfPhB/captainofphb.github.io.git
+  <span class="nv">url</span> <span class="o">=</span> git@gitee.com:&lt;user_count&gt;/&lt;repository_name&gt;.git
+  <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
+</code></pre></div><p>添加完之后，使用 <code>git remote -v</code> 进行查看，打印出：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>push<span class="o">)</span>
+origin  git@gitee.com:&lt;user_count&gt;/&lt;repository_name&gt;.git <span class="o">(</span>push<span class="o">)</span>
+</code></pre></div><p>这表示第一个 url 地址 git 用来做 fetch 或 pull，第二第三用来做 push 同步。</p>
+<p>然后运行 <code>git push</code> 之后，发现仓库会同步到 gitee 了。然后在 gitee page 上进行配置，选择 deploy 分支直接进行部署即可，与 GitHub 类似。</p>
+<p>你可以点击 <a href="https://daijiangtao.name">daijiangtao.name</a> 或 <a href="https://daijiangtao.gitee.io">daijiangtao.gitee.io</a> 访问我的博客。</p>
+<p>完.</p>
 
                         <div class="promotion_text">You can find me here:</div>
 <div class="promotion_container">
@@ -173,7 +175,7 @@
                                 <span class="field tags">
                                     <i class="ri-stack-line"></i>
                                     
-                                    <a href="/tags/essay/">essay</a>
+                                    <a href="/tags/eassy/">eassy</a>
                                     
                                 </span>
                             </div>

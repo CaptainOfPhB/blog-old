@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>essay on 船长の部落格</title>
+    <link>/tags/essay/</link>
+    <description>Recent content in essay on 船长の部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 25 Feb 2021 15:55:08 +0800</lastBuildDate><atom:link href="/tags/essay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记折腾博客（一）</title>
+      <link>/2021/02/25/build-blog-1/</link>
+      <pubDate>Thu, 25 Feb 2021 15:55:08 +0800</pubDate>
+      
+      <guid>/2021/02/25/build-blog-1/</guid>
+      <description>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：
+p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常的棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</description>
+    </item>
+    
+  </channel>
+</rss>

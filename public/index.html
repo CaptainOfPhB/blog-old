@@ -105,6 +105,36 @@
 
 <div class="home post animated fadeInDown">
     <div class="post_title">
+        <h2><a href='/2021/02/28/build-blog-2/'>记折腾博客（二）</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>继续上篇。
+在所有的东西都配置好之后，运行 hugo 命令即可在 public 目录下构建出网站内容。静态站点需要将 public 目录作为网站的根目录进行部署。我的想法是，一份部署在国外 GitHub 上，一份部署在国内 gitee 上，这样一来除了可以做备份之外，还可以将 gitee 上的站点作为镜像，这样如果主域名访问较慢的情况下，可以切换到速度较快的国内站点进行访问。...</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2021.02.28</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-stack-line"></i>
+                    
+                    <a href="/tags/eassy/">eassy</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
         <h2><a href='/2021/02/25/build-blog-1/'>记折腾博客（一）</a></h2>
     </div>
     
@@ -125,7 +155,7 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
                 <div class="field tags">
                     <i class="ri-stack-line"></i>
                     
-                    <a href="/tags/blog/">blog</a>
+                    <a href="/tags/essay/">essay</a>
                     
                 </div>
                 
@@ -155,35 +185,6 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
                     <i class="ri-stack-line"></i>
                     
                     <a href="/tags/npm/">npm</a>
-                    
-                </div>
-                
-        </div>
-    </div>
-</div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2020/09/20/typescript-note-3/'>TypeScript 学习笔记（三）</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &#39;TypeScript&#39;; const ts: TypeScript = &#39;TypeScript&#39;; const sayHello = (name: string) =&gt; console....</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">2020.09.20</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-stack-line"></i>
-                    
-                    <a href="/tags/typescript/">TypeScript</a>
                     
                 </div>
                 
