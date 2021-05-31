@@ -544,7 +544,7 @@ u {
   display: block;
   overflow: auto;
   white-space: pre;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   background-color: #fbfbfb;
 }
 
