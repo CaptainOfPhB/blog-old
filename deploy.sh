@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
-# 1. build site
+# build site
 hugo
 
-# 2. git push
 git add .
-git commit -m 'build'
+
+# support `./deploy.sh your_commit_msg` usage, default msg is 'build'
+if [ "$1" == "" ]; then
+  git commit -m "build"
+else
+  git commit -m "$1"
+fi
+
 git push
-
-# 3. deploy 'public' dir to github 'deploy' branch
-git subtree push --prefix=public origin deploy
-

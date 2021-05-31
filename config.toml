@@ -1,4 +1,5 @@
 baseURL = "/" # 网站根目录
+publishDir = "doc" # 打包目录
 defaultContentLanguage = "zh-cn" # 默认语言
 title = "船长の部落格" # 网站标题
 summaryLength = 10 # // 文章缩略文本长度
