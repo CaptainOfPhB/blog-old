@@ -7,6 +7,12 @@
   src: local('STKaiti'), local('KaiTi'), url('../font/FZKaiTi.ttf');
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: fallback;
+  src: local('JetBrains Mono'), url('../font/JetBrainsMono.ttf');
+}
+
 /*basic styles starts*/
 *::-webkit-scrollbar {
   display: none;
