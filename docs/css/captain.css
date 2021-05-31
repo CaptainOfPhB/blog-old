@@ -544,7 +544,6 @@ u {
   display: block;
   overflow: auto;
   white-space: pre;
-  /* word-wrap: break-word; */
   background-color: #fbfbfb;
 }
 
@@ -553,6 +552,10 @@ u {
   color: #555555;
   white-space: pre;
   background-color: transparent;
+}
+
+.markdown pre code span {
+  white-space: nowrap;
 }
 
 .markdown blockquote p {
