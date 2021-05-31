@@ -1,229 +1,139 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/tags/eassy/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2021/02/28/build-blog-2/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/essay/</loc>
     <lastmod>2021-02-25T15:55:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2021/02/25/build-blog-1/</loc>
     <lastmod>2021-02-25T15:55:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/npm/</loc>
     <lastmod>2021-01-25T16:09:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2021/01/25/unpublishing-your-package-on-npm/</loc>
     <lastmod>2021-01-25T16:09:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/typescript/</loc>
     <lastmod>2020-09-20T14:16:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2020/09/20/typescript-note-3/</loc>
     <lastmod>2020-09-20T14:16:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/java/</loc>
     <lastmod>2019-06-25T11:03:15+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2019/06/25/java-note-3/</loc>
     <lastmod>2019-06-25T11:03:15+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2019/06/17/java-note-2/</loc>
     <lastmod>2019-06-17T10:56:14+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2019/06/16/java-note-1/</loc>
     <lastmod>2019-06-16T10:49:38+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/about-me/</loc>
     <lastmod>2019-06-06T15:28:56+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/about-me/</loc>
     <lastmod>2019-06-06T15:28:56+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2019/05/09/typescript-note-1/</loc>
     <lastmod>2019-05-09T16:38:15+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/git/</loc>
     <lastmod>2019-05-08T17:01:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2019/05/08/git-note-1/</loc>
     <lastmod>2019-05-08T17:01:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/react/</loc>
     <lastmod>2019-04-16T17:05:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2019/04/16/react-note-1/</loc>
     <lastmod>2019-04-16T17:05:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/07/24/commonly-used-git-commands/</loc>
     <lastmod>2018-07-24T18:04:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/javascript/</loc>
     <lastmod>2018-07-19T17:55:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/07/19/data-type/</loc>
     <lastmod>2018-07-19T17:55:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/vue/</loc>
     <lastmod>2018-07-17T17:38:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/07/17/vue-computed-watch-methods/</loc>
     <lastmod>2018-07-17T17:38:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/07/16/object-freeze-and-object-seal/</loc>
     <lastmod>2018-07-16T17:32:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/07/16/object-defineproperty/</loc>
     <lastmod>2018-07-16T17:20:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/tutorial/</loc>
     <lastmod>2018-06-29T17:00:57+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/06/29/use-google-by-shadowsocks/</loc>
     <lastmod>2018-06-29T17:00:57+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/06/29/domain-to-github/</loc>
     <lastmod>2018-06-29T16:49:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/command-line/</loc>
     <lastmod>2018-06-28T16:36:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/tool/</loc>
     <lastmod>2018-06-28T16:36:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/06/28/command-line-tool/</loc>
     <lastmod>2018-06-28T16:36:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/06/27/git-message/</loc>
     <lastmod>2018-06-27T16:05:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/css/</loc>
     <lastmod>2018-06-26T15:54:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/06/26/text-overflow/</loc>
     <lastmod>2018-06-26T15:54:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/https/</loc>
     <lastmod>2018-06-02T15:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/06/02/https/</loc>
     <lastmod>2018-06-02T15:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2018/03/16/css-layout/</loc>
     <lastmod>2018-03-16T14:55:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/layout/</loc>
     <lastmod>2018-03-16T14:55:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/script/</loc>
     <lastmod>2017-10-10T11:47:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2017/10/10/script/</loc>
     <lastmod>2017-10-10T11:47:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
   </url>
-  
 </urlset>

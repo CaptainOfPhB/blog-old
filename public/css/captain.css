@@ -4,9 +4,7 @@
 @font-face {
   font-family: 'KT';
   font-display: fallback;
-  src: local('STKaiti'),
-       local('KaiTi'),
-       url('../font/FZKaiTi.ttf');
+  src: local('STKaiti'), local('KaiTi'), url('../font/FZKaiTi.ttf');
 }
 
 /*basic styles starts*/
@@ -37,7 +35,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
   color: #333333;
-  font-family: "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: JetBrains Mono, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 14px;
   width: 100%;
   background-color: #f7f7f7;
@@ -55,14 +53,16 @@ a {
   text-decoration: none;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   opacity: 1;
   -webkit-transition: all 0.15s linear;
   transition: all 0.15s linear;
   color: #424242;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: #555555;
 }
 
@@ -84,14 +84,14 @@ hr {
 u {
   text-decoration-style: double;
   text-underline-offset: 0.2em;
-  text-decoration-color: #E42B2B;
+  text-decoration-color: #eb5757;
 }
 
 /*basic styles ends*/
 .main {
   background: #ffffff;
   -webkit-box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
-          box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
+  box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
   width: 800px;
   margin: 60px auto 0;
 }
@@ -217,7 +217,7 @@ u {
 
 .header .my_socials a {
   color: #5f5f5f;
-  font-size: 12px;
+  font-size: 16px;
   float: none;
   cursor: pointer;
 }
@@ -238,8 +238,8 @@ u {
 
 .post .post_title a {
   text-decoration: none;
-  color: #1f1f1f;
-  font-size: 1.1rem;
+  color: #333;
+  font-size: 1.3rem;
 }
 
 .post .post_title span {
@@ -265,23 +265,21 @@ u {
   margin-top: 20px;
 }
 
-.post .post_content p {
-  line-height: 2em;
-  letter-spacing: 0.2px;
-  margin-bottom: 20px;
+/* 正文部分的段落 */
+.post .post_content > p {
+  word-break: normal;
+  margin-top: 20px;
 }
 
+/* 首页的文章缩略 */
 .home .post_content p {
-  color: #333;
-  font-size: 12px;
-  margin-bottom: 0;
-  font-family: 'KT', sans-serif;
+  color: #666;
 }
 
 .post .post_content a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #e42b2b;
+  color: #eb5757;
 }
 
 .post .post_content a:hover {
@@ -326,11 +324,11 @@ u {
 }
 
 .post .promotion_text {
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 80px;
   font-style: italic;
   text-transform: capitalize;
-  text-decoration: underline;
+  text-decoration: double;
 }
 
 .post .promotion_container {
@@ -502,7 +500,7 @@ u {
 .markdown h5,
 .markdown h6 {
   margin: 20px 0 20px 0;
-  color: #000000;
+  color: #333;
 }
 
 .markdown h1 {
@@ -523,12 +521,18 @@ u {
 
 .markdown pre,
 .markdown code {
-  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.9em;
-  background: #f1f7fd;
   border: none;
   white-space: pre;
-  border-radius: 10px;
+  font-size: 0.95em;
+  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+.markdown code {
+  color: #eb5757;
+  padding: 4px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  background: #f0f0f0;
 }
 
 .markdown pre {
@@ -537,19 +541,14 @@ u {
   overflow: auto;
   white-space: pre;
   word-wrap: break-word;
-}
-
-.markdown code {
-  color: #666666;
-  padding: 4px 5px;
-  border-radius: 2px;
-  white-space: nowrap;
+  background-color: #f6f6f6;
 }
 
 .markdown pre code {
   padding: 0;
   color: #555555;
   white-space: pre;
+  background-color: transparent;
 }
 
 .markdown blockquote p {
@@ -582,25 +581,11 @@ u {
 }
 
 .markdown blockquote {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 2.5em 0;
-  padding: 0 0 0 30px;
-  color: #666;
-  font-size: 12px;
-  border-left: none;
-}
-
-.markdown blockquote:before {
-  content: '“';
-  display: block;
-  font-family: times, sans-serif;
-  font-style: normal;
-  font-size: 35px;
-  color: #444444;
-  font-weight: bold;
-  margin-left: -30px;
-  position: absolute;
+  box-sizing: border-box;
+  margin: 16px 0;
+  padding: 16px;
+  background-color: #fbfbfb;
+  border-left: 5px solid #ccc;
 }
 
 .markdown strong,
@@ -630,7 +615,8 @@ table th {
   background-color: #f6f8fa;
 }
 
-table th, table td {
+table th,
+table td {
   padding: 10px 20px;
   border: 1px solid #dfe2e5;
 }
@@ -648,7 +634,7 @@ a.back_to_top {
   font-size: 18px;
   text-align: center;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-property: background-color;
   transition-property: background-color;
   display: none;
@@ -681,7 +667,7 @@ a.back_to_top:hover span {
     width: 100%;
     background-color: #ffffff;
     -webkit-box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
-            box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
+    box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
   }
   .nav_container .site_nav ul {
     float: none;
@@ -758,12 +744,12 @@ a.back_to_top:hover span {
   0% {
     opacity: 0;
     -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+    transform: translateY(-3px);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
