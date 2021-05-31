@@ -551,6 +551,7 @@ u {
   padding: 0;
   color: #555555;
   white-space: pre;
+  overflow: scroll;
   background-color: transparent;
 }
 
