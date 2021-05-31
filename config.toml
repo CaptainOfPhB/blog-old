@@ -52,8 +52,7 @@ posts = "/:year/:month/:day/:slug"
 [social]
 github = "https://github.com/CaptainOfPhB"
 zhihu = "https://www.zhihu.com/people/CaptainInPHW"
-twitter = "https://twitter.com/CaptainInPHW"
-wechat = "https://i.loli.net/2020/09/13/zSqAWYPjFkaht2T.jpg"
+wechat = "https://wx4.sinaimg.cn/mw690/006pSoC6gy1gr1xn8hg38j30jl0jstb0.jpg"
 
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
