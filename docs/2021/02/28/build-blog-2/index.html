@@ -137,9 +137,9 @@
   <span class="nv">url</span> <span class="o">=</span> git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git
   <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
 </code></pre></div><p>添加完之后，使用 <code>git remote -v</code> 进行查看，打印出：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>fetch<span class="o">)</span>
-    origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>push<span class="o">)</span>
-    origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git <span class="o">(</span>push<span class="o">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>push<span class="o">)</span>
+origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git <span class="o">(</span>push<span class="o">)</span>
 </code></pre></div><p>这表示第一个 url 地址 git 用来做 fetch 或 pull，第二第三用来做 push 同步。</p>
 <p>然后运行 <code>git push</code> 之后，发现仓库会同步到 gitee 了。然后在 gitee page 上进行配置，选择 deploy 分支直接进行部署即可，与 GitHub 类似。</p>
 <p>你可以点击 <a href="https://daijiangtao.name">daijiangtao.name</a> 或 <a href="https://daijiangtao.gitee.io">daijiangtao.gitee.io</a> 访问我的博客。</p>
