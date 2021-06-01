@@ -5,7 +5,16 @@
     <link>/</link>
     <description>Recent content on 船长の部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Feb 2021 17:04:17 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 15:28:56 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于我</title>
+      <link>/about-me/</link>
+      <pubDate>Tue, 01 Jun 2021 15:28:56 +0800</pubDate>
+      
+      <guid>/about-me/</guid>
+      <description>我是船长，常用的英文 ID 是 CaptainOfPhB（没改之前是 CaptainInPHW）。这个英文 ID 的意思是 Captain of Penhu Bay，即澎湖湾的老船长，当然“老”这个字就不翻译到 ID 中去了。</description>
+    </item>
+    
     <item>
       <title>记折腾博客（二）</title>
       <link>/2021/02/28/build-blog-2/</link>
@@ -69,15 +78,6 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
       
       <guid>/2019/06/16/java-note-1/</guid>
       <description>JRE：java runtime environment，java 运行时环境 JDK：java development kit，java 开发工具集 JRE 和 JDK 不同之处大致在于：JRE 只可以运行 java 代码，而 JDK 既可以开发，又可以运行。抽象的理解为 JDK = JRE + javac JAVA_HOME：当前 JDK 的安装路径（可能存在多个 JDK 用来切换） java 作为开发学习是完全免费的，商用收费 java v1.</description>
-    </item>
-    
-    <item>
-      <title>关于我</title>
-      <link>/about-me/</link>
-      <pubDate>Thu, 06 Jun 2019 15:28:56 +0800</pubDate>
-      
-      <guid>/about-me/</guid>
-      <description>我是船长，常用的英文 ID 是 CaptainOfPhB（没改之前是 CaptainInPHW）。这个英文 ID 的意思是 Captain of Penhu Bay，即澎湖湾的老船长~~(￣▽￣)~*，当然“老”这个字就不放到 ID 中去了。</description>
     </item>
     
     <item>

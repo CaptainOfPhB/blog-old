@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/about-me/</loc>
+    <lastmod>2021-06-01T15:28:56+08:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2021-06-01T15:28:56+08:00</lastmod>
+  </url><url>
+    <loc>/about-me/</loc>
+    <lastmod>2021-06-01T15:28:56+08:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-06-01T15:28:56+08:00</lastmod>
+  </url><url>
     <loc>/tags/eassy/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2021-02-28T17:04:17+08:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2021-02-28T17:04:17+08:00</lastmod>
   </url><url>
     <loc>/2021/02/28/build-blog-2/</loc>
@@ -46,12 +52,6 @@
   </url><url>
     <loc>/2019/06/16/java-note-1/</loc>
     <lastmod>2019-06-16T10:49:38+08:00</lastmod>
-  </url><url>
-    <loc>/tags/about-me/</loc>
-    <lastmod>2019-06-06T15:28:56+08:00</lastmod>
-  </url><url>
-    <loc>/about-me/</loc>
-    <lastmod>2019-06-06T15:28:56+08:00</lastmod>
   </url><url>
     <loc>/2019/05/09/typescript-note-1/</loc>
     <lastmod>2019-05-09T16:38:15+08:00</lastmod>

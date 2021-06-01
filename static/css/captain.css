@@ -604,9 +604,10 @@ u {
 }
 
 .markdown img {
+  margin-top: 20px;
+  margin-bottom: -5px;
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
 }
 
 table {
