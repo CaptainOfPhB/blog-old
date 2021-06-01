@@ -531,7 +531,7 @@ u {
   font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
-.markdown code {
+.markdown p code {
   color: #eb5757;
   padding: 4px 5px;
   border-radius: 4px;
