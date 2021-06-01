@@ -9,8 +9,4 @@ description: '关于我'
 slug: 'about-me'
 ---
 
-未完待续......
-
-> 看一下引用的样式是什么样的
-
-{{< img src="images/favicon.png" >}}
+我是<u>船长</u>，常用的英文 ID 是 <u>CaptainOfPhB</u>（没改之前是 CaptainInPHW）。这个英文 ID 的意思是 Captain of Penhu Bay，即澎湖湾的老船长~~(￣▽￣)~*，当然“老”这个字就不放到 ID 中去了。

@@ -88,7 +88,6 @@ hr {
 }
 
 u {
-  text-decoration-style: double;
   text-underline-offset: 0.2em;
   text-decoration-color: #eb5757;
 }
@@ -332,7 +331,6 @@ u {
 .post .promotion_text {
   font-size: 12px;
   margin-top: 80px;
-  font-style: italic;
   text-transform: capitalize;
   text-decoration: double;
 }
@@ -546,14 +544,14 @@ u {
   display: block;
   overflow: auto;
   white-space: pre;
-  word-wrap: break-word;
-  background-color: #f6f6f6;
+  background-color: #fbfbfb;
 }
 
 .markdown pre code {
   padding: 0;
   color: #555555;
   white-space: pre;
+  overflow: auto;
   background-color: transparent;
 }
 
