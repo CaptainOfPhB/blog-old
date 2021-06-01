@@ -4,17 +4,46 @@
     <div class="main animate__animated animate__fadeInDown">
         {{ partial "nav.html" . }}
         {{ partial "header.html" . }}
-        <div class="content">
-            <div class="page_tags">
-                <h1>(≥o≤)</h1>
-                <h2>{{ with .Site.Params.title404 }}{{ . }}{{ else }}404 Page Not Found{{ end }}</h2>
-                <h3><a href="{{ .Site.BaseURL }}">首页</a></h3>
+        <div class="content page404">
+            <!-- <p>没有找到你要的文章，不如来读首诗吧~</p> -->
+            <div class="poetry-container">
+                <div class="poetry-title"></div>
+                <div class="poetry-author"></div>
+                <div class="poetry-content"></div>
+                <div class="poetry-translate">译文</div>
+                <div class="poetry-translate-content"></div>
             </div>
-            <div class="pagination"></div>
         </div>
     </div>
     {{ partial "footer.html" . }}
     {{ partial "js.html" . }}
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        function q(selector) {
+            return document.querySelector(selector);
+        }
+
+        jinrishici.load(function(result) {
+            console.log(result.data)
+            var data = result.data;
+            q('.poetry-title').innerHTML = data.origin.title;
+            q('.poetry-author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
+            q('.poetry-content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
+
+            if(data.origin.translate) {
+                var t = q('.poetry-translate');
+                var tc = q('.poetry-translate-content');
+                tc.innerHTML = data.origin.translate;
+                t.style.display = 'block';
+                tc.style.display = 'block';
+            }
+
+            q('.poetry-container').style.display = 'block';
+        });
+    </script>
+
 </body>
 
 </html>

@@ -94,13 +94,15 @@
         </div>
     </div>
 </div>
-        <div class="content">
-            <div class="page_tags">
-                <h1>(≥o≤)</h1>
-                <h2>404 Page Not Found</h2>
-                <h3><a href="/">首页</a></h3>
+        <div class="content page404">
+            
+            <div class="poetry-container">
+                <div class="poetry-title"></div>
+                <div class="poetry-author"></div>
+                <div class="poetry-content"></div>
+                <div class="poetry-translate">译文</div>
+                <div class="poetry-translate-content"></div>
             </div>
-            <div class="pagination"></div>
         </div>
     </div>
     <footer class="footer">
@@ -168,6 +170,33 @@
         color: #515151;
     }
 </style>
+
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        function q(selector) {
+            return document.querySelector(selector);
+        }
+
+        jinrishici.load(function(result) {
+            console.log(result.data)
+            var data = result.data;
+            q('.poetry-title').innerHTML = data.origin.title;
+            q('.poetry-author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
+            q('.poetry-content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
+
+            if(data.origin.translate) {
+                var t = q('.poetry-translate');
+                var tc = q('.poetry-translate-content');
+                tc.innerHTML = data.origin.translate;
+                t.style.display = 'block';
+                tc.style.display = 'block';
+            }
+
+            q('.poetry-container').style.display = 'block';
+        });
+    </script>
 
 </body>
 
