@@ -548,8 +548,7 @@ u {
 }
 
 .markdown pre code {
-  padding: 0;
-  color: #555555;
+  display: inline-block;
   white-space: pre;
   overflow: auto;
   background-color: transparent;
