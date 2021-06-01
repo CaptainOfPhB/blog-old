@@ -121,7 +121,7 @@
 <script src="/js/captain.js"></script>
 
 <script>
-  hljs.initHighlightingOnLoad();
+  hljs.highlightAll();
 </script>
 
 <script>
@@ -180,7 +180,6 @@
         }
 
         jinrishici.load(function(result) {
-            console.log(result.data)
             var data = result.data;
             q('.poetry-title').innerHTML = data.origin.title;
             q('.poetry-author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;

@@ -155,7 +155,7 @@
 <span class="c1">// 也不可能设置属性
 </span><span class="c1">// 下面两个语句都会抛出 TypeError.
 </span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span> <span class="p">});</span>
-<span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span> <span class="p">};</span>
+<span class="nx">obj</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span> <span class="p">};</span>
 </code></pre></div><h2 id="deep-freeze">Deep freeze</h2>
 <blockquote>
 <p>数据属性的值不可更改，访问器属性（有 getter 和 setter）也同样（但由于是函数调用，给人的错觉是还是可以修改这个属性）。<code>如果一个属性的值是个对象，则这个对象中的属性是可以修改的，除非它也是个冻结对象</code>。</p>
@@ -229,7 +229,7 @@
 <script src="/js/captain.js"></script>
 
 <script>
-  hljs.initHighlightingOnLoad();
+  hljs.highlightAll();
 </script>
 
 <script>

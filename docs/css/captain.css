@@ -657,6 +657,61 @@ a.back_to_top:hover span {
   color: #555555;
 }
 
+.page404 {
+  min-height: 500px;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.page404::after {
+  content: "404";
+  text-align: center;
+  font-size: 300px;
+  position: absolute;
+  color: #f7f7f7;
+  font-weight: bolder;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.poetry-container,
+.poetry-translate {
+  display: none;
+}
+
+.poetry-title,
+.poetry-translate {
+  margin: 40px auto;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'KT', serif;
+}
+
+.poetry-author {
+  padding: 0 30%;
+  margin: 30px auto;
+  text-align: right;
+  font-family: 'KT', serif;
+}
+
+.poetry-content {
+  font-size: 18px;
+  text-align: center;
+  font-family: 'KT', serif;
+}
+
+.poetry-translate-content {
+  font-size: 16px;
+  text-indent: 2em;
+  text-align: left;
+  line-height: 1.7;
+  font-family: 'KT', serif;
+}
+
+
 @media print, screen and (max-width: 680px) {
   .nav_container {
     position: relative;
@@ -687,6 +742,14 @@ a.back_to_top:hover span {
   }
   .back_to_top {
     display: none !important;
+  }
+
+  .page404 {
+    min-height: 300px;
+  }
+
+  .page404::after {
+    font-size: 200px;
   }
 }
 
@@ -755,59 +818,6 @@ a.back_to_top:hover span {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-}
-
-.page404 {
-  min-height: 500px;
-  position: relative;
-  padding-bottom: 100px;
-}
-
-.page404::after {
-  content: "404";
-  text-align: center;
-  font-size: 300px;
-  position: absolute;
-  color: #f9f9f9;
-  font-weight: bolder;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.poetry-container,
-.poetry-translate {
-  display: none;
-}
-
-.poetry-title,
-.poetry-translate {
-  margin: 40px auto;
-  text-align: center;
-  font-size: 25px;
-  font-family: 'KT', serif;
-}
-
-.poetry-author {
-  padding: 0 30%;
-  margin: 30px auto;
-  text-align: right;
-  font-family: 'KT', serif;
-}
-
-.poetry-content {
-  font-size: 18px;
-  text-align: center;
-  font-family: 'KT', serif;
-}
-
-.poetry-translate-content {
-  font-size: 16px;
-  text-indent: 2em;
-  text-align: left;
-  font-family: 'KT', serif;
 }
 
 /*animation ends*/
