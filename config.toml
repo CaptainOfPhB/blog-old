@@ -5,6 +5,7 @@ title = "船长の部落格" # 网站标题
 summaryLength = 10 # // 文章缩略文本长度
 paginate = 5 # 首页显示文章数量
 enableEmoji = true # 允许使用 emoji
+enableGitInfo = true # 允许使用 git 相关信息
 pygmentsUseClasses = true
 pygmentCodeFences = true
 pygmentscodefencesguesssyntax = true
