@@ -27,19 +27,19 @@
 
         jinrishici.load(function(result) {
             var data = result.data;
-            q('.poetry-title').innerHTML = data.origin.title;
-            q('.poetry-author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
-            q('.poetry-content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
+            q('.poetry_title').innerHTML = data.origin.title;
+            q('.poetry_author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
+            q('.poetry_content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
 
             if(data.origin.translate) {
-                var t = q('.poetry-translate');
-                var tc = q('.poetry-translate-content');
+                var t = q('.poetry_translate');
+                var tc = q('.poetry_translate_content');
                 tc.innerHTML = data.origin.translate;
                 t.style.display = 'block';
                 tc.style.display = 'block';
             }
 
-            q('.poetry-container').style.display = 'block';
+            q('.poetry_container').style.display = 'block';
         });
     </script>
 
