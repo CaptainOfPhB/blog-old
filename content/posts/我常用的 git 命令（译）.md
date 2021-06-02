@@ -37,8 +37,8 @@ slug: 'commonly-used-git-commands'
 那么这三个命令的别名就会派上用场：`gaa`、`gcmsg "Add this commit"`、`gp`（分别是上面三个经典命令的别名）。
 
 > ```sh
->   git checkout develop
->   git checkout -b my-new-branch
+> git checkout develop
+> git checkout -b my-new-branch
 > ```
 >
 > These will switch to an existing branch or a new branch. There is not much new going on here. I often use the full aliases here too - gcd and gcb “my-new-branch“.
@@ -55,7 +55,7 @@ slug: 'commonly-used-git-commands'
 是一个中级开发者教会了我关于 `rebase` 的用法。
 
 > ```sh
->   git rebase <branch>
+> git rebase <branch>
 > ```
 >
 > This will lead us to rebase itself. Remember to rebase! This is especially important if you are doing feature branches. We do not want a half-dead branch, which is a billion commits behind its default branch with merge conflicts up to the throat. Ouch!
@@ -74,9 +74,9 @@ slug: 'commonly-used-git-commands'
 我会在 GitHub 中发起一个 pull request，GitHub 的 GUI 界面很好用。
 
 > ```sh
->   git stash
->   git stash pop
->   git stash apply stash@{1}
+> git stash
+> git stash pop
+> git stash apply stash@{1}
 > ```
 >
 > Has your project manager given you a new task, which need to be done quickly? Just throw your current work to the side and focus on the new stuff. It is awesome! I actually don’t use the full alias for this. I am using `g` instead of `git`. Maybe it is because I want to be absolutely sure, that I am actually stashing 😀
@@ -101,7 +101,7 @@ slug: 'commonly-used-git-commands'
 这些命令是我偶尔使用的。
 
 > ```sh
->   git push --force-with-lease
+>  git push --force-with-lease
 > ```
 >
 > This is one of my strange darlings. But why don’t I just use `--force`? First of all, it is an extremely dangerous command and a huge no-no when using shared branches. It is because it will overwrite the remote repository with whatever you have locally. This can be dangerous if other contributors of the repository have pushed in the meantime. I have mostly used `--force-with-lease` after a rebase. This is because it works like a safety belt. This article has a great example.
@@ -120,7 +120,7 @@ slug: 'commonly-used-git-commands'
 这也是一条指令，前几天我从 David Walsh 那儿发现的。这条命令会从上至下列出分支上的最近的工作记录，it's very cool!
 
 > ```sh
->   git reset --hard
+> git reset --hard
 > ```
 >
 > And if everything goes like 💩, you can always reset the project. Thank you for your time! If you liked this, then please 👏 and follow.

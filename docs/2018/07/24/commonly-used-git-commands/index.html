@@ -131,8 +131,8 @@ It is here that it will be nice to use some aliases. gaa, gcmsg “Add this comm
 <p>这几个命令是我几乎每天都会用到的，如果你听说过 Git，那么你很可能知道上面的这三个经典命令，我几乎一直在使用它们。 如果你使用这些命令的别名那就很 nice 了，
 那么这三个命令的别名就会派上用场：<code>gaa</code>、<code>gcmsg &quot;Add this commit&quot;</code>、<code>gp</code>（分别是上面三个经典命令的别名）。</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">  git checkout develop
-  git checkout -b my-new-branch
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git checkout develop
+git checkout -b my-new-branch
 </code></pre></div><p>These will switch to an existing branch or a new branch. There is not much new going on here. I often use the full aliases here too - gcd and gcb “my-new-branch“.</p>
 </blockquote>
 <p>这几个命令我经常用来切换到一个新的分支或者已经存在的分支，相信大家都很熟悉了。我经常使用的是这两个命令别名：<code>gcd</code> 以及 <code>gcb &quot;my-new-branch&quot;</code>：</p>
@@ -143,7 +143,7 @@ It is here that it will be nice to use some aliases. gaa, gcmsg “Add this comm
 <p>当我从一个仓库拉取分支的时候我经常会加上 <code>--rebase</code> 参数， 这样将会使我的 commit 信息保持整洁，你也可以使用命令别名 <code>gup</code>，
 是一个中级开发者教会了我关于 <code>rebase</code> 的用法。</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">  git rebase &lt;branch&gt;
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git rebase &lt;branch&gt;
 </code></pre></div><p>This will lead us to rebase itself. Remember to rebase! This is especially important if you are doing feature branches. We do not want a half-dead branch, which is a billion commits behind its default branch with merge conflicts up to the throat. Ouch!</p>
 </blockquote>
 <p>这条命令将会对当前分支进行 rebase。当你在开发一个 feature 分支时，一定要记得 rebase，这一点是非常重要的。我们不想开发一个半成品分支，
@@ -156,9 +156,9 @@ It is here that it will be nice to use some aliases. gaa, gcmsg “Add this comm
 <p>直接从终端中直接进行分支的合并，我不经常这样做。 我的团队工作时使用的是 feature 分支的方式。当一个分支开发完成，应该合并至 base 分支或者其他分支时，
 我会在 GitHub 中发起一个 pull request，GitHub 的 GUI 界面很好用。</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">  git stash
-  git stash pop
-  git stash apply stash@<span class="o">{</span>1<span class="o">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git stash
+git stash pop
+git stash apply stash@<span class="o">{</span>1<span class="o">}</span>
 </code></pre></div><p>Has your project manager given you a new task, which need to be done quickly? Just throw your current work to the side and focus on the new stuff. It is awesome! I actually don’t use the full alias for this. I am using <code>g</code> instead of <code>git</code>. Maybe it is because I want to be absolutely sure, that I am actually stashing 😀</p>
 </blockquote>
 <p>你有没有这样的经历，你正在开发一个分支，但是你的项目经理有一个很紧急的任务要你做。你手头开发了一半的工作不能够作为一次完整的提交，
@@ -176,7 +176,7 @@ git log
 </blockquote>
 <p>这些命令是我偶尔使用的。</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">  git push --force-with-lease
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"> git push --force-with-lease
 </code></pre></div><p>This is one of my strange darlings. But why don’t I just use <code>--force</code>? First of all, it is an extremely dangerous command and a huge no-no when using shared branches. It is because it will overwrite the remote repository with whatever you have locally. This can be dangerous if other contributors of the repository have pushed in the meantime. I have mostly used <code>--force-with-lease</code> after a rebase. This is because it works like a safety belt. This article has a great example.</p>
 </blockquote>
 <p>这条命令很奇怪，但是是我最喜欢用的（陌生的宠儿，不知道这句话什么意思，大概猜测）。但是我为什么不使用 <code>--force</code> 呢？首先，这条命令是非常危险的，
@@ -189,7 +189,7 @@ git log
 </blockquote>
 <p>这也是一条指令，前几天我从 David Walsh 那儿发现的。这条命令会从上至下列出分支上的最近的工作记录，it&rsquo;s very cool!</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">  git reset --hard
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git reset --hard
 </code></pre></div><p>And if everything goes like 💩, you can always reset the project. Thank you for your time! If you liked this, then please 👏 and follow.</p>
 </blockquote>
 <p>如果事情已经发展的如同 💩 一样无法挽回，你通常可能会重置你的项目。</p>
@@ -209,6 +209,26 @@ git log
                             </div>
                         </div>
                         
+
+                        <div class="single_page_divider"></div>
+
+                        <div class="single_page_pagination">
+                            
+                                <a class="single_page_pagination_pre" href="/2018/07/19/data-type/">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                    <span class="prev_title">数据类型</span>
+                                    <span class="prev_text">Prev</span>
+                                </a>
+                            
+                            
+                                <a class="single_page_pagination_next" href="/2019/04/16/react-note-1/">
+                                    <span class="next_title">React 学习笔记（一）</span>
+                                    <span class="next_text">Next</span>
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -294,7 +294,6 @@ u {
 
 .post .post_content a {
   text-decoration: none;
-  letter-spacing: 1px;
   color: #eb5757;
 }
 
@@ -482,12 +481,19 @@ u {
 }
 
 .pagination a {
+  display: flex;
+  align-items: center;
   color: #888888;
   text-decoration: none;
 }
 
+.pagination i {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
 .pagination a:hover {
-  color: #333333;
+  color: #424242;
 }
 
 .pagination .pre {
@@ -554,8 +560,8 @@ u {
 }
 
 .markdown pre {
-  padding: 16px;
-  display: block;
+  display: flex;
+  align-items: center;
   overflow: auto;
   white-space: pre;
   background-color: #fbfbfb;
@@ -569,7 +575,16 @@ u {
 }
 
 .markdown blockquote p {
+  font-size: 14px;
   white-space: pre-line;
+}
+
+.markdown blockquote pre {
+  margin: 5px 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
 }
 
 .markdown pre::-webkit-scrollbar {
@@ -618,9 +633,8 @@ u {
 }
 
 .markdown img {
-  margin-top: 20px;
   margin-bottom: -5px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -678,7 +692,7 @@ a.back_to_top:hover span {
 }
 
 .page404::after {
-  content: "404";
+  content: '404';
   text-align: center;
   font-size: 300px;
   position: absolute;
@@ -691,33 +705,33 @@ a.back_to_top:hover span {
   z-index: -1;
 }
 
-.poetry-container,
-.poetry-translate {
+.poetry_container,
+.poetry_translate {
   display: none;
 }
 
-.poetry-title,
-.poetry-translate {
+.poetry_title,
+.poetry_translate {
   margin: 40px auto;
   text-align: center;
   font-size: 25px;
   font-family: 'KT', serif;
 }
 
-.poetry-author {
+.poetry_author {
   padding: 0 30%;
   margin: 30px auto;
   text-align: right;
   font-family: 'KT', serif;
 }
 
-.poetry-content {
+.poetry_content {
   font-size: 18px;
   text-align: center;
   font-family: 'KT', serif;
 }
 
-.poetry-translate-content {
+.poetry_translate_content {
   font-size: 16px;
   text-indent: 2em;
   text-align: left;
@@ -725,6 +739,43 @@ a.back_to_top:hover span {
   font-family: 'KT', serif;
 }
 
+.single_page_divider {
+  margin: 40px 0 50px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.single_page_pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single_page_pagination_pre:link,
+.single_page_pagination_next:link {
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+.single_page_pagination_pre:hover,
+.single_page_pagination_next:hover {
+  color: #424242;
+}
+
+.single_page_pagination i,
+.single_page_pagination span {
+  color: inherit;
+}
+
+.single_page_pagination_pre i,
+.single_page_pagination_next i {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.prev_text,
+.next_text {
+  display: none;
+}
 
 @media print, screen and (max-width: 680px) {
   .nav_container {
@@ -758,12 +809,30 @@ a.back_to_top:hover span {
     display: none !important;
   }
 
+  .post_footer {
+    padding-bottom: 30px !important;
+  }
+
   .page404 {
     min-height: 300px;
   }
 
   .page404::after {
     font-size: 180px;
+  }
+
+  .single_page_divider {
+    margin: 20px 0 30px;
+  }
+
+  .prev_text,
+  .next_text {
+    display: inline;
+  }
+
+  .prev_title,
+  .next_title {
+    display: none;
   }
 }
 

@@ -8,7 +8,7 @@
 	
 	
 	
-	<title>404 Page not found ♡ 船长の部落格</title>
+	<title>GitHub ♡ 船长の部落格</title>
 	
     
     
@@ -21,6 +21,8 @@
     
 
 	
+	<link rel="alternate" type="application/rss+xml" href="/tags/github/index.xml" title="船长の部落格" />
+    
     
     <link rel="shortcut icon" href="/images/favicon.png" />
 
@@ -94,16 +96,25 @@
         </div>
     </div>
 </div>
-        <div class="content page404">
-            
-            <div class="poetry_container">
-                <div class="poetry_title"></div>
-                <div class="poetry_author"></div>
-                <div class="poetry_content"></div>
-                <div class="poetry_translate">译文</div>
-                <div class="poetry_translate_content"></div>
+        <div class="content">
+            <div class="list_with_title">
+                
+                <div class="listing_title">2021</div>
+                <div class="listing">
+                    
+                    <div class="listing_item">
+                        <div class="listing_post">
+                            <a href="/2021/06/02/github-page/">GitHub Pages 如此愚蠢？</a>
+                            <div class="post_time"><span class="date">06-02</span></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
             </div>
+            <div class="pagination"></div>
         </div>
+        <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
     </div>
     <footer class="footer">
     <div class="powered_by">
@@ -170,32 +181,6 @@
         color: #515151;
     }
 </style>
-
-
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
-    <script type="text/javascript">
-        function q(selector) {
-            return document.querySelector(selector);
-        }
-
-        jinrishici.load(function(result) {
-            var data = result.data;
-            q('.poetry-title').innerHTML = data.origin.title;
-            q('.poetry-author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
-            q('.poetry-content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
-
-            if(data.origin.translate) {
-                var t = q('.poetry-translate');
-                var tc = q('.poetry-translate-content');
-                tc.innerHTML = data.origin.translate;
-                t.style.display = 'block';
-                tc.style.display = 'block';
-            }
-
-            q('.poetry-container').style.display = 'block';
-        });
-    </script>
 
 </body>
 

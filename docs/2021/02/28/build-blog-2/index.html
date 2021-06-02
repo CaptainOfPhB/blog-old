@@ -110,9 +110,12 @@
                         <p>继续上篇。</p>
 <p>在所有的东西都配置好之后，运行 <code>hugo</code> 命令即可在 public 目录下构建出网站内容。静态站点需要将 public 目录作为网站的根目录进行部署。我的想法是，一份部署在国外 GitHub 上，一份部署在国内 gitee 上，这样一来除了可以做备份之外，还可以将 gitee 上的站点作为镜像，这样如果主域名访问较慢的情况下，可以切换到速度较快的国内站点进行访问。</p>
 <p>在将博客仓库推到 GitHub 之后，发现 GitHub 貌似没有提供自定义部署文件夹的功能，只有指定的 <code>/root</code> 或者 <code>/doc</code> 两个选择。那么解决方法有两个，要么将打包后的目标文件夹从 public 改为 doc，要么想办法把 public 文件夹作为一个仓库进行部署。</p>
-<p>在网上查阅发现，git 可以将指定的文件夹拷贝到另一个新分支，也就是使用 <code>git subtree</code> 命令。因此我打算将 public 的内容作为新分支 deploy 进行部署，使用以下命令：</p>
+<p><del>在网上查阅发现，git 可以将指定的文件夹拷贝到另一个新分支，也就是使用 <code>git subtree</code> 命令。因此我打算将 public 的内容作为新分支 deploy 进行部署，使用以下命令：</del></p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git subtree push --prefix public origin deploy
-</code></pre></div><p>执行完命令后，本地和远程仓库都有了 deploy 分支，并且分支内容和 public 完全一致。</p>
+</code></pre></div><p><del>执行完命令后，本地和远程仓库都有了 deploy 分支，并且分支内容和 public 完全一致。</del></p>
+<blockquote>
+<p>更新：之前使用的 <code>git subtree</code> 方法由于 push 时经常 conflict 因此废弃掉，换做部署 <code>/docs</code> 文件夹的方式，具体操作步骤可以查看这篇<a href="/2021/06/02/github-page/">文章</a>。</p>
+</blockquote>
 <p>之后进行域名绑定，在阿里云上添加了 A 记录和 CNAME 记录，然后将 IP 地址和域名分别指向 GitHub 的 IP 和 GitHub 为我的博客仓库分配的预览地址。</p>
 <blockquote>
 <p>可以使用 <code>ping github.com</code> 命令来获取 GitHub 的 IP 地址</p>
@@ -164,6 +167,26 @@ origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git <span clas
                             </div>
                         </div>
                         
+
+                        <div class="single_page_divider"></div>
+
+                        <div class="single_page_pagination">
+                            
+                                <a class="single_page_pagination_pre" href="/2021/02/25/build-blog-1/">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                    <span class="prev_title">记折腾博客（一）</span>
+                                    <span class="prev_text">Prev</span>
+                                </a>
+                            
+                            
+                                <a class="single_page_pagination_next" href="/2021/06/02/github-page/">
+                                    <span class="next_title">GitHub Pages 如此愚蠢？</span>
+                                    <span class="next_text">Next</span>
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            
+                        </div>
+
                     </div>
                 </div>
             </div>

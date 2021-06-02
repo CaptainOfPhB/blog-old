@@ -102,6 +102,35 @@
 
 <div class="home post animated fadeInDown">
     <div class="post_title">
+        <h2><a href='/2019/04/16/react-note-1/'>React 学习笔记（一）</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态  // this....</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-edit-line"></i>
+                    <span class="date">2019.04.16</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-hashtag"></i>
+                    
+                    <a href="/tags/react/">React</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
         <h2><a href='/2018/07/24/commonly-used-git-commands/'>我常用的 Git 命令（译）</a></h2>
     </div>
     
@@ -222,44 +251,20 @@ Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符
     </div>
 </div>
 
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2018/07/16/object-defineproperty/'>Object.defineProperty</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。该方法允许精确添加或修改对象的属性。通过赋值来添加的普通属性会创建在属性枚举期间显示的属性（for...in 或 Object.keys 方法），这些值可以被改变，也可以被删除。这种方法允许这些额外的细节从默认值改变。默认情况下，使用 Object.defineProperty() 添加的属性值是不可变的。
-语法 Object.defineProperty(obj, prop, descriptor)...</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-edit-line"></i>
-                    <span class="date">2018.07.16</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-hashtag"></i>
-                    
-                    <a href="/tags/javascript/">JavaScript</a>
-                    
-                </div>
-                
-        </div>
-    </div>
-</div>
-
 
 <div class="pagination">
     
     
-    <a href="/page/2/" class="pre">Prev</a>
+    <a href="/page/2/" class="pre">
+        <i class="ri-arrow-left-s-line"></i>
+        Prev
+    </a>
     
     
-    <a href="/page/4/" class="next">Next</a>
+    <a href="/page/4/" class="next">
+        Next
+        <i class="ri-arrow-right-s-line"></i>
+    </a>
     
     
 </div>

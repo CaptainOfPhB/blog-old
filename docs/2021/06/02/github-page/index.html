@@ -8,16 +8,16 @@
 	
 	
 	
-	<title>404 Page not found ♡ 船长の部落格</title>
+	<title>GitHub Pages 如此愚蠢？ ♡ 船长の部落格</title>
 	
     
     
-    <meta name="description" content="船长の部落格" />
+    <meta name="description" content="GitHub Pages" />
     
 
     
     
-    <meta name="keywords" content="CaptainOfPhB, 船长の部落格" />
+    <meta name="keywords" content="GitHub Pages" />
     
 
 	
@@ -94,17 +94,66 @@
         </div>
     </div>
 </div>
-        <div class="content page404">
-            
-            <div class="poetry_container">
-                <div class="poetry_title"></div>
-                <div class="poetry_author"></div>
-                <div class="poetry_content"></div>
-                <div class="poetry_translate">译文</div>
-                <div class="poetry_translate_content"></div>
+        <div class="content">
+            <div class="single_page post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/2021/06/02/github-page/'>GitHub Pages 如此愚蠢？</a></h2>
+                        <div class="date_container">
+                            <i class="ri-file-add-line"></i>
+                            <span class="date">2021.06.02</span>
+                            <i class="ri-file-edit-line"></i>
+                            <span class="date">2021.06.02</span>
+                        </div>
+                    </div>
+                    <div class="post_content markdown">
+                        <p>今天调整了博客的一些样式之后，push 到 GitHub 和 Gitee 没有成功。原因是之前使用的 <code>git subtree</code> 模式，将 <code>master</code> 分支的 <code>public</code> 文件夹内容作为 deploy 分支。想了一下这种模式有些麻烦，而且办公室电脑和自己的电脑总是在 push 时会出问题，因此不打算用 <code>subtree</code> 的方式了。</p>
+<p>看了下 GitHub Pages 提供了分支选项和部署文件夹选项（仅支持 <code>/docs</code> 文件夹），Gitee 也同样支持该功能，因此如果把 Hugo 的 <code>publishDir</code> 改为 <code>docs</code> 的话，这样选择 master 分支，部署 <code>docs</code> 目录，那么应该是可行的。</p>
+<p><img src="https://pic3.zhimg.com/v2-d87504a226b7446762e2bd901e73b29a_b.png" alt="github"></p>
+<p>理论存在，实践开始。我删掉了之前的 <code>public</code> 目录，然后在 <code>config.toml</code> 中把 Hugo 的 <code>publishDir</code> 改为了 <code>docs</code>。一顿操作后等待部署完成，开心的打开了我的博客网址，我 tm 惊呆了，因为显示的不是首页而是仓库的 <code>README.md</code> 文件。</p>
+<p>百思不得其解。按理说，<code>docs</code> 文件夹作为一个网站去部署完全没有问题，因为有 <code>index.html</code> 文件。思前想后，搜了一堆网上同样的提问，最后在一个犄角旮旯处看到了外国一个哥们写的评论：</p>
+<p><img src="https://pic3.zhimg.com/v2-a7d78856ffa0d8c2dd48723b2ae77a22_b.png" alt="comment"></p>
+<p>抱着将信将疑的态度，我在仓库下面新建了一个 <code>.nojekyll</code> 文件然后提交，强刷了几次博客网站后恢复了正常，显示为我的博客首页。</p>
+<p>凸(艹皿艹)</p>
+<p>这算是 GitHub Pages 隐藏的彩蛋吗？Damn it！搜了下 &ldquo;GitHub Pages nojekyll&rdquo; 发现了下面这篇 GitHub blog：</p>
+<p><a href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/">Bypassing Jekyll on GitHub Pages | The GitHub Blog</a></p>
+<p>你可以点击右边的链接访问我的博客：<a href="https://daijiangtao.name">daijiangtao.name</a> 或 <a href="https://daijiangtao.gitee.io">daijiangtao.gitee.io</a>（镜像）。</p>
+<p>完。</p>
+
+                    </div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-hashtag"></i>
+                                    
+                                    <a href="/tags/github/">GitHub</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+
+                        <div class="single_page_divider"></div>
+
+                        <div class="single_page_pagination">
+                            
+                                <a class="single_page_pagination_pre" href="/2021/02/28/build-blog-2/">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                    <span class="prev_title">记折腾博客（二）</span>
+                                    <span class="prev_text">Prev</span>
+                                </a>
+                            
+                            
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
     <footer class="footer">
     <div class="powered_by">
         <a href="http://www.gohugo.io/">Published by Hugo,</a>
@@ -170,32 +219,6 @@
         color: #515151;
     }
 </style>
-
-
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
-    <script type="text/javascript">
-        function q(selector) {
-            return document.querySelector(selector);
-        }
-
-        jinrishici.load(function(result) {
-            var data = result.data;
-            q('.poetry-title').innerHTML = data.origin.title;
-            q('.poetry-author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
-            q('.poetry-content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
-
-            if(data.origin.translate) {
-                var t = q('.poetry-translate');
-                var tc = q('.poetry-translate-content');
-                tc.innerHTML = data.origin.translate;
-                t.style.display = 'block';
-                tc.style.display = 'block';
-            }
-
-            q('.poetry-container').style.display = 'block';
-        });
-    </script>
 
 </body>
 

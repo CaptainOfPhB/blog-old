@@ -32,6 +32,26 @@
                             </div>
                         </div>
                         {{ end }}
+
+                        <div class="single_page_divider"></div>
+
+                        <div class="single_page_pagination">
+                            {{ with .PrevInSection }}
+                                <a class="single_page_pagination_pre" href="{{.Permalink}}">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                    <span class="prev_title">{{.Title}}</span>
+                                    <span class="prev_text">Prev</span>
+                                </a>
+                            {{ end }}
+                            {{ with .NextInSection }}
+                                <a class="single_page_pagination_next" href="{{.Permalink}}">
+                                    <span class="next_title">{{.Title}}</span>
+                                    <span class="next_text">Next</span>
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            {{ end }}
+                        </div>
+
                     </div>
                 </div>
             </div>
