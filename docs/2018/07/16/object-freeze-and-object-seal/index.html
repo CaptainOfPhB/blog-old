@@ -99,7 +99,12 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='/2018/07/16/object-freeze-and-object-seal/'>Object.freeze 和 Object.seal</a></h2>
-                        <span class="date">2018.07.16</span>
+                        <div class="date_container">
+                            <i class="ri-file-add-line"></i>
+                            <span class="date">2018.07.16</span>
+                            <i class="ri-file-edit-line"></i>
+                            <span class="date">2018.07.16</span>
+                        </div>
                     </div>
                     <div class="post_content markdown">
                         <p>Vue 的响应式是使用了 <code>Object.defineProperty</code> 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 <code>Object.freeze</code> 方法将数据“冻”起来。</p>
@@ -155,7 +160,7 @@
 <span class="c1">// 也不可能设置属性
 </span><span class="c1">// 下面两个语句都会抛出 TypeError.
 </span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span> <span class="p">});</span>
-<span class="nx">obj</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span> <span class="p">};</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span> <span class="p">};</span>
 </code></pre></div><h2 id="deep-freeze">Deep freeze</h2>
 <blockquote>
 <p>数据属性的值不可更改，访问器属性（有 getter 和 setter）也同样（但由于是函数调用，给人的错觉是还是可以修改这个属性）。<code>如果一个属性的值是个对象，则这个对象中的属性是可以修改的，除非它也是个冻结对象</code>。</p>
@@ -199,7 +204,7 @@
                         <div class="meta">
                             <div class="info">
                                 <span class="field tags">
-                                    <i class="ri-stack-line"></i>
+                                    <i class="ri-hashtag"></i>
                                     
                                     <a href="/tags/javascript/">JavaScript</a>
                                     

@@ -14,12 +14,12 @@
     <div class="post_footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">{{ .Date.Format "2006.01.02" }}</span>
+                    <i class="ri-edit-line"></i>
+                    <span class="date">{{ .Lastmod.Format "2006.01.02" }}</span>
                 </div>
                 {{ with .Params.tags }}
                 <div class="field tags">
-                    <i class="ri-stack-line"></i>
+                    <i class="ri-hashtag"></i>
                     {{ range . }}
                     <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
                     {{ end }}
