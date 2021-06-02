@@ -632,6 +632,10 @@ u {
   text-align: center;
 }
 
+.markdown .fancybox img {
+  margin-top: 20px;
+}
+
 .markdown img {
   margin-bottom: -5px;
   width: 100%;
