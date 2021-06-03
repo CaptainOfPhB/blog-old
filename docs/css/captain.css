@@ -40,7 +40,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-  color: #333333;
+  color: #424242;
   font-family: JetBrains Mono, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 14px;
   width: 100%;
@@ -69,7 +69,7 @@ a:visited {
 
 a:hover,
 a:active {
-  color: #555555;
+  color: #666;
 }
 
 h1,
@@ -179,11 +179,10 @@ u {
 }
 
 .header .site_title_container .site_title a {
-  font-size: 28px;
   width: 100px;
   letter-spacing: 2px;
   line-height: 1.2;
-  color: #565656;
+  color: #424242;
 }
 
 .header .site_title_container .site_title a span {
@@ -237,34 +236,12 @@ u {
 }
 
 .post .post_title h2 {
-  letter-spacing: 1px;
-  margin: 0 0 6px 0;
+  margin-bottom: 6px;
 }
 
-.post .post_title a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.3rem;
-}
-
-.post .post_title span {
-  color: rgba(0, 0, 0, 0.44);
-  font-size: 14px;
-}
-
-.post .post_title .date_container {
-  display: flex;
-  align-items: center;
-  color: #bbbbbb;
-}
-
-.post .post_title .date_container i {
-  margin-right: 5px;
-}
-
-.post .post_title span.date {
+.post .post_title .date {
+  color: #999;
   font-size: 12px;
-  margin-right: 10px;
 }
 
 .post .post_detail_title h2 {
@@ -314,7 +291,7 @@ u {
   max-width: 100%;
   height: 25px;
   color: #bbbbbb;
-  font-size: 11px;
+  font-size: 12px;
   display: flex;
 }
 
@@ -325,6 +302,8 @@ u {
 
 .post .post_footer .meta i {
   margin-right: 3px;
+  margin-top: -1px;
+  font-size: 13px;
 }
 
 .post .post_footer .meta .tags a {

@@ -8,13 +8,8 @@
             <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
-                        <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
-                        <div class="date_container">
-                            <i class="ri-file-add-line"></i>
-                            <span class="date">{{ .Date.Format "2006.01.02" }}</span>
-                            <i class="ri-file-edit-line"></i>
-                            <span class="date">{{ .Lastmod.Format "2006.01.02" }}</span>
-                        </div>
+                        <h2>{{ .Title }}</h2>
+                        <div class="date">Update&nbsp;on&nbsp;{{ .Lastmod.Format "2006.01.02" }}</div>
                     </div>
                     <div class="post_content markdown">
                         {{ .Content }}
