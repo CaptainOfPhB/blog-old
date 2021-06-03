@@ -298,11 +298,11 @@ u {
 .post .post_footer .meta .field {
   margin-right: 10px;
   display: flex;
+  align-items: center;
 }
 
 .post .post_footer .meta i {
   margin-right: 3px;
-  margin-top: -1px;
   font-size: 13px;
 }
 
