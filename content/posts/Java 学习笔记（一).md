@@ -17,6 +17,6 @@ slug: 'java-note-1'
 6. java v1.8（2014 年）是最广泛使用支持的版本，本课程以 v1.8 为基础进行学习
 7. JEP223 将 java 版本从 1.x 提升至 9 开头，引入了一些 breaking change
 8. LTS：java v1.8、java v11（v9 以及 v10 在任何情况下都绝不推荐使用）
-9. 常用的 JDK（vender）：Open JDK、Oracle JDK、Adopt JDK 等，Oracle JDK（少量闭源） 维护的版本是 Open JDK（完全开源），社区维护的版本是 Adopt JDK（完全开源）。开发 JDK 需满足 JVMS 以及 JLS 规范
+9. 常用的 JDK（vendor）：Open JDK、Oracle JDK、Adopt JDK 等，Oracle JDK（少量闭源） 维护的版本是 Open JDK（完全开源），社区维护的版本是 Adopt JDK（完全开源）。开发 JDK 需满足 JVMS 以及 JLS 规范
 
 完。
