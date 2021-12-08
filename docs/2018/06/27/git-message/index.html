@@ -120,7 +120,7 @@
 <blockquote>
 <p>Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:</p>
 </blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
 &lt;BLANK LINE&gt;
 &lt;body&gt;
 &lt;BLANK LINE&gt;
@@ -195,13 +195,13 @@ The body should include the motivation for the change and contrast this with pre
 <h2 id="command-line-tool">Command Line Tool</h2>
 <h3 id="use-git-commit-template">Use git commit template</h3>
 <p>如果在个人的项目中， 想尝试一下这样的规范格式, 那么你可以为 git 设置 commit template, 每次 git commit 的时候在命令行中提示，修改 <code>~/.gitconfig</code>, 添加:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[commit]
+<pre tabindex="0"><code>[commit]
   template = ~/.gitmessage
-</code></pre></div><p>之后新建 <code>.gitmessage</code> 文件，内容如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># head: &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+</code></pre><p>之后新建 <code>.gitmessage</code> 文件，内容如下：</p>
+<pre tabindex="0"><code># head: &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
 # - type: feat, fix, docs, style, refactor, test, chore
 # - scope: can be empty (eg. if the change is a global or difficult to assign to a single component)
-# - subject: start with verb (such as &#39;change&#39;), 50-character line
+# - subject: start with verb (such as 'change'), 50-character line
 #
 # body: 72-character wrapped. This should answer:
 # * Why was this change necessary?
@@ -212,64 +212,64 @@ The body should include the motivation for the change and contrast this with pre
 # - Include a link to the ticket, if any.
 # - BREAKING CHANGE
 #
-</code></pre></div><h3 id="use-commitizen">Use Commitizen</h3>
+</code></pre><h3 id="use-commitizen">Use Commitizen</h3>
 <p>除此之外，我们可以使用更加便捷的命令行工具：<a href="https://github.com/commitizen/cz-cli">commitizen/cz-cli</a>, 我们需要借助它提供的 <code>git cz</code> 命令替代我们的 <code>git commit</code> 命令, 帮助我们生成符合规范的 commit message。</p>
 <p>除此之外, 我们还需要为 commitizen 指定一个 Adapter 比如: <a href="https://github.com/commitizen/cz-conventional-changelog">cz-conventional-changelog</a>（一个符合 Angular 团队规范的 preset）使得 commitizen 按照我们指定的规范帮助我们生成 commit message。</p>
 <h4 id="global-installation">Global installation</h4>
 <p>全局模式下, 需要 <code>~/.czrc</code> 配置文件, 为 commitizen 指定 Adapter，全局使用时运行 <code>git cz</code> 即可。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm install -g commitizen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -g commitizen
 npm install -g cz-conventional-changelog
 touch ~/.czrc
-<span class="nb">echo</span> <span class="s1">&#39;{ &#34;path&#34;: &#34;cz-conventional-changelog&#34; }&#39;</span> &gt; ~/.czrc
+echo <span style="color:#e6db74">&#39;{ &#34;path&#34;: &#34;cz-conventional-changelog&#34; }&#39;</span> &gt; ~/.czrc
 </code></pre></div><h4 id="local-installation">Local installation</h4>
 <p>本地安装，使用时运行 <code>npm run commit</code> 即可。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm install -g commitizen -D
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -g commitizen -D
 npm install -g cz-conventional-changelog -D
 </code></pre></div><p>在 <code>package.json</code> 中进行配置：</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;script&#34;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&#34;commit&#34;</span><span class="p">:</span> <span class="s2">&#34;git-cz&#34;</span><span class="p">,</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="s2">&#34;config&#34;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&#34;commitizen&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;node_modules/cz-conventional-changelog&#34;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;script&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;commit&#34;</span>: <span style="color:#e6db74">&#34;git-cz&#34;</span>,
+}<span style="color:#960050;background-color:#1e0010">,</span>
+<span style="color:#e6db74">&#34;config&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;commitizen&#34;</span>: {
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;node_modules/cz-conventional-changelog&#34;</span>
+  }
+}
 </code></pre></div><h4 id="custom-adapter">Custom Adapter</h4>
 <p>也许 Angular 的那套规范我们不习惯, 那么可以通过指定 Adapter (<a href="https://github.com/leonardoanalista/cz-customizable">cz-customizable</a>) 编写一套符合自己团队的规范。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># global installation</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># global installation</span>
 npm i -g cz-customizable
-<span class="c1"># loacl installation</span>
+<span style="color:#75715e"># loacl installation</span>
 npm i -D cz-customizable
 </code></pre></div><p>根据安装方式不同在 <code>~</code> 目录下或者项目根目录下创建 <code>.cz-config.js</code> 文件，然后修改 <code>.czrc</code> 以及 <code>package.json</code> 即可：</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">~/.czrc</span>
-<span class="p">{</span> <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;cz-customizable&#34;</span> <span class="p">}</span>
-<span class="err">//</span> <span class="err">package.json</span>
-<span class="s2">&#34;config&#34;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&#34;commitizen&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;node_modules/cz-customizable&#34;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#75715e">// ~/.czrc
+</span><span style="color:#75715e"></span>{ <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;cz-customizable&#34;</span> }
+<span style="color:#75715e">// package.json
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;config&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;commitizen&#34;</span>: {
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;node_modules/cz-customizable&#34;</span>
+  }
+}
 </code></pre></div><p><code>.cz-config.js</code> 文件的修改可以参照 <a href="https://gist.github.com/leohxj/7bc928f60bfa46a3856ddf7c0f91ab98">leohxj/.cz-config.js</a>或<a href="https://github.com/leonardoanalista/cz-customizable#options">官方文档</a>。</p>
 <h3 id="validate-commit-message">Validate Commit Message</h3>
 <p><a href="https://github.com/marionebl/commitlint">commitlint</a> 可以帮助我们校验 commit message, 如果我们提交的不符合规范, 直接拒绝提交。
 同样的, 它也需要一份校验的配置, 这里推荐 <a href="https://github.com/marionebl/commitlint/tree/master/@commitlint/config-conventional">@commitlint/config-conventional</a>（符合 Angular 团队规范）。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @commitlint/config-conventional @commitlint/cli
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -D @commitlint/config-conventional @commitlint/cli
 </code></pre></div><p>同时需要在项目目录下创建配置文件 <code>.commitlintrc.js</code>, 写入:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="kr">extends</span><span class="o">:</span> <span class="p">[</span>
-    <span class="s1">&#39;&#39;</span><span class="err">@</span><span class="nx">commitlint</span><span class="o">/</span><span class="nx">config</span><span class="o">-</span><span class="nx">conventional</span><span class="s1">&#39;&#39;</span>
-  <span class="p">],</span>
-  <span class="nx">rules</span><span class="o">:</span> <span class="p">{</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#39;&#39;</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">commitlint</span><span style="color:#f92672">/</span><span style="color:#a6e22e">config</span><span style="color:#f92672">-</span><span style="color:#a6e22e">conventional</span><span style="color:#e6db74">&#39;&#39;</span>
+  ],
+  <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> {
+  }
+};
 </code></pre></div><h3 id="validate-custom-adapter">Validate Custom Adapter</h3>
 <p>如果你使用的是自定义的 commitizen adapter, 那么你需要:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ npm i -D commitlint-config-cz @commitlint/cli
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D commitlint-config-cz @commitlint/cli
 </code></pre></div><p>同时在 <code>.commitlintrc.js</code> 中写入:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="kr">extends</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cz&#39;</span><span class="p">],</span>
-  <span class="nx">rules</span><span class="o">:</span> <span class="p">{}</span>
-<span class="p">};</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;cz&#39;</span>],
+  <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> {}
+};
 </code></pre></div><blockquote>
 <p>扩展:</p>
 <ol>

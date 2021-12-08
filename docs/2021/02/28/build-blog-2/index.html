@@ -106,7 +106,7 @@
 <p>在所有的东西都配置好之后，运行 <code>hugo</code> 命令即可在 public 目录下构建出网站内容。静态站点需要将 public 目录作为网站的根目录进行部署。我的想法是，一份部署在国外 GitHub 上，一份部署在国内 gitee 上，这样一来除了可以做备份之外，还可以将 gitee 上的站点作为镜像，这样如果主域名访问较慢的情况下，可以切换到速度较快的国内站点进行访问。</p>
 <p>在将博客仓库推到 GitHub 之后，发现 GitHub 貌似没有提供自定义部署文件夹的功能，只有指定的 <code>/root</code> 或者 <code>/doc</code> 两个选择。那么解决方法有两个，要么将打包后的目标文件夹从 public 改为 doc，要么想办法把 public 文件夹作为一个仓库进行部署。</p>
 <p><del>在网上查阅发现，git 可以将指定的文件夹拷贝到另一个新分支，也就是使用 <code>git subtree</code> 命令。因此我打算将 public 的内容作为新分支 deploy 进行部署，使用以下命令：</del></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git subtree push --prefix public origin deploy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git subtree push --prefix public origin deploy
 </code></pre></div><p><del>执行完命令后，本地和远程仓库都有了 deploy 分支，并且分支内容和 public 完全一致。</del></p>
 <blockquote>
 <p>更新：之前使用的 <code>git subtree</code> 方法由于 push 时经常 conflict 因此废弃掉，换做部署 <code>/docs</code> 文件夹的方式，具体操作步骤可以查看这篇<a href="/2021/06/02/github-page/">文章</a>。</p>
@@ -116,33 +116,33 @@
 <p>可以使用 <code>ping github.com</code> 命令来获取 GitHub 的 IP 地址</p>
 </blockquote>
 <p>还有一个问题，如何使本地仓库同步到两个远程仓库呢？在我网上查阅发现，只需要在本地仓库下的 .git/config 下添加第二个远程仓库的 url 即可，我打开 git config 发现内容如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>core<span class="o">]</span>
-    <span class="nv">repositoryformatversion</span> <span class="o">=</span> <span class="m">0</span>
-    <span class="nv">filemode</span> <span class="o">=</span> <span class="nb">true</span>
-    <span class="nv">bare</span> <span class="o">=</span> <span class="nb">false</span>
-    <span class="nv">logallrefupdates</span> <span class="o">=</span> <span class="nb">true</span>
-    <span class="nv">ignorecase</span> <span class="o">=</span> <span class="nb">true</span>
-    <span class="nv">precomposeunicode</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="o">[</span>user<span class="o">]</span>
-    <span class="nv">name</span> <span class="o">=</span> CaptainOfPhB
-    <span class="nv">email</span> <span class="o">=</span> xxxxxxxx@gmail.com
-<span class="o">[</span>remote <span class="s2">&#34;origin&#34;</span><span class="o">]</span>
-    <span class="nv">url</span> <span class="o">=</span> git@github.com:CaptainOfPhB/captainofphb.github.io.git
-    <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
-<span class="o">[</span>branch <span class="s2">&#34;master&#34;</span><span class="o">]</span>
-    <span class="nv">remote</span> <span class="o">=</span> origin
-    <span class="nv">merge</span> <span class="o">=</span> refs/heads/master
-<span class="o">[</span>branch <span class="s2">&#34;deploy&#34;</span><span class="o">]</span>
-    <span class="nv">remote</span> <span class="o">=</span> origin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>core<span style="color:#f92672">]</span>
+    repositoryformatversion <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    filemode <span style="color:#f92672">=</span> true
+    bare <span style="color:#f92672">=</span> false
+    logallrefupdates <span style="color:#f92672">=</span> true
+    ignorecase <span style="color:#f92672">=</span> true
+    precomposeunicode <span style="color:#f92672">=</span> true
+<span style="color:#f92672">[</span>user<span style="color:#f92672">]</span>
+    name <span style="color:#f92672">=</span> CaptainOfPhB
+    email <span style="color:#f92672">=</span> xxxxxxxx@gmail.com
+<span style="color:#f92672">[</span>remote <span style="color:#e6db74">&#34;origin&#34;</span><span style="color:#f92672">]</span>
+    url <span style="color:#f92672">=</span> git@github.com:CaptainOfPhB/captainofphb.github.io.git
+    fetch <span style="color:#f92672">=</span> +refs/heads/*:refs/remotes/origin/*
+<span style="color:#f92672">[</span>branch <span style="color:#e6db74">&#34;master&#34;</span><span style="color:#f92672">]</span>
+    remote <span style="color:#f92672">=</span> origin
+    merge <span style="color:#f92672">=</span> refs/heads/master
+<span style="color:#f92672">[</span>branch <span style="color:#e6db74">&#34;deploy&#34;</span><span style="color:#f92672">]</span>
+    remote <span style="color:#f92672">=</span> origin
 </code></pre></div><p>那么只需要在 <code>remote.origin.url</code> 下面再添加一条远程仓库的 url 即可，这样就可以把本地仓库同步到两个远程仓库：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>remote <span class="s2">&#34;origin&#34;</span><span class="o">]</span>
-  <span class="nv">url</span> <span class="o">=</span> git@github.com:CaptainOfPhB/captainofphb.github.io.git
-  <span class="nv">url</span> <span class="o">=</span> git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git
-  <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>remote <span style="color:#e6db74">&#34;origin&#34;</span><span style="color:#f92672">]</span>
+  url <span style="color:#f92672">=</span> git@github.com:CaptainOfPhB/captainofphb.github.io.git
+  url <span style="color:#f92672">=</span> git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git
+  fetch <span style="color:#f92672">=</span> +refs/heads/*:refs/remotes/origin/*
 </code></pre></div><p>添加完之后，使用 <code>git remote -v</code> 进行查看，打印出：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>fetch<span class="o">)</span>
-origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span class="o">(</span>push<span class="o">)</span>
-origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git <span class="o">(</span>push<span class="o">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span style="color:#f92672">(</span>fetch<span style="color:#f92672">)</span>
+origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git <span style="color:#f92672">(</span>push<span style="color:#f92672">)</span>
+origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git <span style="color:#f92672">(</span>push<span style="color:#f92672">)</span>
 </code></pre></div><p>这表示第一个 url 地址 git 用来做 fetch 或 pull，第二第三用来做 push 同步。</p>
 <p>然后运行 <code>git push</code> 之后，发现仓库会同步到 gitee 了。然后在 gitee page 上进行配置，选择 <del>deploy 分支直接</del> <code>docs</code> 子目录进行部署即可，与 GitHub 类似。</p>
 <p>你可以点击 <a href="https://daijiangtao.name">daijiangtao.name</a> 或 <a href="https://daijiangtao.gitee.io">daijiangtao.gitee.io</a> 访问我的博客。</p>

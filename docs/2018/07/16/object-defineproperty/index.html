@@ -133,115 +133,115 @@
 如果一个描述符同时有(value 或 writable)和(get 或 set)关键字，将会产生一个异常（数据描述符和存取描述符不能同时存在）。</p>
 <h3 id="configurable">configurable</h3>
 <p><code>configurable</code> 特性指明对象的属性是否可以被删除，以及除 writable 特性外的其他特性是否可以被修改。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">configurable</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">get</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="p">},</span>
-<span class="p">});</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {
+  <span style="color:#a6e22e">configurable</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+  <span style="color:#a6e22e">get</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+  },
+});
 
-<span class="c1">// 以下几条语句全部抛出错误，因为除了 writable 之外的其他属性都是不可修改的
-</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">set</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){}});</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">get</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="mi">1</span><span class="p">;}});</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">value</span> <span class="o">:</span> <span class="mi">12</span><span class="p">});</span>
+<span style="color:#75715e">// 以下几条语句全部抛出错误，因为除了 writable 之外的其他属性都是不可修改的
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {<span style="color:#a6e22e">configurable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>});
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {<span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>});
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {<span style="color:#a6e22e">set</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){}});
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {<span style="color:#a6e22e">get</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;}});
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {<span style="color:#a6e22e">value</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>});
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1
-</span><span class="c1"></span><span class="k">delete</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// Nothing happens
-</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span>; <span style="color:#75715e">// Nothing happens
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 1
 </span></code></pre></div><p>如果 <code>configurable</code> 为 <code>true</code>，那么在删除某个属性的时候，该属性下的 <code>configurable</code> 是最后被删除的。</p>
 <h3 id="enumerable">enumerable</h3>
 <p><code>enumerable</code> 定义了对象的属性是否可以在 <code>for...in</code> 循环和 <code>Object.keys()</code> 中被枚举。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">enumerable</span><span class="o">:</span><span class="kc">true</span> <span class="p">});</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">enumerable</span><span class="o">:</span><span class="kc">false</span> <span class="p">});</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;c&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">3</span> <span class="p">});</span> <span class="c1">// enumerable 配置默认为 false
-</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">d</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// 使用直接赋值的方式创建对象的属性，则这个属性的 enumerable 为 true
-</span><span class="c1"></span>
-<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 打印 &#39;a&#39; 和 &#39;d&#39;
-</span><span class="c1"></span><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, { <span style="color:#a6e22e">value</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span> });
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;b&#34;</span>, { <span style="color:#a6e22e">value</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span><span style="color:#66d9ef">false</span> });
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;c&#34;</span>, { <span style="color:#a6e22e">value</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> }); <span style="color:#75715e">// enumerable 配置默认为 false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">// 使用直接赋值的方式创建对象的属性，则这个属性的 enumerable 为 true
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">// 打印 &#39;a&#39; 和 &#39;d&#39;
+</span><span style="color:#75715e"></span>}
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// [&#34;a&#34;, &#34;d&#34;]
-</span><span class="c1"></span>
-<span class="nx">obj</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span> <span class="c1">// true
-</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span> <span class="c1">// false
-</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">);</span> <span class="c1">// false
+Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">// [&#34;a&#34;, &#34;d&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">propertyIsEnumerable</span>(<span style="color:#e6db74">&#39;a&#39;</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">propertyIsEnumerable</span>(<span style="color:#e6db74">&#39;b&#39;</span>); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">propertyIsEnumerable</span>(<span style="color:#e6db74">&#39;c&#39;</span>); <span style="color:#75715e">// false
 </span></code></pre></div><h3 id="writable">writable</h3>
 <p>当 <code>writable</code> 属性设置为 <code>false</code> 时，该属性不可写，它不能被重新赋值。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="mi">37</span><span class="p">,</span>
-  <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-<span class="p">});</span>
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#39;a&#39;</span>, {
+  <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">37</span>,
+  <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+});
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 37
-</span><span class="c1">// 严格模式下会抛出错误，即使是赋的值与之前相等，如 obj.a = 37
-</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
-<span class="c1">// the assignment didn&#39;t work
-</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 37
-</span><span class="c1"></span>
-<span class="c1">// strict mode
-</span><span class="c1"></span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 37
+</span><span style="color:#75715e">// 严格模式下会抛出错误，即使是赋的值与之前相等，如 obj.a = 37
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>;
+<span style="color:#75715e">// the assignment didn&#39;t work
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 37
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// strict mode
+</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">function</span>() {
+  <span style="color:#e6db74">&#39;use strict&#39;</span>;
 
-  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
-  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="p">});</span>
-  <span class="nx">obj</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// throws TypeError: &#34;b&#34; is read-only
-</span><span class="c1"></span>  <span class="k">return</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">b</span><span class="p">;</span> <span class="c1">// returns 2
-</span><span class="c1"></span><span class="p">}());</span>
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+  Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#39;b&#39;</span>, {
+    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+    <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+  });
+  <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// throws TypeError: &#34;b&#34; is read-only
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">b</span>; <span style="color:#75715e">// returns 2
+</span><span style="color:#75715e"></span>}());
 </code></pre></div><h3 id="get">get</h3>
 <p><code>get</code> 表示如何获取属性的值。配置了该选项后，属性的值不能通过外界的赋值操作来更改，属性的值是通过 <code>get</code> 来获取的。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">get</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s1">&#39;value of a&#39;</span>
-  <span class="p">}</span>
-<span class="p">})</span>
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#39;a&#39;</span>, {
+  <span style="color:#a6e22e">get</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;value of a&#39;</span>
+  }
+})
 
-<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// &#39;value of a&#39;
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// &#39;value of a&#39;
 </span></code></pre></div><h3 id="set">set</h3>
 <p><code>set</code> 表示对该属性进行赋值操作时的回调。配置了该选项后，对属性进行赋值，将会调用该属性配置下的 <code>set</code> 方法。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">set</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;set() has beend called&#39;</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">})</span>
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#39;a&#39;</span>, {
+  <span style="color:#a6e22e">set</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;set() has beend called&#39;</span>)
+  }
+})
 
-<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// log &#39;set() has beend called&#39;, and obj.a is undefined
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>; <span style="color:#75715e">// log &#39;set() has beend called&#39;, and obj.a is undefined
 </span></code></pre></div><h2 id="默认行为">默认行为</h2>
 <p>使用 <code>.</code> 运算符和 <code>Object.defineProperty()</code> 为对象的属性赋值时，数据描述符中的属性默认值是不同的，如下例所示:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
 
-<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="c1">// 等同于:
-</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nx">writable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">});</span>
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#75715e">// 等同于:
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {
+  <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+  <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  <span style="color:#a6e22e">configurable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+});
 
 
-<span class="c1">// 另一方面，
-</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span> <span class="o">:</span> <span class="mi">1</span> <span class="p">});</span>
-<span class="c1">// 等同于:
-</span><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">configurable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">false</span>
-<span class="p">});</span>
+<span style="color:#75715e">// 另一方面，
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, { <span style="color:#a6e22e">value</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> });
+<span style="color:#75715e">// 等同于:
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#34;a&#34;</span>, {
+  <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+  <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+  <span style="color:#a6e22e">configurable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+  <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+});
 </code></pre></div><p><code>Object.defineProperty</code> 是 Vue 实现数据响应式的核心，还需要结合的是 <code>watcher</code>，有待研究。</p>
 <blockquote>
 <p>Reference: <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty | MDN</a></p>

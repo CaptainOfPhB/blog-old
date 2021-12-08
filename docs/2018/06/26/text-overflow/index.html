@@ -117,16 +117,16 @@ The overflow happens in the direction as determined by the direction property or
 </blockquote>
 <p><code>text-oveflow</code> 仅仅能应用在<code>block</code> 或 <code>inline-block</code> 元素上，因为元素（容器）需要一个宽来隐藏文字，溢出发生在由方向属性或者与相关属性确定的方向上。</p>
 <h2 id="demo">Demo</h2>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;ellipsis&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ellipsis&#34;</span>&gt;
   请尽可能保持 props 函数为无状态的，因为它只会在路由发生变化时起作用。 如果你需要状态来定义
   props，请使用包装组件，这样 Vue 才可以对状态变化做出反应。
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">ellipsis</span> <span class="p">{</span>
-  <span class="k">text-overflow</span><span class="p">:</span> <span class="kc">ellipsis</span><span class="p">;</span>
-  <span class="c">/* Required for text-overflow */</span>
-  <span class="k">white-space</span><span class="p">:</span> <span class="kc">nowrap</span><span class="p">;</span>
-  <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
-<span class="p">}</span>
+&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#ellipsis {
+  <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
+  <span style="color:#75715e">/* Required for text-overflow */</span>
+  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+}
 </code></pre></div><p>文本溢出效果展示：</p>
 <p><img src="https://i.loli.net/2018/06/26/5b31d938ddeef.png" alt="text-overflow"></p>
 <blockquote>

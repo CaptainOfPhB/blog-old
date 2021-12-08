@@ -107,19 +107,19 @@
 <li>定义数组有两种方式：&lt;type&gt;[] 或者使用泛型 Array&lt;type&gt;</li>
 <li>元组类型表示已知数量和类型的数组，例如：let x = [number, string]。当访问越界元素时，会使用联合类型替代，例如：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="kt">number</span><span class="p">];</span>
-<span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">];</span> <span class="c1">// ok
-</span><span class="c1"></span><span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">];</span> <span class="c1">// error
-</span><span class="c1">// 越界元素将是 (number | string) 类型
-</span><span class="c1"></span><span class="nx">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">number</span>];
+<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;hello&#39;</span>, <span style="color:#ae81ff">123</span>]; <span style="color:#75715e">// ok
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">123</span>, <span style="color:#e6db74">&#39;hello&#39;</span>]; <span style="color:#75715e">// error
+</span><span style="color:#75715e">// 越界元素将是 (number | string) 类型
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">x</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;world&#39;</span>;
 </code></pre></div><ul>
 <li>枚举 enum 默认情况下，从 0 开始为元素编号，也可手动指定成员的值。也可以根据枚举的值得到 key 的名字，例如：enum Color = { Red, Green }，则 Color[1] 的值为 Green</li>
 <li>void 表示没有任何类型，只能给 void 类型数据赋值 null 或者 undefined</li>
 <li>null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 stricNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined</li>
 <li>类型断言好比类型转换，当你比 ts 更了解某个值更确切的类型时。类型断言有两种，使用尖括号或者使用 as 语法，在 tsx 中只能使用 as。例如：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kd">let</span> <span class="nx">someValue</span>: <span class="kt">any</span> <span class="o">=</span> <span class="s1">&#39;this is a string&#39;</span>
-<span class="kd">let</span> <span class="nx">strLength</span>: <span class="kt">number</span> <span class="o">=</span> <span class="p">(</span><span class="nx">someValue</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">).</span><span class="nx">length</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someValue</span>: <span style="color:#66d9ef">any</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;this is a string&#39;</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strLength</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">someValue</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">string</span>).<span style="color:#a6e22e">length</span>
 </code></pre></div><p>完。</p>
 
                     </div>
