@@ -2,12 +2,6 @@
 
 /* 自定义楷体字，为了兼容所有平台 */
 @font-face {
-  font-family: 'KT';
-  font-display: fallback;
-  src: local('STKaiti'), local('KaiTi'), url('../font/FZKaiTi.ttf');
-}
-
-@font-face {
   font-family: 'JetBrains Mono';
   font-display: fallback;
   src: local('JetBrains Mono'), url('../font/JetBrainsMono.ttf');
@@ -193,7 +187,7 @@ ol {
 .header .site_title_container .site_title a span {
   display: block;
   font-size: 40px;
-  font-family: 'KT', sans-serif;
+  font-family: serif;
 }
 
 .header .site_title_container .site_title a:hover {
@@ -702,29 +696,30 @@ a.back_to_top:hover span {
 .poetry_translate {
   margin: 40px auto;
   text-align: center;
-  font-size: 25px;
-  font-family: 'KT', serif;
+  font-size: 30px;
+  font-family: serif;
 }
 
 .poetry_author {
   padding: 0 30%;
   margin: 30px auto;
   text-align: right;
-  font-family: 'KT', serif;
+  font-family: serif;
+  font-size: 16px;
 }
 
 .poetry_content {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
-  font-family: 'KT', serif;
+  font-family: serif;
 }
 
 .poetry_translate_content {
-  font-size: 16px;
+  font-size: 20px;
   text-indent: 2em;
   text-align: left;
   line-height: 1.7;
-  font-family: 'KT', serif;
+  font-family: serif;
 }
 
 .single_page_divider {
