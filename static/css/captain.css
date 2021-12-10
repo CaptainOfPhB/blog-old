@@ -187,7 +187,8 @@ ol {
 .header .site_title_container .site_title a span {
   display: block;
   font-size: 40px;
-  font-family: serif;
+  font-weight: 200;
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 .header .site_title_container .site_title a:hover {
@@ -402,8 +403,9 @@ ol {
   padding-top: 25px;
   padding-bottom: 10px;
   color: #000000;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 /*for archive*/
@@ -697,7 +699,7 @@ a.back_to_top:hover span {
   margin: 40px auto;
   text-align: center;
   font-size: 30px;
-  font-family: serif;
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 .poetry_author {
@@ -711,7 +713,7 @@ a.back_to_top:hover span {
 .poetry_content {
   font-size: 20px;
   text-align: center;
-  font-family: serif;
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 .poetry_translate_content {
@@ -719,7 +721,7 @@ a.back_to_top:hover span {
   text-indent: 2em;
   text-align: left;
   line-height: 1.7;
-  font-family: serif;
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 .single_page_divider {
