@@ -103,7 +103,7 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2>React 学习笔记（一）</h2>
-                        <div class="date">Updated&nbsp;on&nbsp;2019.04.16</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.24</div>
                     </div>
                     <div class="post_content markdown">
                         <ol>
@@ -128,8 +128,11 @@
 </code></pre></div><ol start="3">
 <li>在这两种情况下，React 的事件对象 e 会被作为第二个参数传递。如果通过箭头函数的方式，事件对象必须显式的进行传递，而通过 bind 的方式，事件对象以及更多的参数将会被隐式的进行传递</li>
 <li>组件中 render 返回 null 则组件不会进行渲染，但是生命周期仍然会进行调用</li>
-<li>map 生成元素集合的时候必须添加 key，key 在兄弟节点之间必须唯一，key 不会作为 props 传入到子组件内。<a href="https://github.com/dylang/shortid">shortId.js</a>、<a href="https://gist.github.com/gordonbrander/2230317">ID.js</a></li>
-<li>受控组件 v.s. 非受控组件 <a href="https://jaredpalmer.com/formik/">Formik.js</a></li>
+<li>map 生成元素集合的时候必须添加 key，key 在兄弟节点之间必须唯一，key 不会作为 props 传入到子组件内。<a href="https://github.com/dylang/shortid" target="_blank">shortId.js</a>
+、<a href="https://gist.github.com/gordonbrander/2230317" target="_blank">ID.js</a>
+</li>
+<li>受控组件 v.s. 非受控组件 <a href="https://jaredpalmer.com/formik/" target="_blank">Formik.js</a>
+</li>
 <li>Fragment &amp; &lt;&gt;&lt;/&gt;、使用 ref 使元素聚焦 this.ref = React.createRef、ref.current.focus()</li>
 <li>组件的动态导入 React.lazy(() =&gt; import('./component'))、React.Suspense fallback、使用 lazy 动态导入的组件必须使用 Suspense 包裹，使得能有一个回退的 UI</li>
 <li>ErrorBoundary 用来处理一些错误边界，常与 Suspense 配合使用，当 Suspense 出现异常时，友好的提示用户，提升体验，内部使用 componentDidCatch 以及 static getDerivedStateFromError 来进行错误处理</li>

@@ -103,16 +103,22 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2>优雅的 Git 提交信息</h2>
-                        <div class="date">Updated&nbsp;on&nbsp;2018.06.27</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.28</div>
                     </div>
                     <div class="post_content markdown">
                         <p>Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？</p>
 <blockquote>
 <p>这种东西，当然要借助工具了，才能够写得即规范，又格式化，还能够支持后续分析。
-目前比较建议的是，使用终端工具 <a href="https://github.com/commitizen/cz-cli">commitizen/cz-cli</a> + <a href="https://github.com/commitizen/cz-conventional-changelog">commitizen/cz-conventional-changelog</a> + <a href="https://github.com/conventional-changelog/standard-version">conventional-changelog/standard-version</a> 一步解决提交信息和版本发布。甚至，如果想更狠一点，在持续集成里面加入 <a href="https://github.com/marionebl/commitlint">marionebl/commitlint</a> 检查 commit 信息是否符合规范，也不是不可以。</p>
+目前比较建议的是，使用终端工具 <a href="https://github.com/commitizen/cz-cli" target="_blank">commitizen/cz-cli</a>
+ + <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank">commitizen/cz-conventional-changelog</a>
+ + <a href="https://github.com/conventional-changelog/standard-version" target="_blank">conventional-changelog/standard-version</a>
+ 一步解决提交信息和版本发布。甚至，如果想更狠一点，在持续集成里面加入 <a href="https://github.com/marionebl/commitlint" target="_blank">marionebl/commitlint</a>
+ 检查 commit 信息是否符合规范，也不是不可以。</p>
 </blockquote>
 <h2 id="commit-message-format">Commit Message Format</h2>
-<p>目前规范使用较多的是 Angular 团队的规范，继而衍生了 <a href="https://conventionalcommits.org/">Conventional Commits specification</a>。很多工具也是基于此规范, 下文摘自 <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular 开发者文档</a>。</p>
+<p>目前规范使用较多的是 Angular 团队的规范，继而衍生了 <a href="https://conventionalcommits.org/" target="_blank">Conventional Commits specification</a>
+。很多工具也是基于此规范, 下文摘自 <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines" target="_blank">Angular 开发者文档</a>
+。</p>
 <blockquote>
 <p>We have very precise rules over how our git commit messages can be formatted. This leads to more readable messages that are easy to follow when looking through the project history. But also, we use the git commit messages to generate the AngularJS change log.</p>
 </blockquote>
@@ -195,7 +201,8 @@ The body should include the motivation for the change and contrast this with pre
 </blockquote>
 <p>footer 部分应该包含重大的改动的信息，同时也可以表明这次的 commit 解决了 GitHub 上的什么问题（引用 issues 的链接）。重大的改动应该以 <code>BREAKING CHANGE:</code> 开头，
 同时前面留一行或者两行，其他的 commit message 将会用到这些留行。</p>
-<p>更加详细的解释可以参考 <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#">AngularJS Git Commit Message Conventions</a>。</p>
+<p>更加详细的解释可以参考 <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#" target="_blank">AngularJS Git Commit Message Conventions</a>
+。</p>
 <h2 id="command-line-tool">Command Line Tool</h2>
 <h3 id="use-git-commit-template">Use git commit template</h3>
 <p>如果在个人的项目中， 想尝试一下这样的规范格式, 那么你可以为 git 设置 commit template, 每次 git commit 的时候在命令行中提示，修改 <code>~/.gitconfig</code>, 添加:</p>
@@ -217,8 +224,10 @@ The body should include the motivation for the change and contrast this with pre
 # - BREAKING CHANGE
 #
 </code></pre><h3 id="use-commitizen">Use Commitizen</h3>
-<p>除此之外，我们可以使用更加便捷的命令行工具：<a href="https://github.com/commitizen/cz-cli">commitizen/cz-cli</a>, 我们需要借助它提供的 <code>git cz</code> 命令替代我们的 <code>git commit</code> 命令, 帮助我们生成符合规范的 commit message。</p>
-<p>除此之外, 我们还需要为 commitizen 指定一个 Adapter 比如: <a href="https://github.com/commitizen/cz-conventional-changelog">cz-conventional-changelog</a>（一个符合 Angular 团队规范的 preset）使得 commitizen 按照我们指定的规范帮助我们生成 commit message。</p>
+<p>除此之外，我们可以使用更加便捷的命令行工具：<a href="https://github.com/commitizen/cz-cli" target="_blank">commitizen/cz-cli</a>
+, 我们需要借助它提供的 <code>git cz</code> 命令替代我们的 <code>git commit</code> 命令, 帮助我们生成符合规范的 commit message。</p>
+<p>除此之外, 我们还需要为 commitizen 指定一个 Adapter 比如: <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank">cz-conventional-changelog</a>
+（一个符合 Angular 团队规范的 preset）使得 commitizen 按照我们指定的规范帮助我们生成 commit message。</p>
 <h4 id="global-installation">Global installation</h4>
 <p>全局模式下, 需要 <code>~/.czrc</code> 配置文件, 为 commitizen 指定 Adapter，全局使用时运行 <code>git cz</code> 即可。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -g commitizen
@@ -239,7 +248,8 @@ npm install -g cz-conventional-changelog -D
   }
 }
 </code></pre></div><h4 id="custom-adapter">Custom Adapter</h4>
-<p>也许 Angular 的那套规范我们不习惯, 那么可以通过指定 Adapter (<a href="https://github.com/leonardoanalista/cz-customizable">cz-customizable</a>) 编写一套符合自己团队的规范。</p>
+<p>也许 Angular 的那套规范我们不习惯, 那么可以通过指定 Adapter (<a href="https://github.com/leonardoanalista/cz-customizable" target="_blank">cz-customizable</a>
+) 编写一套符合自己团队的规范。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># global installation</span>
 npm i -g cz-customizable
 <span style="color:#75715e"># loacl installation</span>
@@ -253,10 +263,14 @@ npm i -D cz-customizable
     <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;node_modules/cz-customizable&#34;</span>
   }
 }
-</code></pre></div><p><code>.cz-config.js</code> 文件的修改可以参照 <a href="https://gist.github.com/leohxj/7bc928f60bfa46a3856ddf7c0f91ab98">leohxj/.cz-config.js</a>或<a href="https://github.com/leonardoanalista/cz-customizable#options">官方文档</a>。</p>
+</code></pre></div><p><code>.cz-config.js</code> 文件的修改可以参照 <a href="https://gist.github.com/leohxj/7bc928f60bfa46a3856ddf7c0f91ab98" target="_blank">leohxj/.cz-config.js</a>
+或<a href="https://github.com/leonardoanalista/cz-customizable#options" target="_blank">官方文档</a>
+。</p>
 <h3 id="validate-commit-message">Validate Commit Message</h3>
-<p><a href="https://github.com/marionebl/commitlint">commitlint</a> 可以帮助我们校验 commit message, 如果我们提交的不符合规范, 直接拒绝提交。
-同样的, 它也需要一份校验的配置, 这里推荐 <a href="https://github.com/marionebl/commitlint/tree/master/@commitlint/config-conventional">@commitlint/config-conventional</a>（符合 Angular 团队规范）。</p>
+<p><a href="https://github.com/marionebl/commitlint" target="_blank">commitlint</a>
+ 可以帮助我们校验 commit message, 如果我们提交的不符合规范, 直接拒绝提交。
+同样的, 它也需要一份校验的配置, 这里推荐 <a href="https://github.com/marionebl/commitlint/tree/master/@commitlint/config-conventional" target="_blank">@commitlint/config-conventional</a>
+（符合 Angular 团队规范）。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -D @commitlint/config-conventional @commitlint/cli
 </code></pre></div><p>同时需要在项目目录下创建配置文件 <code>.commitlintrc.js</code>, 写入:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
@@ -277,12 +291,15 @@ npm i -D cz-customizable
 </code></pre></div><blockquote>
 <p>扩展:</p>
 <ol>
-<li>结合 <a href="https://github.com/typicode/husky">Husky</a> 校验 commit message</li>
-<li>利用符合语义化的 commit message 生成 CHANGELOG，借助 <a href="https://github.com/conventional-changelog/standard-version">standard-version</a></li>
+<li>结合 <a href="https://github.com/typicode/husky" target="_blank">Husky</a>
+ 校验 commit message</li>
+<li>利用符合语义化的 commit message 生成 CHANGELOG，借助 <a href="https://github.com/conventional-changelog/standard-version" target="_blank">standard-version</a>
+</li>
 </ol>
 </blockquote>
 <blockquote>
-<p>参考：<a href="https://zhuanlan.zhihu.com/p/34223150">优雅的提交你的 commit message</a></p>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/34223150" target="_blank">优雅的提交你的 commit message</a>
+</p>
 </blockquote>
 <p>完。</p>
 

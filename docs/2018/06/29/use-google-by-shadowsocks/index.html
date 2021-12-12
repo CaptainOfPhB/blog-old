@@ -103,7 +103,7 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2>如何使用 Shadowsocks 获取谷歌服务</h2>
-                        <div class="date">Updated&nbsp;on&nbsp;2018.06.29</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.28</div>
                     </div>
                     <div class="post_content markdown">
                         <p>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。</p>
@@ -114,7 +114,12 @@
 <h2 id="在-vps-上安装">在 VPS 上安装</h2>
 <p>我们通过在 VPS 上安装 shadowsocks，指定监听某个端口的访问（例如 port 1234），当有访问进来的时候，shadowsocks 进行转发，然后将资源返回给我们。</p>
 <blockquote>
-<p>虚拟服务器供应商有好多，可自行上网搜索，推荐 <a href="https://www.vultr.com/">Vultr</a>、<a href="https://bandwagonhost.com/">BandwagonHOST</a>。如何在 VPS 上安装 shadowsocks 可参考<a href="https://zoomyale.com/2016/vultr_and_ss/">这篇文章</a>（<a href="https://shorturl.at/dhvKT">备用地址</a>，需翻墙），推荐搭配 <a href="https://www.docker.com/">docker</a> 使用。</p>
+<p>虚拟服务器供应商有好多，可自行上网搜索，推荐 <a href="https://www.vultr.com/" target="_blank">Vultr</a>
+、<a href="https://bandwagonhost.com/" target="_blank">BandwagonHOST</a>
+。如何在 VPS 上安装 shadowsocks 可参考<a href="https://zoomyale.com/2016/vultr_and_ss/" target="_blank">这篇文章</a>
+（<a href="https://shorturl.at/dhvKT" target="_blank">备用地址</a>
+，需翻墙），推荐搭配 <a href="https://www.docker.com/" target="_blank">docker</a>
+ 使用。</p>
 </blockquote>
 <h2 id="本地安装">本地安装</h2>
 <p>主要介绍下 Windows、Linux 系统或者 Mac(Unix) 下本地 shadowsocks 的安装使用。</p>
@@ -131,7 +136,9 @@
 <p><img src="https://i.loli.net/2017/11/04/59fd9e1b2cc3d.png" alt="Windows config"></p>
 <p>设置完成后，在任务栏小飞机右键选择<code>启用系统代理</code>即可。</p>
 <blockquote>
-<p>Shadowsocks v4.0.6 下载地址：<a href="http://pan.baidu.com/s/1i5f8sa5">百度云盘</a>（密码 <code>7zns</code>）或 <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.6/Shadowsocks-4.0.6.zip">Github</a></p>
+<p>Shadowsocks v4.0.6 下载地址：<a href="http://pan.baidu.com/s/1i5f8sa5" target="_blank">百度云盘</a>
+（密码 <code>7zns</code>）或 <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.6/Shadowsocks-4.0.6.zip" target="_blank">Github</a>
+</p>
 </blockquote>
 <h3 id="linux">Linux</h3>
 <p>该系统下推荐使用命令行版本，打开终端，键入以下命令：</p>
@@ -151,9 +158,11 @@ echo <span style="color:#e6db74">&#39;\nalias runss=&#34;sudo sslocal -c /etc/sh
 source ~/.zshrc
 </code></pre></div><p><code>runss</code> 即为命令快捷键，可自行设置，执行 <code>runss</code> 即可后台开启代理服务。</p>
 <h3 id="mac">Mac</h3>
-<p>下载 <a href="https://jaist.dl.sourceforge.net/project/shadowsocksgui/dist/ShadowsocksX-2.6.3.dmg">ShadowsocksX-2.6.3.dmg</a>，安装完成后进行配置，可参考上文的 Windows、Linux 系统下的方法进行。</p>
+<p>下载 <a href="https://jaist.dl.sourceforge.net/project/shadowsocksgui/dist/ShadowsocksX-2.6.3.dmg" target="_blank">ShadowsocksX-2.6.3.dmg</a>
+，安装完成后进行配置，可参考上文的 Windows、Linux 系统下的方法进行。</p>
 <h2 id="代理管理设置">代理管理设置</h2>
-<p><a href="https://www.switchyomega.com/">SwitchyOmega</a> 是 Chrome &amp; Firefox 浏览器上的一个代理扩展程序，可以轻松快捷地管理和切换多个代理设置。以 Chrome 为例，下载完成后，在 Chrome 地址栏键入 <code>chrome://extensions</code> 进入扩展管理面板，将对应文件拖入进行安装。</p>
+<p><a href="https://www.switchyomega.com/" target="_blank">SwitchyOmega</a>
+ 是 Chrome &amp; Firefox 浏览器上的一个代理扩展程序，可以轻松快捷地管理和切换多个代理设置。以 Chrome 为例，下载完成后，在 Chrome 地址栏键入 <code>chrome://extensions</code> 进入扩展管理面板，将对应文件拖入进行安装。</p>
 <p>安装完成后，需要对插件进行配置，可参考该配置截图：</p>
 <p><img src="https://i.loli.net/2017/11/04/59fdcd8c2cd99.png" alt="SwitchyOmega config"></p>
 <p>配置完成后选择代理方式为 <code>auto switch</code> 即可，这样访问国内的网站时就不会通过代理去访问。</p>
