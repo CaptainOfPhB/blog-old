@@ -148,8 +148,7 @@
 })
 </code></pre></div><p>两种方式的最终结果是一样的，不同之处在于<code>计算属性是基于它的依赖进行更新的</code>，如果计算属性的依赖没有更新，那么计算属性就不会更新，从缓存中取值。而使用 <code>methods</code> 时<code>每次都要重新进行计算</code>，那么当你需要进行一个计算量比较大的操作的时候，使用 <code>methods</code> 将会增加性能开销。</p>
 <h3 id="computed-vs-watch">computed VS watch</h3>
-<p>侦听属性 <code>watch</code> 用来观察和响应数据的变动。当你有一些数据需要<code>随着其它数据变动而变动时</code>，你应该使用<code>计算属性</code>而不是命令式的 <code>watch</code> 回调，可参照<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-vs-%E4%BE%A6%E5%90%AC%E5%B1%9E%E6%80%A7" target="_blank">官网例子</a>
-。Vue 通过 <code>watch</code> 选项提供了一个更通用的方法，来响应数据的变化。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。除了 <code>watch</code> 之外，还可以使用别名 <code>this.$watch</code>。</p>
+<p>侦听属性 <code>watch</code> 用来观察和响应数据的变动。当你有一些数据需要<code>随着其它数据变动而变动时</code>，你应该使用<code>计算属性</code>而不是命令式的 <code>watch</code> 回调，可参照<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-vs-%E4%BE%A6%E5%90%AC%E5%B1%9E%E6%80%A7" target="_blank">官网例子</a>。Vue 通过 <code>watch</code> 选项提供了一个更通用的方法，来响应数据的变化。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。除了 <code>watch</code> 之外，还可以使用别名 <code>this.$watch</code>。</p>
 <h3 id="computed-setter">computed setter</h3>
 <p>我们在给计算属性提供 getter 的同时，也可以同时提供一个 setter：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
