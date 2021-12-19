@@ -1,12 +1,5 @@
 @charset "UTF-8";
 
-/* 自定义楷体字，为了兼容所有平台 */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-display: fallback;
-  src: local('JetBrains Mono'), url('../font/JetBrainsMono.ttf');
-}
-
 /*basic styles starts*/
 *::-webkit-scrollbar {
   display: none;
