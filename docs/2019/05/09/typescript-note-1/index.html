@@ -24,11 +24,6 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
     
@@ -42,7 +37,13 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Bold.css" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
 	  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/base16/github.css">
@@ -133,7 +134,7 @@
 </code></pre></div><ul>
 <li>枚举 enum 默认情况下，从 0 开始为元素编号，也可手动指定成员的值。也可以根据枚举的值得到 key 的名字，例如：enum Color = { Red, Green }，则 Color[1] 的值为 Green</li>
 <li>void 表示没有任何类型，只能给 void 类型数据赋值 null 或者 undefined</li>
-<li>null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 stricNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined</li>
+<li>null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 strictNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined</li>
 <li>类型断言好比类型转换，当你比 ts 更了解某个值更确切的类型时。类型断言有两种，使用尖括号或者使用 as 语法，在 tsx 中只能使用 as。例如：</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someValue</span>: <span style="color:#66d9ef">any</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;this is a string&#39;</span>

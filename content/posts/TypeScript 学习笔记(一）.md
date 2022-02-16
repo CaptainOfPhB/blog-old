@@ -23,7 +23,7 @@ x[3] = 'world';
 
 - 枚举 enum 默认情况下，从 0 开始为元素编号，也可手动指定成员的值。也可以根据枚举的值得到 key 的名字，例如：enum Color = { Red, Green }，则 Color[1] 的值为 Green
 - void 表示没有任何类型，只能给 void 类型数据赋值 null 或者 undefined
-- null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 stricNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined
+- null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 strictNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined
 - 类型断言好比类型转换，当你比 ts 更了解某个值更确切的类型时。类型断言有两种，使用尖括号或者使用 as 语法，在 tsx 中只能使用 as。例如：
 
 ```typescript

@@ -40,7 +40,7 @@ type StringType = typeof stringMaybeChange; // string
 
 #### Enum
 
-1. 枚举可以方便的当做字典/map 使用，因为在编译为 js 之后，枚举转换为了一个同名的对象。
+1. 枚举可以方便地当做字典/map 使用，因为在编译为 js 之后，枚举转换为了一个同名的对象。
 2. 若枚举值是数字，那么还可以用作 reflect，利用 value 来获取 key。比如：
 
 ```typescript

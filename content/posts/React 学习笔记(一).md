@@ -27,7 +27,7 @@ console.log(this.state.count); // 3
 
 2. 事件处理中，可以使用箭头函数，也可使用 bind，区别在于 bind 可以隐式的将事件对象等传递进去
 
-```html
+```text
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
 <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 ```

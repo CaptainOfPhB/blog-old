@@ -79,9 +79,10 @@ u {
   text-decoration-color: #eb5757;
 }
 
-ol {
+ol, ul {
   font-size: 17px;
   line-height: 1.9em;
+  font-weight: bold;
 }
 
 /*basic styles ends*/
@@ -555,7 +556,8 @@ ol {
 }
 
 .markdown blockquote p {
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: bold;
   white-space: pre-line;
 }
 
@@ -620,6 +622,10 @@ ol {
   margin-bottom: -5px;
   width: 100%;
   height: auto;
+}
+
+del {
+  color: #999;
 }
 
 table {
