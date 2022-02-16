@@ -28,12 +28,12 @@ html::-webkit-scrollbar-thumb {
 
 body {
   color: #424242;
-  font-family: JetBrains Mono, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 14px;
   width: 100%;
   background-color: #f7f7f7;
   margin: 0;
   padding: 0;
+  font-family: LXGWWenKai, JetBrains Mono, Helvetica Neue, sans-serif;
 }
 
 p {
@@ -80,7 +80,7 @@ u {
 }
 
 ol {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.9em;
 }
 
@@ -181,7 +181,7 @@ ol {
   display: block;
   font-size: 40px;
   font-weight: 200;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: Ma Shan Zheng, cursive, sans-serif;
 }
 
 .header .site_title_container .site_title a:hover {
@@ -233,12 +233,13 @@ ol {
 
 .post .post_title .date {
   color: #999;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .post .post_detail_title h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.7rem;
+  font-weight: 800;
 }
 
 .post .list p {
@@ -254,12 +255,15 @@ ol {
 .post .post_content > p {
   word-break: normal;
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 /* 首页的文章缩略 */
 .home .post_content p {
   color: #666;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .post .post_content a {
@@ -283,8 +287,8 @@ ol {
 .post .post_footer .meta {
   max-width: 100%;
   height: 25px;
-  color: #bbbbbb;
-  font-size: 12px;
+  color: #999;
+  font-size: 13px;
   display: flex;
 }
 
@@ -301,7 +305,7 @@ ol {
 
 .post .post_footer .meta .tags a {
   text-decoration: none;
-  color: #bbbbbb;
+  color: #999;
   margin-top: -1px;
   margin-right: 4px;
 }
@@ -380,12 +384,13 @@ ol {
 
 .footer .powered_by {
   margin: 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .footer .powered_by a {
-  color: #cccccc;
+  color: #aaa;
   margin: 0 2px;
+  font-weight: bold;
 }
 
 .footer .powered_by a:hover {
@@ -398,7 +403,7 @@ ol {
   color: #000000;
   font-size: 18px;
   letter-spacing: 1px;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: Ma Shan Zheng, cursive, sans-serif;
 }
 
 /*for archive*/
@@ -513,15 +518,17 @@ ol {
 }
 
 .markdown h4 {
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 
 .markdown pre,
 .markdown code {
   border: none;
   white-space: pre;
-  font-size: 14px;
-  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-family: LXGWWenKaiMono, JetBrains Mono, Fira Code, Menlo, Monaco, monospace, sans-serif;
 }
 
 .markdown p code {
@@ -529,7 +536,7 @@ ol {
   padding: 2px 5px;
   border-radius: 3px;
   white-space: nowrap;
-  background: #f0f0f0;
+  background: #f3f3f3;
 }
 
 .markdown pre {
@@ -692,7 +699,7 @@ a.back_to_top:hover span {
   margin: 40px auto;
   text-align: center;
   font-size: 25px;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: LXGWWenKai, sans-serif;
 }
 
 .poetry_author {
@@ -700,13 +707,13 @@ a.back_to_top:hover span {
   margin: 30px auto;
   text-align: right;
   font-size: 16px;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: LXGWWenKai, sans-serif;
 }
 
 .poetry_content {
   font-size: 20px;
   text-align: center;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: LXGWWenKai, sans-serif;
 }
 
 .poetry_translate_content {
@@ -714,7 +721,7 @@ a.back_to_top:hover span {
   text-indent: 2em;
   text-align: left;
   line-height: 1.7;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: LXGWWenKai, sans-serif;
 }
 
 .single_page_divider {
