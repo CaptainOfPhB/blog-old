@@ -196,8 +196,7 @@ ol, ul {
 }
 
 .header .site_title_container .description .sub_title {
-  font-weight: normal !important;
-  float: none !important;
+  font-weight: bold;
   text-align: right;
   font-size: 14px;
 }
@@ -213,8 +212,8 @@ ol, ul {
 }
 
 .header .my_socials a {
-  color: #5f5f5f;
-  font-size: 18px;
+  color: #666;
+  font-size: 20px;
   float: none;
   cursor: pointer;
 }
