@@ -5,7 +5,27 @@
     <link>/tags/typescript/</link>
     <description>Recent content in TypeScript on 船长の部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Sep 2020 14:16:27 +0800</lastBuildDate><atom:link href="/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Feb 2022 23:04:33 +0800</lastBuildDate><atom:link href="/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript 类型体操通关秘籍（二)</title>
+      <link>/2022/02/18/juejin-book-7047524421182947366-2/</link>
+      <pubDate>Fri, 18 Feb 2022 23:04:33 +0800</pubDate>
+      
+      <guid>/2022/02/18/juejin-book-7047524421182947366-2/</guid>
+      <description>Capitalize 利用 ts 自带的 Uppercase 工具类型。
+type Capitalize&amp;lt;S extends string&amp;gt; = S extends `${infer First}${infer Rest}` ?</description>
+    </item>
+    
+    <item>
+      <title>TypeScript 类型体操通关秘籍（一)</title>
+      <link>/2022/02/18/juejin-book-7047524421182947366-1/</link>
+      <pubDate>Fri, 18 Feb 2022 21:45:07 +0800</pubDate>
+      
+      <guid>/2022/02/18/juejin-book-7047524421182947366-1/</guid>
+      <description>TypeScript 类型系统中的一些类型运算。
+条件运算 extends ? : ts 为图灵类型完备的类型系统，具有类型计算功能。extends 相当于 js 中的三元运算符。</description>
+    </item>
+    
     <item>
       <title>TypeScript 学习笔记（三）</title>
       <link>/2020/09/20/typescript-note-3/</link>

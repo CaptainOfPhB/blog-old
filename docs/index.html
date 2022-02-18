@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
 <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.92.2" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -121,6 +121,66 @@
 
 <div class="home post animated fadeInDown">
     <div class="post_title">
+        <h2><a href='/2022/02/18/juejin-book-7047524421182947366-2/'>TypeScript 类型体操通关秘籍（二)</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>Capitalize 利用 ts 自带的 Uppercase 工具类型。
+type Capitalize&lt;S extends string&gt; = S extends `${infer First}${infer Rest}` ?...</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-time-line"></i>
+                    <span class="date">2022.02.18</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-hashtag"></i>
+                    
+                    <a href="/tags/typescript/">TypeScript</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/2022/02/18/juejin-book-7047524421182947366-1/'>TypeScript 类型体操通关秘籍（一)</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>TypeScript 类型系统中的一些类型运算。
+条件运算 extends ? : ts 为图灵类型完备的类型系统，具有类型计算功能。extends 相当于 js 中的三元运算符。...</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+                <div class="field">
+                    <i class="ri-time-line"></i>
+                    <span class="date">2022.02.18</span>
+                </div>
+                
+                <div class="field tags">
+                    <i class="ri-hashtag"></i>
+                    
+                    <a href="/tags/typescript/">TypeScript</a>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="home post animated fadeInDown">
+    <div class="post_title">
         <h2><a href='/2021/06/02/github-page/'>GitHub Pages 如此愚蠢？</a></h2>
     </div>
     
@@ -164,7 +224,7 @@
         <div class="meta">
                 <div class="field">
                     <i class="ri-time-line"></i>
-                    <span class="date">2021.02.28</span>
+                    <span class="date">2022.02.16</span>
                 </div>
                 
                 <div class="field tags">
@@ -194,71 +254,13 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
         <div class="meta">
                 <div class="field">
                     <i class="ri-time-line"></i>
-                    <span class="date">2021.02.25</span>
+                    <span class="date">2022.02.16</span>
                 </div>
                 
                 <div class="field tags">
                     <i class="ri-hashtag"></i>
                     
                     <a href="/tags/essay/">essay</a>
-                    
-                </div>
-                
-        </div>
-    </div>
-</div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2021/01/25/unpublishing-your-package-on-npm/'>Unpublishing your package on npm</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:...</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-time-line"></i>
-                    <span class="date">2021.02.28</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-hashtag"></i>
-                    
-                    <a href="/tags/npm/">npm</a>
-                    
-                </div>
-                
-        </div>
-    </div>
-</div>
-
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/2020/09/20/typescript-note-3/'>TypeScript 学习笔记（三）</a></h2>
-    </div>
-    
-    <div class="list">
-        <div class="post_content markdown">
-            <p>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &#39;TypeScript&#39;; const ts: TypeScript = &#39;TypeScript&#39;; const sayHello = (name: string) =&gt; console....</p>
-        </div>
-    </div>
-    
-    <div class="post_footer">
-        <div class="meta">
-                <div class="field">
-                    <i class="ri-time-line"></i>
-                    <span class="date">2020.09.20</span>
-                </div>
-                
-                <div class="field tags">
-                    <i class="ri-hashtag"></i>
-                    
-                    <a href="/tags/typescript/">TypeScript</a>
                     
                 </div>
                 

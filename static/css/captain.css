@@ -506,19 +506,61 @@ ol, ul {
 }
 
 .markdown h1 {
-  font-size: 1.35em;
+  font-size: 24px;
+}
+
+.markdown h1::before {
+  color: #cccccc;
+  font-size: 16px;
+  content: 'H1';
+  position: absolute;
+  left: -24px;
 }
 
 .markdown h2 {
-  font-size: 1.25em;
+  font-size: 22px;
+}
+
+.markdown h2::before {
+  color: #cccccc;
+  font-size: 14px;
+  content: 'H2';
+  position: absolute;
+  left: -24px;
 }
 
 .markdown h3 {
-  font-size: 1.15em;
+  font-size: 20px;
 }
 
-.markdown h4 {
-  font-size: 1.3em;
+.markdown h3::before {
+  color: #cccccc;
+  font-size: 12px;
+  content: 'H3';
+  position: absolute;
+  left: -24px;
+}
+
+.markdown h1 code,
+.markdown h2 code,
+.markdown h3 code {
+  color: #eb5757;
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  background: #f3f3f3;
+}
+
+.markdown h1 code {
+  font-size: 22px !important;
+}
+
+.markdown h2 code {
+  font-size: 20px !important;
+}
+
+.markdown h3 code {
+  font-size: 18px !important;
 }
 
 .markdown pre,

@@ -8,16 +8,16 @@
 	
 	
 	
-	<title>记折腾博客（一） ♡ 船长の部落格</title>
+	<title>TypeScript 类型体操通关秘籍（一) ♡ 船长の部落格</title>
 	
     
     
-    <meta name="description" content="记折腾博客（一）" />
+    <meta name="description" content="TypeScript 类型体操通关秘籍（一)" />
     
 
     
     
-    <meta name="keywords" content="build blog" />
+    <meta name="keywords" content="TypeScript" />
     
 
 	
@@ -117,49 +117,37 @@
             <div class="single_page post_page">
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
-                        <h1>记折腾博客（一）</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2022.02.16</div>
+                        <h1>TypeScript 类型体操通关秘籍（一)</h1>
+                        <div class="date">Updated&nbsp;on&nbsp;2022.02.18</div>
                     </div>
                     <div class="post_content markdown">
-                        <p>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">p</span>.<span style="color:#a6e22e">content</span> {
-  <span style="color:#66d9ef">font-family</span>: STKaiti, KaiTi, <span style="color:#66d9ef">sans-serif</span>; 
-}
-</code></pre></div><p>写完部署后发现效果非常地棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</p>
-<p>这当然难不倒我小猪佩奇了，想起了以前的 web 自定义字体，因此我去网上下载了一个楷体字的 ttf 文件。但是下载完一看文件大小 15M（WTF！）。</p>
-<p>这怎么能忍，于是我有找啊找，终于找到一个方正楷体字，下载完 ttf 格式是 3.8M，这还可以忍受。那有没有办法让这个文件大小更小一点呢？就我所知字体格式有 ttf、woff、woff2、eof 等，于是搜了下发现 woff 字体文件是体积最小的，然后我又去网上搜“ttf to woff”，最后下载下来发现 woff 字体竟然只有 18K！</p>
-<p>不禁说了声牛逼，然后把代码改成了这样：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">font-face</span> {
-  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;KT&#39;</span><span style="color:#f92672">;</span>
-  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;../font/FZKaiti.woff&#39;</span><span style="color:#f92672">);</span>
-}
+                        <p>TypeScript 类型系统中的一些类型运算。</p>
+<h3 id="条件运算-extends--">条件运算 <code>extends ? :</code></h3>
+<p>ts 为<u>图灵类型完备</u>的类型系统，具有类型计算功能。<code>extends</code> 相当于 js 中的三元运算符。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">isTow</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
 
-<span style="color:#f92672">p</span>.<span style="color:#a6e22e">content</span> {
-  <span style="color:#66d9ef">font-family</span>: KT, <span style="color:#66d9ef">sans-serif</span>; 
-}
-</code></pre></div><p>在电脑上预览没有任何问题。但是在手机上又跪了，手机上只会把英文渲染为楷体字展示，中文不变。难道手机上中文不支持 woff？？？最后不得已，换回 ttf，然后又把代码改成了这样：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">font-face</span> {
-  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;KT&#39;</span><span style="color:#f92672">;</span>
-  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;../font/FZKaiti.ttf&#39;</span><span style="color:#f92672">);</span>
-}
-<span style="color:#f92672">p</span>.<span style="color:#a6e22e">content</span> {
-  <span style="color:#66d9ef">font-family</span>: KT, <span style="color:#66d9ef">sans-serif</span>; 
-}
-</code></pre></div><p>手机上也能正常展示楷体字了，但是有一个严重的体验问题。那就是在楷体字没有加载完成时，使用楷体字渲染的文本处都是空白的（WTF）。</p>
-<p>最后在网上搜了一下，可以使用 font-display 属性用来做自定义字体的过渡显示，当字体没加载完成时，显示兜底字体，字体加载完后，替换为加载完的字体。最后代码改成了这样：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">font-face</span> {
-  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;KT&#39;</span><span style="color:#f92672">;</span>
-  <span style="color:#f92672">font-display</span><span style="color:#f92672">:</span> <span style="color:#f92672">fallback</span><span style="color:#f92672">;</span>
-  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">local</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;STKaiti&#39;</span><span style="color:#f92672">),</span>
-       <span style="color:#f92672">local</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;KaiTi&#39;</span><span style="color:#f92672">),</span>
-       <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;../font/FZKaiTi.ttf&#39;</span><span style="color:#f92672">);</span>
-}
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isTow</span>&lt;<span style="color:#f92672">1</span>&gt;; <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">res2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isTow</span>&lt;<span style="color:#f92672">2</span>&gt;; <span style="color:#75715e">// true
+</span></code></pre></div><h3 id="推导-infer">推导 <code>infer</code></h3>
+<p><code>infer</code> 后面的泛型表示待推导的类型。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">First</span>&lt;<span style="color:#f92672">Tuple</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">[]</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">Tuple</span> <span style="color:#66d9ef">extends</span> [<span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">T</span>,...<span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">R</span>] <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> : <span style="color:#66d9ef">never</span>;
 
-<span style="color:#f92672">p</span>.<span style="color:#a6e22e">content</span> {
-  <span style="color:#66d9ef">font-family</span>: KT, <span style="color:#66d9ef">sans-serif</span>; 
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">First</span><span style="color:#f92672">&lt;</span>[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]<span style="color:#f92672">&gt;</span>; <span style="color:#75715e">// 1
+</span></code></pre></div><h3 id="交叉-">交叉 <code>&amp;</code></h3>
+<p>对两种类型取交集，没有交集则为 <code>never</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ObjType</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span> } <span style="color:#f92672">&amp;</span> {<span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">boolean</span>}; <span style="color:#75715e">// { a: number; c: boolean }
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;aaa&#39;</span> <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">222</span>; <span style="color:#75715e">// never
+</span></code></pre></div><h3 id="类型映射">类型映射</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MapType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+  [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">?:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">Key</span>]
 }
-</code></pre></div><p>这样一来，Mac 和 Windows 上直接显示本地的楷体字，在手机上打开页面时，先展示系统默认字体，然后等 FZKaiti.ttf 加载完后，再展示楷体字。</p>
-<p>你可以<a href="https://daijiangtao.gitee.io" target="_blank">点击这里</a>浏览我的博客。</p>
+</code></pre></div><p><code>keyof T</code> 是查询索引类型中所有的索引，叫做<u>索引查询</u>。<code>T[Key]</code> 是取索引类型某个索引的值，叫做<u>索引访问</u>。</p>
+<p>一个集合映射到另一个集合，叫做<u>类型映射</u>。使用 <code>as</code> 运算符，可以做到<u>重映射</u>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MapType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+    [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">as</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Key</span> <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">string</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">Key</span> <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">string</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">Key</span> <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">string</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>]<span style="color:#f92672">:</span> [<span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">Key</span>], <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">Key</span>], <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">Key</span>]]
+}
+</code></pre></div><p><code>Key</code> 默认可能是 <code>string</code>、<code>number</code>、<code>symbol</code> 这三种，所以要和 <code>string</code> 取交叉部分。</p>
 <p>完。</p>
 
                     </div>
@@ -170,7 +158,7 @@
                                 <span class="field tags">
                                     <i class="ri-hashtag"></i>
                                     
-                                    <a href="/tags/essay/">essay</a>
+                                    <a href="/tags/typescript/">TypeScript</a>
                                     
                                 </span>
                             </div>
@@ -181,15 +169,15 @@
 
                         <div class="single_page_pagination">
                             
-                                <a class="single_page_pagination_pre" href="/2021/01/25/unpublishing-your-package-on-npm/">
+                                <a class="single_page_pagination_pre" href="/2021/06/02/github-page/">
                                     <i class="ri-arrow-left-s-line"></i>
-                                    <span class="prev_title">Unpublishing your package on npm</span>
+                                    <span class="prev_title">GitHub Pages 如此愚蠢？</span>
                                     <span class="prev_text">Prev</span>
                                 </a>
                             
                             
-                                <a class="single_page_pagination_next" href="/2021/02/28/build-blog-2/">
-                                    <span class="next_title">记折腾博客（二）</span>
+                                <a class="single_page_pagination_next" href="/2022/02/18/juejin-book-7047524421182947366-2/">
+                                    <span class="next_title">TypeScript 类型体操通关秘籍（二)</span>
                                     <span class="next_text">Next</span>
                                     <i class="ri-arrow-right-s-line"></i>
                                 </a>
