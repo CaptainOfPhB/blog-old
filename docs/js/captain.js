@@ -1,68 +1,98 @@
-'use strict';
+// document.ready will execute twice, declare this flag for judge
+// must be declared via 'var' keyword
+var MOUNTED = false;
 
-// 文章总结超长时对文字进行剪切
-$(document).ready((function (_this) {
-  return function () {
-    const element = $('.post_content > p');
-    element.each(function (index, el) {
-      const content = el.textContent;
-      if (content.length > 300) {
-        el.textContent = content.substring(0, 305) + ' ...';
-      }
-    });
-  };
-})(this));
+$(function () {
+  if (!MOUNTED) {
+    MOUNTED = true;
 
-// back-to-top
-$(document).ready((function (_this) {
-  return function () {
-    let bt;
-    bt = $('#back_to_top');
-    if ($(document).width() > 480) {
-      $(window).scroll(function () {
-        let st;
-        st = $(window).scrollTop();
-        if (st > 30) {
-          return bt.css('display', 'block');
-        } else {
-          return bt.css('display', 'none');
-        }
-      });
-      return bt.click(function () {
-        $('body,html').animate({
-          scrollTop: 0,
-        }, 800);
-        return false;
-      });
-    }
-  };
-})(this));
-
-// nav-toggle
-$(document).ready((function (_this) {
-  return function () {
-    let nav, icon;
-    icon = $('#menu_icon');
-    nav = $('#site_nav');
-    icon.click(function () {
-      nav.slideToggle(250);
-    });
-  };
-})(this));
-
-// FancyBox
-$('[data-fancybox="gallery"]').fancybox({
-  arrows: false,
-  infobar: false,
-  buttons: [],
-  clickContent: 'close',
-  autoFocus: false,
-  backFocus: false,
-  wheel: false,
-  mobile: {
-    clickContent: 'close',
-    clickSlide: 'close',
-    dblclickContent: false,
-    dblclickSlide: false,
-  },
+    highlightCode();
+    makeTableScrollable();
+    splitText();
+    bindBackToTopEvent();
+    bindFancybox();
+    shareBlog();
+    bindClickToSaveEvent();
+  }
 });
+
+function highlightCode() {
+  hljs.highlightAll();
+}
+
+function makeTableScrollable() {
+  const tables = document.getElementsByTagName('table');
+  if (tables.length) {
+    for (let i = 0; i < tables.length; i++) {
+      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>';
+    }
+  }
+}
+
+function splitText() {
+  const element = $('.post_content > p');
+  element.each(function (index, el) {
+    const content = el.textContent;
+    if (content.length > 300) {
+      el.textContent = content.substring(0, 305) + ' ...';
+    }
+  });
+}
+
+function bindBackToTopEvent() {
+  const $backToTop = $('#back_to_top');
+  $(window).on('scroll', function () {
+    const scrollY = window.scrollY;
+    const display = $backToTop.css('display');
+    if (scrollY < 30) {
+      return $backToTop.css('display', 'none');
+    }
+    if (display === 'none') {
+      return $backToTop.css('display', 'block');
+    }
+  });
+  $backToTop.on('click', function () {
+    $('body,html').animate({
+      scrollTop: 0,
+    }, 800);
+    return false;
+  });
+}
+
+function bindFancybox() {
+  Fancybox.bind('[data-fancybox="gallery"]');
+}
+
+function shareBlog() {
+  $('#share_blog').on('click', function () {
+    QRCode.toDataURL(encodeURI(location.href), { margin: 0 })
+      .then(url => {
+        const text = $('.post_content').text();
+        $('#title').html($('.post_title h1').text());
+        $('#author').html('CaptainOfPhB');
+        $('#summary').text(text.substring(0, 200) + ' ...');
+        $('#qrcode').attr('src', url);
+        Fancybox.show([{
+          src: '#share_card_container',
+          type: 'inline',
+        }], { click: () => void 0 });
+      });
+  });
+}
+
+function bindClickToSaveEvent() {
+  $('#download').on('click', function () {
+    html2canvas(
+      document.querySelector('#share_card_container'),
+      {
+        ignoreElements: function (el) {
+          return el.id === 'download';
+        },
+      })
+      .then(canvas => {
+        const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        window.open(image, );
+      });
+  });
+}
+

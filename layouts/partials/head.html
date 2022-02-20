@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}" />
-	{{ $title := ( .Title ) }}
-	{{ $siteTitle := ( .Site.Title ) }}
-	{{ if .IsHome }}
-	<title>{{ $siteTitle }}</title>
-	{{ else }}
-	<title>{{ $title }} ♡ {{ $siteTitle }}</title>
-	{{ end }}
+	  {{ $title := ( .Title ) }}
+	  {{ $siteTitle := ( .Site.Title ) }}
+	  {{ if .IsHome }}
+	    <title>{{ $siteTitle }}</title>
+	  {{ else }}
+	    <title>{{ $title }} ♡ {{ $siteTitle }}</title>
+	  {{ end }}
     <!-- description & keywords -->
     {{ if .Description }}
-    <meta name="description" content="{{ .Description | safeHTML }}" />
+      <meta name="description" content="{{ .Description | safeHTML }}" />
     {{ else if .IsPage }}
-    <meta name="description" content="{{ .Summary | plainify }}" />
+      <meta name="description" content="{{ .Summary | plainify }}" />
     {{ else if .Site.Params.description }}
-    <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+      <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
     {{ end }}
 
     {{ if .Keywords }}
@@ -29,23 +29,15 @@
     <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
     {{ end }}
 
-	{{ with .OutputFormats.Get "rss" }}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	  {{ with .OutputFormats.Get "rss" }}
+	  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end }}
 
     <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" />
 
-    <!-- 霞鹜文楷 Regular -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
-    <!-- 霞鹜文楷 Lite -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Light.css" />
-    <!-- 霞鹜文楷 Bold -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Bold.css" />
-    <!-- 霞鹜文楷 Mono Regular -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Regular.css" />
-    <!-- 霞鹜文楷 Mono Lite -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Light.css" />
-    <!-- 霞鹜文楷 Mono Bold -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Bold.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,15 +46,10 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
 	  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/base16/github.css">
-    <link href="{{ "css/fancybox.min.css" | absURL }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/captain.css" |absURL }}" />
-
-    <!-- custom css -->
-    {{ range .Site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ "css/" | absURL }}{{ . }}" />
-    {{ end }}
 </head>

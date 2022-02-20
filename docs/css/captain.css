@@ -507,38 +507,41 @@ ol, ul {
 
 .markdown h1 {
   font-size: 24px;
+  position: relative;
 }
 
 .markdown h1::before {
-  color: #cccccc;
-  font-size: 16px;
   content: 'H1';
-  position: absolute;
-  left: -24px;
+  top: 5px;
 }
 
 .markdown h2 {
   font-size: 22px;
+  position: relative;
 }
 
 .markdown h2::before {
-  color: #cccccc;
-  font-size: 14px;
   content: 'H2';
-  position: absolute;
-  left: -24px;
+  top: 4px;
 }
 
 .markdown h3 {
   font-size: 20px;
+  position: relative;
 }
 
 .markdown h3::before {
+  content: 'H3';
+  top: 3px;
+}
+
+.markdown h1::before,
+.markdown h2::before,
+.markdown h3::before {
   color: #cccccc;
   font-size: 12px;
-  content: 'H3';
   position: absolute;
-  left: -24px;
+  left: -16px;
 }
 
 .markdown h1 code,
@@ -684,7 +687,8 @@ table td {
   border: 1px solid #dfe2e5;
 }
 
-a.back_to_top {
+a.back_to_top,
+a.share_blog {
   text-decoration: none;
   position: fixed;
   bottom: 40px;
@@ -696,24 +700,94 @@ a.back_to_top {
   line-height: 36px;
   font-size: 18px;
   text-align: center;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transition-property: background-color;
   transition-property: background-color;
+  color: #424242;
+}
+
+a.share_blog {
+  bottom: 90px;
+  right: 30px;
+}
+
+a.back_to_top {
+  bottom: 40px;
+  right: 30px;
   display: none;
 }
 
-a.back_to_top span {
-  color: #888888;
-}
-
+a.share_blog:hover,
 a.back_to_top:hover {
   cursor: pointer;
   background: #dfdfdf;
 }
 
-a.back_to_top:hover span {
-  color: #555555;
+#share_card_container {
+  display: none;
+  width: 300px;
+  padding: 0;
+  position: relative;
+}
+
+#share_card_inner_container {
+  padding: 20px 20px 0;
+}
+
+#share_card_container #title {
+  margin: 0 0 5px;
+}
+
+#share_card_container #author {
+  color: #666666;
+  font-size: 12px;
+}
+
+#share_card_container #summary {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#share_card_container #card_footer {
+  padding: 25px 20px 25px;
+  display: flex;
+  background: #f7f7f7;
+  align-items: center;
+}
+
+#share_card_container #site_title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+#share_card_container #site_title img {
+  margin-right: 5px;
+}
+
+#share_card_container #tip {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+#share_card_container #download {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  padding: 10px;
+  justify-content: right;
+  align-items: center;
+  text-align: right;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f7f7f7;
+}
+
+#share_card_container #download i {
+  margin-right: 5px;
 }
 
 .page404 {
@@ -810,37 +884,6 @@ a.back_to_top:hover span {
 }
 
 @media print, screen and (max-width: 680px) {
-  .nav_container {
-    position: relative;
-    z-index: 999;
-  }
-  .nav_container .site_nav {
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 60px;
-    padding: 10px 0;
-    width: 100%;
-    background-color: #ffffff;
-    -webkit-box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
-    box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
-  }
-  .nav_container .site_nav ul {
-    float: none;
-    text-align: center;
-  }
-  .nav_container .site_nav li {
-    float: none;
-  }
-  .nav_container .menu_icon {
-    position: fixed;
-    right: 0;
-    display: block;
-  }
-  .back_to_top {
-    display: none !important;
-  }
-
   .post_footer {
     padding-bottom: 30px !important;
   }
@@ -872,9 +915,11 @@ a.back_to_top:hover span {
   .main {
     width: 1000px;
   }
+
   .nav_container {
     width: 840px;
   }
+
   .header,
   .content {
     width: 820px;
@@ -886,25 +931,32 @@ a.back_to_top:hover span {
     width: 95%;
     margin-top: 20px;
   }
+
   .nav_container {
     width: 95%;
   }
+
   .header,
   .content {
     width: 90%;
   }
+
   .post_page {
     padding-top: 0;
   }
+
   .footer a {
     margin: 0 6px;
   }
+
   .post {
     margin-top: 40px;
   }
+
   .post .post_title a {
     font-size: 1.4rem;
   }
+
   .post_footer {
     padding-bottom: 30px;
   }
@@ -914,23 +966,21 @@ a.back_to_top:hover span {
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-3px);
     transform: translateY(-3px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }

@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="CaptainOfPhB" />
-	
-	
-	
-	<title>文本溢出省略 ♡ 船长の部落格</title>
-	
+	  
+	  
+	  
+	    <title>文本溢出省略 ♡ 船长の部落格</title>
+	  
     
     
-    <meta name="description" content="文本溢出省略" />
+      <meta name="description" content="文本溢出省略" />
     
 
     
@@ -20,21 +20,13 @@
     <meta name="keywords" content="CSS, text overflow" />
     
 
-	
+	  
 
     <link rel="shortcut icon" href="/images/favicon.png" />
 
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Light.css" />
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Bold.css" />
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Regular.css" />
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Light.css" />
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Bold.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,15 +35,12 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
 	  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/base16/github.css">
-    <link href="/css/fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/captain.css" />
-
-    
-    
 </head>
 
 <body>
@@ -77,9 +66,6 @@
             </li>
             
         </ul>
-    </div>
-    <div class="menu_icon">
-        <a id="menu_icon"><i class="ri-menu-line"></i></a>
     </div>
 </div>
         <div class="header animated fadeInDown">
@@ -193,7 +179,32 @@ Extension: <a href="https://css-tricks.com/line-clampin/" target="_blank">text-o
             </div>
         </div>
     </div>
-    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+
+    <div id='share_card_container'>
+        <div id='share_card_inner_container'>
+            <h2 id='title'></h2>
+            <p id='author'></p>
+            <p id='summary'></p>
+        </div>
+        <div id='card_footer'>
+            <img id='qrcode' src='' alt='qrcode' width='70' height='70'>
+            <div id='extra'>
+                <p id='site_title'>
+                    <img src='/images/favicon.png' width='18' height='18'>
+                    船长の部落格
+                </p>
+                <p id='tip'>扫描二维码阅读原文</p>
+            </div>
+        </div>
+        <div id='download'>
+            <i class="ri-download-line"></i>
+            点击保存
+        </div>
+    </div>
+
+    <a id="share_blog" class='share_blog'><i class="ri-share-forward-line"></i></a>
+    <a id="back_to_top" class="back_to_top" href="#"><i class="ri-arrow-up-s-line"></i></a>
+
     <footer class="footer">
     <div class="powered_by">
         <a href="http://www.gohugo.io/">Published by Hugo,</a>
@@ -204,61 +215,15 @@ Extension: <a href="https://css-tricks.com/line-clampin/" target="_blank">text-o
         <span>愿历经千帆，归来仍少年</span>
     </div>
 </footer>
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
-<script src="/js/jquery-3.5.1.min.js"></script>
-<script src="/js/fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
 
-<script>
-  hljs.highlightAll();
-</script>
-
-<script>
-  var tables = document.getElementsByTagName('table');
-  if(tables.length) {
-    for(var i = 0; i < tables.length; i++) {
-      tables[i].outerHTML = '<div style="overflow-x: auto">' + tables[i].outerHTML + '</div>'; 
-    }
-  }
-</script>
 
 
-<script type="text/javascript" async
-    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
-                processEscapes: true,
-                processEnvironments: true,
-                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-                TeX: {
-                    equationNumbers: { autoNumber: "AMS" },
-                    extensions: ["AMSmath.js", "AMSsymbols.js"]
-                }
-            }
-        });
-
-        MathJax.Hub.Queue(function () {
-            
-            
-            
-            var all = MathJax.Hub.getAllJax(), i;
-            for (i = 0; i < all.length; i += 1) {
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-    </script>
-
-<style>
-    code.has-jax {
-        font: inherit;
-        font-size: 100%;
-        background: inherit;
-        border: inherit;
-        color: #515151;
-    }
-</style>
 
 </body>
 
