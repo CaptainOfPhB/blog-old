@@ -12,7 +12,6 @@ $(function () {
     bindBackToTopEvent();
     bindFancybox();
     shareBlog();
-    bindClickToSaveEvent();
   }
 });
 
@@ -81,9 +80,10 @@ function shareBlog() {
             const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
             Fancybox.show([{
               src: `
-              <p style='font-size: 16px;font-weight: bold;margin-bottom:10px;'>右键/长按以保存图片</p>
-              <img src='${image}' width='300' style='border: 1px solid #f3f3f3;'>
-            `, type: 'html',
+                <p style='font-size: 16px;font-weight: bold;margin-bottom:10px;'>右键/长按以保存图片</p>
+                <img src='${image}' width='300' style='border: 1px solid #f3f3f3;'>
+              `,
+              type: 'html',
             }], { click: () => void 0 });
           });
       });

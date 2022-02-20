@@ -753,10 +753,12 @@ a.back_to_top:hover {
   display: flex;
   background: #f7f7f7;
   align-items: center;
+  justify-content: space-between;
 }
 
 #share_card_container #site_title {
   display: flex;
+  margin-top: 5px;
   align-items: center;
   font-weight: bold;
   font-size: 18px;
@@ -768,8 +770,13 @@ a.back_to_top:hover {
 }
 
 #share_card_container #tip {
-  font-size: 14px;
+  color: #666666;
+  font-size: 12px;
   margin-left: 10px;
+}
+
+.fancybox__content {
+  padding: 20px;
 }
 
 .page404 {
