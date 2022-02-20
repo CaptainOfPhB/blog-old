@@ -749,7 +749,7 @@ a.back_to_top:hover {
 }
 
 #share_card_container #card_footer {
-  padding: 30px 20px 30px;
+  padding: 20px;
   display: flex;
   background: #f7f7f7;
   align-items: center;
@@ -770,24 +770,6 @@ a.back_to_top:hover {
 #share_card_container #tip {
   font-size: 14px;
   margin-left: 10px;
-}
-
-#share_card_container #download {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  padding: 10px;
-  justify-content: right;
-  align-items: center;
-  text-align: right;
-  font-weight: bold;
-  cursor: pointer;
-  background: #f7f7f7;
-}
-
-#share_card_container #download i {
-  margin-right: 5px;
 }
 
 .page404 {

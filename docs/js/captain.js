@@ -72,37 +72,20 @@ function shareBlog() {
         $('#author').html('CaptainOfPhB');
         $('#summary').text(text.substring(0, 200) + ' ...');
         $('#qrcode').attr('src', url);
-        Fancybox.show(
-          [{
-            src: '#share_card_container',
-            type: 'inline',
-          }],
-          { click: () => void 0 },
-        );
+        html2canvas(document.querySelector('#share_card_container'), {
+          onclone: function (document) {
+            document.getElementById('share_card_container').style.display = 'block';
+          },
+        })
+          .then(canvas => {
+            const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+            Fancybox.show([{
+              src: `
+              <p style='font-size: 16px;font-weight: bold;margin-bottom:10px;'>右键/长按以保存图片</p>
+              <img src='${image}' width='300' style='border: 1px solid #f3f3f3;'>
+            `, type: 'html',
+            }], { click: () => void 0 });
+          });
       });
   });
 }
-
-function bindClickToSaveEvent() {
-  $('#download').on('click', function () {
-    html2canvas(
-      document.querySelector('#share_card_container'),
-      {
-        ignoreElements: function (el) {
-          return el.id === 'download';
-        },
-      })
-      .then(canvas => {
-        const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-        Fancybox.close();
-        Fancybox.show(
-          [{
-            src: image,
-            type: 'image',
-          }],
-          { click: () => void 0 },
-        );
-      });
-  });
-}
-
