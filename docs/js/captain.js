@@ -72,10 +72,13 @@ function shareBlog() {
         $('#author').html('CaptainOfPhB');
         $('#summary').text(text.substring(0, 200) + ' ...');
         $('#qrcode').attr('src', url);
-        Fancybox.show([{
-          src: '#share_card_container',
-          type: 'inline',
-        }], { click: () => void 0 });
+        Fancybox.show(
+          [{
+            src: '#share_card_container',
+            type: 'inline',
+          }],
+          { click: () => void 0 },
+        );
       });
   });
 }
@@ -90,8 +93,15 @@ function bindClickToSaveEvent() {
         },
       })
       .then(canvas => {
-        const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        window.open(image, );
+        const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+        Fancybox.close();
+        Fancybox.show(
+          [{
+            src: image,
+            type: 'image',
+          }],
+          { click: () => void 0 },
+        );
       });
   });
 }
