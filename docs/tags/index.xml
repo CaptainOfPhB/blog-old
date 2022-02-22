@@ -5,7 +5,25 @@
     <link>/tags/</link>
     <description>Recent content in Tags on 船长の部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 18 Feb 2022 23:04:33 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 21:48:52 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>babel</title>
+      <link>/tags/babel/</link>
+      <pubDate>Tue, 22 Feb 2022 21:48:52 +0800</pubDate>
+      
+      <guid>/tags/babel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>share</title>
+      <link>/tags/share/</link>
+      <pubDate>Tue, 22 Feb 2022 21:48:52 +0800</pubDate>
+      
+      <guid>/tags/share/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>TypeScript</title>
       <link>/tags/typescript/</link>

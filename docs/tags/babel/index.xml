@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>babel on 船长の部落格</title>
+    <link>/tags/babel/</link>
+    <description>Recent content in babel on 船长の部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 22 Feb 2022 21:48:52 +0800</lastBuildDate><atom:link href="/tags/babel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enhance Your Console</title>
+      <link>/2022/02/22/enhance-your-console/</link>
+      <pubDate>Tue, 22 Feb 2022 21:48:52 +0800</pubDate>
+      
+      <guid>/2022/02/22/enhance-your-console/</guid>
+      <description>babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel。
+babel 的用途  转义 es、ts 等到目标环境的 js。babel7 支持 preset-env，可以指定 targets，转换更加的精准，产物更小。 一些特定用途的代码转换。利用 babel 暴露的 api parse 出 AST，taro 框架。 代码的静态分析。如 linter、type checker 等。  babel 的编译流程 babel 整体编译流程分为三步：</description>
+    </item>
+    
+  </channel>
+</rss>
