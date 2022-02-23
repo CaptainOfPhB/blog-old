@@ -576,7 +576,7 @@ ol, ul {
   font-family: LXGWWenKaiMono, JetBrains Mono, Fira Code, Menlo, Monaco, monospace, sans-serif;
 }
 
-.markdown p code {
+.markdown code {
   color: #eb5757;
   padding: 2px 5px;
   border-radius: 3px;
