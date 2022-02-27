@@ -22,8 +22,8 @@ babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel。
 babel 整体编译流程分为三步：
 
 1. parse：通过 parser 把源码转成抽象语法树（AST）
-3. transform：遍历 AST，调用各种 transform 插件对 AST 进行增删改
-4. generate：把转换后的 AST 打印成目标代码，并生成 sourcemap
+2. transform：遍历 AST，调用各种 transform 插件对 AST 进行增删改
+3. generate：把转换后的 AST 打印成目标代码，并生成 sourcemap
 
 {{< img src="https://s2.loli.net/2022/02/22/vzGDNfSu2FgIOrR.png" alt="babel 编译流程" >}}
 
