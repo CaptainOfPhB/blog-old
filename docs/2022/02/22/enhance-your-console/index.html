@@ -117,9 +117,9 @@
 <h2 id="babel-的编译流程">babel 的编译流程</h2>
 <p>babel 整体编译流程分为三步：</p>
 <ol>
-<li>parse：通过 parser 把源码转成抽象语法树（AST）</li>
-<li>transform：遍历 AST，调用各种 transform 插件对 AST 进行增删改</li>
-<li>generate：把转换后的 AST 打印成目标代码，并生成 sourcemap</li>
+<li>parse：通过 parser 把源码转成抽象语法树（AST）（<code>@babel/parser</code>）</li>
+<li>transform：遍历 AST，调用各种 transform 插件对 AST 进行增删改（<code>@babel/traverse</code>、<code>@babel/types</code>、<code>@babel/template</code>）</li>
+<li>generate：把转换后的 AST 打印成目标代码，并生成 sourcemap（<code>@babel/generate</code>）</li>
 </ol>
 
 
@@ -187,7 +187,67 @@
         <img src="https://s2.loli.net/2022/02/23/JBlKtkMiZzW4aqC.png" />
     </a>
 </div>
+<h2 id="babelparser"><code>@babel/parser</code></h2>
+<p>babel parser 叫 babylon，基于 acorn 实现的，扩展了很多语法，可以支持 es next、jsx、flow、typescript 等语法的解析，其中 jsx、flow、typescript 这些非标准的语法的解析需要指定语法插件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">input</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">options?</span>: <span style="color:#66d9ef">ParserOptions</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">File</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">parseExpression</span>(<span style="color:#a6e22e">input</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">options?</span>: <span style="color:#66d9ef">ParserOptions</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Expression</span>
 
+<span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#34;@babel/parser&#34;</span>).<span style="color:#a6e22e">parse</span>(<span style="color:#e6db74">&#34;code&#34;</span>, {
+  <span style="color:#a6e22e">sourceType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;module&#34;</span>,
+  <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#34;jsx&#34;</span>,
+    <span style="color:#e6db74">&#34;typescript&#34;</span>
+  ]
+});
+</code></pre></div><h2 id="babeltraverse"><code>@babel/traverse</code></h2>
+<p>parse 出的 AST 由 <code>@babel/traverse</code> 来遍历和修改，babel traverse 包提供了 traverse 方法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">opts</span>)
+</code></pre></div><p>parent 指定要遍历的 AST 节点，opts 指定 visitor 函数。babel 会在遍历 parent 对应的 AST 时调用相应的 visitor 函数。visitor 函数会接收两个参数 path 和 state。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">visitor</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">Identifier</span> (<span style="color:#a6e22e">path</span>, <span style="color:#a6e22e">state</span>) {},
+    <span style="color:#a6e22e">StringLiteral</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">enter</span> (<span style="color:#a6e22e">path</span>, <span style="color:#a6e22e">state</span>) {},
+        <span style="color:#a6e22e">exit</span> (<span style="color:#a6e22e">path</span>, <span style="color:#a6e22e">state</span>) {}
+    }
+}
+</code></pre></div>
+
+<div class="fancybox">
+    <a data-fancybox="gallery" href="https://s2.loli.net/2022/03/02/oBLnvwFsRW9SIjZ.png" data-caption="">
+        <img src="https://s2.loli.net/2022/03/02/oBLnvwFsRW9SIjZ.png" />
+    </a>
+</div>
+<p>path 是遍历过程中的路径，会保留上下文信息，有很多属性和方法，比如:</p>
+
+
+<div class="fancybox">
+    <a data-fancybox="gallery" href="https://s2.loli.net/2022/03/02/sW3bGgeOM4mEfdp.png" data-caption="">
+        <img src="https://s2.loli.net/2022/03/02/sW3bGgeOM4mEfdp.png" />
+    </a>
+</div>
+<h2 id="babeltypes"><code>@babel/types</code></h2>
+<p>遍历 AST 的过程中需要创建一些 AST 和判断 AST 的类型。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// create IfStatement node
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">ifStatement</span>(<span style="color:#a6e22e">test</span>, <span style="color:#a6e22e">consequent</span>, <span style="color:#a6e22e">alternate</span>);
+<span style="color:#75715e">// assert IfStatement node
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">isIfStatement</span>(<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">opts</span>);
+<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">assertIfStatement</span>(<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">opts</span>);
+</code></pre></div><h2 id="babeltemplate"><code>@babel/template</code></h2>
+<p>使用 <code>@babel/template</code> 包来批量创建 AST 节点。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ast</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">template</span>(<span style="color:#a6e22e">code</span>, [<span style="color:#a6e22e">opts</span>])(<span style="color:#a6e22e">args</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ast</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">template</span>.<span style="color:#a6e22e">ast</span>(<span style="color:#a6e22e">code</span>, [<span style="color:#a6e22e">opts</span>]);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ast</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">template</span>.<span style="color:#a6e22e">program</span>(<span style="color:#a6e22e">code</span>, [<span style="color:#a6e22e">opts</span>]);
+</code></pre></div><p>如果模版中有占位符，那么就用 template 的 api，在模版中写一些占位的参数，调用时传入这些占位符参数对应的 AST 节点。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fn1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">template</span>(<span style="color:#e6db74">`console.log(NAME)`</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fn2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">template</span>(<span style="color:#e6db74">`console.log(%%NAME%%)`</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ast</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fn1</span>({
+  <span style="color:#a6e22e">NAME</span>: <span style="color:#66d9ef">t.stringLiteral</span>(<span style="color:#e6db74">&#34;CaptainOfPhB&#34;</span>),
+});
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ast</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fn2</span>({
+  <span style="color:#a6e22e">NAME</span>: <span style="color:#66d9ef">t.stringLiteral</span>(<span style="color:#e6db74">&#34;CaptainOfPhB&#34;</span>),
+});
+</code></pre></div>
                     </div>
                     <div class="post_footer">
                         
