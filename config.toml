@@ -45,7 +45,8 @@ url = "/about-me"
 weight = 40
 
 [permalinks]
-posts = "/:year/:month/:day/:slug"
+posts = "/:slug"
+#posts = "/:year/:month/:day/:slug"
 
 [social]
 github = "https://github.com/CaptainOfPhB"

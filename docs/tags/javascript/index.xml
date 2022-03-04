@@ -8,10 +8,10 @@
     <lastBuildDate>Thu, 19 Jul 2018 17:55:23 +0800</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数据类型</title>
-      <link>/2018/07/19/data-type/</link>
+      <link>/data-type/</link>
       <pubDate>Thu, 19 Jul 2018 17:55:23 +0800</pubDate>
       
-      <guid>/2018/07/19/data-type/</guid>
+      <guid>/data-type/</guid>
       <description>JavaScript 中的数据类型有：String、Number、Boolean、Null、Undefined、Object、Symbol 七大类。其中常见的有前六个。
 数据分类 String、Number、Boolean、Null、Undefined 被称为基础类型数据，而 Object 类型的数据被称为引用类型数据。
 数据存储 基础类型的数据直接存储于栈内存（stack）中。而 引用类型 的数据存储于堆内存（heap）中，栈内存中存储的是数据在堆内存中的引用地址，而不是真正的数据。</description>
@@ -19,10 +19,10 @@
     
     <item>
       <title>Object.freeze 和 Object.seal</title>
-      <link>/2018/07/16/object-freeze-and-object-seal/</link>
+      <link>/object-freeze-and-object-seal/</link>
       <pubDate>Mon, 16 Jul 2018 17:32:12 +0800</pubDate>
       
-      <guid>/2018/07/16/object-freeze-and-object-seal/</guid>
+      <guid>/object-freeze-and-object-seal/</guid>
       <description>Vue 的响应式是使用了 Object.defineProperty 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 Object.freeze 方法将数据“冻”起来。
  Object.freeze() 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。
  parameter Obj: 需要冻结的对象。</description>
@@ -30,10 +30,10 @@
     
     <item>
       <title>Object.defineProperty</title>
-      <link>/2018/07/16/object-defineproperty/</link>
+      <link>/object-defineproperty/</link>
       <pubDate>Mon, 16 Jul 2018 17:20:12 +0800</pubDate>
       
-      <guid>/2018/07/16/object-defineproperty/</guid>
+      <guid>/object-defineproperty/</guid>
       <description>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。该方法允许精确添加或修改对象的属性。通过赋值来添加的普通属性会创建在属性枚举期间显示的属性（for...in 或 Object.keys 方法），这些值可以被改变，也可以被删除。这种方法允许这些额外的细节从默认值改变。默认情况下，使用 Object.defineProperty() 添加的属性值是不可变的。
 语法 Object.defineProperty(obj, prop, descriptor)</description>
     </item>

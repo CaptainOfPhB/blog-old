@@ -1,12 +1,12 @@
 ---
-title: "Enhance Your Console"
+title: "Enhance Console Method"
 date: 2022-02-22T21:48:52+08:00
 hidden: false
 draft: false
 tags: ['share','babel']
 keywords: ['share','babel']
 description: "enhance your console"
-slug: "/enhance-your-console"
+slug: "/enhance-console-method"
 ---
 
 babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel。
@@ -140,4 +140,11 @@ const ast = fn2({
 });
 ```
 
+接下来进入实战，使用上面的一些知识，让我们在写 `console` 的时候自动打印出 `console` 所在的行信息。
+
+[GitHub demo][github]
+
 [estree]: https://github.com/estree/estree
+[github]: https://github.com/CaptainOfPhB/enhance-console-method
+
+完。

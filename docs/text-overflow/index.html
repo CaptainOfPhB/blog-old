@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	  
+	  
+	  
+	    <title>文本溢出省略 ♡ 船长の部落格</title>
+	  
+    
+    
+      <meta name="description" content="文本溢出省略" />
+    
+
+    
+    
+    <meta name="keywords" content="CSS, text overflow" />
+    
+
+	  
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Bold.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Regular.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Bold.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
+	  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/base16/github.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/captain.css" />
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">&lt;Reach Me Here /&gt;</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="single_page post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h1>文本溢出省略</h1>
+                        <div class="date">Updated&nbsp;on&nbsp;2018.06.26</div>
+                    </div>
+                    <div class="post_content markdown">
+                        <blockquote>
+<p>The <code>text-overflow</code> property in CSS deals with situations where text is clipped when it overflows the element&rsquo;s box. It can be clipped (i.e. cut off, hidden), display an ellipsis ('…', Unicode Range Value U+2026) or display an custom string (no current browser support for custom strings).</p>
+</blockquote>
+<p>CSS 中的 <code>text-overflow</code> 属性用来处理这样一种情况：当文本超出了他所在元素的盒子（边界）时，将文本进行剪切。文本可以被剪切（截断或者隐藏），将其显示为省略号（<code>...</code>，Unicode 编码为 <code>U+2026</code>）或者显示为一个自定义的字符串。</p>
+<blockquote>
+<p>Note that <code>text-overflow</code> only occurs when the container&rsquo;s <code>overflow</code> property has the value <code>hidden</code>, <code>scroll</code> or <code>auto</code> and <code>white-space: nowrap;</code>.</p>
+</blockquote>
+<p>请注意，<code>text-overflow</code> 仅仅当 container（包裹文字的容器元素）的 <code>overflow</code> 属性具有 <code>hidden</code> 或 <code>scroll</code> 或 <code>auto</code>，以及 <code>white-space: nowrap</code>。</p>
+<blockquote>
+<p><code>Text overflow</code> can only happen on <code>block</code> or <code>inline-block</code> level elements,
+because the element needs to have a width in order to be overflow-ed.
+The overflow happens in the direction as determined by the direction property or related attributes.</p>
+</blockquote>
+<p><code>text-oveflow</code> 仅仅能应用在<code>block</code> 或 <code>inline-block</code> 元素上，因为元素（容器）需要一个宽来隐藏文字，溢出发生在由方向属性或者与相关属性确定的方向上。</p>
+<h2 id="demo">Demo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ellipsis&#34;</span>&gt;
+  请尽可能保持 props 函数为无状态的，因为它只会在路由发生变化时起作用。 如果你需要状态来定义
+  props，请使用包装组件，这样 Vue 才可以对状态变化做出反应。
+&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#ellipsis {
+  <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
+  <span style="color:#75715e">/* Required for text-overflow */</span>
+  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+}
+</code></pre></div><p>文本溢出效果展示：</p>
+<p><img src="https://i.loli.net/2018/06/26/5b31d938ddeef.png" alt="text-overflow"></p>
+<blockquote>
+<p>Reference: <a href="https://css-tricks.com/almanac/properties/t/text-overflow/" target="_blank">text-overflow | CSS-Tricks</a>
+Extension: <a href="https://css-tricks.com/line-clampin/" target="_blank">text-overflow ellipsis multiple lines | CSS-Tricks</a></p>
+</blockquote>
+<p>完。</p>
+
+                    </div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    
+                                    <i class="ri-hashtag"></i>
+                                    <a href="/tags/css/">CSS</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+
+                        <div class="single_page_divider"></div>
+
+                        <div class="single_page_pagination">
+                            
+                                <a class="single_page_pagination_pre" href="/https/">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                    <span class="prev_title">HTTPS</span>
+                                    <span class="prev_text">Prev</span>
+                                </a>
+                            
+                            
+                                <a class="single_page_pagination_next" href="/git-message/">
+                                    <span class="next_title">优雅的 Git 提交信息</span>
+                                    <span class="next_text">Next</span>
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='share_card_container'>
+        <div id='share_card_inner_container'>
+            <h2 id='title'></h2>
+            <p id='author'></p>
+            <p id='summary'></p>
+        </div>
+        <div id='card_footer'>
+            <div style='display: flex;'>
+                <img id='qrcode' src='' alt='qrcode' width='70' height='70'>
+                <div id='extra'>
+                    <p id='site_title'>船长の部落格</p>
+                    <p id='tip'>扫描二维码阅读原文</p>
+                </div>
+            </div>
+            <img src='/images/favicon.png' width='40' height='40'>
+        </div>
+    </div>
+
+    <a id="share_blog" class='share_blog'><i class="ri-share-forward-line"></i></a>
+    <a id="back_to_top" class="back_to_top" href="#"><i class="ri-arrow-up-s-line"></i></a>
+
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="http://www.gohugo.io/">Published by Hugo,</a>
+        <a href="https://github.com/CaptainOfPhB">Hosted on GitHub</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年</span>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="/js/captain.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CaptainOfPhB" />
+	  
+	  
+	  
+	    <title>优雅的 Git 提交信息 ♡ 船长の部落格</title>
+	  
+    
+    
+      <meta name="description" content="优雅的 Git 提交信息" />
+    
+
+    
+    
+    <meta name="keywords" content="git message" />
+    
+
+	  
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Bold.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Regular.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Bold.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
+	  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/base16/github.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/captain.css" />
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about-me">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>沉梦昂志</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">&lt;Reach Me Here /&gt;</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
+                
+                
+                
+                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
+                
+                
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="single_page post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h1>优雅的 Git 提交信息</h1>
+                        <div class="date">Updated&nbsp;on&nbsp;2018.06.27</div>
+                    </div>
+                    <div class="post_content markdown">
+                        <p>Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？</p>
+<blockquote>
+<p>这种东西，当然要借助工具了，才能够写得即规范，又格式化，还能够支持后续分析。
+目前比较建议的是，使用终端工具 <a href="https://github.com/commitizen/cz-cli" target="_blank">commitizen/cz-cli</a> + <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank">commitizen/cz-conventional-changelog</a> + <a href="https://github.com/conventional-changelog/standard-version" target="_blank">conventional-changelog/standard-version</a> 一步解决提交信息和版本发布。甚至，如果想更狠一点，在持续集成里面加入 <a href="https://github.com/marionebl/commitlint" target="_blank">marionebl/commitlint</a> 检查 commit 信息是否符合规范，也不是不可以。</p>
+</blockquote>
+<h2 id="commit-message-format">Commit Message Format</h2>
+<p>目前规范使用较多的是 Angular 团队的规范，继而衍生了 <a href="https://conventionalcommits.org/" target="_blank">Conventional Commits specification</a>。很多工具也是基于此规范, 下文摘自 <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines" target="_blank">Angular 开发者文档</a>。</p>
+<blockquote>
+<p>We have very precise rules over how our git commit messages can be formatted. This leads to more readable messages that are easy to follow when looking through the project history. But also, we use the git commit messages to generate the AngularJS change log.</p>
+</blockquote>
+<p>我们对 commit message 格式有一个非常明确的约束，这样做将使得在浏览项目历史时 commit message 会非常易读，此外，我们也利用 commit message 来生成 AngularJS 的 change log。</p>
+<blockquote>
+<p>The commit message formatting can be added using a typical git workflow or through the use of a CLI wizard (Commitizen). To use the wizard, run yarn run commit in your terminal after staging your changes in git.</p>
+</blockquote>
+<p>commit message 格式可以在经典的 git 工作流中使用，也可以配合一个客户端向导 (Commitizen) 来使用。</p>
+<blockquote>
+<p>Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;
+</code></pre></div><p>每一个 commit message 包括头部、主题以及注脚，头部的格式比较特殊，其包含类型、范围以及主题分类。</p>
+<blockquote>
+<p>The header is mandatory and the scope of the header is optional.</p>
+</blockquote>
+<p>header 部分是强制必须的，但是其范围可写可不写，是可选的。</p>
+<blockquote>
+<p>Any line of the commit message cannot be longer 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools.</p>
+</blockquote>
+<p>任意一行 commit message 不能超过 100 个字符，这样就使得 commit message 在 GitHub 或其他的 Git 工具上变得易读。</p>
+<blockquote>
+<p>If the commit reverts a previous commit, it should begin with revert:, followed by the header of the reverted commit. In the body it should say: This reverts commit <hash>., where the hash is the SHA of the commit being reverted. A commit with this format is automatically created by the git revert command.</p>
+</blockquote>
+<p>如果某个 commit 恢复了之前的 commit，那么 commit message 应该以 <code>revert:</code> 开头，同时在 body 部分应该写明：恢复了 hash 为 xxx 的提交。
+git 恢复命令会自动创建这个格式的 commit message。</p>
+<blockquote>
+<p>Type must be one of the following:</p>
+<ul>
+<li>feat: A new feature</li>
+<li>fix: A bug fix</li>
+<li>docs: Documentation only changes</li>
+<li>style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)</li>
+<li>refactor: A code change that neither fixes a bug nor adds a feature</li>
+<li>perf: A code change that improves performance</li>
+<li>test: Adding missing or correcting existing tests</li>
+<li>chore: Changes to the build process or auxiliary tools and libraries such as documentation generation</li>
+</ul>
+</blockquote>
+<p>type 部分格式参考如下：</p>
+<ul>
+<li>feat: 新的特性</li>
+<li>fix: 修复了一个 bug</li>
+<li>docs: 更改了文档说明</li>
+<li>style: 代码风格修改，并没有影响代码的含义（空格、格式化、分号等）</li>
+<li>refactor: 代码更改，没有修复 bug 也没有添加新的特性</li>
+<li>perf: 代码更改，提升了整体表现（性能、或者运行时间更快等）</li>
+<li>test: 添加了测试或者修改了已有的测试</li>
+<li>chore: 修改了构建流程或者依赖等</li>
+</ul>
+<blockquote>
+<p>The scope could be anything specifying place of the commit change. For example $location, $browser, $compile, $rootScope, ngHref, ngClick, ngView, etc, You can use * when the change affects more than a single scope.</p>
+</blockquote>
+<p>scope 可以是指明 commit 更改范围的任何内容，例如 $location、$browser、$compile、$rootScope 等，你也可以使用 <code>*</code> 符号来表明改动影响的不仅仅是单个范围。</p>
+<blockquote>
+<p>The subject contains succinct description of the change:</p>
+<ol>
+<li>use the imperative, present tense: &ldquo;change&rdquo; not &ldquo;changed&rdquo; nor &ldquo;changes&rdquo;</li>
+<li>don&rsquo;t capitalize first letter</li>
+<li>no dot (.) at the end</li>
+</ol>
+</blockquote>
+<p>subject 部分是针对改动的简要描述，需要注意的是：</p>
+<ol>
+<li>使用祈使句、现在时语态：使用 change 而不是 changed 或 changes</li>
+<li>首字母不要大写</li>
+<li>末尾不要加 <code>.</code> 符号</li>
+</ol>
+<blockquote>
+<p>Just as in the subject, use the imperative, present tense: &ldquo;change&rdquo; not &ldquo;changed&rdquo; nor &ldquo;changes&rdquo;.
+The body should include the motivation for the change and contrast this with previous behavior.</p>
+</blockquote>
+<p>参照 subject 的规范（使用祈使句、现在时语态：change 而不是 changed 或 changes），body 部分也应该以做了什么改动为核心，写明与改动前的差异。</p>
+<blockquote>
+<p>The footer should contain any information about Breaking Changes and is also the place to reference GitHub issues that this commit closes. Breaking Changes should start with the word BREAKING CHANGE: with a space or two newlines. The rest of the commit message is then used for this.</p>
+</blockquote>
+<p>footer 部分应该包含重大的改动的信息，同时也可以表明这次的 commit 解决了 GitHub 上的什么问题（引用 issues 的链接）。重大的改动应该以 <code>BREAKING CHANGE:</code> 开头，
+同时前面留一行或者两行，其他的 commit message 将会用到这些留行。</p>
+<p>更加详细的解释可以参考 <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#" target="_blank">AngularJS Git Commit Message Conventions</a>。</p>
+<h2 id="command-line-tool">Command Line Tool</h2>
+<h3 id="use-git-commit-template">Use git commit template</h3>
+<p>如果在个人的项目中， 想尝试一下这样的规范格式, 那么你可以为 git 设置 commit template, 每次 git commit 的时候在命令行中提示，修改 <code>~/.gitconfig</code>, 添加:</p>
+<pre tabindex="0"><code>[commit]
+  template = ~/.gitmessage
+</code></pre><p>之后新建 <code>.gitmessage</code> 文件，内容如下：</p>
+<pre tabindex="0"><code># head: &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+# - type: feat, fix, docs, style, refactor, test, chore
+# - scope: can be empty (eg. if the change is a global or difficult to assign to a single component)
+# - subject: start with verb (such as 'change'), 50-character line
+#
+# body: 72-character wrapped. This should answer:
+# * Why was this change necessary?
+# * How does it address the problem?
+# * Are there any side effects?
+#
+# footer:
+# - Include a link to the ticket, if any.
+# - BREAKING CHANGE
+#
+</code></pre><h3 id="use-commitizen">Use Commitizen</h3>
+<p>除此之外，我们可以使用更加便捷的命令行工具：<a href="https://github.com/commitizen/cz-cli" target="_blank">commitizen/cz-cli</a>, 我们需要借助它提供的 <code>git cz</code> 命令替代我们的 <code>git commit</code> 命令, 帮助我们生成符合规范的 commit message。</p>
+<p>除此之外, 我们还需要为 commitizen 指定一个 Adapter 比如: <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank">cz-conventional-changelog</a>（一个符合 Angular 团队规范的 preset）使得 commitizen 按照我们指定的规范帮助我们生成 commit message。</p>
+<h4 id="global-installation">Global installation</h4>
+<p>全局模式下, 需要 <code>~/.czrc</code> 配置文件, 为 commitizen 指定 Adapter，全局使用时运行 <code>git cz</code> 即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -g commitizen
+npm install -g cz-conventional-changelog
+touch ~/.czrc
+echo <span style="color:#e6db74">&#39;{ &#34;path&#34;: &#34;cz-conventional-changelog&#34; }&#39;</span> &gt; ~/.czrc
+</code></pre></div><h4 id="local-installation">Local installation</h4>
+<p>本地安装，使用时运行 <code>npm run commit</code> 即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -g commitizen -D
+npm install -g cz-conventional-changelog -D
+</code></pre></div><p>在 <code>package.json</code> 中进行配置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;script&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;commit&#34;</span>: <span style="color:#e6db74">&#34;git-cz&#34;</span>,
+}<span style="color:#960050;background-color:#1e0010">,</span>
+<span style="color:#e6db74">&#34;config&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;commitizen&#34;</span>: {
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;node_modules/cz-conventional-changelog&#34;</span>
+  }
+}
+</code></pre></div><h4 id="custom-adapter">Custom Adapter</h4>
+<p>也许 Angular 的那套规范我们不习惯, 那么可以通过指定 Adapter (<a href="https://github.com/leonardoanalista/cz-customizable" target="_blank">cz-customizable</a>) 编写一套符合自己团队的规范。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># global installation</span>
+npm i -g cz-customizable
+<span style="color:#75715e"># loacl installation</span>
+npm i -D cz-customizable
+</code></pre></div><p>根据安装方式不同在 <code>~</code> 目录下或者项目根目录下创建 <code>.cz-config.js</code> 文件，然后修改 <code>.czrc</code> 以及 <code>package.json</code> 即可：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#75715e">// ~/.czrc
+</span><span style="color:#75715e"></span>{ <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;cz-customizable&#34;</span> }
+<span style="color:#75715e">// package.json
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;config&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;commitizen&#34;</span>: {
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;node_modules/cz-customizable&#34;</span>
+  }
+}
+</code></pre></div><p><code>.cz-config.js</code> 文件的修改可以参照 <a href="https://gist.github.com/leohxj/7bc928f60bfa46a3856ddf7c0f91ab98" target="_blank">leohxj/.cz-config.js</a>或<a href="https://github.com/leonardoanalista/cz-customizable#options" target="_blank">官方文档</a>。</p>
+<h3 id="validate-commit-message">Validate Commit Message</h3>
+<p><a href="https://github.com/marionebl/commitlint" target="_blank">commitlint</a> 可以帮助我们校验 commit message, 如果我们提交的不符合规范, 直接拒绝提交。
+同样的, 它也需要一份校验的配置, 这里推荐 <a href="https://github.com/marionebl/commitlint/tree/master/@commitlint/config-conventional" target="_blank">@commitlint/config-conventional</a>（符合 Angular 团队规范）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -D @commitlint/config-conventional @commitlint/cli
+</code></pre></div><p>同时需要在项目目录下创建配置文件 <code>.commitlintrc.js</code>, 写入:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#39;&#39;</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">commitlint</span><span style="color:#f92672">/</span><span style="color:#a6e22e">config</span><span style="color:#f92672">-</span><span style="color:#a6e22e">conventional</span><span style="color:#e6db74">&#39;&#39;</span>
+  ],
+  <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> {
+  }
+};
+</code></pre></div><h3 id="validate-custom-adapter">Validate Custom Adapter</h3>
+<p>如果你使用的是自定义的 commitizen adapter, 那么你需要:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D commitlint-config-cz @commitlint/cli
+</code></pre></div><p>同时在 <code>.commitlintrc.js</code> 中写入:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;cz&#39;</span>],
+  <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> {}
+};
+</code></pre></div><blockquote>
+<p>扩展:</p>
+<ol>
+<li>结合 <a href="https://github.com/typicode/husky" target="_blank">Husky</a> 校验 commit message</li>
+<li>利用符合语义化的 commit message 生成 CHANGELOG，借助 <a href="https://github.com/conventional-changelog/standard-version" target="_blank">standard-version</a></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/34223150" target="_blank">优雅的提交你的 commit message</a></p>
+</blockquote>
+<p>完。</p>
+
+                    </div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    
+                                    <i class="ri-hashtag"></i>
+                                    <a href="/tags/git/">git</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+
+                        <div class="single_page_divider"></div>
+
+                        <div class="single_page_pagination">
+                            
+                                <a class="single_page_pagination_pre" href="/text-overflow/">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                    <span class="prev_title">文本溢出省略</span>
+                                    <span class="prev_text">Prev</span>
+                                </a>
+                            
+                            
+                                <a class="single_page_pagination_next" href="/command-line-tool/">
+                                    <span class="next_title">实用的命令行工具</span>
+                                    <span class="next_text">Next</span>
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='share_card_container'>
+        <div id='share_card_inner_container'>
+            <h2 id='title'></h2>
+            <p id='author'></p>
+            <p id='summary'></p>
+        </div>
+        <div id='card_footer'>
+            <div style='display: flex;'>
+                <img id='qrcode' src='' alt='qrcode' width='70' height='70'>
+                <div id='extra'>
+                    <p id='site_title'>船长の部落格</p>
+                    <p id='tip'>扫描二维码阅读原文</p>
+                </div>
+            </div>
+            <img src='/images/favicon.png' width='40' height='40'>
+        </div>
+    </div>
+
+    <a id="share_blog" class='share_blog'><i class="ri-share-forward-line"></i></a>
+    <a id="back_to_top" class="back_to_top" href="#"><i class="ri-arrow-up-s-line"></i></a>
+
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="http://www.gohugo.io/">Published by Hugo,</a>
+        <a href="https://github.com/CaptainOfPhB">Hosted on GitHub</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>愿历经千帆，归来仍少年</span>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="/js/captain.js"></script>
+
+
+
+
+</body>
+
+</html>
