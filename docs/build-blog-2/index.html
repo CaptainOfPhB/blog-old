@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,15 +109,15 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h1>记折腾博客（二）</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2021.02.28</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2022.02.16</div>
                     </div>
                     <div class="post_content markdown">
                         <p>继续上篇。</p>
 <p>在所有的东西都配置好之后，运行 <code>hugo</code> 命令即可在 public 目录下构建出网站内容。静态站点需要将 public 目录作为网站的根目录进行部署。我的想法是，一份部署在国外 GitHub 上，一份部署在国内 gitee 上，这样一来除了可以做备份之外，还可以将 gitee 上的站点作为镜像，这样如果主域名访问较慢的情况下，可以切换到速度较快的国内站点进行访问。</p>
 <p>在将博客仓库推到 GitHub 之后，发现 GitHub 貌似没有提供自定义部署文件夹的功能，只有指定的 <code>/root</code> 或者 <code>/doc</code> 两个选择。那么解决方法有两个，要么将打包后的目标文件夹从 public 改为 doc，要么想办法把 public 文件夹作为一个仓库进行部署。</p>
 <p><del>在网上查阅发现，git 可以将指定的文件夹拷贝到另一个新分支，也就是使用 <code>git subtree</code> 命令。因此我打算将 public 的内容作为新分支 deploy 进行部署，使用以下命令：</del></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git subtree push --prefix public origin deploy
-</code></pre></div><p><del>执行完命令后，本地和远程仓库都有了 deploy 分支，并且分支内容和 public 完全一致。</del></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git subtree push --prefix public origin deploy
+</span></span></code></pre></div><p><del>执行完命令后，本地和远程仓库都有了 deploy 分支，并且分支内容和 public 完全一致。</del></p>
 <blockquote>
 <p>更新：之前使用的 <code>git subtree</code> 方法由于 push 时经常 conflict 因此废弃掉，换做部署 <code>/docs</code> 文件夹的方式，具体操作步骤可以查看这篇<a href="/2021/06/02/github-page/">文章</a>。</p>
 </blockquote>
@@ -121,34 +126,34 @@
 <p>可以使用 <code>ping github.com</code> 命令来获取 GitHub 的 IP 地址</p>
 </blockquote>
 <p>还有一个问题，如何使本地仓库同步到两个远程仓库呢？在我网上查阅发现，只需要在本地仓库下的 .git/config 下添加第二个远程仓库的 url 即可，我打开 git config 发现内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">[<span style="color:#ae81ff">core]</span>
-    <span style="color:#ae81ff">repositoryformatversion = 0</span>
-    <span style="color:#ae81ff">filemode = true</span>
-    <span style="color:#ae81ff">bare = false</span>
-    <span style="color:#ae81ff">logallrefupdates = true</span>
-    <span style="color:#ae81ff">ignorecase = true</span>
-    <span style="color:#ae81ff">precomposeunicode = true</span>
-[<span style="color:#ae81ff">user]</span>
-    <span style="color:#ae81ff">name = CaptainOfPhB</span>
-    <span style="color:#ae81ff">email = xxxxxxxx@gmail.com</span>
-[<span style="color:#ae81ff">remote &#34;origin&#34;]</span>
-    <span style="color:#ae81ff">url = git@github.com:CaptainOfPhB/captainofphb.github.io.git</span>
-    <span style="color:#ae81ff">fetch = +refs/heads/*:refs/remotes/origin/*</span>
-[<span style="color:#ae81ff">branch &#34;master&#34;]</span>
-    <span style="color:#ae81ff">remote = origin</span>
-    <span style="color:#ae81ff">merge = refs/heads/master</span>
-[<span style="color:#ae81ff">branch &#34;deploy&#34;]</span>
-    <span style="color:#ae81ff">remote = origin</span>
-</code></pre></div><p>那么只需要在 <code>remote.origin.url</code> 下面再添加一条远程仓库的 url 即可，这样就可以把本地仓库同步到两个远程仓库：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">[<span style="color:#ae81ff">remote &#34;origin&#34;]</span>
-  <span style="color:#ae81ff">url = git@github.com:CaptainOfPhB/captainofphb.github.io.git</span>
-  <span style="color:#ae81ff">url = git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git</span>
-  <span style="color:#ae81ff">fetch = +refs/heads/*:refs/remotes/origin/*</span>
-</code></pre></div><p>添加完之后，使用 <code>git remote -v</code> 进行查看，打印出：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git (fetch)</span>
-<span style="color:#ae81ff">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git (push)</span>
-<span style="color:#ae81ff">origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git (push)</span>
-</code></pre></div><p>这表示第一个 url 地址 git 用来做 fetch 或 pull，第二第三用来做 push 同步。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[<span style="color:#ae81ff">core]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">repositoryformatversion = 0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">filemode = true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">bare = false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">logallrefupdates = true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">ignorecase = true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">precomposeunicode = true</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">user]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">name = CaptainOfPhB</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">email = xxxxxxxx@gmail.com</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">remote &#34;origin&#34;]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">url = git@github.com:CaptainOfPhB/captainofphb.github.io.git</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">fetch = +refs/heads/*:refs/remotes/origin/*</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">branch &#34;master&#34;]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">remote = origin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">merge = refs/heads/master</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">branch &#34;deploy&#34;]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">remote = origin</span>
+</span></span></code></pre></div><p>那么只需要在 <code>remote.origin.url</code> 下面再添加一条远程仓库的 url 即可，这样就可以把本地仓库同步到两个远程仓库：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[<span style="color:#ae81ff">remote &#34;origin&#34;]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">url = git@github.com:CaptainOfPhB/captainofphb.github.io.git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">url = git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">fetch = +refs/heads/*:refs/remotes/origin/*</span>
+</span></span></code></pre></div><p>添加完之后，使用 <code>git remote -v</code> 进行查看，打印出：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git (fetch)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">origin  git@github.com:CaptainOfPhB/captainofphb.github.io.git (push)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">origin  git@gitee.com:&lt;user_acount&gt;/&lt;repository_name&gt;.git (push)</span>
+</span></span></code></pre></div><p>这表示第一个 url 地址 git 用来做 fetch 或 pull，第二第三用来做 push 同步。</p>
 <p>然后运行 <code>git push</code> 之后，发现仓库会同步到 gitee 了。然后在 gitee page 上进行配置，选择 <del>deploy 分支直接</del> <code>docs</code> 子目录进行部署即可，与 GitHub 类似。</p>
 <p>你可以点击 <a href="https://daijiangtao.name" target="_blank">daijiangtao.name</a> 或 <a href="https://daijiangtao.gitee.io" target="_blank">daijiangtao.gitee.io</a> 访问我的博客。</p>
 <p>完。</p>
@@ -230,8 +235,6 @@
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>

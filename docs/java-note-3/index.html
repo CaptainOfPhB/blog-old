@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,7 +109,7 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h1>Java 学习笔记（三)</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2019.06.25</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.26</div>
                     </div>
                     <div class="post_content markdown">
                         <h3 id="数据类型">数据类型</h3>
@@ -147,41 +152,41 @@
 <ul>
 <li>每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 127<span style="color:#f92672">;</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">((</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)(</span>a <span style="color:#f92672">+</span> 1<span style="color:#f92672">));</span> <span style="color:#75715e">// -128, int 类型数据最大 127，最小 -128
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 127<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">((</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)(</span>a <span style="color:#f92672">+</span> 1<span style="color:#f92672">));</span> <span style="color:#75715e">// -128, int 类型数据最大 127，最小 -128
+</span></span></span></code></pre></div><ul>
 <li>int 类型数据最大值大概是 21 亿，强制类型转换的时候会丢失精度</li>
 <li>每个数据类型原始的类称为装箱类型</li>
 <li>java 中，可以使用 <strong>_</strong> 作为数字的分割符，例如 int a = 1_0_0_0 和 int a = 1000 是等价的</li>
 <li>float 和 double 是计算中对于小数的近似表示，因为浮点数无法精确的存储十进制的小数。浮点数只能比较大小，不能比较相等，如果两个浮点数相等，仅仅只是巧合</li>
 <li>浮点数如何实现相等比较呢？使用 Math.abs() 方法，例如：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">double</span> a <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">00002</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>Math<span style="color:#f92672">.</span><span style="color:#a6e22e">abs</span><span style="color:#f92672">(</span>a <span style="color:#f92672">-</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">00002</span><span style="color:#f92672">)</span> <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">0000000001</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#75715e">// 小于一个足够小的数字，说明两者是相等的
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> a <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">00002</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>Math<span style="color:#f92672">.</span><span style="color:#a6e22e">abs</span><span style="color:#f92672">(</span>a <span style="color:#f92672">-</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">00002</span><span style="color:#f92672">)</span> <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">0000000001</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 小于一个足够小的数字，说明两者是相等的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li>如何声明不同数据类型的数据？</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">byte</span> e <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)(</span>126<span style="color:#f92672">);</span> <span style="color:#75715e">// 使用类型转换的例子
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span> 1000000<span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> g <span style="color:#f92672">=</span> 0x12377<span style="color:#f92672">;</span> <span style="color:#75715e">// 16 进制
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> h <span style="color:#f92672">=</span> 0b1010011<span style="color:#f92672">;</span> <span style="color:#75715e">// 2 进制
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">long</span> a <span style="color:#f92672">=</span> 1000000000000L<span style="color:#f92672">;</span> <span style="color:#75715e">// 末尾使用大写的 L
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> b <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">1f</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">double</span> c <span style="color:#f92672">=</span> 1e<span style="color:#f92672">-</span>7d<span style="color:#f92672">;</span> <span style="color:#75715e">// e 代表 10 次方
-</span></code></pre></div><h3 id="类型转换">类型转换</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">byte</span> e <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)(</span>126<span style="color:#f92672">);</span> <span style="color:#75715e">// 使用类型转换的例子
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span> 1000000<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> g <span style="color:#f92672">=</span> 0x12377<span style="color:#f92672">;</span> <span style="color:#75715e">// 16 进制
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> h <span style="color:#f92672">=</span> 0b1010011<span style="color:#f92672">;</span> <span style="color:#75715e">// 2 进制
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">long</span> a <span style="color:#f92672">=</span> 1000000000000L<span style="color:#f92672">;</span> <span style="color:#75715e">// 末尾使用大写的 L
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> b <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">1f</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> c <span style="color:#f92672">=</span> 1e<span style="color:#f92672">-</span>7d<span style="color:#f92672">;</span> <span style="color:#75715e">// e 代表 10 次方
+</span></span></span></code></pre></div><h3 id="类型转换">类型转换</h3>
 <ul>
 <li>整数除法是地板除。除法结果向下取整，导致得到的结果和预期不符</li>
 <li>解决类型原因带来的异常，需要把所有的数据类型提升到最高精度级别</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 3<span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span>
-
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a <span style="color:#f92672">/</span> b<span style="color:#f92672">);</span> <span style="color:#75715e">// 1.0，向下取整
-</span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">((</span><span style="color:#66d9ef">double</span><span style="color:#f92672">)</span> a <span style="color:#f92672">/</span> b<span style="color:#f92672">);</span> <span style="color:#75715e">// 1.5
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 3<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a <span style="color:#f92672">/</span> b<span style="color:#f92672">);</span> <span style="color:#75715e">// 1.0，向下取整
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">((</span><span style="color:#66d9ef">double</span><span style="color:#f92672">)</span> a <span style="color:#f92672">/</span> b<span style="color:#f92672">);</span> <span style="color:#75715e">// 1.5
+</span></span></span></code></pre></div><ul>
 <li>丢失精度时需要进行强制类型转换</li>
 <li>char 参与计算的时候使用的是 ascii 码，char i = &lsquo;1&rsquo; 与 char i = 49 是等价的</li>
 </ul>
@@ -189,35 +194,35 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 <ul>
 <li>原生（基本）数据类型的包装类称为装箱类型。java 在一些情况下会自动做装箱拆箱处理。类似 js 中：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// js
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> obj1 <span style="color:#f92672">=</span> <span style="color:#f92672">{};</span>
-<span style="color:#66d9ef">const</span> obj2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">();</span>
-<span style="color:#66d9ef">const</span> num1 <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
-<span style="color:#66d9ef">const</span> num2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Number<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-<span style="color:#75715e">// java
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
-Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> obj1 <span style="color:#f92672">=</span> <span style="color:#f92672">{};</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> obj2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> num1 <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> num2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Number<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// java
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span></code></pre></div><ul>
 <li>容器类不接受原生数据类型，必须是装箱类型，例如：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 错误的使用原生类型
-</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
-<span style="color:#75715e">// 正确的使用装箱类型
-</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 错误的使用原生类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 正确的使用装箱类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+</span></span></code></pre></div><ul>
 <li>可以赋值为 null，例如：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> <span style="color:#75715e">// error, 原生数据类型不允许赋值为 null
-</span><span style="color:#75715e"></span>
-Boolean flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-</code></pre></div><p>但是对装箱类型赋值 null 的时候，存在一个隐患：当我们将一个装箱的数据赋值给一个原生类型的数据时，java 会进行拆箱操作，拆箱可能会出现<u>空指针异常报错</u>（NullPointerException），比如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span> <span style="color:#75715e">// NullPointerException，java 拆箱的时候发生错误
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> <span style="color:#75715e">// error, 原生数据类型不允许赋值为 null
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Boolean flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+</span></span></code></pre></div><p>但是对装箱类型赋值 null 的时候，存在一个隐患：当我们将一个装箱的数据赋值给一个原生类型的数据时，java 会进行拆箱操作，拆箱可能会出现<u>空指针异常报错</u>（NullPointerException），比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span> <span style="color:#75715e">// NullPointerException，java 拆箱的时候发生错误
+</span></span></span></code></pre></div><ul>
 <li>可以使用装箱类型提供的一些方法，类似于 js 中的 Object.prototype.toString 等操作。比如 Integer.parseInt() 可将字符串转换为 int 类型数据</li>
 </ul>
 <h3 id="相等比较">相等比较</h3>
@@ -225,23 +230,23 @@ flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</spa
 <li>equals 用来比较两个值是否相等，而 == 用来比较两个值是否具有同一性</li>
 <li>当 java 中的数据为基础类型时，使用 == 能够得到正确的结果。当数据为引用类型的时候，使用 == 比较的是引用类型的栈内存（stack）内容，通常得不到正确的结果，因为真正的数据存放于堆（heap）内存中</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 1000<span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 1000<span style="color:#f92672">;</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a <span style="color:#f92672">==</span> b<span style="color:#f92672">);</span> <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span>
-Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1000<span style="color:#f92672">);</span>
-Integer j <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1000<span style="color:#f92672">);</span>
-
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> j<span style="color:#f92672">);</span> <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>j<span style="color:#f92672">));</span> <span style="color:#75715e">// true, 使用 equals 得到正确的结果
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 1000<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 1000<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a <span style="color:#f92672">==</span> b<span style="color:#f92672">);</span> <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1000<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Integer j <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1000<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> j<span style="color:#f92672">);</span> <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>j<span style="color:#f92672">));</span> <span style="color:#75715e">// true, 使用 equals 得到正确的结果
+</span></span></span></code></pre></div><ul>
 <li>当 Integer 包装类声明的引用对象赋值 -128 ~127 范围内的数值时，使用 == 进行两个值得比较会神奇的得到比较结果为 true：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-Integer j <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> j<span style="color:#f92672">);</span> <span style="color:#75715e">// true
-</span></code></pre></div><p>其原因是：Integer 创建的引用类型数据占用的空间大小远远比 int 占用的 4 byte 要大，因此 java 为了优化节省内存，将 -128 ~ 127 范围内的 Integer 数据进行了<strong>缓存</strong>，因此 i 和 j 指向的都是同一处堆内存，导致了使用 == 进行比较的时候得到的结果为 true，可以在 JDK 的代码中查看查看注释。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Integer j <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> j<span style="color:#f92672">);</span> <span style="color:#75715e">// true
+</span></span></span></code></pre></div><p>其原因是：Integer 创建的引用类型数据占用的空间大小远远比 int 占用的 4 byte 要大，因此 java 为了优化节省内存，将 -128 ~ 127 范围内的 Integer 数据进行了<strong>缓存</strong>，因此 i 和 j 指向的都是同一处堆内存，导致了使用 == 进行比较的时候得到的结果为 true，可以在 JDK 的代码中查看查看注释。</p>
 <p>完。</p>
 
                     </div>
@@ -321,8 +326,6 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>

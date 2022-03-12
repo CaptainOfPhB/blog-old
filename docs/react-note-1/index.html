@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,49 +109,49 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h1>React 学习笔记（一）</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2019.04.16</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2022.02.16</div>
                     </div>
                     <div class="post_content markdown">
                         <ol>
 <li>React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// this.state.count === 0
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> });
-<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> });
-<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> });
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>); <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// this.state.count === 0
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(({ <span style="color:#a6e22e">count</span> }) =&gt; ({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }));
-<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(({ <span style="color:#a6e22e">count</span> }) =&gt; ({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }));
-<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(({ <span style="color:#a6e22e">count</span> }) =&gt; ({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }));
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>); <span style="color:#75715e">// 3
-</span></code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// this.state.count === 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> });
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> });
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> });
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>); <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// this.state.count === 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(({ <span style="color:#a6e22e">count</span> }) =&gt; ({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(({ <span style="color:#a6e22e">count</span> }) =&gt; ({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(({ <span style="color:#a6e22e">count</span> }) =&gt; ({ <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>); <span style="color:#75715e">// 3
+</span></span></span></code></pre></div><ol start="2">
 <li>事件处理中，可以使用箭头函数，也可使用 bind，区别在于 bind 可以隐式的将事件对象等传递进去</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;button onClick={(e) =&gt; this.deleteRow(id, e)}&gt;Delete Row&lt;/button&gt;
-&lt;button onClick={this.deleteRow.bind(this, id)}&gt;Delete Row&lt;/button&gt;
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;button onClick={(e) =&gt; this.deleteRow(id, e)}&gt;Delete Row&lt;/button&gt;
+</span></span><span style="display:flex;"><span>&lt;button onClick={this.deleteRow.bind(this, id)}&gt;Delete Row&lt;/button&gt;
+</span></span></code></pre></div><ol start="3">
 <li>在这两种情况下，React 的事件对象 e 会被作为第二个参数传递。如果通过箭头函数的方式，事件对象必须显式的进行传递，而通过 bind 的方式，事件对象以及更多的参数将会被隐式的进行传递</li>
 <li>组件中 render 返回 null 则组件不会进行渲染，但是生命周期仍然会进行调用</li>
 <li>map 生成元素集合的时候必须添加 key，key 在兄弟节点之间必须唯一，key 不会作为 props 传入到子组件内。<a href="https://github.com/dylang/shortid" target="_blank">shortId.js</a>、<a href="https://gist.github.com/gordonbrander/2230317" target="_blank">ID.js</a></li>
 <li>受控组件 v.s. 非受控组件 <a href="https://jaredpalmer.com/formik/" target="_blank">Formik.js</a></li>
 <li>Fragment &amp; &lt;&gt;&lt;/&gt;、使用 ref 使元素聚焦 this.ref = React.createRef、ref.current.focus()</li>
-<li>组件的动态导入 React.lazy(() =&gt; import('./component'))、React.Suspense fallback、使用 lazy 动态导入的组件必须使用 Suspense 包裹，使得能有一个回退的 UI</li>
+<li>组件的动态导入 React.lazy(() =&gt; import(&rsquo;./component&rsquo;))、React.Suspense fallback、使用 lazy 动态导入的组件必须使用 Suspense 包裹，使得能有一个回退的 UI</li>
 <li>ErrorBoundary 用来处理一些错误边界，常与 Suspense 配合使用，当 Suspense 出现异常时，友好的提示用户，提升体验，内部使用 componentDidCatch 以及 static getDerivedStateFromError 来进行错误处理</li>
 <li>基于路由的代码分割配合 React.lazy 或者 React Router 实现</li>
 <li>React.lazy 只支持默认导出（export default），若想将命名导出不会被 treeshaking 掉，可使用中间模块，重新导出为默认模块</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// components.js
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">xxx</span> <span style="color:#f92672">=</span> <span style="color:#75715e">/* */</span>
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">yyy</span> <span style="color:#f92672">=</span> <span style="color:#75715e">/* */</span>
-
-<span style="color:#75715e">// component.js
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> {<span style="color:#a6e22e">xxx</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">dafault</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components&#39;</span>;
-
-<span style="color:#75715e">//App.js
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">xxx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">lazy</span>(() =&gt; <span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#39;./component.js&#39;</span>))
-</code></pre></div><p>完。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// components.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">xxx</span> <span style="color:#f92672">=</span> <span style="color:#75715e">/* */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">yyy</span> <span style="color:#f92672">=</span> <span style="color:#75715e">/* */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// component.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> {<span style="color:#a6e22e">xxx</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">dafault</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//App.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">xxx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">lazy</span>(() =&gt; <span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#39;./component.js&#39;</span>))
+</span></span></code></pre></div><p>完。</p>
 
                     </div>
                     <div class="post_footer">
@@ -225,8 +230,6 @@
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>

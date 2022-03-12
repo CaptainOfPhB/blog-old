@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,7 +109,7 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h1>如何使用 Shadowsocks 获取谷歌服务</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2018.06.29</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.28</div>
                     </div>
                     <div class="post_content markdown">
                         <p>由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。</p>
@@ -136,21 +141,21 @@
 </blockquote>
 <h3 id="linux">Linux</h3>
 <p>该系统下推荐使用命令行版本，打开终端，键入以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get update
-sudo apt-get install python-pip
-sudo pip install shadowsocks
-</code></pre></div><p>执行成功后，编辑 <code>/etc/shadowsocks/config.json</code> 文件，可参考 Linux 下的配置截图：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install python-pip
+</span></span><span style="display:flex;"><span>sudo pip install shadowsocks
+</span></span></code></pre></div><p>执行成功后，编辑 <code>/etc/shadowsocks/config.json</code> 文件，可参考 Linux 下的配置截图：</p>
 <pre tabindex="0"><code>sudo vim /etc/shadowsocks/config.json
 </code></pre><p><img src="https://i.loli.net/2017/11/04/59fda605f346d.jpg" alt="Linux config"></p>
 <p>配置完成后，键入以下命令可在后台运行 shadowsocks，运行成功截图：</p>
 <pre tabindex="0"><code>sudo sslocal -c /etc/shadowsocks/config.json -d start
 </code></pre><p><img src="https://i.loli.net/2017/11/04/59fdb0a5ca920.jpg" alt="Successed"></p>
 <p>命令太长不好记，可以在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 中添加 alias：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># alias it in .zshrc for example</span>
-echo <span style="color:#e6db74">&#39;\n#alias for running shaodowsocks in the background&#39;</span> &gt;&gt; ~/.zshrc
-echo <span style="color:#e6db74">&#39;\nalias runss=&#34;sudo sslocal -c /etc/shadowsocks/config.json -d start&#34;&#39;</span> &gt;&gt; ~/.zshrc
-source ~/.zshrc
-</code></pre></div><p><code>runss</code> 即为命令快捷键，可自行设置，执行 <code>runss</code> 即可后台开启代理服务。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># alias it in .zshrc for example</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;\n#alias for running shaodowsocks in the background&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;\nalias runss=&#34;sudo sslocal -c /etc/shadowsocks/config.json -d start&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span style="display:flex;"><span>source ~/.zshrc
+</span></span></code></pre></div><p><code>runss</code> 即为命令快捷键，可自行设置，执行 <code>runss</code> 即可后台开启代理服务。</p>
 <h3 id="mac">Mac</h3>
 <p>下载 <a href="https://jaist.dl.sourceforge.net/project/shadowsocksgui/dist/ShadowsocksX-2.6.3.dmg" target="_blank">ShadowsocksX-2.6.3.dmg</a>，安装完成后进行配置，可参考上文的 Windows、Linux 系统下的方法进行。</p>
 <h2 id="代理管理设置">代理管理设置</h2>
@@ -238,8 +243,6 @@ source ~/.zshrc
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>

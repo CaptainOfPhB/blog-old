@@ -23,7 +23,7 @@ babel 的用途  转义 es、ts 等到目标环境的 js。babel7 支持 preset-
       
       <guid>/juejin-book-7047524421182947366-2/</guid>
       <description>Capitalize 利用 ts 自带的 Uppercase 工具类型。
-type Capitalize&amp;lt;S extends string&amp;gt; = S extends `${infer First}${infer Rest}` ?</description>
+type Capitalize&amp;lt;S extends string&amp;gt; =  S extends `${infer First}${infer Rest}`  ?</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ type Capitalize&amp;lt;S extends string&amp;gt; = S extends `${infer First}${inf
       
       <guid>/build-blog-1/</guid>
       <description>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：
-p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常地棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</description>
+p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常地棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
       <pubDate>Sun, 20 Sep 2020 14:16:27 +0800</pubDate>
       
       <guid>/typescript-note-3/</guid>
-      <description>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &amp;#39;TypeScript&amp;#39;; const ts: TypeScript = &amp;#39;TypeScript&amp;#39;; const sayHello = (name: string) =&amp;gt; console.</description>
+      <description>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &amp;#39;TypeScript&amp;#39;; const ts: TypeScript = &amp;#39;TypeScript&amp;#39;;  const sayHello = (name: string) =&amp;gt; console.</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@ p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效�
       <guid>/vue-computed-watch-methods/</guid>
       <description>在 Vue 模板中使用表达式是十分便利的，但是这样设计的初衷是仅仅用于简单运算。在模板中使用大量的逻辑运算会使得模板变得难以维护。对于任何复杂的逻辑，都应该使用计算属性。
 Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符串放入一个计算属性中：
-&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;p&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; const app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;Hello&amp;#39; }, computed: { // 计算属性的 getter  reversedMessage: function () { // this 指向 Vue 实例  return this.</description>
+&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt;  &amp;lt;p&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/p&amp;gt;  &amp;lt;p&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; const app = new Vue({  el: &amp;#39;#app&amp;#39;,  data: {  message: &amp;#39;Hello&amp;#39;  },  computed: {  // 计算属性的 getter  reversedMessage: function () {  // this 指向 Vue 实例  return this.</description>
     </item>
     
     <item>

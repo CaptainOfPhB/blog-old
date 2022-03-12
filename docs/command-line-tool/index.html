@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,62 +109,62 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h1>实用的命令行工具</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2018.06.28</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.28</div>
                     </div>
                     <div class="post_content markdown">
                         <p>工欲善其事，必先利其器。介绍一些比较实用的命令行工具以及技巧。</p>
 <h2 id="asciinema">asciinema</h2>
 <p>Record and share your terminal sessions, an awesome terminal recording tool:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># installation</span>
-brew install asciinema
-<span style="color:#75715e"># usage</span>
-asciinema rec
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># installation</span>
+</span></span><span style="display:flex;"><span>brew install asciinema
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usage</span>
+</span></span><span style="display:flex;"><span>asciinema rec
+</span></span></code></pre></div><blockquote>
 <p>Offical website: <a href="https://asciinema.org/" target="_blank">asciinema</a></p>
 </blockquote>
 <h2 id="brew">brew</h2>
 <p>The missing package manager for macOS:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># installation</span>
-/usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#75715e"># usage</span>
-brew install &lt;package_name&gt;
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># installation</span>
+</span></span><span style="display:flex;"><span>/usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usage</span>
+</span></span><span style="display:flex;"><span>brew install &lt;package_name&gt;
+</span></span></code></pre></div><blockquote>
 <p>Notice: For Mac(Unix) only</p>
 </blockquote>
 <h2 id="git-open">git-open</h2>
 <p>Open the corresponding remote repository in your default browser conveniently when you under a local git repository:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># installation</span>
-npm i -g git-open
-<span style="color:#75715e"># usage</span>
-git-open
-</code></pre></div><h2 id="http-server">http-server</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># installation</span>
+</span></span><span style="display:flex;"><span>npm i -g git-open
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usage</span>
+</span></span><span style="display:flex;"><span>git-open
+</span></span></code></pre></div><h2 id="http-server">http-server</h2>
 <p>Start a local server on your computer, subcommands <code>-c</code> means no cache and <code>-1</code> means the expire time is <code>-1</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># installation</span>
-npm i -g http-server
-<span style="color:#75715e"># usage</span>
-http-server -c-1
-</code></pre></div><h2 id="open">open</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># installation</span>
+</span></span><span style="display:flex;"><span>npm i -g http-server
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usage</span>
+</span></span><span style="display:flex;"><span>http-server -c-1
+</span></span></code></pre></div><h2 id="open">open</h2>
 <p>Open current directory or open a file with default application:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># usage for Mac(Unix)</span>
-open &lt;dir or file&gt;
-<span style="color:#75715e"># usage for Linux</span>
-xdg-open &lt;dir or file&gt;
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># usage for Mac(Unix)</span>
+</span></span><span style="display:flex;"><span>open &lt;dir or file&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usage for Linux</span>
+</span></span><span style="display:flex;"><span>xdg-open &lt;dir or file&gt;
+</span></span></code></pre></div><blockquote>
 <p>Notice: The above commands are pre-installed</p>
 </blockquote>
 <h2 id="say">say</h2>
 <p>Maybe you will use it when you confuse what a word&rsquo;s pronunciation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">say &lt;word&gt;
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>say &lt;word&gt;
+</span></span></code></pre></div><blockquote>
 <p>Notice: Pre-installed and for Mac(Unix) only</p>
 </blockquote>
 <h2 id="terminal-translate">terminal-translate</h2>
 <p>Translate words and sentences using terminal conveniently:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># installation</span>
-npm i -g terminal-translate
-<span style="color:#75715e"># usage</span>
-tl &lt;word or sentence&gt;
-</code></pre></div><p>未完待续&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># installation</span>
+</span></span><span style="display:flex;"><span>npm i -g terminal-translate
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usage</span>
+</span></span><span style="display:flex;"><span>tl &lt;word or sentence&gt;
+</span></span></code></pre></div><p>未完待续&hellip;</p>
 
                     </div>
                     <div class="post_footer">
@@ -241,8 +246,6 @@ tl &lt;word or sentence&gt;
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>

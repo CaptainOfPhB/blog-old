@@ -12,7 +12,7 @@ name = "CaptainOfPhB"
 
 [params]
 description = "船长の部落格" # 网站描述
-enableMathJax = true # 是否使用 mathjax（数学公式）
+#enableMathJax = true # 是否使用 mathjax（数学公式）
 enableSummary = true # 是否显示文章摘要
 footerSlogan = "愿历经千帆，归来仍少年" # 网站页脚标语
 keywords = ["CaptainOfPhB", "船长の部落格"] # 网站关键字
@@ -52,6 +52,7 @@ posts = "/:slug"
 github = "https://github.com/CaptainOfPhB"
 zhihu = "https://www.zhihu.com/people/CaptainInPHW"
 wechat = "https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg"
+share = "https://daijiangtao.site"
 
 [markup.goldmark.renderer]
 unsafe = true

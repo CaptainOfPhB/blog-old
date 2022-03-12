@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -109,35 +114,35 @@
                     <div class="post_content markdown">
                         <h3 id="capitalize">Capitalize</h3>
 <p>利用 ts 自带的 <code>Uppercase</code> 工具类型。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Capitalize</span>&lt;<span style="color:#f92672">S</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span>&gt; <span style="color:#f92672">=</span>
-  <span style="color:#a6e22e">S</span> <span style="color:#66d9ef">extends</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">First</span><span style="color:#e6db74">}${</span><span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Rest</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
-    <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Uppercase</span>&lt;<span style="color:#f92672">First</span>&gt;<span style="color:#e6db74">}${</span><span style="color:#a6e22e">Rest</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
-    <span style="color:#f92672">:</span> <span style="color:#a6e22e">S</span>;
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Capitalize</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#39;captainOfPhB&#39;</span><span style="color:#f92672">&gt;</span>; <span style="color:#75715e">// CaptainOfPhB
-</span></code></pre></div><h3 id="filterbyvaluetype">FilterByValueType</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Capitalize</span>&lt;<span style="color:#f92672">S</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span>&gt; <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">S</span> <span style="color:#66d9ef">extends</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">First</span><span style="color:#e6db74">}${</span><span style="color:#66d9ef">infer</span> <span style="color:#a6e22e">Rest</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Uppercase</span>&lt;<span style="color:#f92672">First</span>&gt;<span style="color:#e6db74">}${</span><span style="color:#a6e22e">Rest</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">:</span> <span style="color:#a6e22e">S</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Capitalize</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#39;captainOfPhB&#39;</span><span style="color:#f92672">&gt;</span>; <span style="color:#75715e">// CaptainOfPhB
+</span></span></span></code></pre></div><h3 id="filterbyvaluetype">FilterByValueType</h3>
 <p><code>never</code> 的索引会在生成新的索引类型时被去掉。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FilterByValueType</span>&lt;<span style="color:#f92672">Obj</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">Record</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;, <span style="color:#a6e22e">ValueType</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> {
-  [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">Obj</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ValueType</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Obj</span>[<span style="color:#a6e22e">Key</span>] <span style="color:#f92672">?</span> <span style="color:#a6e22e">Key</span> : <span style="color:#66d9ef">never</span>] <span style="color:#f92672">:</span> <span style="color:#a6e22e">Obj</span>[<span style="color:#a6e22e">Key</span>]
-}
-
-<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
-  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
-  <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>;
-  <span style="color:#a6e22e">hobby</span>: <span style="color:#66d9ef">string</span>[];
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">FilterByValueType</span>&lt;<span style="color:#f92672">Person</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">string</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">number</span>&gt;; <span style="color:#75715e">// { name: string; age: number }
-</span></code></pre></div><h3 id="isequal">isEqual</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">IsEqual</span>&lt;<span style="color:#f92672">A</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">B</span>&gt; <span style="color:#f92672">=</span> (<span style="color:#a6e22e">A</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">1</span> : <span style="color:#66d9ef">2</span>) <span style="color:#66d9ef">extends</span> (<span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">1</span> : <span style="color:#66d9ef">2</span>) <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
-</code></pre></div><h3 id="buildarray">BuildArray</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">BuildArray</span>&lt;<span style="color:#f92672">Length</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">number</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Ele </span><span style="color:#f92672">=</span> <span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Arr</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">[]</span> <span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">[]</span>&gt; <span style="color:#f92672">=</span>
-  <span style="color:#a6e22e">Arr</span>[<span style="color:#e6db74">&#39;length&#39;</span>] <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Length</span>
-    <span style="color:#f92672">?</span> <span style="color:#a6e22e">Arr</span> 
-    : <span style="color:#66d9ef">BuildArray</span>&lt;<span style="color:#f92672">Length</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Ele</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">...Arr</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Ele</span><span style="color:#960050;background-color:#1e0010">]</span>&gt;;
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">BuildArray</span>&lt;<span style="color:#f92672">3</span>&gt;; <span style="color:#75715e">// [unknown, unknown, unknown]
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FilterByValueType</span>&lt;<span style="color:#f92672">Obj</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">Record</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;, <span style="color:#a6e22e">ValueType</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">Key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">Obj</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ValueType</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Obj</span>[<span style="color:#a6e22e">Key</span>] <span style="color:#f92672">?</span> <span style="color:#a6e22e">Key</span> : <span style="color:#66d9ef">never</span>] <span style="color:#f92672">:</span> <span style="color:#a6e22e">Obj</span>[<span style="color:#a6e22e">Key</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hobby</span>: <span style="color:#66d9ef">string</span>[];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">FilterByValueType</span>&lt;<span style="color:#f92672">Person</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">string</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">number</span>&gt;; <span style="color:#75715e">// { name: string; age: number }
+</span></span></span></code></pre></div><h3 id="isequal">isEqual</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">IsEqual</span>&lt;<span style="color:#f92672">A</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">B</span>&gt; <span style="color:#f92672">=</span> (<span style="color:#a6e22e">A</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">1</span> : <span style="color:#66d9ef">2</span>) <span style="color:#66d9ef">extends</span> (<span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">1</span> : <span style="color:#66d9ef">2</span>) <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
+</span></span></code></pre></div><h3 id="buildarray">BuildArray</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">BuildArray</span>&lt;<span style="color:#f92672">Length</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">number</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Ele </span><span style="color:#f92672">=</span> <span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Arr</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">[]</span> <span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">[]</span>&gt; <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Arr</span>[<span style="color:#e6db74">&#39;length&#39;</span>] <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Length</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">?</span> <span style="color:#a6e22e">Arr</span> 
+</span></span><span style="display:flex;"><span>    : <span style="color:#66d9ef">BuildArray</span>&lt;<span style="color:#f92672">Length</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Ele</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">...Arr</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Ele</span><span style="color:#960050;background-color:#1e0010">]</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">BuildArray</span>&lt;<span style="color:#f92672">3</span>&gt;; <span style="color:#75715e">// [unknown, unknown, unknown]
+</span></span></span></code></pre></div>
                     </div>
                     <div class="post_footer">
                         
@@ -215,8 +220,6 @@
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>

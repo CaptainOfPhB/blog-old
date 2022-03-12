@@ -7,7 +7,7 @@ git add .
 
 # support `./deploy.sh your_commit_msg` usage, default msg is 'build'
 if [ "$1" == "" ]; then
-  git commit -m "build"
+  git commit -m ":rocket: build and deploy"
 else
   git commit -m "$1"
 fi

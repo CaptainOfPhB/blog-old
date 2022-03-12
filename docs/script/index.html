@@ -86,6 +86,10 @@
                 
                 
                 
+                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
+                
+                
+                
                 <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
                 
                 
@@ -93,8 +97,9 @@
                 <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
                 
                 
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
+                    <i class="ri-rss-fill"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -104,7 +109,7 @@
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h1>脚本</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;2017.10.10</div>
+                        <div class="date">Updated&nbsp;on&nbsp;2021.02.28</div>
                     </div>
                     <div class="post_content markdown">
                         <p>脚本（script） 原指拍摄电影或者戏剧时，演员依据其对白演出的文件，也称之为剧本。
@@ -122,9 +127,9 @@
 <p>找到一个空的目录，在该目录下打开终端键入 <code>touch myshell.sh</code> 创建我们的第一个脚本文件，以 <code>.sh</code> 结尾的作用是让计算机方便的认出该文件“可能”是一个脚本文件，
 会以默认的执行程序去运行该文件而已，否则后缀没有任何意义，举个例子，你可以用记事本去打开后缀为<code>.html</code>的文件进行编辑，可见后缀名没有对你的操作有丝毫影响。
 创建成功后键入 <code>vim myshell.sh</code> 编辑新建的脚本文件。键入如下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir  ./demo  ./demo/css  ./demo/js
-touch  ./demo/index.html  ./demo/css/style.css  ./demo/js/main.js
-</code></pre></div><p>完成以上步骤之后退出编辑，在终端键入 <code>ls -l</code> 发现 <code>demo.sh</code> 文件前面的一串字符为 <code>-rw-r--r--</code>，末尾的字符为 <code>-</code> 说明该文件不具备执行权限。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir  ./demo  ./demo/css  ./demo/js
+</span></span><span style="display:flex;"><span>touch  ./demo/index.html  ./demo/css/style.css  ./demo/js/main.js
+</span></span></code></pre></div><p>完成以上步骤之后退出编辑，在终端键入 <code>ls -l</code> 发现 <code>demo.sh</code> 文件前面的一串字符为 <code>-rw-r--r--</code>，末尾的字符为 <code>-</code> 说明该文件不具备执行权限。
 在终端键入 <code>chmod +x demo.sh</code> 为该文件添加执行权限，<code>chmod</code> 意思为 change mode，<code>+x</code> 意思为添加执行权限
 （读取权限缩写为 <code>r</code>，写入权限的缩写为 <code>w</code>，执行权限的缩写为 <code>x</code>）。执行完成再运行 <code>ls -l</code> 发现 <code>demo.sh</code> 前面的字符变为 <code>-rwxr-xr-x</code>，
 说明该文件已具有执行权限。</p>
@@ -137,52 +142,52 @@ touch  ./demo/index.html  ./demo/css/style.css  ./demo/js/main.js
 <h4 id="custom-directory-name">Custom directory name</h4>
 <p>进一步优化，可以实现目录名称自定义，bash 脚本给我们提供了参数列表，其中 <code>$0</code> 表示命令行本身，<code>$1</code> 表示第一个参数，<code>$2</code> 表示第二个参数，以此类推。
 接下来优化我们的脚本，修改 <code>demo</code> 文件内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir  ./$1  ./$1/css  ./$1/js
-touch  ./$1/index.html  ./$1/css/style.css  ./$1/js/main.js
-</code></pre></div><p>编辑完成保存并退出，在终端键入 <code>demo test</code> 即可在当前目录下创建名为 <code>test</code> 的目录，该目录下有名为 <code>css</code> 与 <code>js</code> 的目录以及名为 <code>index.html</code> 的文件，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir  ./$1  ./$1/css  ./$1/js
+</span></span><span style="display:flex;"><span>touch  ./$1/index.html  ./$1/css/style.css  ./$1/js/main.js
+</span></span></code></pre></div><p>编辑完成保存并退出，在终端键入 <code>demo test</code> 即可在当前目录下创建名为 <code>test</code> 的目录，该目录下有名为 <code>css</code> 与 <code>js</code> 的目录以及名为 <code>index.html</code> 的文件，
 子目录下分别有名为 <code>style.css</code> 与 <code>main.js</code> 的文件。运行 <code>demo</code> 命令时后面不带参数则会报错。</p>
 <h4 id="avoid-repeative-file-name">Avoid repeative file name</h4>
 <p>文件重名会怎样呢？会不会覆盖掉已经存在的目录呢？如果会覆盖的话，那么之前目录下的文件会不会丢失？我们需要在该脚本新建目录之前进行判断：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// pseudo code
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_dir_exist</span>) {
-  <span style="color:#75715e">// directory already exist
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// return
-</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
-  <span style="color:#75715e">// mkdir $1
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// return
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>继续修改我们的脚本文件 <code>vim demo</code>，因为我们的脚本是 shell 脚本，因此需要遵循 shell 语法：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d $1 <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  echo  <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74"> already existed!&#34;</span>
-  exit
-<span style="color:#66d9ef">else</span>
-  mkdir ./$1 ./$1/css ./$1/js
-  touch ./$1/index.html ./$1/css/style.css ./$1/js/main.js
-  echo <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74"> create successful!&#34;</span>
-  exit
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><p>编辑完成保存并退出。至此，我们的 <code>demo</code> 脚本文件已经成型了，如果需要同时往文件中写入字符，那么在脚本文件中使用 <code>echo</code> 指令即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// pseudo code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_dir_exist</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// directory already exist
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// return
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// mkdir $1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// return
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>继续修改我们的脚本文件 <code>vim demo</code>，因为我们的脚本是 shell 脚本，因此需要遵循 shell 语法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d $1 <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo  <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74"> already existed!&#34;</span>
+</span></span><span style="display:flex;"><span>  exit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  mkdir ./$1 ./$1/css ./$1/js
+</span></span><span style="display:flex;"><span>  touch ./$1/index.html ./$1/css/style.css ./$1/js/main.js
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74"> create successful!&#34;</span>
+</span></span><span style="display:flex;"><span>  exit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>编辑完成保存并退出。至此，我们的 <code>demo</code> 脚本文件已经成型了，如果需要同时往文件中写入字符，那么在脚本文件中使用 <code>echo</code> 指令即可。</p>
 <h4 id="nodejs-script-file">Node.js script file</h4>
 <p>使用 <code>Node.js</code> 编写脚本必然需要遵循 <code>Node.js</code> 的语法规则，新建名为 <code>script</code> 的文件，写入以下内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dirName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>[<span style="color:#ae81ff">2</span>];
-<span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">exists</span>(<span style="color:#a6e22e">dirName</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">exists</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">exists</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dirName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; already existed!&#39;</span>);
-    <span style="color:#66d9ef">return</span>;
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dirName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; is creating...&#39;</span>);
-    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#a6e22e">dirName</span>);
-    <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">chdir</span>(<span style="color:#e6db74">&#39;./&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dirName</span>);
-    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#e6db74">&#39;css&#39;</span>);
-    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#e6db74">&#39;js&#39;</span>);
-    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;./index.html&#39;</span>, <span style="color:#e6db74">&#34;&lt;h1&gt;Hello, I&#39;m Captain!&lt;/h1&gt;&#34;</span>);
-    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;./css/style.css&#39;</span>, <span style="color:#e6db74">&#39;h1{ color: red; }&#39;</span>);
-    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;./js/main.js&#39;</span>, <span style="color:#e6db74">&#34;alert(&#39;Surprise!&#39;);&#34;</span>);
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dirName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; create successful!&#39;</span>);
-  }
-});
-</code></pre></div><p>以上内容涉及 <code>Node.js</code> 知识，其中第一行指令调用 <code>file system</code> 接口，然后将第三个参数传递给<code>dirName</code>变量，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dirName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>[<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">exists</span>(<span style="color:#a6e22e">dirName</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">exists</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">exists</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dirName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; already existed!&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dirName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; is creating...&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#a6e22e">dirName</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">chdir</span>(<span style="color:#e6db74">&#39;./&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dirName</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#e6db74">&#39;css&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#e6db74">&#39;js&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;./index.html&#39;</span>, <span style="color:#e6db74">&#34;&lt;h1&gt;Hello, I&#39;m Captain!&lt;/h1&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;./css/style.css&#39;</span>, <span style="color:#e6db74">&#39;h1{ color: red; }&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;./js/main.js&#39;</span>, <span style="color:#e6db74">&#34;alert(&#39;Surprise!&#39;);&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dirName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; create successful!&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>以上内容涉及 <code>Node.js</code> 知识，其中第一行指令调用 <code>file system</code> 接口，然后将第三个参数传递给<code>dirName</code>变量，
 之后调用 <code>fs.exists()</code> 方法，该方法可以判断一个文件是否存在，判断流程与之前思路一致。编辑完成后保存并退出，
 在终端键入 <code>node script node-script</code> 即可在当前目录下创建名为 <code>node-script</code> 的目录，其中内容与运行脚本文件 <code>demo</code> 后所生成目录中的内容一致。</p>
 <h4 id="shebang-">Shebang &lsquo;#!&rsquo;</h4>
@@ -191,8 +196,8 @@ Unix 术语中，<code>#</code> 号通常称为 <code>sharp</code>、<code>hash<
 也有看法认为，<code>Shebang</code> 名字中的 <code>sh</code> 来自于默认 <code>shell Bourne shell</code> 的名称 <code>sh</code>。
 <code>#!</code> 出现在文件的第一行的前两个字符，在文件中存在 <code>Shebang</code> 的情况下，类 Unix 操作系统的程序载入器会分析 <code>Shebang</code> 后的内容，
 将这些内容作为解释器指令，并调用该指令，并将载有 <code>Shebang</code> 的文件路径作为该解释器的参数。例如在 <code>script</code> 脚本的前面添加下面的 <code>shebang</code>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/usr/bin/env node
-</span></code></pre></div><p>那么解释器就会分析 <code>#!</code> 后面的路径并按照指定的解释程序 <code>node</code> 去执行文件。如果该文件没有执行权限的话，那么会报错 <code>permission denied</code>，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env node
+</span></span></span></code></pre></div><p>那么解释器就会分析 <code>#!</code> 后面的路径并按照指定的解释程序 <code>node</code> 去执行文件。如果该文件没有执行权限的话，那么会报错 <code>permission denied</code>，
 如果指定的解释程序不存在，那么会报错 <code>No such file or directory</code>。<code>#!</code> 之后的解释程序，需要写其绝对路径，
 它是不会自动到 <code>PATH</code> 列表中寻找解释器（或者执行文件）的。</p>
 <p>当然，如果你使用 <code>sh script node-script</code> 这样显式的指明解释器来执行脚本，那么 <code>#!</code> 这一行将会被忽略掉，解释器当然是用命令行中显式指定的 <code>sh</code> 去执行文件。</p>
@@ -269,8 +274,6 @@ Unix 术语中，<code>#</code> 号通常称为 <code>sharp</code>、<code>hash<
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/captain.js"></script>
-
-
 
 
 </body>
