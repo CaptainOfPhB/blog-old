@@ -1,10 +1,14 @@
 # 船长の部落格
 
-This is my personal blog site, named 沉梦昂志, built with [Hugo](https://gohugo.io/).
+This is my personal blog named 沉梦昂志, built with [Hugo][hugo].
 
-[daijiangtao.name](http://daijiangtao.name) or [daijiangtao.gitee.io](https://daijiangtao.gitee.io) (China mirror site, more faster).
+You can preview it at [daijiangtao.name][github] or [daijiangtao.blog][gitlab].
 
-PS: **Do not fork this repository! thank you!**
+PS: **Don't fork this repository! thank you!**
 
-![船长の部落格](./static/images/blog-preview.png)
+![preview][preview]
 
+[hugo]: https://gohugo.io/
+[github]: https://daijiangtao.name
+[gitlab]: https://daijiangtao.blog
+[preview]: ./static/images/blog-preview.png
