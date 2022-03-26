@@ -1,26 +1,29 @@
+<div class="home">
 {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 {{ range $paginator.Pages }}
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
-    </div>
+<div class="section">
+    <h2 class="title">
+        <a href='{{ .RelPermalink }}'>{{ .Title }}</a>
+    </h2>
     {{ if .Site.Params.enableSummary }}
-    <div class="list">
-        <div class="post_content markdown">
-            <p>{{ .Summary }}...</p>
-        </div>
-    </div>
+    <p class="summary">{{ .Summary }}...</p>
     {{ end }}
-    <div class="post_footer">
+    <div class="footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-time-line"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+                    </svg>
                     <span class="date">{{ .Lastmod.Format "2006.01.02" }}</span>
                 </div>
                 {{ with .Params.tags }}
-                <div class="field tags">
+                <div class="field">
                     {{ range . }}
-                    <i class="ri-hashtag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                    </svg>
                     <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
                     {{ end }}
                 </div>
@@ -34,17 +37,22 @@
     {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
     {{ if $paginator.HasPrev }}
     <a href="{{$paginator.Prev.URL}}" class="pre">
-        <i class="ri-arrow-left-s-line"></i>
-        Prev
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/>
+        </svg>
+        <span>Prev</span>
     </a>
     {{ end }}
     {{ if $paginator.HasNext }}
     <a href="{{$paginator.Next.URL}}" class="next">
-        Next
-        <i class="ri-arrow-right-s-line"></i>
+        <span>Next</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/>
+        </svg>
     </a>
     {{ end }}
     {{ end }}
 </div>
-
-{{ partial "js.html" . }}
+</div>

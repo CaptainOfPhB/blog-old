@@ -1,48 +1,16 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div class="main animate__animated animate__fadeInDown">
+    <div class="main">
         {{ partial "nav.html" . }}
-        {{ partial "header.html" . }}
-        <div class="content page404">
-            <!-- <p>没有找到你要的文章，不如来读首诗吧~</p> -->
-            <div class="poetry_container">
-                <div class="poetry_title"></div>
-                <div class="poetry_author"></div>
-                <div class="poetry_content"></div>
-                <div class="poetry_translate">译文</div>
-                <div class="poetry_translate_content"></div>
+        <div class="content">
+            <div class="not-found">
+                <svg viewBox="0 0 1664 1024" xmlns="http://www.w3.org/2000/svg" p-id="17086" width="500" height="500">
+                    <path d="M5.688889 829.155556v-142.222223L290.133333 14.222222h170.666667v672.711111h73.955556v142.222223H460.8V1009.777778h-156.444444v-180.622222H5.688889z m143.644444-142.222223h155.022223V318.577778L149.333333 686.933333z m600.177778-443.733333v537.6c0 71.111111 31.288889 98.133333 81.066667 98.133333s81.066667-27.022222 81.066666-98.133333V243.2c0-71.111111-31.288889-98.133333-81.066666-98.133333s-81.066667 27.022222-81.066667 98.133333z m-156.444444 527.644444V253.155556C593.066667 93.866667 676.977778 2.844444 830.577778 2.844444s237.511111 91.022222 237.511111 250.311112v517.688888c0 159.288889-83.911111 250.311111-237.511111 250.311112s-237.511111-91.022222-237.511111-250.311112z m539.022222 58.311112v-142.222223l284.444444-672.711111h170.666667v672.711111h73.955556v142.222223h-73.955556V1009.777778h-156.444444v-180.622222h-298.666667z m143.644444-142.222223h155.022223V318.577778l-155.022223 368.355555z" fill="#eeeeee" p-id="17087"></path>
+                </svg>
             </div>
         </div>
     </div>
-    {{ partial "footer.html" . }}
-    {{ partial "js.html" . }}
-
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
-    <script type="text/javascript">
-        function q(selector) {
-            return document.querySelector(selector);
-        }
-
-        jinrishici.load(function(result) {
-            var data = result.data;
-            q('.poetry_title').innerHTML = data.origin.title;
-            q('.poetry_author').innerHTML = '—— ' + data.origin.dynasty + '·' + data.origin.author;
-            q('.poetry_content').innerHTML = data.origin.content.map(c => '<p>' + c + '</p>').join('');
-
-            if(data.origin.translate) {
-                var t = q('.poetry_translate');
-                var tc = q('.poetry_translate_content');
-                tc.innerHTML = data.origin.translate;
-                t.style.display = 'block';
-                tc.style.display = 'block';
-            }
-
-            q('.poetry_container').style.display = 'block';
-        });
-    </script>
-
 </body>
 
 </html>

@@ -1,30 +1,26 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div class="main animate__animated animate__fadeInDown">
+    <div class="main">
         {{ partial "nav.html" . }}
-        {{ partial "header.html" . }}
         <div class="content">
-            <div class="page_tags">
+            <div class="tags">
                 <ul>
                     {{ $data := .Data }}
                     {{ range $key, $value := .Data.Terms.ByCount }}
                     {{ if ($value.Name) }}
                     <li>
                         <a href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}">
-                            {{ $value.Name }} <span class="terms_count">{{ $value.Count }}</span>
+                            {{ $value.Name }}
+                            <span class="count">{{ $value.Count }}</span>
                         </a>
                     </li>
                     {{ end }}
                     {{ end }}
                 </ul>
             </div>
-            <div class="pagination"></div>
         </div>
-        <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
     </div>
-    {{ partial "footer.html" . }}
-    {{ partial "js.html" . }}
 </body>
 
 </html>

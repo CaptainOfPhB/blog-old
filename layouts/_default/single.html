@@ -1,80 +1,58 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div class="main animate__animated animate__fadeInDown">
+    <div class="main">
         {{ partial "nav.html" . }}
-        {{ partial "header.html" . }}
         <div class="content">
-            <div class="single_page post_page">
-                <div class="post animate__animated animate__fadeInDown">
-                    <div class="post_title post_detail_title">
-                        <h1>{{ .Title }}</h1>
-                        <div class="date">Updated&nbsp;on&nbsp;{{ .Lastmod.Format "2006.01.02" }}</div>
+            <div class="single">
+                <h1 class="title">{{ .Title }}</h1>
+                <div class="date">Updated&nbsp;on&nbsp;{{ .Lastmod.Format "2006.01.02" }}</div>
+                <div class="markdown">
+                    {{ .Content }}
+                </div>
+                <div class="footer">
+                    {{ with .Params.tags }}
+                    <div class="meta">
+                        <span class="field">
+                            {{ range . }}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                            </svg>
+                            <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                            {{ end }}
+                        </span>
                     </div>
-                    <div class="post_content markdown">
-                        {{ .Content }}
-                    </div>
-                    <div class="post_footer">
-                        {{ with .Params.tags }}
-                        <div class="meta">
-                            <div class="info">
-                                <span class="field tags">
-                                    {{ range . }}
-                                    <i class="ri-hashtag"></i>
-                                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-                                    {{ end }}
-                                </span>
-                            </div>
-                        </div>
+                    {{ end }}
+
+                    <div class="divider"></div>
+
+                    <div class="pagination">
+                        {{ with .PrevInSection }}
+                            <a class="pre" href="{{.Permalink}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/>
+                                </svg>
+                                <span>{{.Title}}</span>
+                            </a>
                         {{ end }}
-
-                        <div class="single_page_divider"></div>
-
-                        <div class="single_page_pagination">
-                            {{ with .PrevInSection }}
-                                <a class="single_page_pagination_pre" href="{{.Permalink}}">
-                                    <i class="ri-arrow-left-s-line"></i>
-                                    <span class="prev_title">{{.Title}}</span>
-                                    <span class="prev_text">Prev</span>
-                                </a>
-                            {{ end }}
-                            {{ with .NextInSection }}
-                                <a class="single_page_pagination_next" href="{{.Permalink}}">
-                                    <span class="next_title">{{.Title}}</span>
-                                    <span class="next_text">Next</span>
-                                    <i class="ri-arrow-right-s-line"></i>
-                                </a>
-                            {{ end }}
-                        </div>
-
+                        {{ with .NextInSection }}
+                            <a class="next" href="{{.Permalink}}">
+                                <span>{{.Title}}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/>
+                                </svg>
+                            </a>
+                        {{ end }}
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div id='share_card_container'>
-        <div id='share_card_inner_container'>
-            <h2 id='title'></h2>
-            <p id='author'></p>
-            <p id='summary'></p>
-        </div>
-        <div id='card_footer'>
-            <div style='display: flex;'>
-                <img id='qrcode' src='' alt='qrcode' width='70' height='70'>
-                <div id='extra'>
-                    <p id='site_title'>船长の部落格</p>
-                    <p id='tip'>扫描二维码阅读原文</p>
-                </div>
-            </div>
-            <img src='{{ "images/favicon.png" | absURL }}' width='40' height='40'>
-        </div>
-    </div>
-
-    <a id="share_blog" class='share_blog'><i class="ri-share-forward-line"></i></a>
-    <a id="back_to_top" class="back_to_top" href="#"><i class="ri-arrow-up-s-line"></i></a>
-
-    {{ partial "footer.html" . }}
     {{ partial "js.html" . }}
 </body>
 

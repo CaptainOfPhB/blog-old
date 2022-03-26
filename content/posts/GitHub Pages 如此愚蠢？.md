@@ -35,4 +35,4 @@ slug: "github-page"
 
 [1]: https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages
 [2]: https://daijiangtao.name
-[2]: https://daijiangtao.gitee.io
+[3]: https://daijiangtao.gitee.io

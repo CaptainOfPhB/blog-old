@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html >
+<html lang="zh-cn">
 <head>
-	<meta name="generator" content="Hugo 0.93.2" />
+	<meta name="generator" content="Hugo 0.94.2" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,111 +27,49 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Bold.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Regular.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Bold.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
-	  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/base16/github.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/captain.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism-one-light.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
 </head>
 
 <body>
-    <div class="main animate__animated animate__fadeInDown">
-        <div class="nav_container animated fadeInDown">
-    <div class="site_nav" id="site_nav">
-        <ul>
-            
-            <li>
-                <a href="/">首页</a>
-            </li>
-            
-            <li>
-                <a href="/posts/">归档</a>
-            </li>
-            
-            <li>
-                <a href="/tags/">标签</a>
-            </li>
-            
-            <li>
-                <a href="/about-me">关于</a>
-            </li>
-            
-        </ul>
-    </div>
+    <div class="main">
+        <div class="site-nav-container">
+  <div class="site-nav">
+    <a href="/">首页</a>
+    <a href="/posts">归档</a>
+    <a href="/tags">标签</a>
+    <a href="/about-me">关于</a>
+  </div>
 </div>
-        <div class="header animated fadeInDown">
-    <div class="site_title_container">
-        <div class="site_title">
-            <h1>
-                <a href="/">
-                    <span>沉梦昂志</span>
-                </a>
-            </h1>
-        </div>
-        <div class="description">
-            <p class="sub_title">&lt;Reach Me Here /&gt;</p>
-            <div class="my_socials">
-                
-                
-                <a href="https://github.com/CaptainOfPhB" title="github" target="_blank"><i class="ri-github-fill"></i></a>
-                
-                
-                
-                <a href="https://daijiangtao.site" title="share" target="_blank"><i class="ri-share-fill"></i></a>
-                
-                
-                
-                <a href="https://pic1.zhimg.com/80/v2-fb404d5fd3c8d9794518e05ead97d01b_1440w.jpeg" title="wechat" target="_blank"><i class="ri-wechat-fill"></i></a>
-                
-                
-                
-                <a href="https://www.zhihu.com/people/CaptainInPHW" title="zhihu" target="_blank"><i class="ri-zhihu-fill"></i></a>
-                
-                
-                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank">
-                    <i class="ri-rss-fill"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-        <div class="content">
-            
 
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/build-blog-1/'>记折腾博客（一）</a></h2>
-    </div>
+        <div class="content">
+            <div class="home">
+
+
+<div class="section">
+    <h2 class="title">
+        <a href='/build-blog-1/'>记折腾博客（一）</a>
+    </h2>
     
-    <div class="list">
-        <div class="post_content markdown">
-            <p>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：
+    <p class="summary">昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：
 p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常地棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。...</p>
-        </div>
-    </div>
     
-    <div class="post_footer">
+    <div class="footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-time-line"></i>
-                    <span class="date">2022.02.16</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+                    </svg>
+                    <span class="date">2021.02.25</span>
                 </div>
                 
-                <div class="field tags">
+                <div class="field">
                     
-                    <i class="ri-hashtag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                    </svg>
                     <a href="/tags/essay/">essay</a>
                     
                 </div>
@@ -140,27 +78,29 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
     </div>
 </div>
 
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/unpublishing-your-package-on-npm/'>Unpublishing your package on npm</a></h2>
-    </div>
+<div class="section">
+    <h2 class="title">
+        <a href='/unpublishing-your-package-on-npm/'>Unpublishing your package on npm</a>
+    </h2>
     
-    <div class="list">
-        <div class="post_content markdown">
-            <p>If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:...</p>
-        </div>
-    </div>
+    <p class="summary">If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:...</p>
     
-    <div class="post_footer">
+    <div class="footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-time-line"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+                    </svg>
                     <span class="date">2021.02.28</span>
                 </div>
                 
-                <div class="field tags">
+                <div class="field">
                     
-                    <i class="ri-hashtag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                    </svg>
                     <a href="/tags/npm/">npm</a>
                     
                 </div>
@@ -169,27 +109,29 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
     </div>
 </div>
 
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/typescript-note-3/'>TypeScript 学习笔记（三）</a></h2>
-    </div>
+<div class="section">
+    <h2 class="title">
+        <a href='/typescript-note-3/'>TypeScript 学习笔记（三）</a>
+    </h2>
     
-    <div class="list">
-        <div class="post_content markdown">
-            <p>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &#39;TypeScript&#39;; const ts: TypeScript = &#39;TypeScript&#39;;  const sayHello = (name: string) =&gt; console....</p>
-        </div>
-    </div>
+    <p class="summary">Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &#39;TypeScript&#39;; const ts: TypeScript = &#39;TypeScript&#39;;  const sayHello = (name: string) =&gt; console....</p>
     
-    <div class="post_footer">
+    <div class="footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-time-line"></i>
-                    <span class="date">2022.02.16</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+                    </svg>
+                    <span class="date">2020.09.20</span>
                 </div>
                 
-                <div class="field tags">
+                <div class="field">
                     
-                    <i class="ri-hashtag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                    </svg>
                     <a href="/tags/typescript/">TypeScript</a>
                     
                 </div>
@@ -198,27 +140,29 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
     </div>
 </div>
 
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/java-note-3/'>Java 学习笔记（三)</a></h2>
-    </div>
+<div class="section">
+    <h2 class="title">
+        <a href='/java-note-3/'>Java 学习笔记（三)</a>
+    </h2>
     
-    <div class="list">
-        <div class="post_content markdown">
-            <p>数据类型  Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和引用类型。只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有：     数据类型 byte int long double float char boolean void     所占空间（字节） 1 4 8 8 4 2 true/false      每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:  int a = 127; System....</p>
-        </div>
-    </div>
+    <p class="summary">数据类型  Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和引用类型。只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有：     数据类型 byte int long double float char boolean void     所占空间（字节） 1 4 8 8 4 2 true/false      每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:  int a = 127; System....</p>
     
-    <div class="post_footer">
+    <div class="footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-time-line"></i>
-                    <span class="date">2021.02.26</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+                    </svg>
+                    <span class="date">2019.06.25</span>
                 </div>
                 
-                <div class="field tags">
+                <div class="field">
                     
-                    <i class="ri-hashtag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                    </svg>
                     <a href="/tags/java/">Java</a>
                     
                 </div>
@@ -227,27 +171,29 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
     </div>
 </div>
 
-<div class="home post animated fadeInDown">
-    <div class="post_title">
-        <h2><a href='/java-note-2/'>Java 学习笔记（二)</a></h2>
-    </div>
+<div class="section">
+    <h2 class="title">
+        <a href='/java-note-2/'>Java 学习笔记（二)</a>
+    </h2>
     
-    <div class="list">
-        <div class="post_content markdown">
-            <p>java 是一门强类型的静态语言，编译器（compile）提供了最佳的安全保障 java 的跨平台性能良好（Windows、Linux、macOS），JVM（Java Virtual Machine）打通了不同平台和 java 之间的桥梁，这种中间层语言为 bytecode （字节码），java -&gt; bytecode -&gt; 机器码，一处编译，处处运行 class 类是 java 中的最小单位，一般放在与类同名的 ....</p>
-        </div>
-    </div>
+    <p class="summary">java 是一门强类型的静态语言，编译器（compile）提供了最佳的安全保障 java 的跨平台性能良好（Windows、Linux、macOS），JVM（Java Virtual Machine）打通了不同平台和 java 之间的桥梁，这种中间层语言为 bytecode （字节码），java -&gt; bytecode -&gt; 机器码，一处编译，处处运行 class 类是 java 中的最小单位，一般放在与类同名的 ....</p>
     
-    <div class="post_footer">
+    <div class="footer">
         <div class="meta">
                 <div class="field">
-                    <i class="ri-time-line"></i>
-                    <span class="date">2021.02.26</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+                    </svg>
+                    <span class="date">2019.06.17</span>
                 </div>
                 
-                <div class="field tags">
+                <div class="field">
                     
-                    <i class="ri-hashtag"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                    </svg>
                     <a href="/tags/java/">Java</a>
                     
                 </div>
@@ -261,48 +207,32 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
     
     
     <a href="/" class="pre">
-        <i class="ri-arrow-left-s-line"></i>
-        Prev
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/>
+        </svg>
+        <span>Prev</span>
     </a>
     
     
     <a href="/page/3/" class="next">
-        Next
-        <i class="ri-arrow-right-s-line"></i>
+        <span>Next</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/>
+        </svg>
     </a>
     
     
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="/js/captain.js"></script>
-
-
+</div>
 
         </div>
     </div>
-    <footer class="footer">
-    <div class="powered_by">
-        <a href="http://www.gohugo.io/">Published by Hugo,</a>
-        <a href="https://github.com/CaptainOfPhB">Hosted on GitHub</a>
-    </div>
 
-    <div class="footer_slogan">
-        <span>愿历经千帆，归来仍少年</span>
-    </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="/js/captain.js"></script>
-
-
+    <script src="https://unpkg.com/prismjs@1.27.0/components/prism-core.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 
 </html>

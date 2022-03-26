@@ -9,7 +9,7 @@ description: "TypeScript 类型体操通关秘籍（二)"
 slug: "juejin-book-7047524421182947366-2"
 ---
 
-### Capitalize
+## Capitalize
 
 利用 ts 自带的 `Uppercase` 工具类型。
 
