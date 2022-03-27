@@ -17,9 +17,6 @@ slug: 'about-me'
 
 我没什么伟大的理想，但是活着也还算有趣。
 
-如果你能为我提供一份好的工作，这是[我的简历][简历]，你可以在网页上右键点击打印。
-
 祝你身体健康，有个好心情。
 
 [知乎]: https://zhuanlan.zhihu.com/p/36296156
-[简历]: https://daijiangtao.site/resume
