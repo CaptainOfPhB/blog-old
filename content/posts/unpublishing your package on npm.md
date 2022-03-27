@@ -15,7 +15,7 @@ If your package is published on npm, for some reason, you want to unpublish a si
 
 To unpublish a single version of a package, run the following command, replacing  with the name of your package, and  with your version number:
 
-```sh
+```bash
 npm unpublish <package_name>@<specific_version_name>
 ```
 
@@ -23,7 +23,7 @@ npm unpublish <package_name>@<specific_version_name>
 
 To unpublish an entire package, run the following command, replacing  with the name of your package:
 
-```sh
+```bash
 npm unpublish <package_name> -f
 ```
 

@@ -1,15 +1,15 @@
 ---
-title: "TypeScript 学习笔记（三）"
+title: "TypeScript 学习笔记（二）"
 date: 2020-09-20T14:16:27+08:00
 hidden: false
 draft: false
 tags: ['TypeScript']
 keywords: ['TypeScript']
-slug: 'typescript-note-3'
+slug: 'typescript-note-2'
 description: 'Learning TypeScript'
 ---
 
-#### Literal Types
+## Literal Types
 
 1. 字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的）
 2. ts 中，对应的也有字面量类型。分为  String Literal Type、Number Literal Type、Boolean Literal Type 等
@@ -38,7 +38,7 @@ type StringLiteralType = typeof stringConNotChange; // 'Hello World'
 type StringType = typeof stringMaybeChange; // string
 ```
 
-#### Enum
+## Enum
 
 1. 枚举可以方便地当做字典/map 使用，因为在编译为 js 之后，枚举转换为了一个同名的对象。
 2. 若枚举值是数字，那么还可以用作 reflect，利用 value 来获取 key。比如：
@@ -107,7 +107,7 @@ if(Animal.isDog(animal.type)) {
 }
 ```
 
-#### Class Type
+## Class Type
 
 当我们声明一个 class 时，其实同时声明了两个类型：一个代表着实例的类型（class），一个代表着构造函数的类型（typeof class）。
 
@@ -134,7 +134,7 @@ const greeter2 = new GreeterFactory('World');
 greeter2.greet(); // log: Hello World
 ```
 
-#### keyof、typeof
+## keyof、typeof
 
 1. 使用 typeof 可以获得其后所跟内容（非类型）的类型。typeof 不能直接跟类型，否则报错。
 
@@ -170,7 +170,7 @@ type tuple = [1, 'abc']; // every element in a tuple is a literal type, not a li
 type ElementTypeInTuple = tuple[number]; // 1 | 'abc' 
 ```
 
-#### Question
+## Question
 
 1. ts 中的元组 tuple 限制了数组中具体对应位置的类型。你可以给类型为 tuple 的数组继续 push，但是却不能读取到刚刚 push 过的那个值：
 
