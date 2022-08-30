@@ -198,6 +198,12 @@ body {
   justify-content: space-between;
 }
 
+.post .item .date {
+  width: 60px;
+  text-align: right;
+  display: inline-block;
+}
+
 /* 标签 */
 
 .tags {
@@ -339,8 +345,7 @@ body {
   text-align: center;
 }
 
-@media print,
-screen and (max-width: 680px) {
+@media screen and (max-width: 680px) {
   .not-found svg {
     width: 300px;
     height: 300px;
@@ -348,9 +353,17 @@ screen and (max-width: 680px) {
 }
 
 @media screen and (max-width: 900px) {
+
+  html,
+  body {
+    height: 100%;
+  }
+
   .main {
-    width: 95%;
-    margin: 15px auto;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0 0;
   }
 
   .content {
