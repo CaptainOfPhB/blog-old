@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-	<meta name="generator" content="Hugo 0.94.2" />
+	<meta name="generator" content="Hugo 0.101.0" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +27,13 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism-one-light.css" />
+    
+    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: light)" href="/css/light.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="/css/dark.css" />
+    
+    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: light)" href="/css/prism-light.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="/css/prism-dark.css" />
+
     <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
 </head>
 
@@ -52,7 +58,7 @@
     </h2>
     
     <p class="summary">babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel。
-babel 的用途  转义 es、ts 等到目标环境的 js。babel7 支持 preset-env，可以指定 targets，转换更加的精准，产物更小。 一些特定用途的代码转换。利用 babel 暴露的 api parse 出 AST，taro 框架。 代码的静态分析。如 linter、type checker 等。  babel 的编译流程 babel 整体编译流程分为三步：...</p>
+babel 的用途 转义 es、ts 等到目标环境的 js。babel7 支持 preset-env，可以指定 targets，转换更加的精准，产物更小。 一些特定用途的代码转换。利用 babel 暴露的 api parse 出 AST，taro 框架。 代码的静态分析。如 linter、type checker 等。 babel 的编译流程 babel 整体编译流程分为三步：...</p>
     
     <div class="footer">
         <div class="meta">
@@ -90,7 +96,7 @@ babel 的用途  转义 es、ts 等到目标环境的 js。babel7 支持 preset-
     </h2>
     
     <p class="summary">Capitalize 利用 ts 自带的 Uppercase 工具类型。
-type Capitalize&lt;S extends string&gt; =  S extends `${infer First}${infer Rest}`  ?...</p>
+type Capitalize&lt;S extends string&gt; = S extends `${infer First}${infer Rest}` ?...</p>
     
     <div class="footer">
         <div class="meta">

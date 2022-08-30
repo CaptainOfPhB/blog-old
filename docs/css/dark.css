@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+a {
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--red) !important;
+}
+
+table th {
+  background: var(--code-background-dark);
+}
+
+body {
+  color: var(--white);
+  background-color: var(--background-dark);
+}
+
+.main {
+  background: var(--dark-light);
+}
+
+pre {
+  background: var(--code-background-dark) !important;
+}
+
+.markdown code {
+  background: var(--code-background-dark);
+}
+
+.single .date {
+  color: var(--gray-light);
+}
+
+.single .field a,
+.single .pagination a {
+  color: var(--white-light);
+}
+
+.single .divider,
+.home .footer {
+  border-bottom: 1px solid var(--gray);
+}
+
+.home .summary {
+  color: var(--white-light);
+}
+
+.posts .year {
+  color: var(--white);
+}
+
+.markdown blockquote {
+  color: var(--gray-light);
+  border-left: 5px solid var(--dark);
+}
+
+.markdown strong,
+.markdown b,
+.markdown em {
+  background-color: rgba(235, 87, 87, 0.3);
+}

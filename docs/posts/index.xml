@@ -13,7 +13,7 @@
       
       <guid>/enhance-console-method/</guid>
       <description>babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel。
-babel 的用途  转义 es、ts 等到目标环境的 js。babel7 支持 preset-env，可以指定 targets，转换更加的精准，产物更小。 一些特定用途的代码转换。利用 babel 暴露的 api parse 出 AST，taro 框架。 代码的静态分析。如 linter、type checker 等。  babel 的编译流程 babel 整体编译流程分为三步：</description>
+babel 的用途 转义 es、ts 等到目标环境的 js。babel7 支持 preset-env，可以指定 targets，转换更加的精准，产物更小。 一些特定用途的代码转换。利用 babel 暴露的 api parse 出 AST，taro 框架。 代码的静态分析。如 linter、type checker 等。 babel 的编译流程 babel 整体编译流程分为三步：</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@ babel 的用途  转义 es、ts 等到目标环境的 js。babel7 支持 preset-
       
       <guid>/juejin-book-7047524421182947366-2/</guid>
       <description>Capitalize 利用 ts 自带的 Uppercase 工具类型。
-type Capitalize&amp;lt;S extends string&amp;gt; =  S extends `${infer First}${infer Rest}`  ?</description>
+type Capitalize&amp;lt;S extends string&amp;gt; = S extends `${infer First}${infer Rest}` ?</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ type Capitalize&amp;lt;S extends string&amp;gt; =  S extends `${infer First}${in
       
       <guid>/build-blog-1/</guid>
       <description>昨天折腾博客，弄好了样式等。因为我比较喜欢楷体字，所以首页的文章 list 的 summary 打算用楷体字展示。在网上搜了下楷体字的 font-family 后，在 css 文件里面这样写了：
-p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常地棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</description>
+p.content { font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效果非常地棒。但是在手机上预览的时候发现，浏览器并没有如期展示楷体字，因为手机上貌似没有楷体字库。</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
       <pubDate>Sun, 20 Sep 2020 14:16:27 +0800</pubDate>
       
       <guid>/typescript-note-2/</guid>
-      <description>Literal Types  字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例：  type TypeScript = &amp;#39;TypeScript&amp;#39;; const ts: TypeScript = &amp;#39;TypeScript&amp;#39;;  const sayHello = (name: string) =&amp;gt; console.</description>
+      <description>Literal Types 字面量（literal）：用于在代码中表示一个固定值（区别于变量，变量是可变化的） ts 中，对应的也有字面量类型。分为 String Literal Type、Number Literal Type、Boolean Literal Type 等 一般情况下，literal type 可以看做是对应的类型的子类型。比如 string literal type 可以认为是 string type 的 subtype。在这种前提下我们可以得知，literal type 是可以 assign 给对应父类型的，反之则不行（特殊情况可用 as）。以 string literal type 为例： type TypeScript = &amp;#39;TypeScript&amp;#39;; const ts: TypeScript = &amp;#39;TypeScript&amp;#39;; const sayHello = (name: string) =&amp;gt; console.</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
       <pubDate>Tue, 25 Jun 2019 11:03:15 +0800</pubDate>
       
       <guid>/java-note-3/</guid>
-      <description>数据类型  Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和引用类型。只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有：     数据类型 byte int long double float char boolean void     所占空间（字节） 1 4 8 8 4 2 true/false      每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如:  int a = 127; System.</description>
+      <description>数据类型 Java 中一个 int 数据类型数据占 4 个字节（byte） 大小，32 位（bit）。最高位是符号位，剩下的 31 位存放数据 char 类型和 short 类型数据占用 2 个 byte，任何数据类型在内存中都是以二进制形式存储的 使用 man ascii 查看码表 java 中以 0 开头的数字表示 8 进制，以 0x 开头的数字表示 16 进制，0b 开头的数字表示 2 进制 java 中的数据分为原生类型和引用类型。只要能在 java 语言包中找到对应的 class 的就是引用类型，否则就是原生类型 java 中的基本类型有： 数据类型 byte int long double float char boolean void 所占空间（字节） 1 4 8 8 4 2 true/false 每个类型数据都有最大值最小值，如果超过最大最小范围， 则会发生溢出，数据会变为最初始的数值，例如: int a = 127; System.</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
       <pubDate>Thu, 09 May 2019 16:38:15 +0800</pubDate>
       
       <guid>/typescript-note-1/</guid>
-      <description>ts 中的基础类型有：boolean、number、string、array、enum、元组 Tuple、any、null、undefined、never、object（除了 js 中的基础五大类型 string、number、boolean、symbol、null、undefined 之外可以用 object 类型表示） 定义数组有两种方式：&amp;lt;type&amp;gt;[] 或者使用泛型 Array&amp;lt;type&amp;gt; 元组类型表示已知数量和类型的数组，例如：let x = [number, string]。当访问越界元素时，会使用联合类型替代，例如：  let x: [string, number]; x = [&amp;#39;hello&amp;#39;, 123]; // ok x = [123, &amp;#39;hello&amp;#39;]; // error // 越界元素将是 (number | string) 类型 x[3] = &amp;#39;world&amp;#39;;  枚举 enum 默认情况下，从 0 开始为元素编号，也可手动指定成员的值。也可以根据枚举的值得到 key 的名字，例如：enum Color = { Red, Green }，则 Color[1] 的值为 Green void 表示没有任何类型，只能给 void 类型数据赋值 null 或者 undefined null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 strictNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined 类型断言好比类型转换，当你比 ts 更了解某个值更确切的类型时。类型断言有两种，使用尖括号或者使用 as 语法，在 tsx 中只能使用 as。例如：  let someValue: any = &amp;#39;this is a string&amp;#39; let strLength: number = (someValue as string).</description>
+      <description>ts 中的基础类型有：boolean、number、string、array、enum、元组 Tuple、any、null、undefined、never、object（除了 js 中的基础五大类型 string、number、boolean、symbol、null、undefined 之外可以用 object 类型表示） 定义数组有两种方式：&amp;lt;type&amp;gt;[] 或者使用泛型 Array&amp;lt;type&amp;gt; 元组类型表示已知数量和类型的数组，例如：let x = [number, string]。当访问越界元素时，会使用联合类型替代，例如： let x: [string, number]; x = [&amp;#39;hello&amp;#39;, 123]; // ok x = [123, &amp;#39;hello&amp;#39;]; // error // 越界元素将是 (number | string) 类型 x[3] = &amp;#39;world&amp;#39;; 枚举 enum 默认情况下，从 0 开始为元素编号，也可手动指定成员的值。也可以根据枚举的值得到 key 的名字，例如：enum Color = { Red, Green }，则 Color[1] 的值为 Green void 表示没有任何类型，只能给 void 类型数据赋值 null 或者 undefined null 和 undefined 类型是任何类型的子类型，可以赋值给任意类型的数据。在 tsconfig 中建议开启 strictNullChecks 选项，使 null 或 undefined 只能赋值给对应的 null 或 undefined 类型断言好比类型转换，当你比 ts 更了解某个值更确切的类型时。类型断言有两种，使用尖括号或者使用 as 语法，在 tsx 中只能使用 as。例如： let someValue: any = &amp;#39;this is a string&amp;#39; let strLength: number = (someValue as string).</description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
       <pubDate>Wed, 08 May 2019 17:01:07 +0800</pubDate>
       
       <guid>/git-note-1/</guid>
-      <description>git 查看文件改动状态使用 git status git 查看改动的内容使用 git diff git 查看提交记录使用 git log 命令 HEAD 指针表示的是当前版本，上一个版本为 HEAD^，再往上就是 HEAD^^，往上一百个版本可以写作 HEAD~100 git 回退至上个版本使用 git reset &amp;ndash;hard HEAD^，若回退至指定版本，先使用 git log 查看版本的 hash，然后使用 git reset &amp;ndash;hard &amp;lt;hash_version&amp;gt; 如果回退版本后又想回到最新的版本，在不知道最新版本 hash 的情况下，使用 git reflog 查看所有 commit 的 hash，然后使用 git reset &amp;ndash;hard &amp;lt;hash_version&amp;gt; 进行回退或者前进 git VCS 分为工作区和版本库（暂存区与分支），git add 命令将改动添加进入暂存区，git commit 将改动添加到分支 工作区的文件发生了改动，想要撤销修改，可以使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt; 来撤销掉修改，注意必须要加 &amp;ndash; 符号（&amp;ndash; 与文件名之间有空格），否则 git 会认为是要切换分支 如果文件发生了改动并且已经添加到暂存区，想撤销掉暂存区的改动，使用 git reset HEAD &amp;lt;file_name&amp;gt; 命令，这样就把修改了的文件又放回工作区了，暂存区是干净的，放置到工作区后，再使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt; 将放置在工作区的文件改动撤销掉，这样两步操作就将文件的改动彻底还原了 查看工作区与版本库文件的差异可以使用 git diff HEAD &amp;ndash; &amp;lt;file_name&amp;gt;（同样，&amp;ndash; 与文件名之间有空格） 如果工作区的文件被误删除，想要恢复可以使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt;，git checkout 其实是用版本库里的版本替换工作区的版本操作，无论是工作区的修改还是删除，都可以用该命令一键还原 本地分支首次推向远程分支的时候可以使用 git push -u origin &amp;lt;branch_name&amp;gt;，其中 -u 参数是 &amp;ndash;set-upstream 的简写 切换分支使用 git checkout &amp;lt;branch_name&amp;gt;，创建并切换新分支时需要加上 -b 参数，创建新分支使用 git branch &amp;lt;branch_name&amp;gt;，查看分支 git branch 合并分支使用 git merge &amp;lt;branch_name&amp;gt;，删除使用 git branch -d &amp;lt;branch_name&amp;gt; git merge 合并分支产生冲突时，先解决冲突，再添加至暂存区，然后提交。解决冲突时，&amp;laquo;&amp;laquo;&amp;lt; HEAD 到 ===== 部分是当前分支的内容，&amp;raquo;&amp;raquo;&amp;gt; 到 ===== 部分是需要并入的分支的内容，确定好要保留好的内容后保存并退出，然后提交。提交成功后，使用 git log &amp;ndash;graph 可查看分支合并图 如果合并分支时产生冲突，想要还原回原来的状态，可以适用 git merge &amp;ndash;abort 命令 git 可以将工作区暂时的改动“存储”起来，当你不想将改动提交至暂存区时。使用 git stash 命令即可。当你想将“存储”的内容释放出来时，先使用 git stash list 查看，然后进行恢复。恢复命令有两条，使用 git stash apply &amp;lt;shash@{index}&amp;gt; （这个括号里面的内容是可选的，可以指定恢复第几个 stash 的内容，在多次 stash 时使用)，可以将存储的内容恢复至工作区，但是存储的内容并不会删除，需要删除可以使用 git stash drop &amp;lt;shash@{index}&amp;gt; 命令；另一种方式是使用 git stash pop &amp;lt;shash@{index}&amp;gt; 命令，该条命令会在恢复之后同时删除 stash 区域的内容 查看远程仓库的信息使用 git remote -v 本地分支与远程分支进行关联使用 git branch -u &amp;lt;branch_name&amp;gt; origin/&amp;lt;branch_name&amp;gt; 创建标签使用 git tag -a &amp;lt;tag_name&amp;gt; -m &amp;lt;tag_description&amp;gt; &amp;lt;commit_hash&amp;gt;，查看一个标签的内容可以使用 git show &amp;lt;tag_name&amp;gt; 推送标签可以使用 git push origin &amp;lt;tag_name&amp;gt;，一次性推送可以使用 git push origun &amp;ndash;tags 命令，删除本地标签可以使用 git tag -d &amp;lt;tag_name&amp;gt;，删除远程标签使用 git push origin :refs/tags/&amp;lt;tag_name&amp;gt;  完。</description>
+      <description>git 查看文件改动状态使用 git status git 查看改动的内容使用 git diff git 查看提交记录使用 git log 命令 HEAD 指针表示的是当前版本，上一个版本为 HEAD^，再往上就是 HEAD^^，往上一百个版本可以写作 HEAD~100 git 回退至上个版本使用 git reset &amp;ndash;hard HEAD^，若回退至指定版本，先使用 git log 查看版本的 hash，然后使用 git reset &amp;ndash;hard &amp;lt;hash_version&amp;gt; 如果回退版本后又想回到最新的版本，在不知道最新版本 hash 的情况下，使用 git reflog 查看所有 commit 的 hash，然后使用 git reset &amp;ndash;hard &amp;lt;hash_version&amp;gt; 进行回退或者前进 git VCS 分为工作区和版本库（暂存区与分支），git add 命令将改动添加进入暂存区，git commit 将改动添加到分支 工作区的文件发生了改动，想要撤销修改，可以使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt; 来撤销掉修改，注意必须要加 &amp;ndash; 符号（&amp;ndash; 与文件名之间有空格），否则 git 会认为是要切换分支 如果文件发生了改动并且已经添加到暂存区，想撤销掉暂存区的改动，使用 git reset HEAD &amp;lt;file_name&amp;gt; 命令，这样就把修改了的文件又放回工作区了，暂存区是干净的，放置到工作区后，再使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt; 将放置在工作区的文件改动撤销掉，这样两步操作就将文件的改动彻底还原了 查看工作区与版本库文件的差异可以使用 git diff HEAD &amp;ndash; &amp;lt;file_name&amp;gt;（同样，&amp;ndash; 与文件名之间有空格） 如果工作区的文件被误删除，想要恢复可以使用 git checkout &amp;ndash; &amp;lt;file_name&amp;gt;，git checkout 其实是用版本库里的版本替换工作区的版本操作，无论是工作区的修改还是删除，都可以用该命令一键还原 本地分支首次推向远程分支的时候可以使用 git push -u origin &amp;lt;branch_name&amp;gt;，其中 -u 参数是 &amp;ndash;set-upstream 的简写 切换分支使用 git checkout &amp;lt;branch_name&amp;gt;，创建并切换新分支时需要加上 -b 参数，创建新分支使用 git branch &amp;lt;branch_name&amp;gt;，查看分支 git branch 合并分支使用 git merge &amp;lt;branch_name&amp;gt;，删除使用 git branch -d &amp;lt;branch_name&amp;gt; git merge 合并分支产生冲突时，先解决冲突，再添加至暂存区，然后提交。解决冲突时，&amp;laquo;&amp;laquo;&amp;lt; HEAD 到 ===== 部分是当前分支的内容，&amp;raquo;&amp;raquo;&amp;gt; 到 ===== 部分是需要并入的分支的内容，确定好要保留好的内容后保存并退出，然后提交。提交成功后，使用 git log &amp;ndash;graph 可查看分支合并图 如果合并分支时产生冲突，想要还原回原来的状态，可以适用 git merge &amp;ndash;abort 命令 git 可以将工作区暂时的改动“存储”起来，当你不想将改动提交至暂存区时。使用 git stash 命令即可。当你想将“存储”的内容释放出来时，先使用 git stash list 查看，然后进行恢复。恢复命令有两条，使用 git stash apply &amp;lt;shash@{index}&amp;gt; （这个括号里面的内容是可选的，可以指定恢复第几个 stash 的内容，在多次 stash 时使用)，可以将存储的内容恢复至工作区，但是存储的内容并不会删除，需要删除可以使用 git stash drop &amp;lt;shash@{index}&amp;gt; 命令；另一种方式是使用 git stash pop &amp;lt;shash@{index}&amp;gt; 命令，该条命令会在恢复之后同时删除 stash 区域的内容 查看远程仓库的信息使用 git remote -v 本地分支与远程分支进行关联使用 git branch -u &amp;lt;branch_name&amp;gt; origin/&amp;lt;branch_name&amp;gt; 创建标签使用 git tag -a &amp;lt;tag_name&amp;gt; -m &amp;lt;tag_description&amp;gt; &amp;lt;commit_hash&amp;gt;，查看一个标签的内容可以使用 git show &amp;lt;tag_name&amp;gt; 推送标签可以使用 git push origin &amp;lt;tag_name&amp;gt;，一次性推送可以使用 git push origun &amp;ndash;tags 命令，删除本地标签可以使用 git tag -d &amp;lt;tag_name&amp;gt;，删除远程标签使用 git push origin :refs/tags/&amp;lt;tag_name&amp;gt; 完。</description>
     </item>
     
     <item>
@@ -134,7 +134,7 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
       <pubDate>Tue, 16 Apr 2019 17:05:16 +0800</pubDate>
       
       <guid>/react-note-1/</guid>
-      <description>React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态  // this.</description>
+      <description>React 可能会把多个 setState() 调用合并成一个调用。 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态 // this.</description>
     </item>
     
     <item>
@@ -165,7 +165,7 @@ p.content {  font-family: STKaiti, KaiTi, sans-serif; } 写完部署后发现效
       <guid>/vue-computed-watch-methods/</guid>
       <description>在 Vue 模板中使用表达式是十分便利的，但是这样设计的初衷是仅仅用于简单运算。在模板中使用大量的逻辑运算会使得模板变得难以维护。对于任何复杂的逻辑，都应该使用计算属性。
 Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符串放入一个计算属性中：
-&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt;  &amp;lt;p&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/p&amp;gt;  &amp;lt;p&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; const app = new Vue({  el: &amp;#39;#app&amp;#39;,  data: {  message: &amp;#39;Hello&amp;#39;  },  computed: {  // 计算属性的 getter  reversedMessage: function () {  // this 指向 Vue 实例  return this.</description>
+&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;p&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; const app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;Hello&amp;#39; }, computed: { // 计算属性的 getter reversedMessage: function () { // this 指向 Vue 实例 return this.</description>
     </item>
     
     <item>
@@ -175,8 +175,8 @@ Demo 一个最简单的翻转字符串的例子，可以将翻转之后的字符
       
       <guid>/object-freeze-and-object-seal/</guid>
       <description>Vue 的响应式是使用了 Object.defineProperty 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 Object.freeze 方法将数据“冻”起来。
- Object.freeze() 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。
- parameter Obj: 需要冻结的对象。</description>
+Object.freeze() 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。
+parameter Obj: 需要冻结的对象。</description>
     </item>
     
     <item>

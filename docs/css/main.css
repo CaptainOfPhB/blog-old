@@ -1,11 +1,18 @@
 @charset "UTF-8";
 
 :root {
+  --red-light: #ff7875;
   --red: #eb5757;
   --gray-light: #999999;
   --gray: #666666;
-  --black: #333333;
-  --border-color: #eeeeee;
+  --dark-light: rgba(100, 100, 100, 0.2);
+  --dark: #333333;
+  --white-light: #cccccc;
+  --white: #eeeeee;
+  --background-light: #f7f7f7;
+  --background-dark: #333333;
+  --code-background-light: #f7f7f7;
+  --code-background-dark: rgba(50, 50, 50, 0.7);
 }
 
 *::-webkit-scrollbar {
@@ -16,13 +23,13 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--red) !important;
+ul,
+ol {
+  margin: 0;
 }
 
 a:link,
 a:visited {
-  color: #424242;
   transition: all 0.15s linear;
 }
 
@@ -42,12 +49,9 @@ del {
 }
 
 table {
+  margin: 10px 0;
   border-spacing: 0;
   border-collapse: collapse;
-}
-
-table th {
-  background-color: #f6f8fa;
 }
 
 table th,
@@ -76,17 +80,14 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  color: var(--black);
-  font-family: sans-serif;
-  background-color: #f7f7f7;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
 }
 
 .main {
   width: 800px;
   padding: 60px 0;
   margin: 80px auto;
-  background: #ffffff;
-  box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 1);
 }
 
 .content {
@@ -120,7 +121,6 @@ body {
 }
 
 .home .summary {
-  color: var(--gray);
   margin: 20px 0;
   line-height: 1.8em;
   word-break: normal;
@@ -130,12 +130,11 @@ body {
 
 .home .footer {
   padding-bottom: 30px;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .home .meta {
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--gray-light);
 }
 
@@ -172,7 +171,6 @@ body {
   display: inline-flex;
   font-size: 14px;
   align-items: center;
-  color: var(--gray-light);
 }
 
 /* 归档 */
@@ -184,7 +182,6 @@ body {
 
 .posts .year {
   font-size: 1.5rem;
-  color: var(--black);
   font-weight: bold;
   margin: 30px 0 10px;
 }
@@ -237,12 +234,10 @@ body {
 
 .single .date {
   font-size: 13px;
-  color: var(--gray);
 }
 
 .single .divider {
   margin: 30px 0;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .single .meta {
@@ -263,7 +258,6 @@ body {
   display: flex;
   font-size: 14px;
   align-items: center;
-  color: var(--gray-light);
 }
 
 .single .pagination {
@@ -276,7 +270,6 @@ body {
   display: inline-flex;
   font-size: 14px;
   align-items: center;
-  color: var(--gray-light);
 }
 
 .markdown {
@@ -293,20 +286,22 @@ body {
 .markdown h5,
 .markdown h6 {
   margin: 20px 0;
-  color: var(--black);
 }
 
 .markdown code {
+  font-size: 14px;
   padding: 3px 5px;
   white-space: nowrap;
-  background: #f1f1f1;
-	font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+.markdown h2 code {
+  font-size: inherit;
 }
 
 .markdown pre {
   overflow: auto;
   padding: 5px 13px;
-  background-color: #f9f9f9 !important;
 }
 
 .markdown pre code {
@@ -319,14 +314,17 @@ body {
 .markdown blockquote {
   margin: 15px 0;
   padding: 0.1px 15px;
-  border-left: 5px solid var(--border-color);
+}
+
+.markdown blockquote p {
+  margin: 0;
 }
 
 .markdown strong,
 .markdown b,
 .markdown em {
   padding: 1px 2px;
-  background-color: #ffe889;
+  font-weight: normal;
 }
 
 .markdown img {
@@ -341,7 +339,8 @@ body {
   text-align: center;
 }
 
-@media print, screen and (max-width: 680px) {
+@media print,
+screen and (max-width: 680px) {
   .not-found svg {
     width: 300px;
     height: 300px;
