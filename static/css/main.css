@@ -19,7 +19,7 @@
 .main {
   max-width: 800px;
   margin: 80px auto 0;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 }
 
 /* 顶部导航 */
@@ -78,9 +78,7 @@
 }
 
 .home .pagination {
-  height: 20px;
   position: relative;
-  padding: 30px 0 10px;
   justify-content: space-between;
 }
 
@@ -283,6 +281,11 @@
 }
 
 @media screen and (max-width: 800px) {
+  .main {
+    margin: 50px auto 0;
+    padding-bottom: 50px;
+  }
+
   .content {
     margin: 0px 15px;
   }
