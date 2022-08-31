@@ -16,10 +16,10 @@ TypeScript 类型系统中的一些类型运算。
 ts 为<u>图灵类型完备</u>的类型系统，具有类型计算功能。`extends` 相当于 js 中的三元运算符。
 
 ```typescript
-type isTow<T> = T extends 2 ? true: false;
+type isTwo<T> = T extends 2 ? true: false;
 
-type res = isTow<1>; // false
-type res2 = isTow<2>; // true
+type res = isTwo<1>; // false
+type res2 = isTwo<2>; // true
 ```
 
 ### 推导 `infer`
