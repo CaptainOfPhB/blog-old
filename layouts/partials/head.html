@@ -4,7 +4,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- author -->
     <meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}" />
+
+    <!-- title -->
 	  {{ $title := ( .Title ) }}
 	  {{ $siteTitle := ( .Site.Title ) }}
 	  {{ if .IsHome }}
@@ -12,7 +16,8 @@
 	  {{ else }}
 	    <title>{{ $title }} ♡ {{ $siteTitle }}</title>
 	  {{ end }}
-    <!-- description & keywords -->
+
+    <!-- description -->
     {{ if .Description }}
       <meta name="description" content="{{ .Description | safeHTML }}" />
     {{ else if .IsPage }}
@@ -21,6 +26,7 @@
       <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
     {{ end }}
 
+    <!-- keywords -->
     {{ if .Keywords }}
     {{ $length := len .Keywords | add -1 }}
     <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
@@ -35,13 +41,13 @@
 
     <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" />
 
-    <!-- page theme -->
+    <!-- reset css -->
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" >
+
+    <style>{{ readFile "static/css/base.css" | safeCSS }}</style>
     <style>{{ readFile "static/css/light.css" | safeCSS }}</style>
     <style>{{ readFile "static/css/dark.css" | safeCSS }}</style>
-    <!-- code theme -->
     <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style>
     <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style>
-
-    <!-- import main.css as inline style -->
     <style>{{ readFile "static/css/main.css" | safeCSS }}</style>
 </head>

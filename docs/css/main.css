@@ -9,96 +9,23 @@
   --dark: #333333;
   --white-light: #cccccc;
   --white: #eeeeee;
-  --background-light: #f7f7f7;
+  --background-light: #fefefe;
   --background-dark: #333333;
   --code-background-light: rgba(236, 236, 236, 0.5);
   --code-background-dark: rgba(0, 0, 0, 0.3);
-}
-
-*::-webkit-scrollbar {
-  display: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding-left: 25px;
-}
-
-a:link,
-a:visited {
-  transition: all 0.15s linear;
-}
-
-hr {
-  width: 50%;
-  margin: 50px auto;
-  border: 0.5px solid #f3f3f3;
-}
-
-u {
-  text-underline-offset: 0.3em;
-  text-decoration-color: var(--gray-light);
-}
-
-del {
-  color: #999;
-}
-
-table {
-  margin: 10px 0;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  padding: 10px 20px;
-  border: 1px solid #dfe2e5;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-}
-
-html::-webkit-scrollbar-button {
-  display: none;
-}
-
-html::-webkit-scrollbar-thumb {
-  min-height: 16px;
-  background-color: #999999;
-  background-clip: padding-box;
-  border: 3px solid #fdfdfd;
-  border-radius: 5px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol, Noto Color Emoji;
+  --font: Fira Code, Fira Mono, Menlo, Consolas, DejaVu Sans Mono, monospace;
 }
 
 .main {
-  padding: 60px 0;
-  margin: 80px auto;
-}
-
-.content {
-  margin: 0 100px;
+  max-width: 800px;
+  margin: 80px auto 0;
+  padding-bottom: 100px;
 }
 
 /* 顶部导航 */
 
 .site-nav-container {
   display: flex;
-  margin: 0 100px;
   flex-flow: row-reverse;
 }
 
@@ -198,10 +125,13 @@ body {
   justify-content: space-between;
 }
 
-.post .item .date {
-  width: 60px;
+.posts .item .date {
+  opacity: 0.3;
+  font-size: 14px;
+  width: 80px;
   text-align: right;
   display: inline-block;
+  font-family: var(--font);
 }
 
 /* 标签 */
@@ -230,7 +160,7 @@ body {
 
 /* 文章 */
 
-.single p a {
+.single a {
   color: var(--red);
 }
 
@@ -267,8 +197,8 @@ body {
 }
 
 .single .pagination {
+  gap: 20px;
   display: flex;
-  padding-bottom: 30px;
   justify-content: space-between;
 }
 
@@ -299,7 +229,7 @@ body {
   font-size: 14px;
   padding: 3px 5px;
   white-space: nowrap;
-  font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-family: var(--font);
 }
 
 .markdown h2 code {
@@ -346,27 +276,13 @@ body {
   text-align: center;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 500px) {
   .not-found svg {
-    width: 300px;
-    height: 300px;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 900px) {
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  .main {
-    min-height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 30px 0;
-  }
-
+@media screen and (max-width: 800px) {
   .content {
     margin: 0px 15px;
   }
@@ -378,15 +294,5 @@ body {
 
   .site-nav a {
     margin: 0 20px 0 0;
-  }
-
-  .home title a {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .main {
-    width: 1000px;
   }
 }

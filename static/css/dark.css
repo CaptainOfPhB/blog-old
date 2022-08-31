@@ -61,4 +61,8 @@
   .markdown em {
     background-color: rgba(235, 87, 87, 0.3);
   }
+
+  .not-found svg {
+    fill: var(--gray);
+  }
 }
