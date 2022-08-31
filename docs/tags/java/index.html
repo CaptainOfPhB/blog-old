@@ -29,6 +29,569 @@
     
     <style>@charset "UTF-8";
 
+@media (prefers-color-scheme: light) {
+  a {
+    color: var(--dark);
+  }
+
+  a:hover {
+    color: var(--red-light) !important;
+  }
+
+  table th {
+    background-color: var(--background-light);
+  }
+
+  body {
+    color: var(--dark);
+    background-color: var(--background-light);
+  }
+
+  pre {
+    background: var(--code-background-light) !important;
+  }
+
+  .markdown code {
+    background: var(--code-background-light);
+  }
+
+  .single .date {
+    color: var(--gray);
+  }
+
+  .single .field a,
+  .single .pagination a {
+    color: var(--gray-light);
+  }
+
+  .single .divider {
+    border-bottom: 1px solid var(--white);
+  }
+
+  .home .summary {
+    color: var(--gray);
+  }
+
+  .home .pagination a {
+    color: var(--gray-light);
+  }
+
+  .posts .year {
+    color: var(--dark);
+  }
+
+  .markdown blockquote {
+    color: var(--gray);
+    border-left: 5px solid var(--white);
+  }
+
+  .markdown strong,
+  .markdown b,
+  .markdown em {
+    background-color: rgba(255, 197, 61, 0.3);
+  }
+}</style>
+    <style>@charset "UTF-8";
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--white);
+  }
+
+  a:hover {
+    color: var(--red) !important;
+  }
+
+  table th {
+    background: var(--code-background-dark);
+  }
+
+  body {
+    color: var(--white);
+    background-color: var(--background-dark);
+  }
+
+  pre {
+    background: var(--code-background-dark) !important;
+  }
+
+  .markdown code {
+    background: var(--code-background-dark);
+  }
+
+  .single .date {
+    color: var(--gray-light);
+  }
+
+  .single .field a,
+  .single .pagination a {
+    color: var(--white-light);
+  }
+
+  .single .divider {
+    border-bottom: 1px solid var(--gray);
+  }
+
+  .home .summary {
+    color: var(--white-light);
+  }
+
+  .home .pagination a {
+    color: var(--white-light);
+  }
+
+  .posts .year {
+    color: var(--white);
+  }
+
+  .markdown blockquote {
+    color: var(--gray-light);
+    border-left: 5px solid var(--gray);
+  }
+
+  .markdown strong,
+  .markdown b,
+  .markdown em {
+    background-color: rgba(235, 87, 87, 0.3);
+  }
+}</style>
+    
+    <style>@media (prefers-color-scheme: light) {
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+		color: #111b27;
+		background: none;
+		font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+		text-align: left;
+		white-space: pre;
+		word-spacing: normal;
+		word-break: normal;
+		word-wrap: normal;
+		line-height: 1.5;
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		tab-size: 4;
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		hyphens: none;
+	}
+
+	pre[class*="language-"]::-moz-selection,
+	pre[class*="language-"] ::-moz-selection,
+	code[class*="language-"]::-moz-selection,
+	code[class*="language-"] ::-moz-selection {
+		background: #8da1b9;
+	}
+
+	pre[class*="language-"]::selection,
+	pre[class*="language-"] ::selection,
+	code[class*="language-"]::selection,
+	code[class*="language-"] ::selection {
+		background: #8da1b9;
+	}
+
+	/* Code blocks */
+	pre[class*="language-"] {
+		padding: 1em;
+		margin: 0.5em 0;
+		overflow: auto;
+	}
+
+	:not(pre)>code[class*="language-"],
+	pre[class*="language-"] {
+		background: #e3eaf2;
+	}
+
+	/* Inline code */
+	:not(pre)>code[class*="language-"] {
+		padding: 0.1em 0.3em;
+		border-radius: 0.3em;
+		white-space: normal;
+	}
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata {
+		color: #3c526d;
+	}
+
+	.token.punctuation {
+		color: #111b27;
+	}
+
+	.token.delimiter.important,
+	.token.selector .parent,
+	.token.tag,
+	.token.tag .token.punctuation {
+		color: #006d6d;
+	}
+
+	.token.attr-name,
+	.token.boolean,
+	.token.boolean.important,
+	.token.number,
+	.token.constant,
+	.token.selector .token.attribute {
+		color: #755f00;
+	}
+
+	.token.class-name,
+	.token.key,
+	.token.parameter,
+	.token.property,
+	.token.property-access,
+	.token.variable {
+		color: #005a8e;
+	}
+
+	.token.attr-value,
+	.token.inserted,
+	.token.color,
+	.token.selector .token.value,
+	.token.string,
+	.token.string .token.url-link {
+		color: #116b00;
+	}
+
+	.token.builtin,
+	.token.keyword-array,
+	.token.package,
+	.token.regex {
+		color: #af00af;
+	}
+
+	.token.function,
+	.token.selector .token.class,
+	.token.selector .token.id {
+		color: #7c00aa;
+	}
+
+	.token.atrule .token.rule,
+	.token.combinator,
+	.token.keyword,
+	.token.operator,
+	.token.pseudo-class,
+	.token.pseudo-element,
+	.token.selector,
+	.token.unit {
+		color: #a04900;
+	}
+
+	.token.deleted,
+	.token.important {
+		color: #c22f2e;
+	}
+
+	.token.keyword-this,
+	.token.this {
+		color: #005a8e;
+	}
+
+	.token.important,
+	.token.keyword-this,
+	.token.this,
+	.token.bold {
+		font-weight: bold;
+	}
+
+	.token.delimiter.important {
+		font-weight: inherit;
+	}
+
+	.token.italic {
+		font-style: italic;
+	}
+
+	.token.entity {
+		cursor: help;
+	}
+
+	.language-markdown .token.title,
+	.language-markdown .token.title .token.punctuation {
+		color: #005a8e;
+		font-weight: bold;
+	}
+
+	.language-markdown .token.blockquote.punctuation {
+		color: #af00af;
+	}
+
+	.language-markdown .token.code {
+		color: #006d6d;
+	}
+
+	.language-markdown .token.hr.punctuation {
+		color: #005a8e;
+	}
+
+	.language-markdown .token.url>.token.content {
+		color: #116b00;
+	}
+
+	.language-markdown .token.url-link {
+		color: #755f00;
+	}
+
+	.language-markdown .token.list.punctuation {
+		color: #af00af;
+	}
+
+	.language-markdown .token.table-header {
+		color: #111b27;
+	}
+
+	.language-json .token.operator {
+		color: #111b27;
+	}
+
+	.language-scss .token.variable {
+		color: #006d6d;
+	}
+
+	/* overrides color-values for the Show Invisibles plugin
+ * https://prismjs.com/plugins/show-invisibles/
+ */
+	.token.token.tab:not(:empty):before,
+	.token.token.cr:before,
+	.token.token.lf:before,
+	.token.token.space:before {
+		color: #3c526d;
+	}
+
+	/* overrides color-values for the Toolbar plugin
+ * https://prismjs.com/plugins/toolbar/
+ */
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>button {
+		color: #e3eaf2;
+		background: #005a8e;
+	}
+
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus {
+		color: #e3eaf2;
+		background: #005a8eda;
+		text-decoration: none;
+	}
+
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>span,
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover,
+	div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus {
+		color: #e3eaf2;
+		background: #3c526d;
+	}
+
+	/* overrides color-values for the Line Highlight plugin
+ * http://prismjs.com/plugins/line-highlight/
+ */
+	.line-highlight.line-highlight {
+		background: #8da1b92f;
+		background: linear-gradient(to right, #8da1b92f 70%, #8da1b925);
+	}
+
+	.line-highlight.line-highlight:before,
+	.line-highlight.line-highlight[data-end]:after {
+		background-color: #3c526d;
+		color: #e3eaf2;
+		box-shadow: 0 1px #8da1b9;
+	}
+
+	pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before {
+		background-color: #3c526d1f;
+	}
+
+	/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+	.line-numbers.line-numbers .line-numbers-rows {
+		border-right: 1px solid #8da1b97a;
+		background: #d0dae77a;
+	}
+
+	.line-numbers .line-numbers-rows>span:before {
+		color: #3c526dda;
+	}
+
+	/* overrides color-values for the Match Braces plugin
+ * https://prismjs.com/plugins/match-braces/
+ */
+	.rainbow-braces .token.token.punctuation.brace-level-1,
+	.rainbow-braces .token.token.punctuation.brace-level-5,
+	.rainbow-braces .token.token.punctuation.brace-level-9 {
+		color: #755f00;
+	}
+
+	.rainbow-braces .token.token.punctuation.brace-level-2,
+	.rainbow-braces .token.token.punctuation.brace-level-6,
+	.rainbow-braces .token.token.punctuation.brace-level-10 {
+		color: #af00af;
+	}
+
+	.rainbow-braces .token.token.punctuation.brace-level-3,
+	.rainbow-braces .token.token.punctuation.brace-level-7,
+	.rainbow-braces .token.token.punctuation.brace-level-11 {
+		color: #005a8e;
+	}
+
+	.rainbow-braces .token.token.punctuation.brace-level-4,
+	.rainbow-braces .token.token.punctuation.brace-level-8,
+	.rainbow-braces .token.token.punctuation.brace-level-12 {
+		color: #7c00aa;
+	}
+
+	/* overrides color-values for the Diff Highlight plugin
+ * https://prismjs.com/plugins/diff-highlight/
+ */
+	pre.diff-highlight>code .token.token.deleted:not(.prefix),
+	pre>code.diff-highlight .token.token.deleted:not(.prefix) {
+		background-color: #c22f2e1f;
+	}
+
+	pre.diff-highlight>code .token.token.inserted:not(.prefix),
+	pre>code.diff-highlight .token.token.inserted:not(.prefix) {
+		background-color: #116b001f;
+	}
+
+	/* overrides color-values for the Command Line plugin
+ * https://prismjs.com/plugins/command-line/
+ */
+	.command-line .command-line-prompt {
+		border-right: 1px solid #8da1b97a;
+	}
+
+	.command-line .command-line-prompt>span:before {
+		color: #3c526dda;
+	}
+}</style>
+    <style>@media (prefers-color-scheme: dark) {
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+		color: #ccc;
+		background: none;
+		font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+		font-size: 1em;
+		text-align: left;
+		white-space: pre;
+		word-spacing: normal;
+		word-break: normal;
+		word-wrap: normal;
+		line-height: 1.5;
+
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		tab-size: 4;
+
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		hyphens: none;
+
+	}
+
+	/* Code blocks */
+	pre[class*="language-"] {
+		padding: 1em;
+		margin: .5em 0;
+		overflow: auto;
+	}
+
+	:not(pre)>code[class*="language-"],
+	pre[class*="language-"] {
+		background: #2d2d2d;
+	}
+
+	/* Inline code */
+	:not(pre)>code[class*="language-"] {
+		padding: .1em;
+		border-radius: .3em;
+		white-space: normal;
+	}
+
+	.token.comment,
+	.token.block-comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata {
+		color: #999;
+	}
+
+	.token.punctuation {
+		color: #ccc;
+	}
+
+	.token.tag,
+	.token.attr-name,
+	.token.namespace,
+	.token.deleted {
+		color: #e2777a;
+	}
+
+	.token.function-name {
+		color: #6196cc;
+	}
+
+	.token.boolean,
+	.token.number,
+	.token.function {
+		color: #f08d49;
+	}
+
+	.token.property,
+	.token.class-name,
+	.token.constant,
+	.token.symbol {
+		color: #f8c555;
+	}
+
+	.token.selector,
+	.token.important,
+	.token.atrule,
+	.token.keyword,
+	.token.builtin {
+		color: #cc99cd;
+	}
+
+	.token.string,
+	.token.char,
+	.token.attr-value,
+	.token.regex,
+	.token.variable {
+		color: #7ec699;
+	}
+
+	.token.operator,
+	.token.entity,
+	.token.url {
+		color: #67cdcc;
+	}
+
+	.token.important,
+	.token.bold {
+		font-weight: bold;
+	}
+
+	.token.italic {
+		font-style: italic;
+	}
+
+	.token.entity {
+		cursor: help;
+	}
+
+	.token.inserted {
+		color: green;
+	}
+}</style>
+
+    
+    <style>@charset "UTF-8";
+
 :root {
   --red-light: #ff7875;
   --red: #eb5757;
@@ -40,8 +603,8 @@
   --white: #eeeeee;
   --background-light: #f7f7f7;
   --background-dark: #333333;
-  --code-background-light: #f7f7f7;
-  --code-background-dark: rgba(50, 50, 50, 0.7);
+  --code-background-light: rgba(236, 236, 236, 0.5);
+  --code-background-dark: rgba(0, 0, 0, 0.3);
 }
 
 *::-webkit-scrollbar {
@@ -55,6 +618,7 @@ a {
 ul,
 ol {
   margin: 0;
+  padding-left: 25px;
 }
 
 a:link,
@@ -114,7 +678,6 @@ body {
 }
 
 .main {
-  width: 800px;
   padding: 60px 0;
   margin: 80px auto;
 }
@@ -308,6 +871,7 @@ body {
 }
 
 .markdown {
+  padding-top: 15px;
   line-height: 1.8em;
   word-break: normal;
   word-wrap: break-word;
@@ -418,13 +982,6 @@ body {
     width: 1000px;
   }
 }</style>
-
-    
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: light)" href="/css/light.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="/css/dark.css" />
-    
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: light)" href="/css/prism-light.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="/css/prism-dark.css" />
 </head>
 
 <body>

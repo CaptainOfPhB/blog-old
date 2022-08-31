@@ -11,8 +11,8 @@
   --white: #eeeeee;
   --background-light: #f7f7f7;
   --background-dark: #333333;
-  --code-background-light: #f7f7f7;
-  --code-background-dark: rgba(50, 50, 50, 0.7);
+  --code-background-light: rgba(236, 236, 236, 0.5);
+  --code-background-dark: rgba(0, 0, 0, 0.3);
 }
 
 *::-webkit-scrollbar {
@@ -26,6 +26,7 @@ a {
 ul,
 ol {
   margin: 0;
+  padding-left: 25px;
 }
 
 a:link,
@@ -85,7 +86,6 @@ body {
 }
 
 .main {
-  width: 800px;
   padding: 60px 0;
   margin: 80px auto;
 }
@@ -279,6 +279,7 @@ body {
 }
 
 .markdown {
+  padding-top: 15px;
   line-height: 1.8em;
   word-break: normal;
   word-wrap: break-word;
