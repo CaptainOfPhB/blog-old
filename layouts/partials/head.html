@@ -35,13 +35,13 @@
 
     <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" />
 
+    <!-- page theme -->
+    <style>{{ readFile "static/css/light.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/dark.css" | safeCSS }}</style>
+    <!-- code theme -->
+    <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style>
+
     <!-- import main.css as inline style -->
     <style>{{ readFile "static/css/main.css" | safeCSS }}</style>
-
-    <!-- page theme -->
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: light)" href="{{ "css/light.css" | absURL }}" />
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="{{ "css/dark.css" | absURL }}" />
-    <!-- code theme -->
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: light)" href="{{ "css/prism-light.css" | absURL }}" />
-    <link rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="{{ "css/prism-dark.css" | absURL }}" />
 </head>
