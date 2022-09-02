@@ -5,6 +5,7 @@ summaryLength = 10 # 文章缩略文本长度
 paginate = 5 # 首页显示文章数量
 enableEmoji = true # 允许使用 emoji
 enableGitInfo = true # 允许使用 git 相关信息
+disqusShortname = "disques_7SnMEBOBVX"
 
 [author]
 name = "CaptainOfPhB"
