@@ -1,16 +1,8 @@
 # 船长の部落格
 
-This is my personal blog named 沉梦昂志, built with [Hugo][hugo].
-
-You can preview it at [daijiangtao.blog][blog].
-
-PS: **Don't fork this repository! thank you!**
+This is my personal site built with [Hugo][hugo]. You can preview it at [daijiangtao.blog][blog].
 
 ![preview][preview]
-
-[hugo]: https://gohugo.io/
-[blog]: https://daijiangtao.blog
-[preview]: ./static/images/blog-preview.png
 
 ## Local preview
 
@@ -30,3 +22,7 @@ hugo new posts/your-post-name.md
 ```bash
 sh deploy.sh
 ```
+
+[hugo]: https://gohugo.io/
+[blog]: https://daijiangtao.blog
+[preview]: ./static/images/blog-preview.png
