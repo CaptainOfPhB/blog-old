@@ -44,10 +44,13 @@
     <!-- reset css -->
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" >
 
-    <link rel="stylesheet"  href="{{ "css/prism-light.css" | absURL }}" >
-    <link rel="stylesheet"  href="{{ "css/prism-dark.css" | absURL }}" >
-    <link rel="stylesheet"  href="{{ "css/base.css" | absURL }}" >
-    <link rel="stylesheet"  href="{{ "css/light.css" | absURL }}" >
-    <link rel="stylesheet"  href="{{ "css/dark.css" | absURL }}" >
-    <link rel="stylesheet"  href="{{ "css/main.css" | absURL }}" >
+    <!-- reset css -->
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" >
+
+    <style>{{ readFile "static/css/base.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/light.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/dark.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/main.css" | safeCSS }}</style>
 </head>
