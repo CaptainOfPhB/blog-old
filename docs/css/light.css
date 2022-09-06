@@ -26,6 +26,14 @@
     background: var(--code-background-light);
   }
 
+  .single .toc {
+    background-color: var(--code-background-light);
+  }
+
+  .single .toc a {
+    color: var(--gray);
+  }
+
   .single .date {
     color: var(--gray);
   }

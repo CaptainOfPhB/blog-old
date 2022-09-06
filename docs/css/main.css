@@ -142,15 +142,20 @@
 .tags ul {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .tags li {
-  margin: 10px 15px;
+  flex: 46%;
+  text-align: left;
+  margin: 10px 10px 10px 0;
   display: inline-block;
 }
 
 .tags .count {
-  top: -10px;
+  top: -6px;
   font-size: 12px;
   position: relative;
   color: var(--gray-light);
@@ -163,11 +168,34 @@
 }
 
 .single {
+  position: relative;
   margin-top: 30px;
 }
 
 .single .date {
   font-size: 13px;
+}
+
+.single .toc {
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.single .toc summary {
+  cursor: pointer;
+}
+
+.single #TableOfContents {
+  padding: 15px 0 10px;
+}
+
+.single #TableOfContents > ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.single #TableOfContents li {
+  line-height: 1.5;
 }
 
 .single .divider {
@@ -207,7 +235,6 @@
 }
 
 .markdown {
-  padding-top: 15px;
   line-height: 1.8em;
   word-break: normal;
   word-wrap: break-word;
@@ -301,5 +328,11 @@
 
   .site-nav a {
     margin: 0 20px 0 0;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .single .toc-icon {
+    display: block;
   }
 }
