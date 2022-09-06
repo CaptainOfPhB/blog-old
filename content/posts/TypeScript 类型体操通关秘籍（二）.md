@@ -22,7 +22,7 @@ type Capitalize<S extends string> =
 type result = Capitalize<'captainOfPhB'>; // CaptainOfPhB
 ```
 
-### FilterByValueType
+## FilterByValueType
 
 `never` 的索引会在生成新的索引类型时被去掉。
 
@@ -40,13 +40,13 @@ interface Person {
 type result = FilterByValueType<Person, string | number>; // { name: string; age: number }
 ```
 
-### isEqual
+## isEqual
 
 ```typescript
 type IsEqual<A, B> = (A extends B ? 1 : 2) extends (B extends A ? 1 : 2) ? true : false;
 ```
 
-### BuildArray
+## BuildArray
 
 ```typescript
 type BuildArray<Length extends number, Ele = unknown, Arr extends unknown[] = []> =
