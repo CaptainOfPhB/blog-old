@@ -181,6 +181,10 @@
   margin-top: 15px;
 }
 
+.single .toc code {
+  font-family: inherit;;
+}
+
 .single .toc summary {
   cursor: pointer;
 }
