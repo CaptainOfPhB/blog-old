@@ -1,76 +1,40 @@
-@charset "UTF-8";
-
 @media (prefers-color-scheme: light) {
   a {
-    color: var(--dark);
-  }
-
+    color: var(--dark); }
   a:hover {
-    color: var(--red-light) !important;
-  }
-
+    color: var(--red-light) !important; }
   table th {
-    background-color: var(--background-light);
-  }
-
+    background-color: var(--background-light); }
   body {
     color: var(--dark);
-    background-color: var(--background-light);
-  }
-
+    background-color: var(--background-light); }
   pre {
-    background: var(--code-background-light) !important;
-  }
-
+    background: var(--code-background-light) !important; }
   .markdown code {
-    background: var(--code-background-light);
-  }
-
+    background: var(--code-background-light); }
   .single .toc {
-    background-color: var(--code-background-light);
-  }
-
+    background-color: var(--code-background-light); }
   .single .toc a {
-    color: var(--gray);
-  }
-
+    color: var(--gray); }
   .single .date {
-    color: var(--gray);
-  }
-
+    color: var(--gray); }
   .single .field a,
   .single .pagination a {
-    color: var(--gray-light);
-  }
-
+    color: var(--gray-light); }
   .single .divider {
-    border-bottom: 1px solid var(--white);
-  }
-
+    border-bottom: 1px solid var(--white); }
   .home .summary {
-    color: var(--gray);
-  }
-
+    color: var(--gray); }
   .home .pagination a {
-    color: var(--gray-light);
-  }
-
+    color: var(--gray-light); }
   .posts .year {
-    color: var(--dark);
-  }
-
+    color: var(--dark); }
   .markdown blockquote {
     color: var(--gray);
-    border-left: 5px solid var(--white);
-  }
-
+    border-left: 5px solid var(--white); }
   .markdown strong,
   .markdown b,
   .markdown em {
-    background-color: rgba(255, 197, 61, 0.3);
-  }
-
+    background-color: rgba(255, 197, 61, 0.3); }
   .not-found svg {
-    fill: var(--white-light);
-  }
-}
+    fill: var(--white-light); } }
