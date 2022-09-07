@@ -19,9 +19,7 @@ hugo new posts/your-post-name.md
 
 ## Deploy
 
-```bash
-sh deploy.sh
-```
+Github action will auto build and deploy pages when we push changes to master.
 
 [hugo]: https://gohugo.io/
 [blog]: https://daijiangtao.blog
