@@ -1,5 +1,6 @@
 baseURL = "/" # 网站根目录
 publishDir = "docs" # 打包目录
+assetDir = "static" # 打包目录
 title = "船长の部落格" # 网站标题
 summaryLength = 10 # 文章缩略文本长度
 paginate = 5 # 首页显示文章数量

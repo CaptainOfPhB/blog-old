@@ -42,15 +42,32 @@
     <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" />
 
     <!-- reset css -->
-    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" >
+    <!-- <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" > -->
 
-    <!-- reset css -->
-    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" >
+    <!-- <style>{{ readFile "static/css/base.css" | safeCSS }}</style> -->
+    <!-- <style>{{ readFile "static/css/light.css" | safeCSS }}</style> -->
+    <!-- <style>{{ readFile "static/css/dark.css" | safeCSS }}</style> -->
+    <!-- <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style> -->
+    <!-- <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style> -->
+    <!-- <style>{{ readFile "static/css/main.css" | safeCSS }}</style> -->
 
-    <style>{{ readFile "static/css/base.css" | safeCSS }}</style>
-    <style>{{ readFile "static/css/light.css" | safeCSS }}</style>
-    <style>{{ readFile "static/css/dark.css" | safeCSS }}</style>
-    <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style>
-    <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style>
-    <style>{{ readFile "static/css/main.css" | safeCSS }}</style>
+    {{ $scss := resources.Get "css/base.css" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $scss := resources.Get "css/light.css" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $scss := resources.Get "css/dark.css" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $scss := resources.Get "css/prism-light.css" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $scss := resources.Get "css/prism-dark.css" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $scss := resources.Get "css/main.css" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
 </head>
