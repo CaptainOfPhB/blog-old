@@ -15,6 +15,7 @@ description = "船长の部落格" # 网站描述
 enableSummary = true # 是否显示文章摘要
 keywords = ["CaptainOfPhB", "船长の部落格"] # 网站关键字
 mainSections = ["posts", "post"]
+hasCJKLanguage = true # 自动检测中文、日文、韩文
 
 [permalinks]
 posts = "/:slug"

@@ -2,12 +2,15 @@
 {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 {{ range $paginator.Pages }}
 <div class="section">
+
     <h2 class="title">
         <a href='{{ .RelPermalink }}'>{{ .Title }}</a>
     </h2>
+
     {{ if .Site.Params.enableSummary }}
-    <p class="summary">{{ .Summary }}...</p>
+        <div class="summary">{{ .Summary | plainify }}</div>
     {{ end }}
+
     <div class="footer">
         <div class="meta">
                 <div class="field">
