@@ -6,7 +6,12 @@
         <div class="content">
             <div class="single">
                 <h1 class="title">{{ .Title }}</h1>
-                <div class="date">Updated&nbsp;on&nbsp;{{ .Lastmod.Format "2006.01.02" }}</div>
+                <div class="date">
+                    {{- if $.GitInfo -}}
+                        {{ .GitInfo.AuthorName }}
+                    {{- end -}}
+                    Updated&nbsp;on&nbsp;{{ .Lastmod.Format "2006.01.02" }}
+                </div>
 
                 {{ if (and (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") (ne .TableOfContents "")) }}
                     <details open class="toc">
