@@ -13,5 +13,6 @@ $RECYCLE.BIN/
 *.map
 
 .resource
+resources
 
 .hugo_build.lock
