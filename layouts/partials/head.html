@@ -9,65 +9,38 @@
     <meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}" />
 
     <!-- title -->
-	  {{ $title := ( .Title ) }}
-	  {{ $siteTitle := ( .Site.Title ) }}
-	  {{ if .IsHome }}
-	    <title>{{ $siteTitle }}</title>
-	  {{ else }}
-	    <title>{{ $title }} ♡ {{ $siteTitle }}</title>
-	  {{ end }}
+    {{ $title := ( .Title ) }}
+    {{ $siteTitle := ( .Site.Title ) }}
+    {{ if .IsHome }}
+        <title>{{ $siteTitle }}</title>
+    {{ else }}
+	    <title>{{ $title }} | {{ $siteTitle }}</title>
+    {{ end }}
 
     <!-- description -->
     {{ if .Description }}
-      <meta name="description" content="{{ .Description | safeHTML }}" />
+        <meta name="description" content="{{ .Description | safeHTML }}" />
     {{ else if .IsPage }}
-      <meta name="description" content="{{ .Summary | plainify }}" />
+        <meta name="description" content="{{ .Summary | plainify }}" />
     {{ else if .Site.Params.description }}
-      <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+        <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
     {{ end }}
 
     <!-- keywords -->
     {{ if .Keywords }}
-    {{ $length := len .Keywords | add -1 }}
-    <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
+        {{ $length := len .Keywords | add -1 }}
+        <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
     {{ else if .Site.Params.keywords }}
-    {{ $length := len .Site.Params.keywords | add -1 }}
-    <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
-    {{ end }}
-
-	  {{ with .OutputFormats.Get "rss" }}
-	  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+        {{ $length := len .Site.Params.keywords | add -1 }}
+        <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
     {{ end }}
 
     <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" />
 
-    <!-- reset css -->
-    <!-- <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/reseter.css" > -->
-
-    <!-- <style>{{ readFile "static/css/base.css" | safeCSS }}</style> -->
-    <!-- <style>{{ readFile "static/css/light.css" | safeCSS }}</style> -->
-    <!-- <style>{{ readFile "static/css/dark.css" | safeCSS }}</style> -->
-    <!-- <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style> -->
-    <!-- <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style> -->
-    <!-- <style>{{ readFile "static/css/main.css" | safeCSS }}</style> -->
-
-    {{ $scss := resources.Get "css/base.css" }}
-    {{ $style := $scss | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-    {{ $scss := resources.Get "css/light.css" }}
-    {{ $style := $scss | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-    {{ $scss := resources.Get "css/dark.css" }}
-    {{ $style := $scss | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-    {{ $scss := resources.Get "css/prism-light.css" }}
-    {{ $style := $scss | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-    {{ $scss := resources.Get "css/prism-dark.css" }}
-    {{ $style := $scss | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-    {{ $scss := resources.Get "css/main.css" }}
-    {{ $style := $scss | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-
+    <style>{{ readFile "static/css/reset.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/light.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/dark.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/prism-light.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/prism-dark.css" | safeCSS }}</style>
+    <style>{{ readFile "static/css/main.css" | safeCSS }}</style>
 </head>

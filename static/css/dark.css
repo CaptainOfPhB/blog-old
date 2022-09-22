@@ -34,24 +34,15 @@
     color: var(--white-light);
   }
 
-  .single .date {
+  .single .meta {
     color: var(--gray-light);
   }
 
-  .single .field a,
-  .single .pagination a {
+  .single .label-item a {
     color: var(--white-light);
-  }
-
-  .single .divider {
-    border-bottom: 1px solid var(--gray);
   }
 
   .home .summary {
-    color: var(--white-light);
-  }
-
-  .home .pagination a {
     color: var(--white-light);
   }
 

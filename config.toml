@@ -1,12 +1,12 @@
 baseURL = "/" # 网站根目录
 publishDir = "docs" # 打包目录
-assetDir = "static" # 打包目录
+assetDir = "static" # 资源目录
 title = "船长の部落格" # 网站标题
 summaryLength = 10 # 文章缩略文本长度
 paginate = 5 # 首页显示文章数量
 enableEmoji = true # 允许使用 emoji
 enableGitInfo = true # 允许使用 git 相关信息
-disqusShortname = "daijiangtao-blog"
+disqusShortname = "daijiangtao-blog" # disqus 评论
 
 [author]
 name = "CaptainOfPhB"
@@ -20,7 +20,10 @@ hasCJKLanguage = true # 自动检测中文、日文、韩文
 
 [permalinks]
 posts = "/:slug"
-#posts = "/:year/:month/:day/:slug"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[markup.highlight]
+# style = 'solarized-light'
+noClasses = false

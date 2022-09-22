@@ -2,20 +2,23 @@
 
 <body>
     <div class="main">
+
         {{ partial "nav.html" . }}
+
         <div class="content">
             <div class="single">
+
                 <h1 class="title">{{ .Title }}</h1>
-                <div class="date">
-                    {{- if $.GitInfo -}}
-                        {{ .GitInfo.AuthorName }}
-                    {{- end -}}
-                    Updated&nbsp;on&nbsp;{{ .Lastmod.Format "2006.01.02" }}
+
+                <div class="meta">
+                    Updated&nbsp;at&nbsp;{{ .Lastmod.Format "2006.01.02" }},
+                    {{ countwords .Content }} words,
+                    {{ math.Round (div (countwords .Content) 220.0) }} mins
                 </div>
 
                 {{ if (and (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") (ne .TableOfContents "")) }}
                     <details open class="toc">
-                        <summary>Table of Contents</summary>
+                        <summary>&nbsp;Table&nbsp;of&nbsp;Contents</summary>
                         {{ .TableOfContents  }}
                     </details>
                 {{ end }}
@@ -26,45 +29,20 @@
 
                 <div class="footer">
                     {{ with .Params.tags }}
-                    <div class="meta">
-                        <span class="field">
+                        <div class="labels">
                             {{ range . }}
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; margin-right: 3px;">
-                                <path fill="none" d="M0 0h24v24H0z"/>
-                                <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
-                            </svg>
-                            <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                                <span class="label-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999;">
+                                        <path fill="none" d="M0 0h24v24H0z"/>
+                                        <path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
+                                    </svg>
+                                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                                </span>
                             {{ end }}
-                        </span>
-                    </div>
+                        </div>
                     {{ end }}
-
-                    <div class="divider"></div>
-
-                    <div class="pagination">
-                        {{ with .PrevInSection }}
-                            <a class="pre" href="{{.Permalink}}">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
-                                    <path fill="none" d="M0 0h24v24H0z"/>
-                                    <path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/>
-                                </svg>
-                                <span>{{.Title}}</span>
-                            </a>
-                        {{ end }}
-                        {{ with .NextInSection }}
-                            <a class="next" href="{{.Permalink}}">
-                                <span>{{.Title}}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="fill: #999;">
-                                    <path fill="none" d="M0 0h24v24H0z"/>
-                                    <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/>
-                                </svg>
-                            </a>
-                        {{ end }}
-                    </div>
-
-                    {{ template "_internal/disqus.html" . }}
-
                 </div>
+
             </div>
         </div>
     </div>

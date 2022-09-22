@@ -7,6 +7,7 @@ tags: ['share','babel']
 keywords: ['share','babel']
 description: "enhance your console"
 slug: "/enhance-console-method"
+summary: "babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel ..."
 ---
 
 babel 最开始叫 6to5，顾名思义是 es6 转 es5，后面改名为 babel。

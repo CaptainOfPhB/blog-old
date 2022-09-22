@@ -1,12 +1,9 @@
 ---
-title: '关于我'
+title: "👋 Hi, I'm CaptainOfPhB 👨‍💻‍"
 date: 2021-06-01T15:28:56+08:00
-hidden: false
-draft: false
-tags: ['about-me']
-keywords: ['about me']
-description: '关于我'
 slug: 'about-me'
+type: 'about'
+layout: 'index'
 ---
 
 我是船长，常用的英文 ID 是 CaptainOfPhB。
