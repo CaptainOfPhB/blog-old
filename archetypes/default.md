@@ -7,11 +7,10 @@ tags: []
 keywords: []
 description: ""
 slug: ""
+summary: ""
 ---
 
-This is your first paragraph, it will be displayed as summary...
-
-<!--more-->
+This is your first paragraph.
 
 ## H2 title
 
