@@ -99,7 +99,7 @@ visitor: {
 }
 ```
 
-{{< img src="https://s2.loli.net/2022/03/02/oBLnvwFsRW9SIjZ.png" >}}
+{{< img src="https://s2.loli.net/2022/09/25/4QixGvN7B2sjZlR.png" >}}
 
 path 是遍历过程中的路径，会保留上下文信息，有很多属性和方法，比如:
 
