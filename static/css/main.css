@@ -196,7 +196,6 @@
 
 .single #TableOfContents ul {
   list-style: none;
-  padding-left: 0;
 }
 
 .single #TableOfContents > ul {
@@ -205,6 +204,10 @@
 
 .single #TableOfContents li {
   line-height: 1.5;
+}
+
+.single #TableOfContents li ul {
+  padding-left: 2em;
 }
 
 .single .labels {
