@@ -33,6 +33,8 @@ del {
 }
 
 table {
+  display: block;
+  overflow-x: scroll;
   margin: 10px 0;
   border-spacing: 0;
   border-collapse: collapse;

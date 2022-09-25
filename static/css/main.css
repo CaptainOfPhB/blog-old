@@ -61,7 +61,7 @@
 
 .home .meta {
   display: flex;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 20px;
   color: var(--gray-light);
 }
@@ -79,8 +79,8 @@
 }
 
 .home .pagination {
+  margin-top: 30px;
   position: relative;
-  justify-content: space-between;
 }
 
 .home .prev {
@@ -256,7 +256,7 @@
 
 .markdown pre {
   overflow: auto;
-  padding: 5px 13px;
+  padding: 15px 18px;
 }
 
 .markdown pre code {
