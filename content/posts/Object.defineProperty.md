@@ -7,6 +7,7 @@ tags: ['JavaScript']
 keywords: ['object defineProperty']
 description: 'Object.defineProperty'
 slug: 'object-defineProperty'
+summary: 'Object.defineProperty 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回这个对象。'
 ---
 
 `Object.defineProperty()` 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。该方法允许精确添加或修改对象的属性。通过赋值来添加的普通属性会创建在属性枚举期间显示的属性（`for...in` 或 `Object.keys` 方法），这些值可以被改变，也可以被删除。这种方法允许这些额外的细节从默认值改变。默认情况下，使用 `Object.defineProperty()` 添加的属性值是不可变的。
@@ -45,7 +46,7 @@ slug: 'object-defineProperty'
 如果一个描述符不具有 value、writable、get 和 set 任意一个关键字，那么它将被认为是一个数据描述符。
 如果一个描述符同时有(value 或 writable)和(get 或 set)关键字，将会产生一个异常（数据描述符和存取描述符不能同时存在）。
 
-### configurable
+### Configurable
 
 `configurable` 特性指明对象的属性是否可以被删除，以及除 writable 特性外的其他特性是否可以被修改。
 
@@ -72,7 +73,7 @@ console.log(obj.a); // 1
 
 如果 `configurable` 为 `true`，那么在删除某个属性的时候，该属性下的 `configurable` 是最后被删除的。
 
-### enumerable
+### Enumerable
 
 `enumerable` 定义了对象的属性是否可以在 `for...in` 循环和 `Object.keys()` 中被枚举。
 
@@ -94,7 +95,7 @@ obj.propertyIsEnumerable('b'); // false
 obj.propertyIsEnumerable('c'); // false
 ```
 
-### writable
+### Writable
 
 当 `writable` 属性设置为 `false` 时，该属性不可写，它不能被重新赋值。
 
@@ -126,7 +127,7 @@ console.log(o.a); // 37
 }());
 ```
 
-### get
+### Getter
 
 `get` 表示如何获取属性的值。配置了该选项后，属性的值不能通过外界的赋值操作来更改，属性的值是通过 `get` 来获取的。
 
@@ -143,7 +144,7 @@ obj.a = 123
 console.log(obj.a) // 'value of a'
 ```
 
-### set
+### Setter
 
 `set` 表示对该属性进行赋值操作时的回调。配置了该选项后，对属性进行赋值，将会调用该属性配置下的 `set` 方法。
 

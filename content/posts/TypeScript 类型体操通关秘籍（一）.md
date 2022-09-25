@@ -7,6 +7,7 @@ tags: ['TypeScript']
 keywords: ['TypeScript']
 description: "TypeScript 类型体操通关秘籍（一)"
 slug: "juejin-book-7047524421182947366-1"
+summary: 'TS 中的一些小技巧。'
 ---
 
 TypeScript 类型系统中的一些类型运算。
@@ -63,4 +64,3 @@ type MapType<T> = {
 `Key` 默认可能是 `string`、`number`、`symbol` 这三种，所以要和 `string` 取交叉部分。
 
 完。
-

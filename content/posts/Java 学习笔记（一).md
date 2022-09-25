@@ -7,6 +7,7 @@ tags: ['Java']
 keywords: ['Java']
 description: 'Java 学习笔记（一）'
 slug: 'java-note-1'
+hideSummary: true
 ---
 
 1. JRE：java runtime environment，java 运行时环境

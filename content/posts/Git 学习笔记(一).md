@@ -7,6 +7,7 @@ tags: ['git']
 keywords: ['git']
 description: 'Learn git'
 slug: 'git-note-1'
+hideSummary: true
 ---
 
 - git 查看文件改动状态使用 git status

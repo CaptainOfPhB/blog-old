@@ -7,6 +7,7 @@ tags: ['tutorial']
 keywords: ['shadowsocks']
 description: '如何使用 Shadowsocks 获取谷歌服务'
 slug: 'use-google-by-shadowsocks'
+hideSummary: true
 ---
 
 由于我国网络的特殊限制，很多墙外的优质资源不能够直接访问， GFW（Great FireWall，防火长城）就是互联网上那道巍峨的墙，深受程序员的痛恶。
@@ -36,7 +37,7 @@ slug: 'use-google-by-shadowsocks'
 - Server Addr：服务器 IP 地址（可在代理商处购买代理服务）
 - Server Port：服务器上的代理端口（所有从这个端口进来的请求全部转发）
 - Password：密码
-- Encrpytion：加密方式（默认为 `aes-256-cfb`，不需要更改）
+- Encryption：加密方式（默认为 `aes-256-cfb`，不需要更改）
 - Proxy Port：本地代理端口（默认为 `1080`，可自行修改为其他端口）
 
 可参考 Windows 环境下的配置截图：
@@ -59,7 +60,7 @@ sudo pip install shadowsocks
 
 执行成功后，编辑 `/etc/shadowsocks/config.json` 文件，可参考 Linux 下的配置截图：
 
-```
+```bash
 sudo vim /etc/shadowsocks/config.json
 ```
 
@@ -67,11 +68,11 @@ sudo vim /etc/shadowsocks/config.json
 
 配置完成后，键入以下命令可在后台运行 shadowsocks，运行成功截图：
 
-```
+```bash
 sudo sslocal -c /etc/shadowsocks/config.json -d start
 ```
 
-![Successed](https://i.loli.net/2017/11/04/59fdb0a5ca920.jpg)
+![Succeeded](https://i.loli.net/2017/11/04/59fdb0a5ca920.jpg)
 
 命令太长不好记，可以在 `~/.bashrc` 或 `~/.zshrc` 中添加 alias：
 

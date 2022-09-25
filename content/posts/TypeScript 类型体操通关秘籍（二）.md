@@ -7,6 +7,7 @@ tags: ['TypeScript']
 keywords: ['TypeScript']
 description: "TypeScript 类型体操通关秘籍（二)"
 slug: "juejin-book-7047524421182947366-2"
+summary: 'TS 中的一些内置类型工具。'
 ---
 
 ## Capitalize

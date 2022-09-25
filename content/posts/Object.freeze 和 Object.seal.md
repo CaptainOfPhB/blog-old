@@ -7,19 +7,20 @@ tags: ['JavaScript']
 keywords: ['object freeze', 'object seal']
 description: 'Object.freeze 和 Object.seal'
 slug: 'object-freeze-and-object-seal'
+summary: '本文主要介绍 Object.freeze 和 Object.seal 两个 api。'
 ---
 
 Vue 的响应式是使用了 `Object.defineProperty` 来实现的，官方文档上注明如果想要响应式系统无法再追踪数据的变化，应该使用 `Object.freeze` 方法将数据“冻”起来。
 
 > `Object.freeze()` 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。
 
-## parameter
+## Parameter
 
 `Obj`: 需要冻结的对象。
 
 > 在 ES5 中，如果这个方法的参数不是一个对象（一个原始值），那么它会导致 `TypeError`。在 ES6 中，非对象参数将被视为要被冻结的普通对象，并被简单地返回。
 
-## return
+## Return
 
 被冻结的对象，而不是被冻结对象的副本（不是原对象的拷贝）。
 

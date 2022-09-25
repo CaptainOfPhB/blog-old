@@ -7,9 +7,10 @@ tags: ['git']
 keywords: ['git message']
 description: '优雅的 Git 提交信息'
 slug: 'git-message'
+summary: '写好 commit message 不仅有助于他人 review，还可以有效的输出 change log，对项目的管理实际至关重要。'
 ---
 
-Commit change 是开发的日常操作，写好 log 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？
+写好 commit message 不仅有助于他人 review, 还可以有效的输出 change log, 对项目的管理实际至关重要。如何写好每一个 commit message 呢？
 
 > 这种东西，当然要借助工具了，才能够写得即规范，又格式化，还能够支持后续分析。
 > 目前比较建议的是，使用终端工具 [commitizen/cz-cli](https://github.com/commitizen/cz-cli) + [commitizen/cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) + [conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version) 一步解决提交信息和版本发布。甚至，如果想更狠一点，在持续集成里面加入 [marionebl/commitlint](https://github.com/marionebl/commitlint) 检查 commit 信息是否符合规范，也不是不可以。
@@ -79,9 +80,9 @@ scope 可以是指明 commit 更改范围的任何内容，例如 $location、$b
 
 > The subject contains succinct description of the change:
 >
-> 1.  use the imperative, present tense: "change" not "changed" nor "changes"
-> 2.  don't capitalize first letter
-> 3.  no dot (.) at the end
+> 1. use the imperative, present tense: "change" not "changed" nor "changes"
+> 2. don't capitalize first letter
+> 3. no dot (.) at the end
 
 subject 部分是针对改动的简要描述，需要注意的是：
 
@@ -222,7 +223,7 @@ module.exports = {
 如果你使用的是自定义的 commitizen adapter, 那么你需要:
 
 ```sh
-$ npm i -D commitlint-config-cz @commitlint/cli
+npm i -D commitlint-config-cz @commitlint/cli
 ```
 
 同时在 `.commitlintrc.js` 中写入:
@@ -234,11 +235,8 @@ module.exports = {
 };
 ```
 
-> 扩展:
->
 > 1. 结合 [Husky](https://github.com/typicode/husky) 校验 commit message
 > 2. 利用符合语义化的 commit message 生成 CHANGELOG，借助 [standard-version](https://github.com/conventional-changelog/standard-version)
-
-> 参考：[优雅的提交你的 commit message](https://zhuanlan.zhihu.com/p/34223150)
+> 3. [优雅的提交你的 commit message](https://zhuanlan.zhihu.com/p/34223150)
 
 完。

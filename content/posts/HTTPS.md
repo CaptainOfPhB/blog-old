@@ -7,9 +7,10 @@ tags: ['HTTPS']
 keywords: ['HTTPS']
 description: 'HTTPS'
 slug: 'https'
+summary: 'HTTPS = HTTP（Hyper Text Transfer Protocol）+ SSL（Secure Sockets Layer）/ TLS（Transport Layer Security）.'
 ---
 
-HTTPS：HTTP（Hyper Text Tranfer Protocal）+ SSL（Secure Sockets Layer）/ TLS（Transport Layer Security）.
+HTTPS：HTTP（Hyper Text Transfer Protocol）+ SSL（Secure Sockets Layer）/ TLS（Transport Layer Security）.
 
 SSL 提高了互联网的连接安全，对两个系统之间发送的敏感数据提供了有效保护，它使用加密算法对传输的数据进行加密，防止第三方进行劫持和篡改。这两个系统可以是 server 与 client ，也可以是 server 与 server。
 

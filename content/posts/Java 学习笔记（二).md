@@ -7,6 +7,7 @@ tags: ['Java']
 keywords: ['Java']
 description: 'Java 学习笔记（二)'
 slug: 'java-note-2'
+hideSummary: true
 ---
 
 1. java 是一门强类型的静态语言，编译器（compile）提供了最佳的安全保障

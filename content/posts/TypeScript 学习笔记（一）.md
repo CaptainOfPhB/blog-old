@@ -7,6 +7,7 @@ tags: ['TypeScript']
 keywords: ['TypeScript']
 description: 'TypeScript 学习笔记（一）'
 slug: 'typescript-note-1'
+hideSummary: true
 ---
 
 - ts 中的基础类型有：boolean、number、string、array、enum、元组 Tuple、any、null、undefined、never、object（除了 js 中的基础五大类型 string、number、boolean、symbol、null、undefined 之外可以用 object 类型表示）

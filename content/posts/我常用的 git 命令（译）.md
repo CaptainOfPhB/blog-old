@@ -7,6 +7,7 @@ tags: ['git']
 keywords: ['git', 'translate']
 description: '我常用的 Git 命令（译）'
 slug: 'commonly-used-git-commands'
+summary: '本文是对 Medium 上一篇国外开发者写的博客的翻译。'
 ---
 
 本文是对 [Medium](https://medium.com) 上一篇国外开发者写的博客的翻译，原文地址请点击：[A Dev’s Thoughts: My Most Used Git Commands | Medium](https://medium.com/@steffen.pedersen/a-devs-thoughts-my-most-used-git-commands-6f7f9fe41f33?token=r-dMLF3Roe3B15H8)。

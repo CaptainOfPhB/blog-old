@@ -7,6 +7,7 @@ tags: ["GitHub"]
 keywords: ["GitHub Pages"]
 description: "GitHub Pages"
 slug: "github-page"
+summary: '仓库下新建 .nojekyll 文件使 GitHub Pages 不将网站作为 jekyll 站点显示。'
 ---
 
 今天调整了博客的一些样式之后，push 到 GitHub 和 Gitee 没有成功。原因是之前使用的 `git subtree` 模式，将 `master` 分支的 `public` 文件夹内容作为 deploy 分支。想了一下这种模式有些麻烦，而且办公室电脑和自己的电脑总是在 push 时会出问题，因此不打算用 `subtree` 的方式了。

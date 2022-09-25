@@ -7,11 +7,12 @@ tags: ['npm']
 keywords: ['npm']
 description: "Unpublishing your package on npm"
 slug: "unpublishing-your-package-on-npm"
+summary: 'If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow those steps.'
 ---
 
 If your package is published on npm, for some reason, you want to unpublish a single version or the entire package, you can follow the steps below:
 
-### Unpublishing a single version of a package
+## Unpublishing a single version of a package
 
 To unpublish a single version of a package, run the following command, replacing  with the name of your package, and  with your version number:
 
@@ -19,7 +20,7 @@ To unpublish a single version of a package, run the following command, replacing
 npm unpublish <package_name>@<specific_version_name>
 ```
 
-### Unpublishing the entire package
+## Unpublishing the entire package
 
 To unpublish an entire package, run the following command, replacing  with the name of your package:
 
