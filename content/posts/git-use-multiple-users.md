@@ -12,7 +12,7 @@ summary: "Use `[includeIf]` to auto toggle different user in git"
 
 In some cases, we work between our personal projects and work projects, so we need to use different user across multiple projects. As we all known, git provides a way to set up user individually in the `.git/config` file in the project root dir. But actually, I always forget to set up the user in the new project before I commit my changes. This annoyed me for a long time.
 
-So I found a way to auto toggle the user in git. We can use the `[includeIf]` to include different config files in the `.git/config` file. This is a feature named "[conditional includes](https://git-scm.com/docs/git-config#_conditional_includes)" in git.
+So I found a way to auto toggle the user in git. We can use the `[includeIf]` to include different config files in the `~/.gitconfig` file. This is a feature named "[conditional includes](https://git-scm.com/docs/git-config#_conditional_includes)" in git.
 
 The following is my `~/.gitconfig` file:
 
