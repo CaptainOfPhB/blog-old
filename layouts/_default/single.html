@@ -11,14 +11,14 @@
                 <h1 class="title">{{ .Title }}</h1>
 
                 <div class="meta">
-                    Updated&nbsp;at&nbsp;{{ .Lastmod.Format "2006.01.02" }},
+                    Updated at {{ .Lastmod.Format "2006.01.02" }},
                     {{ countwords .Content }} words,
                     {{ math.Round (div (countwords .Content) 220.0) }} mins
                 </div>
 
                 {{ if (and (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") (ne .TableOfContents "")) }}
                     <details open class="toc">
-                        <summary>&nbsp;Table&nbsp;of&nbsp;Contents</summary>
+                        <summary> Table of Contents</summary>
                         {{ .TableOfContents  }}
                     </details>
                 {{ end }}
