@@ -2,6 +2,6 @@
 {{ $caption := .Get "title" }}
 <div class="fancybox">
     <a data-fancybox="gallery" href="{{ $path | absURL }}" data-caption="{{ $caption }}">
-        <img src="{{ $path | absURL }}" />
+        <img src="{{ $path | absURL }}" loading="lazy" />
     </a>
 </div>
