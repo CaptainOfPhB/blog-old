@@ -6,14 +6,16 @@ type: 'about'
 layout: 'index'
 ---
 
-我是船长，常用的英文 ID 是 CaptainOfPhB。
+Hi there, I'm CaptainOfPhB, a <u>front-end developer</u> from <u>Shanghai, China</u>.
 
-2016 年我于西安理工大学毕业之后在老家国企移动上班，奈何对腐朽的办公室政治忍无可忍，于是在一年半后毅然辞职，只身一人前往上海，我曾写了[一篇文章][知乎]用来记录这段往事。目前我从事于前端开发工作。
+At present, I have <u>5 years</u> of experience on front-end development, and working with <u>React</u> for over 4 years. I have been developing backend management system for most of my work. I write clean and simple code, and always try to find the right way to solve problems in my work.
 
-我养了两只很可爱的猫，一只狸花叫球球，另一只美短叫小胖。
+Outside of work, I like to self-driving travel with friends, or sometimes cook at home on weekends.
 
-我没什么伟大的理想，但是活着也还算有趣。
+Like most of programmer, I have two lovely cats which have been with me over 4 years.
 
-祝你身体健康，有个好心情。
+I learn English and some new techniques in my spare time. I would appreciate it if you could teach me anything new to me.
 
-[知乎]: https://zhuanlan.zhihu.com/p/36296156
+Feel free to contact me if you can offer me a better job or just wanna make friend with me.
+
+[GitHub](https://github.com/CaptainOfPhB) | [X(Twitter)](https://twitter.com/CaptainOfPhB) | [Email](mailto:captainofphb@gmail.com) | [知乎](https://www.zhihu.com/people/CaptainInPHW) | [微信](https://bit.ly/captainofphb-wechat)
