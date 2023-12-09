@@ -18,4 +18,4 @@ I learn English and some new techniques in my spare time. I would appreciate it 
 
 Feel free to contact me if you can offer me a better job or just wanna make friend with me.
 
-[GitHub](https://github.com/CaptainOfPhB) | [X(Twitter)](https://twitter.com/CaptainOfPhB) | [Email](mailto:captainofphb@gmail.com) | [知乎](https://www.zhihu.com/people/CaptainInPHW) | [微信](https://bit.ly/captainofphb-wechat)
+[GitHub](https://github.com/CaptainOfPhB) | [X(Twitter)](https://twitter.com/CaptainOfPhB) | [Email](mailto:captainofphb@gmail.com) | [知乎](https://www.zhihu.com/people/CaptainInPHW) | [微信](https://picx.zhimg.com/80/v2-502fce7fabff98705dfab84cc58bb31d_1440w.png)
