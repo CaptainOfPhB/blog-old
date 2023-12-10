@@ -8,15 +8,15 @@ enableEmoji = true # 允许使用 emoji
 enableGitInfo = true # 允许使用 git 相关信息
 disqusShortname = "daijiangtao-blog" # disqus 评论
 
-[author]
-name = "CaptainOfPhB"
-
 [params]
 description = "船长の部落格" # 网站描述
 enableSummary = true # 是否显示文章摘要
 keywords = ["CaptainOfPhB", "船长の部落格"] # 网站关键字
-mainSections = ["posts", "post"]
+mainSections = ["posts"]
 hasCJKLanguage = true # 自动检测中文、日文、韩文
+
+[params.author]
+name = "CaptainOfPhB"
 
 [permalinks]
 posts = "/:slug"

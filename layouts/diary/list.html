@@ -1,0 +1,21 @@
+{{ partial "head.html" . }}
+
+<body>
+    <div class="main">
+        {{ partial "nav.html" . }}
+        <div class="content">
+            <div class="posts">
+                <div class="list">
+                    {{ range .Pages.Reverse }}
+                    <div class="item">
+                        <div class="diary-summary">{{ .Summary }}</div>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
