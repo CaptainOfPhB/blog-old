@@ -8,7 +8,7 @@
                 <ul>
                     {{ $data := .Data }}
                     {{ range $key, $value := .Data.Terms.ByCount }}
-                    {{ if ($value.Name) }}
+                    {{ if (and $value.Name (ne $value.Name "diary")) }}
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="fill: #999; vertical-align: middle;">
                             <path fill="none" d="M0 0h24v24H0z"/>
