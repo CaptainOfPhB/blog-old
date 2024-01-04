@@ -1,3 +1,6 @@
+> [!CAUTION]
+> The site is no longer maintained, please move to my new site -> [captainofphb.me](https://captainofphb.me).
+
 # 船长の部落格
 
 This is my personal site built with [Hugo][hugo]. You can preview it at [daijiangtao.blog][blog].
